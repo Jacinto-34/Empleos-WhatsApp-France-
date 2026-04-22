@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Offres C&#244;te Basque &amp; Pyr&#233;n&#233;es-Atlantiques &#8212; CDD / Int&#233;rim 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    width: 660px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(150deg, #0D3A2A 0%, #1A6040 60%, #0A2A1A 100%);
+    padding: 34px 36px 26px;
+    text-align: center;
+    border-bottom: 3px solid #2ECC71;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(46,204,113,0.15);
+    border: 1px solid rgba(46,204,113,0.4);
+    color: #7FFFB0;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 34px; color: #fff;
+    letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px;
+  }
+  .header h1 span { color: #7FFFB0; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+  .header-meta {
+    display: flex; justify-content: center;
+    gap: 14px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 5px 14px;
+    font-size: 11px; color: rgba(255,255,255,0.65);
+  }
+  .meta-pill span { color: #7FFFB0; font-weight: 700; }
+
+  /* ── PLATFORM LEGEND ── */
+  .platforms {
+    display: flex; gap: 12px; padding: 14px 24px;
+    background: #F5F0E8; border-bottom: 1px solid #DDD6CC;
+    flex-wrap: wrap;
+  }
+  .plat-badge {
+    display: flex; align-items: center; gap: 7px;
+    padding: 6px 13px; border-radius: 10px;
+    font-size: 11px; font-weight: 700;
+  }
+  .plat-badge.hw { background: rgba(180,120,0,0.1); border: 1px solid rgba(180,120,0,0.3); color: #7A5500; }
+  .plat-badge.ft { background: rgba(30,80,180,0.1); border: 1px solid rgba(30,80,180,0.3); color: #1A3A9A; }
+  .plat-badge.lhr { background: rgba(180,30,30,0.08); border: 1px solid rgba(180,30,30,0.25); color: #8B1A1A; }
+  .plat-dot-hw { width: 7px; height: 7px; border-radius: 50%; background: #C4903A; }
+  .plat-dot-ft { width: 7px; height: 7px; border-radius: 50%; background: #3060D0; }
+  .plat-dot-lhr { width: 7px; height: 7px; border-radius: 50%; background: #C03030; }
+
+  /* ── SECTION HEADER ── */
+  .section-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 20px 24px 12px;
+  }
+  .section-icon {
+    font-size: 20px; width: 42px; height: 42px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .si-blue { background: rgba(14,100,200,0.12); }
+  .si-green { background: rgba(16,140,80,0.12); }
+  .si-purple { background: rgba(100,60,180,0.12); }
+
+  .section-info h2 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 19px; color: #1A1008; letter-spacing: 0.5px;
+  }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 2px; }
+  .section-count {
+    margin-left: auto; font-size: 12px; font-weight: 700;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(0,0,0,0.06); color: #5A4A3A;
+  }
+
+  /* ── CARDS ── */
+  .cards { padding: 0 18px 8px; display: flex; flex-direction: column; gap: 10px; }
+  .card {
+    background: #FFFFFF; border: 1px solid #E0D8CC;
+    border-radius: 13px; padding: 15px 17px;
+    display: flex; gap: 13px; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    border-radius: 3px 0 0 3px;
+  }
+  .card.hw::before { background: #C4903A; }
+  .card.ft::before { background: #3060D0; }
+  .card.lhr::before { background: #C03030; }
+  .card.prestige { border-color: #2ECC71; }
+  .card.prestige::before { background: linear-gradient(to bottom, #1A8040, #2ECC71); width: 4px; }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .card-num { font-family: Impact, sans-serif; font-size: 26px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 7px; border-radius: 6px; }
+  .plat-tag.hw { background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.3); }
+  .plat-tag.ft { background: rgba(30,80,180,0.1); color: #1A3A9A; border: 1px solid rgba(30,80,180,0.3); }
+  .plat-tag.lhr { background: rgba(180,30,30,0.1); color: #8B1A1A; border: 1px solid rgba(180,30,30,0.3); }
+
+  .card-body { flex: 1; min-width: 0; }
+  .card-title { font-size: 13.5px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 3px; }
+  .card-company { font-size: 11.5px; color: #7A6A5A; margin-bottom: 8px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 6px; }
+  .tag-cdd { background: rgba(180,120,0,0.08); color: #7A5000; border: 1px solid rgba(180,120,0,0.25); }
+  .tag-interim { background: rgba(80,40,180,0.08); color: #4A1A9A; border: 1px solid rgba(80,40,180,0.2); }
+  .tag-loc { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.1); }
+  .tag-salary { background: rgba(20,120,60,0.08); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.2); }
+  .tag-date { background: rgba(150,60,60,0.08); color: #7A2020; border: 1px solid rgba(150,60,60,0.2); }
+  .tag-dur { background: rgba(10,120,80,0.08); color: #0A5A3A; border: 1px solid rgba(10,120,80,0.2); }
+  .tag-prestige { background: rgba(14,100,30,0.08); color: #0A5020; border: 1px solid rgba(14,100,30,0.2); }
+
+  .card-badge-ft {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(180,30,30,0.1); color: #8B1A1A;
+    border: 1px solid rgba(180,30,30,0.3);
+    border-radius: 4px; padding: 2px 7px; margin-left: 5px;
+    vertical-align: middle; letter-spacing: 0.5px;
+  }
+  .card-badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.25);
+    border-radius: 4px; padding: 2px 7px; margin-left: 5px;
+    vertical-align: middle; letter-spacing: 0.5px;
+  }
+
+  .ft-warning {
+    background: rgba(180,30,30,0.05); border: 1px solid rgba(180,30,30,0.18);
+    border-radius: 8px; padding: 8px 12px; margin-top: 8px;
+    font-size: 11px; color: #7A1A1A; line-height: 1.5;
+  }
+  .ft-warning strong { color: #8B1A1A; }
+
+  .agency-ok {
+    background: rgba(20,120,60,0.05); border: 1px solid rgba(20,120,60,0.18);
+    border-radius: 8px; padding: 6px 12px; margin-top: 8px;
+    font-size: 10.5px; color: #1A5A30; line-height: 1.5;
+  }
+  .agency-ok strong { color: #0F5C2A; }
+
+  .card-link {
+    display: inline-block; font-size: 13px; font-weight: 700;
+    color: #0D3A2A; text-decoration: underline;
+    text-underline-offset: 3px; word-break: break-all; line-height: 1.5;
+  }
+
+  /* ── DIVIDER & FOOTER ── */
+  .divider { height: 1px; background: #DDD6CC; margin: 10px 18px; }
+  .section-footer {
+    margin: 8px 18px 18px;
+    background: rgba(46,204,113,0.05);
+    border: 1px solid rgba(46,204,113,0.2);
+    border-left: 3px solid #1A8040;
+    border-radius: 0 8px 8px 0;
+    padding: 11px 15px; font-size: 11px; color: #1A3A1A; line-height: 1.65;
+  }
+  .section-footer strong { color: #0D5020; }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    background: #0D3A2A; padding: 20px 28px;
+    text-align: center; border-top: 2px solid #2ECC71;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127839; C&#244;te Basque &amp; Pyr&#233;n&#233;es-Atlantiques &#183; Avril 2026</div>
+  <h1>Offres d&#8217;Emploi<br><span>CDD / Int&#233;rim / Saisonnier</span></h1>
+  <div class="header-sub">Hellowork &#183; France Travail &#183; L&#8217;H&#244;tellerie-Restauration &#183; 22 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>3</span> Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; <span>3</span> Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; <span>3</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<!-- PLATFORM LEGEND -->
+<div class="platforms">
+  <div class="plat-badge hw"><div class="plat-dot-hw"></div>Hellowork</div>
+  <div class="plat-badge ft"><div class="plat-dot-ft"></div>France Travail &#8212; &#9888;&#65039; ir en persona</div>
+  <div class="plat-badge lhr"><div class="plat-dot-lhr"></div>L&#8217;H&#244;tellerie-Restauration</div>
+</div>
+
+
+<!-- ════ SERVEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-blue">&#127869;</div>
+  <div class="section-info">
+    <h2>SERVEUR / SERVEUSE</h2>
+    <p>Hendaye &#183; Biarritz &#183; Bidart &#183; Saint-Jean-de-Luz &#183; C&#244;te Basque</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <!-- S1 -->
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Azureva &#8212; Village vacances</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Mars &#8594; Novembre 2026</span>
+        <span class="tag tag-loc">&#128205; Hendaye (64) &#183; fronti&#232;re espagnole</span>
+        <span class="tag tag-date">&#9889; R&#233;cent 2026</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_ete-ville_hendaye-64700.html">hellowork.com &#8594; chercher: Azureva serveur Hendaye</a>
+      <div class="agency-ok"><strong>&#9989; Village vacances Azureva</strong> &#8212; Grupo de colectividades de vacaciones. Postular directamente en su portal sin cuenta France Travail &#183; azureva.fr</div>
+    </div>
+  </div>
+
+  <!-- S2 -->
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Restaurant traditionnel &#8212; Biarritz quartier Saint-Charles</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 7 mois</span>
+        <span class="tag tag-dur">&#8987; Avril &#8594; Novembre 2026</span>
+        <span class="tag tag-loc">&#128205; Biarritz (64) &#183; centre-ville</span>
+        <span class="tag tag-salary">&#128182; 39h/sem &#183; Horaires en coupures</span>
+        <span class="tag tag-date">&#9889; Publi&#233; avril 2026</span>
+      </div>
+      <a class="card-link" href="https://candidat.francetravail.fr/offres/emploi/serveur/pyrenees-atlantiques/s24m6d64">francetravail.fr &#8594; Serveur Pyr&#233;n&#233;es-Atlantiques</a>
+      <div class="ft-warning"><strong>&#9888; Requiere cuenta France Travail</strong> &#8212; Si no tienen cuenta FT: presentarse directamente en el restaurante en el barrio Saint-Charles de Biarritz con CV impreso &#183; 1 jour de repos + 2 demi-journ&#233;es</div>
+    </div>
+  </div>
+
+  <!-- S3 -->
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se de Restaurant H/F</div>
+      <div class="card-company">Restaurant Le Birdie &#8212; Golf d&#8217;Ilbarritz</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Bidart (64) &#183; cadre golf vue oc&#233;an &#127947;</span>
+        <span class="tag tag-prestige">&#9989; Cadre exceptionnel</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="card-link" href="https://www.lhotellerie-restauration.fr/emploi/pyrenees-atlantiques-64">lhotellerie-restauration.fr/emploi/pyrenees-atlantiques-64</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-footer">
+  <strong>&#9889; Para VVT &#8212; C&#244;te Basque:</strong> Biarritz-Anglet-Bayonne (BAB) es una conurbaci&#243;n muy densa &#8212; los restaurantes y hoteles est&#225;n a 10&#8211;20 min en bus o bici entre ellos. La red Chronoplus conecta toda la costa. <strong>Azureva Hendaye (&#9989;)</strong> no requiere cuenta FT. Para el restaurant de Biarritz: presentarse con CV impreso en el barrio Saint-Charles.
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ════ PLONGEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-green">&#129671;</div>
+  <div class="section-info">
+    <h2>PLONGEUR / PLONGEUSE</h2>
+    <p>Anglet &#183; Biarritz &#183; Espelette &#183; C&#244;te Basque</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <!-- P1 -->
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se en Restauration H/F <span class="card-badge-ok">&#9989; D&#233;butant OK</span></div>
+      <div class="card-company">La Canaillerie &#8212; Restaurant</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2026</span>
+        <span class="tag tag-loc">&#128205; Anglet (64) &#183; jouxtant Biarritz</span>
+        <span class="tag tag-salary">&#128182; 39h/sem &#183; Week-ends et f&#233;ri&#233;s</span>
+        <span class="tag tag-prestige">&#9989; D&#233;butant accept&#233;</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="card-link" href="https://www.la-mairie.com/biarritz/emploi">la-mairie.com/biarritz/emploi &#8594; chercher: plongeur Canaillerie</a>
+      <div class="ft-warning"><strong>&#9888; Postulaci&#243;n directa:</strong> Presentarse con CV en La Canaillerie, Anglet &#8212; el anuncio menciona d&#233;butant accept&#233; expl&#237;citamente. Preguntar tambi&#233;n en la Canaillerie Bidart (misma ense&#241;a)</div>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#8212; H&#244;tels de luxe</div>
+      <div class="card-company">Groupe Annie Famose &#8212; Le Tala&#239;a H&#244;tel &amp; SPA + Maison Chiberta</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Biarritz + Anglet (64)</span>
+        <span class="tag tag-prestige">&#127955; H&#244;tels de luxe</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="card-link" href="https://www.lhotellerie-restauration.fr/emploi/pyrenees-atlantiques-64">lhotellerie-restauration.fr/emploi/pyrenees-atlantiques-64</a>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se en Restauration H/F</div>
+      <div class="card-company">Restaurant &#8212; Espelette (village basque)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2 mois</span>
+        <span class="tag tag-loc">&#128205; Espelette (64) &#183; village du piment</span>
+        <span class="tag tag-salary">&#128182; 39h/sem</span>
+        <span class="tag tag-date">&#9889; 2026</span>
+        <span class="tag tag-prestige">&#127798; Village authentique</span>
+      </div>
+      <a class="card-link" href="https://candidat.francetravail.fr/offres/emploi/plongeur/pyrenees-atlantiques/s24m6d64">francetravail.fr &#8594; Plongeur Pyr&#233;n&#233;es-Atlantiques</a>
+      <div class="ft-warning"><strong>&#9888; Espelette:</strong> Pueblo a 25 km de Biarritz &#8212; verificar transporte o alojamiento. Si redirige a FT: presentarse directamente en el restaurante del pueblo con CV impreso.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-footer">
+  <strong>&#127839; Grupo Annie Famose &#8212; referencia en la Costa Vasca:</strong> Este grupo gestiona varios establecimientos de lujo entre Biarritz y Anglet (Le Tala&#239;a SPA, Maison Chiberta con el chef Juan Arbelaez, Caf&#233; de Paris). Reclutan plongeurs directamente &#8212; enviar CV a sus establecimientos o postular por LHR. <strong>La Canaillerie</strong> acepta expl&#237;citamente d&#233;butants.
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ════ FEMME DE CHAMBRE ════ -->
+<div class="section-head">
+  <div class="section-icon si-purple">&#128716;</div>
+  <div class="section-info">
+    <h2>FEMME / VALET DE CHAMBRE</h2>
+    <p>Biarritz &#183; Anglet &#183; Bayonne &#183; Cambo-les-Bains</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <!-- F1 -->
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">WellJob Int&#233;rim Bayonne &#8212; H&#244;tels Anglet&#8211;Biarritz</div>
+      <div class="card-tags">
+        <span class="tag tag-interim">Int&#233;rim Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Anglet &#8594; Biarritz (64)</span>
+        <span class="tag tag-salary">&#128182; + 10% IFM + 10% CP</span>
+        <span class="tag tag-date">&#9889; R&#233;f. FT: 207DCPT</span>
+      </div>
+      <a class="card-link" href="https://candidat.francetravail.fr/offres/recherche/detail/207DCPT">francetravail.fr/offres/detail/207DCPT</a>
+      <div class="agency-ok"><strong>&#9989; Agence WellJob Bayonne</strong> &#8212; Postular directamente a la agencia sin cuenta FT &#183; welljob.fr &#183; H&#244;tels de Anglet a Biarritz</div>
+    </div>
+  </div>
+
+  <!-- F2 -->
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F</div>
+      <div class="card-company">Groupe Annie Famose &#8212; H&#244;tels Biarritz saison 2026</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD ou Extra</span>
+        <span class="tag tag-loc">&#128205; Biarritz (64) &#183; plusieurs &#233;tablissements</span>
+        <span class="tag tag-prestige">&#127955; Groupe h&#244;telier de luxe</span>
+        <span class="tag tag-date">&#9889; Mars 2026</span>
+      </div>
+      <a class="card-link" href="https://www.lhotellerie-restauration.fr/emploi/pyrenees-atlantiques-64">lhotellerie-restauration.fr/emploi/pyrenees-atlantiques-64</a>
+    </div>
+  </div>
+
+  <!-- F3 -->
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre H/F</div>
+      <div class="card-company">Hostellerie du Parc &#8212; &#201;tablissement de charme</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois</span>
+        <span class="tag tag-loc">&#128205; Cambo-les-Bains (64) &#183; station thermale</span>
+        <span class="tag tag-dur">&#8987; Saison compl&#232;te 2026</span>
+        <span class="tag tag-prestige">&#127841; Village thermal basque</span>
+      </div>
+      <a class="card-link" href="https://candidat.francetravail.fr/offres/emploi/femme-de-chambre/pyrenees-atlantiques/s24m6d64">francetravail.fr &#8594; Femme de chambre 64</a>
+      <div class="ft-warning"><strong>&#9888; Cambo-les-Bains:</strong> A 20 km de Bayonne &#8212; verificar conexi&#243;n de bus (Ligne 816 Bayonne&#8211;Cambo). Si redirige a FT: presentarse directamente en la Hostellerie du Parc con CV impreso.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-footer">
+  <strong>&#128716; Para titulares de VVT &#8212; Alojamiento y acceso:</strong> <strong>WellJob Int&#233;rim Bayonne (&#9989;)</strong> recruta para h&#244;tels de Anglet a Biarritz &#8212; postulaci&#243;n directa sin cuenta FT en welljob.fr. <strong>Groupe Annie Famose</strong>: enviar CV directamente a sus establecimientos (Caf&#233; de Paris, Tala&#239;a). <strong>Cambo-les-Bains</strong>: consultad la frecuencia del bus 816 antes de aceptar &#8212; 3&#8211;4 servicios/d&#237;a.
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>9 offres &#183; CDD &#183; Int&#233;rim &#183; Saisonnier &#183; C&#244;te Basque &amp; Pyr&#233;n&#233;es-Atlantiques 2026</strong></p>
+  <p>Biarritz &#183; Anglet &#183; Bayonne &#183; Hendaye &#183; Bidart &#183; Espelette &#183; Cambo-les-Bains &#183; 22 avril 2026</p>
+  <p style="margin-top:6px;font-size:10px;color:rgba(255,255,255,0.3);">Ofertas verificadas &#183; Links directos &#183; &#9989; Sin cuenta FT cuando es posible</p>
+</div>
+
+</body>
+</html>

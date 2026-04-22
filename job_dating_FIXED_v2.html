@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Dating France &#8212; Saison 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #F0EBE3;
+    min-height: 100vh;
+    padding: 0 0 40px;
+  }
+
+  .header {
+    background: linear-gradient(160deg, #1B3A5C 0%, #0F2540 100%);
+    padding: 36px 20px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .flag-row { font-size: 28px; margin-bottom: 12px; letter-spacing: 4px; }
+  .header h1 {
+    font-size: clamp(22px, 6vw, 32px);
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+  .header h1 span { color: #F5C842; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.6); position: relative; z-index: 1; }
+  .header-badge {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(245,200,66,0.15);
+    border: 1px solid rgba(245,200,66,0.35);
+    color: #F5C842;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .info-box {
+    margin: 20px 16px 0;
+    background: #FFF8E7;
+    border: 1px solid #F5C842;
+    border-left: 4px solid #E6A01E;
+    border-radius: 10px;
+    padding: 13px 16px;
+    font-size: 12.5px;
+    color: #5A3E00;
+    line-height: 1.6;
+  }
+  .info-box strong { color: #8B5E00; font-weight: 700; }
+
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 16px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1B3A5C;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #C8BEB0;
+  }
+
+  .card {
+    margin: 0 16px 14px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border: 1px solid #E8E0D6;
+  }
+
+  .card-top { display: flex; align-items: stretch; }
+
+  .card-date-bar {
+    width: 72px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 8px;
+    text-align: center;
+  }
+  .urgent { background: #8B1A1A; }
+  .special { background: #1B3A5C; }
+  .future { background: #6B4A00; }
+
+  .date-day { font-size: 28px; font-weight: 800; color: white; line-height: 1; }
+  .date-month { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.75); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+  .date-weekday {
+    font-size: 9px; color: rgba(255,255,255,0.55); text-transform: uppercase;
+    letter-spacing: 1px; margin-top: 4px; border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 4px; width: 100%; text-align: center;
+  }
+
+  .card-body { flex: 1; padding: 14px 14px 12px; min-width: 0; }
+
+  .urgency-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 9px; border-radius: 20px; margin-bottom: 6px; letter-spacing: 0.5px;
+  }
+  .tag-urgent { background: #FEE2E2; color: #991B1B; }
+  .tag-special { background: #DBEAFE; color: #1E3A8A; }
+  .tag-future { background: #FEF3C7; color: #92400E; }
+
+  .card-title { font-size: 14.5px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 5px; }
+
+  .card-meta { display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; }
+  .meta-row { display: flex; align-items: flex-start; gap: 6px; font-size: 12px; color: #5A4A3A; line-height: 1.4; }
+  .meta-icon { font-size: 13px; flex-shrink: 0; }
+
+  .sectors { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .sector-tag {
+    font-size: 10px; padding: 3px 9px; background: #F0EBE3;
+    border: 1px solid #D4C8BA; border-radius: 20px; color: #5A4A3A; font-weight: 500;
+  }
+
+  .hotels-list {
+    background: #F8F4EE;
+    border-radius: 8px;
+    padding: 9px 12px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    color: #5A4A3A;
+    line-height: 1.7;
+    border: 1px solid #E8E0D6;
+  }
+  .hotels-list strong { color: #1B3A5C; font-size: 10.5px; display: block; margin-bottom: 3px; }
+
+  .cta-btn {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    width: 100%; padding: 11px 16px; border-radius: 10px; font-size: 13px;
+    font-weight: 700; text-decoration: none; transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.88; }
+  .btn-red { background: #8B1A1A; color: white; }
+  .btn-blue { background: #1B3A5C; color: white; }
+  .btn-gold { background: #8B5E00; color: white; }
+  .btn-green { background: #2D6A3F; color: white; }
+
+  .card-footer { background: #F8F5F0; border-top: 1px solid #E8E0D6; padding: 10px 14px; }
+
+  .tips-section {
+    margin: 0 16px;
+    background: #1B3A5C;
+    border-radius: 16px;
+    padding: 20px 18px;
+    color: white;
+  }
+  .tips-title { font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #F5C842; margin-bottom: 12px; text-transform: uppercase; }
+  .tip-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 12.5px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .tip-num {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(245,200,66,0.2); border: 1px solid rgba(245,200,66,0.4);
+    color: #F5C842; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+
+  .sources-section { margin: 20px 16px 0; }
+  .source-card {
+    background: white; border-radius: 12px; padding: 14px 16px;
+    margin-bottom: 10px; border: 1px solid #E8E0D6;
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+  .source-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: #F0EBE3; display: flex; align-items: center;
+    justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .source-info { flex: 1; min-width: 0; }
+  .source-name { font-size: 13px; font-weight: 700; color: #1B3A5C; margin-bottom: 2px; }
+  .source-desc { font-size: 11px; color: #8A7A6A; }
+  .source-arrow { font-size: 16px; color: #C8BEB0; }
+
+  .footer {
+    background: #1B3A5C; margin-top: 24px; padding: 20px 20px;
+    text-align: center; color: rgba(255,255,255,0.45);
+    font-size: 11px; line-height: 1.7;
+  }
+  .footer strong { color: rgba(255,255,255,0.7); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="flag-row">&#127467;&#127479;</div>
+  <h1>Job Dating &amp;<br>Jornadas de <span>Reclutamiento</span><br>Hoteler&#237;a &#183; Restauraci&#243;n</h1>
+  <p class="header-sub">Francia metropolitana &#183; Eventos confirmados &#183; Saison 2026</p>
+  <div class="header-badge">&#128203; CV imprim&#233; en mano &#183; Entrada libre</div>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box">
+  &#9989; <strong>Para titulares de VVT:</strong> Estos eventos son <strong>abiertos a todos</strong> &#8212; no se necesita cuenta France Travail para participar. Solo llev&#225; tu CV impreso en varios ejemplares y present&#225;te directamente con los reclutadores.
+</div>
+
+
+<!-- ===== URGENTE ===== -->
+<div class="section-title">&#128293; Esta semana &#8212; urgente</div>
+
+<!-- 22 AVRIL - CIDJ -->
+<div class="card">
+  <div class="card-top">
+    <div class="card-date-bar urgent">
+      <div class="date-day">22</div>
+      <div class="date-month">Avril</div>
+      <div class="date-weekday">Mi&#233;rcoles</div>
+    </div>
+    <div class="card-body">
+      <span class="urgency-tag tag-urgent">&#128293; MA&#209;ANA</span>
+      <div class="card-title">Forum Jobs d&#8217;&#233;t&#233; CIDJ &#8212; 33&#232;me &#233;dition</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-icon">&#128205;</span> Si&#232;ge R&#233;gion &#206;le-de-France &#183; Saint-Ouen-sur-Seine (93)</div>
+        <div class="meta-row"><span class="meta-icon">&#127970;</span> +30 empresas &#183; Miles de ofertas disponibles</div>
+        <div class="meta-row"><span class="meta-icon">&#128247;</span> Coaching CV, studio foto profesional incluido</div>
+      </div>
+      <div class="sectors">
+        <span class="sector-tag">&#127869; H&#244;tellerie-Resto</span>
+        <span class="sector-tag">&#9992; Tourisme</span>
+        <span class="sector-tag">&#127914; &#201;v&#233;nementiel</span>
+        <span class="sector-tag">&#128717; Commerce</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.cidj.com/agendas/forum-jobs-ete" target="_blank" class="cta-btn btn-red">
+      &#128279; Ver el evento completo &#8212; cidj.com
+    </a>
+  </div>
+</div>
+
+<!-- 23 AVRIL - PALAVAS -->
+<div class="card">
+  <div class="card-top">
+    <div class="card-date-bar urgent">
+      <div class="date-day">23</div>
+      <div class="date-month">Avril</div>
+      <div class="date-weekday">Jueves</div>
+    </div>
+    <div class="card-body">
+      <span class="urgency-tag tag-urgent">&#128293; MA&#209;ANA &#183; 14h30</span>
+      <div class="card-title">Job Dating Saisonnier &#8212; Pays de l&#8217;Or</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-icon">&#128205;</span> Salle des F&#234;tes / COSEC &#183; Avenue de l&#8217;Abb&#233; Brocardi &#183; 34250 <strong>Palavas-les-Flots</strong></div>
+        <div class="meta-row"><span class="meta-icon">&#128336;</span> Jueves 23 avril &#183; 14h30 &#8211; 18h &#183; Entrada libre</div>
+        <div class="meta-row"><span class="meta-icon">&#127754;</span> Occitanie &#183; Costa mediterr&#225;nea &#183; H&#233;rault (34)</div>
+      </div>
+      <div class="sectors">
+        <span class="sector-tag">&#127869; Restauration</span>
+        <span class="sector-tag">&#127958; Plage</span>
+        <span class="sector-tag">&#9975; Camping</span>
+        <span class="sector-tag">&#127976; H&#244;tellerie</span>
+        <span class="sector-tag">&#127965; Tourisme</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.palavaslesflots.com/15-9984/agenda/fiche/job-dating.htm" target="_blank" class="cta-btn btn-red">
+      &#128279; Sitio oficial Palavas-les-Flots
+    </a>
+  </div>
+</div>
+
+
+<!-- ===== PROXIMAS SEMANAS ===== -->
+<div class="section-title">&#128197; Pr&#243;ximas semanas</div>
+
+<!-- 13 MAI - CLUB HOTELIER 78 VERSAILLES -->
+<div class="card">
+  <div class="card-top">
+    <div class="card-date-bar special">
+      <div class="date-day">13</div>
+      <div class="date-month">Mai</div>
+      <div class="date-weekday">Mi&#233;rcoles</div>
+    </div>
+    <div class="card-body">
+      <span class="urgency-tag tag-special">&#11088; ESPECIAL CHR</span>
+      <div class="card-title">Job Dating H&#244;tellerie-Restauration &#8212; Club H&#244;telier 78</div>
+      <div class="card-meta">
+        <div class="meta-row"><span class="meta-icon">&#128205;</span> H&#244;tel Le Louis Versailles Ch&#226;teau &#183; 2 Bis Av. de Paris &#183; 78000 <strong>Versailles</strong></div>
+        <div class="meta-row"><span class="meta-icon">&#128336;</span> 14h &#8211; 19h &#183; Inscripci&#243;n facultativa recomendada</div>
+        <div class="meta-row"><span class="meta-icon">&#128084;</span> Directores de hotel y Responsables RH en persona &#8212; sin intermediarios</div>
+      </div>
+      <div class="hotels-list">
+        <strong>&#127970; Hoteles presentes:</strong>
+        Le Trianon Palace Versailles &#183; Le Louis Versailles Ch&#226;teau MGallery &#183; Les Lumi&#232;res Versailles &#183; Le Grand Contr&#244;le Versailles &#183; Cazaudehore &#183; Dolce Versailles &#183; DoubleTree Paris Bougival &#183; Le Barn &#183; Best Western Plus Paris Meudon Ermitage&#8230;
+      </div>
+      <div class="sectors">
+        <span class="sector-tag">&#128084; CDI / CDD</span>
+        <span class="sector-tag">&#128198; Job d&#8217;&#233;t&#233;</span>
+        <span class="sector-tag">&#9889; Extras</span>
+        <span class="sector-tag">&#127891; Stage / Alternance</span>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="https://www.versailles.fr/15-9986/actualites/fiche/job-dating-club-hotelier-78.htm" target="_blank" class="cta-btn btn-blue">
+      &#128279; Info oficial &#8212; versailles.fr
+    </a>
+  </div>
+</div>
+
+
+<!-- ===== PREPARACION ===== -->
+<div class="section-title">&#128161; C&#243;mo prepararse</div>
+
+<div class="tips-section">
+  <div class="tips-title">&#9989; Checklist para el d&#237;a</div>
+  <div class="tip-item">
+    <div class="tip-num">1</div>
+    <div>Llevar <strong>varios CV impresos</strong> (m&#237;nimo 5 copias) &#8212; uno por reclutador</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">2</div>
+    <div>Presentarse <strong>al inicio del evento</strong> &#8212; las filas se alargan al mediod&#237;a</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">3</div>
+    <div>Preparar un <strong>pitch de 2 minutos</strong>: qui&#233;n sos, qu&#233; buscas, cu&#225;ndo est&#225;s disponible</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">4</div>
+    <div>Llevar <strong>documentos de identidad</strong> con autorizaci&#243;n de trabajo (VVT, titre de s&#233;jour)</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">5</div>
+    <div>Vestirse de forma <strong>profesional</strong> &#8212; se hacen mini-entretiens en el momento</div>
+  </div>
+</div>
+
+
+<!-- ===== FUENTES ===== -->
+<div class="section-title">&#128269; Buscar m&#225;s eventos</div>
+
+<div class="sources-section">
+
+  <a href="https://job-dating.org" target="_blank" class="source-card">
+    <div class="source-icon">&#128205;</div>
+    <div class="source-info">
+      <div class="source-name">job-dating.org</div>
+      <div class="source-desc">Eventos por departamento, sector y fecha &#183; H&#244;tellerie-Restauration-Tourisme</div>
+    </div>
+    <div class="source-arrow">&#8250;</div>
+  </a>
+
+  <a href="https://www.ohmyseason.fr/blog/8-forums-et-evenements-incontournables-pour-decrocher-un-job-saisonnier-en-2026" target="_blank" class="source-card">
+    <div class="source-icon">&#127774;</div>
+    <div class="source-info">
+      <div class="source-name">ohmyseason.fr</div>
+      <div class="source-desc">Calendario de forums y eventos para empleos saisonniers en toda Francia</div>
+    </div>
+    <div class="source-arrow">&#8250;</div>
+  </a>
+
+  <a href="https://info-jeunes.fr/jobsdete2026/" target="_blank" class="source-card">
+    <div class="source-icon">&#127919;</div>
+    <div class="source-info">
+      <div class="source-name">info-jeunes.fr</div>
+      <div class="source-desc">Red Information Jeunesse &#183; Iniciativas por regi&#243;n para jobs d&#8217;&#233;t&#233;</div>
+    </div>
+    <div class="source-arrow">&#8250;</div>
+  </a>
+
+  <a href="https://rebondir.fr/recherche-demploi-reconversion-les-evenements-a-ne-pas-rater-en-avril-2026/" target="_blank" class="source-card">
+    <div class="source-icon">&#128198;</div>
+    <div class="source-info">
+      <div class="source-name">rebondir.fr</div>
+      <div class="source-desc">Eventos de empleo a no perderse &#8212; actualizado mensualmente</div>
+    </div>
+    <div class="source-arrow">&#8250;</div>
+  </a>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <p><strong>Compilado por la comunidad &#183; Abril 2026</strong></p>
+  <p>&#9989; Sin cuenta France Travail requerida para asistir</p>
+  <p>Llevar CV impreso &#183; Entrada libre y gratuita</p>
+</div>
+
+</body>
+</html>
