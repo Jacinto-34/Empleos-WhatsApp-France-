@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Offres Bordeaux &amp; Gironde &#8212; CDD / Int&#233;rim 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(150deg, #4A0A00 0%, #7A1800 60%, #3A0800 100%);
+    padding: 32px 36px 24px;
+    text-align: center;
+    border-bottom: 3px solid #C4503A;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(196,80,58,0.2);
+    border: 1px solid rgba(196,80,58,0.45);
+    color: #FFA080; font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 34px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px;
+  }
+  .header h1 span { color: #FFA080; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta {
+    display: flex; justify-content: center;
+    gap: 12px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 4px 13px;
+    font-size: 11px; color: rgba(255,255,255,0.65);
+  }
+  .meta-pill span { color: #FFA080; font-weight: 700; }
+
+  /* PLATFORM LEGEND */
+  .platforms {
+    display: flex; gap: 10px; padding: 13px 22px;
+    background: #F5F0E8; border-bottom: 1px solid #DDD6CC;
+    flex-wrap: wrap; align-items: center;
+  }
+  .plat-badge {
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 9px;
+    font-size: 11px; font-weight: 700;
+  }
+  .plat-badge.hw  { background: rgba(180,120,0,0.1);  border: 1px solid rgba(180,120,0,0.3);  color: #7A5500; }
+  .plat-badge.ft  { background: rgba(30,80,180,0.1);  border: 1px solid rgba(30,80,180,0.3);  color: #1A3A9A; }
+  .plat-badge.lhr { background: rgba(180,30,30,0.08); border: 1px solid rgba(180,30,30,0.25); color: #8B1A1A; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .dot-hw  { background: #C4903A; }
+  .dot-ft  { background: #3060D0; }
+  .dot-lhr { background: #C03030; }
+
+  /* SECTION HEADER */
+  .section-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 20px 24px 12px;
+  }
+  .section-icon {
+    font-size: 20px; width: 42px; height: 42px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .si-red    { background: rgba(180,40,20,0.12); }
+  .si-teal   { background: rgba(16,140,110,0.12); }
+  .si-purple { background: rgba(100,60,180,0.12); }
+
+  .section-info h2 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 19px; color: #1A1008; letter-spacing: 0.5px;
+  }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 2px; }
+  .section-count {
+    margin-left: auto; font-size: 12px; font-weight: 700;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(0,0,0,0.06); color: #5A4A3A;
+  }
+
+  /* CARDS */
+  .cards { padding: 0 18px 8px; display: flex; flex-direction: column; gap: 10px; }
+  .card {
+    background: #fff; border: 1px solid #E0D8CC;
+    border-radius: 13px; padding: 14px 16px;
+    display: flex; gap: 12px; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px;
+  }
+  .card.hw::before  { background: #C4903A; }
+  .card.ft::before  { background: #3060D0; }
+  .card.lhr::before { background: #C03030; }
+  .card.prestige    { border-color: #C4503A; }
+  .card.prestige::before { background: linear-gradient(to bottom,#7A1800,#C4503A); width: 4px; }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .card-num  { font-family: Impact,sans-serif; font-size: 26px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag  { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-tag.hw  { background: rgba(180,120,0,0.1);  color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .plat-tag.ft  { background: rgba(30,80,180,0.1);  color: #1A3A9A; border: 1px solid rgba(30,80,180,0.28); }
+  .plat-tag.lhr { background: rgba(180,30,30,0.1);  color: #8B1A1A; border: 1px solid rgba(180,30,30,0.28); }
+
+  .card-body    { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13.5px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 3px; }
+  .card-company { font-size: 11.5px; color: #7A6A5A; margin-bottom: 8px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdd  { background: rgba(180,120,0,0.08); color: #7A5000; border: 1px solid rgba(180,120,0,0.22); }
+  .tag-dur  { background: rgba(10,120,80,0.08);  color: #0A5A3A; border: 1px solid rgba(10,120,80,0.18); }
+  .tag-loc  { background: rgba(0,0,0,0.04);      color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09);  }
+  .tag-sal  { background: rgba(20,120,60,0.08);  color: #0F5C2A; border: 1px solid rgba(20,120,60,0.18); }
+  .tag-loge { background: rgba(14,100,200,0.08); color: #0A4080; border: 1px solid rgba(14,100,200,0.18);}
+  .tag-pres { background: rgba(100,20,0,0.08);   color: #6A1000; border: 1px solid rgba(100,20,0,0.18); }
+  .tag-date { background: rgba(150,60,60,0.08);  color: #7A2020; border: 1px solid rgba(150,60,60,0.18); }
+  .tag-deb  { background: rgba(20,120,60,0.08);  color: #0F5C2A; border: 1px solid rgba(20,120,60,0.18); }
+
+  .card-badge-ft {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(180,30,30,0.1); color: #8B1A1A;
+    border: 1px solid rgba(180,30,30,0.28); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+  .card-badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.22); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+
+  /* LINK BLOCK */
+  .link-block {
+    display: block;
+    margin-top: 11px;
+    margin-bottom: 2px;
+    padding: 9px 13px;
+    background: #F4F0EA;
+    border: 1px solid #CEC4B4;
+    border-left: 3px solid #C4503A;
+    border-radius: 0 7px 7px 0;
+    font-size: 12.5px; font-weight: 700;
+    color: #6A1000;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  .notice {
+    margin-top: 8px; border-radius: 7px; padding: 7px 11px;
+    font-size: 10.5px; line-height: 1.5;
+  }
+  .notice.ok  { background: rgba(20,120,60,0.05);  border: 1px solid rgba(20,120,60,0.16);  color: #1A5A30; }
+  .notice.ft  { background: rgba(180,30,30,0.05);  border: 1px solid rgba(180,30,30,0.16);  color: #7A1A1A; }
+  .notice.ok strong { color: #0F5C2A; }
+  .notice.ft strong { color: #8B1A1A; }
+
+  /* DIVIDER & FOOTER */
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 18px; }
+  .section-footer {
+    margin: 4px 18px 16px;
+    background: rgba(196,80,58,0.05);
+    border: 1px solid rgba(196,80,58,0.2);
+    border-left: 3px solid #C4503A;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 15px; font-size: 11px; color: #3A1008; line-height: 1.65;
+  }
+  .section-footer strong { color: #7A1800; }
+
+  /* PAGE FOOTER */
+  .page-footer {
+    background: #4A0A00; padding: 18px 28px;
+    text-align: center; border-top: 2px solid #C4503A;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127863; Bordeaux &amp; Gironde &#183; Saison 2026</div>
+  <h1>Offres d&#8217;Emploi<br><span>Bordeaux &amp; Alentours</span></h1>
+  <div class="header-sub">Hellowork &#183; France Travail &#183; LHR &#183; 22 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>3</span> Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; <span>3</span> Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; <span>3</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<!-- PLATFORM LEGEND -->
+<div class="platforms">
+  <div class="plat-badge hw"><div class="dot dot-hw"></div>Hellowork &#9989; Sin FT</div>
+  <div class="plat-badge ft"><div class="dot dot-ft"></div>France Travail &#9888; ir en persona</div>
+  <div class="plat-badge lhr"><div class="dot dot-lhr"></div>L&#8217;H&#244;tellerie-Restauration</div>
+</div>
+
+
+<!-- ════ SERVEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-red">&#127869;</div>
+  <div class="section-info">
+    <h2>SERVEUR / SERVEUSE</h2>
+    <p>Centre &#183; Bassins &#224; Flot &#183; Bordeaux Lac &#183; Gironde</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur Polyvalent Saisonnier H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Mama Shelter Bordeaux &#8212; H&#244;tel &amp; Restaurant design</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDI &#8594; contrato estable</span>
+        <span class="tag tag-loc">&#128205; Bordeaux centre (33)</span>
+        <span class="tag tag-pres">&#11088; Groupe iconique</span>
+        <span class="tag tag-date">&#9889; Il y a 4 jours</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78129866.html">
+        hellowork.com/fr-fr/emplois/78129866.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa</strong> &#8212; Mama Shelter es un grupo de hoteles-restaurantes de dise&#241;o muy conocido. Ambiente joven e internacional. Posibilidad de evoluci&#243;n interna.</div>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Restaurant saisonnier <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Novotel Bordeaux Lac &#8212; Groupe Accor</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Mai &#8594; Juillet 2026 &#183; 35h</span>
+        <span class="tag tag-loc">&#128205; Bordeaux Lac (33)</span>
+        <span class="tag tag-pres">&#127970; Groupe Accor</span>
+        <span class="tag tag-date">&#9889; 4 avril 2026</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/emploi/serveur/gironde/s24m6d33">
+        francetravail.fr &#8594; serveur Gironde (33)
+      </a>
+      <div class="notice ft"><strong>&#9888; Si no tienen cuenta FT:</strong> Presentarse directamente en el Novotel Bordeaux Lac con CV impreso. Grupo Accor tiene proceso de selecci&#243;n propio &#8212; buscar tambi&#233;n en careers.accor.com</div>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Barman Saisonnier H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">First Name &#8212; Restaurant &amp; Bar</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 5 mois</span>
+        <span class="tag tag-sal">&#128182; 2 248 &#8364;/mois &#11088;</span>
+        <span class="tag tag-loc">&#128205; Bordeaux (33)</span>
+        <span class="tag tag-date">&#9889; Il y a 8 jours</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/77894831.html">
+        hellowork.com/fr-fr/emplois/77894831.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa</strong> &#8212; Uno de los mejores salarios de la categor&#237;a en Bordeaux: <strong>2 248&#8364;/mes brut</strong> por 5 meses. Perfil serveur/barman.</div>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#127863; Bordeaux ville &#8212; mercado laboral CHR muy activo:</strong> La ciudad tiene m&#225;s de 1.400 ofertas de jobs d&#8217;&#233;t&#233; activas. Mama Shelter y First Name son los dos empleadores m&#225;s interesantes para perfil serveur &#8212; buenos salarios y ambiente internacional. Para VVT sin cuenta FT: Mama Shelter y First Name tienen postulaci&#243;n directa por Hellowork.
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ PLONGEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-teal">&#129671;</div>
+  <div class="section-info">
+    <h2>PLONGEUR / PLONGEUSE</h2>
+    <p>Bordeaux &#183; Bordeaux-Bastide &#183; Lacanau &#183; M&#233;rignac &#183; Gironde</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#8212; 35h <span class="card-badge-ok">&#9989; D&#233;butant OK</span></div>
+      <div class="card-company">Restaurant &#8212; Bordeaux-Bastide</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Bordeaux-Bastide (33)</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+        <span class="tag tag-date">&#9889; Il y a 15h &#8212; tr&#232;s r&#233;cent</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/emploi/plongeur/gironde/s24m6d33">
+        francetravail.fr &#8594; plongeur Gironde (33)
+      </a>
+      <div class="notice ft"><strong>&#9888; Si no tienen cuenta FT:</strong> Presentarse directamente en el barrio Bordeaux-Bastide (rive droite de la Garonne). D&#233;butant explicitement accept&#233; &#8212; ideal para quienes llegan sin experiencia.</div>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Cit&#233; du Vin <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Fondation pour la Culture et les Civilisations du Vin</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Cit&#233; du Vin &#183; Bordeaux (33)</span>
+        <span class="tag tag-pres">&#127863; Monument emblematique</span>
+        <span class="tag tag-date">&#9889; 12 janvier 2026 &#8212; activo</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-ville_bordeaux-33000.html">
+        hellowork.com &#8594; plongeur Bordeaux
+      </a>
+      <div class="notice ok"><strong>&#9989; La Cit&#233; du Vin</strong> &#8212; El museo del vino m&#225;s famoso de Francia. Trabajar aqu&#237; es una referencia s&#243;lida en el CV. Postulaci&#243;n directa a trav&#233;s de la Fondation.</div>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Bord de mer &#127968; LOG&#201; <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Azureva &#8212; Village vacances Lacanau</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 20/04 &#8594; 30/09/2026</span>
+        <span class="tag tag-loge">&#127968; Logement inclus</span>
+        <span class="tag tag-loc">&#128205; Lacanau (33) &#183; bord de l&#8217;oc&#233;an</span>
+        <span class="tag tag-date">&#9889; 6 avril 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_azureva-plongeur-ville_lacanau-33680.html">
+        hellowork.com &#8594; Azureva plongeur Lacanau
+      </a>
+      <div class="notice ok"><strong>&#127968; Logement inclus &#8212; Azureva Lacanau</strong> &#8212; Village vacances en la costa atl&#225;ntica, plage de Lacanau-Oc&#233;an. Contrato hasta fin de septiembre. Postular directamente en azureva.fr sin cuenta FT.</div>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#129671; Plongeur Bordeaux/Gironde &#8212; 57 ofertas activas en Hellowork:</strong> El mercado es muy din&#225;mico. La Cit&#233; du Vin y Azureva Lacanau son las dos referencias. <strong>Para ampliar:</strong> buscar en hellowork.com &#8594; "plongeur Gironde" &#8212; hay m&#225;s de 50 ofertas activas. Lacanau tambi&#233;n tiene el Sunset Caf&#233; (plongeur bord de plage, sin logement confirmado).
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ FEMME DE CHAMBRE ════ -->
+<div class="section-head">
+  <div class="section-icon si-purple">&#128716;</div>
+  <div class="section-info">
+    <h2>FEMME / VALET DE CHAMBRE</h2>
+    <p>Bordeaux &#183; Bassins &#224; Flot &#183; M&#233;rignac &#183; Gironde</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre CDD 25h H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Ad&#232;s Propret&#233; &#8212; H&#244;tel B&amp;B Bordeaux Bassins &#224; Flot &#183; 3&#9733;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois &#8594; Octobre 2026</span>
+        <span class="tag tag-sal">&#128182; 1 356 &#8364;/mois &#183; 25h/sem</span>
+        <span class="tag tag-loc">&#128205; Bordeaux Bassins &#224; Flot (33)</span>
+        <span class="tag tag-date">&#9889; Il y a 14 jours</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/77694579.html">
+        hellowork.com/fr-fr/emplois/77694579.html
+      </a>
+      <div class="notice ok"><strong>&#9989; CDD 6 mois &#8212; Postulaci&#243;n directa Hellowork</strong> &#8212; Contrato hasta octubre 2026, 25h/semana. Barrio Bassins &#224; Flot, zona en plena expansi&#243;n de Bordeaux. Sin cuenta FT requerida.</div>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; 4&#9733; <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">H&#244;tel 4 &#233;toiles &#8212; Bordeaux centre</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 30h</span>
+        <span class="tag tag-loc">&#128205; Bordeaux centre (33)</span>
+        <span class="tag tag-pres">&#11088; H&#244;tel 4 &#233;toiles</span>
+        <span class="tag tag-date">&#9889; 4 avril 2026</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/emploi/valet-de-chambre/gironde/s24m6d33">
+        francetravail.fr &#8594; valet de chambre Gironde (33)
+      </a>
+      <div class="notice ft"><strong>&#9888; Si no tienen cuenta FT:</strong> Presentarse en persona en los hoteles 4&#9733; del centro de Bordeaux con CV impreso. Varios establecimientos buscan femme/valet de chambre para la saison mai-octobre. Ropa de trabajo limpia y CV impreso suficiente.</div>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre H/F &#8212; Hampton by Hilton <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Hampton by Hilton Bordeaux-M&#233;rignac</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier mi-temps</span>
+        <span class="tag tag-loc">&#128205; M&#233;rignac (33) &#183; pr&#232;s a&#233;roport</span>
+        <span class="tag tag-pres">&#127970; Groupe Hilton</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/emploi/valet-de-chambre/gironde/s24m6d33">
+        francetravail.fr &#8594; valet de chambre Gironde (33)
+      </a>
+      <div class="notice ft"><strong>&#9888; Grupo Hilton &#8212; postular tambi&#233;n en:</strong> jobs.hilton.com &#8594; Buscar "Bordeaux" para evitar France Travail. Remboursement transports 50%. M&#233;rignac conectado con Bordeaux en tramway (linea C).</div>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#128716; Femme de Chambre Bordeaux:</strong> La oferta estrella es <strong>Ad&#232;s Propret&#233; / B&amp;B Hotels (&#9989;)</strong> &#8212; link directo Hellowork, CDD 6 meses, sin cuenta FT. Para Hilton M&#233;rignac: probar primero en <strong>jobs.hilton.com</strong> antes de pasar por France Travail. Tramway l&#237;nea C conecta M&#233;rignac con el centro en 20 minutos.
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>9 offres &#183; CDD &#183; Int&#233;rim &#183; Saisonnier &#183; Bordeaux &amp; Gironde 2026</strong></p>
+  <p>Bordeaux &#183; Bassins &#224; Flot &#183; Bordeaux Lac &#183; M&#233;rignac &#183; Lacanau &#183; 22 avril 2026</p>
+  <p style="margin-top:6px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Links separados del texto &#183; Sin cuenta France Travail cuando es posible</p>
+</div>
+
+</body>
+</html>
