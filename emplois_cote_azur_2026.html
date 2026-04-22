@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Offres Côte d'Azur — CDD / Intérim / Saisonnier 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    padding: 0;
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(150deg, #0A2540 0%, #0D3060 60%, #0A1E35 100%);
+    padding: 36px 36px 28px;
+    text-align: center;
+    border-bottom: 3px solid #1E90B0;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(30,144,176,0.2);
+    border: 1px solid rgba(30,144,176,0.4);
+    color: #7DD6F0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 38px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    line-height: 1.05;
+    margin-bottom: 4px;
+  }
+  .header h1 span { color: #1EC8E0; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+  .header-meta {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+  }
+  .meta-pill span { color: #1EC8E0; font-weight: 700; }
+
+  /* ── PLATFORM LEGEND ── */
+  .platforms {
+    display: flex;
+    gap: 12px;
+    padding: 14px 24px;
+    background: #F5F0E8;
+    border-bottom: 1px solid #DDD6CC;
+    flex-wrap: wrap;
+  }
+  .plat-badge {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 13px;
+    border-radius: 10px;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+  .plat-badge.hw { background: rgba(180,120,0,0.1); border: 1px solid rgba(180,120,0,0.3); color: #7A5500; }
+  .plat-dot { width: 7px; height: 7px; border-radius: 50%; background: #C4903A; }
+
+  /* ── SECTION HEADER ── */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 24px 12px;
+  }
+  .section-icon {
+    font-size: 20px;
+    width: 42px; height: 42px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .si-blue { background: rgba(14,100,200,0.12); }
+  .si-green { background: rgba(16,140,80,0.12); }
+  .si-purple { background: rgba(100,60,180,0.12); }
+
+  .section-info h2 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 19px;
+    color: #1A1008;
+    letter-spacing: 0.5px;
+  }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 2px; }
+  .section-count {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.06);
+    color: #5A4A3A;
+  }
+
+  /* ── CARDS ── */
+  .cards { padding: 0 18px 8px; display: flex; flex-direction: column; gap: 10px; }
+
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E0D8CC;
+    border-radius: 13px;
+    padding: 15px 17px;
+    display: flex;
+    gap: 13px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    border-radius: 3px 0 0 3px;
+  }
+  .card.hw::before { background: #C4903A; }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .card-num { font-family: Impact, sans-serif; font-size: 26px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag {
+    font-size: 9px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 3px 7px; border-radius: 6px;
+  }
+  .plat-tag.hw { background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.3); }
+
+  .card-body { flex: 1; min-width: 0; }
+  .card-title { font-size: 13.5px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 3px; }
+  .card-company { font-size: 11.5px; color: #7A6A5A; margin-bottom: 8px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 6px; }
+  .tag-cdd { background: rgba(180,120,0,0.08); color: #7A5000; border: 1px solid rgba(180,120,0,0.25); }
+  .tag-interim { background: rgba(80,40,180,0.08); color: #4A1A9A; border: 1px solid rgba(80,40,180,0.2); }
+  .tag-saison { background: rgba(10,120,80,0.08); color: #0A5A3A; border: 1px solid rgba(10,120,80,0.2); }
+  .tag-loc { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.1); }
+  .tag-salary { background: rgba(20,120,60,0.08); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.2); }
+  .tag-date { background: rgba(150,60,60,0.08); color: #7A2020; border: 1px solid rgba(150,60,60,0.2); }
+  .tag-loge { background: rgba(14,100,200,0.08); color: #0A4080; border: 1px solid rgba(14,100,200,0.2); }
+  .tag-prestige { background: rgba(180,130,0,0.08); color: #6B4A00; border: 1px solid rgba(180,130,0,0.2); }
+
+  .card-link {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #5A3A00;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  /* FT / OK badges */
+  .card-badge-ft {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(180,30,30,0.1); color: #8B1A1A;
+    border: 1px solid rgba(180,30,30,0.3);
+    border-radius: 4px; padding: 2px 7px; margin-left: 5px;
+    vertical-align: middle; letter-spacing: 0.5px;
+  }
+  .card-badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.25);
+    border-radius: 4px; padding: 2px 7px; margin-left: 5px;
+    vertical-align: middle; letter-spacing: 0.5px;
+  }
+
+  .ft-warning {
+    background: rgba(180,30,30,0.06); border: 1px solid rgba(180,30,30,0.2);
+    border-radius: 8px; padding: 8px 12px; margin-top: 8px;
+    font-size: 11px; color: #7A1A1A; line-height: 1.5;
+  }
+  .ft-warning strong { color: #8B1A1A; font-weight: 700; }
+  .ft-warning .addr { color: #5A3A3A; margin-top: 3px; font-size: 10.5px; }
+
+  .agency-ok {
+    background: rgba(20,120,60,0.06); border: 1px solid rgba(20,120,60,0.2);
+    border-radius: 8px; padding: 6px 12px; margin-top: 8px;
+    font-size: 10.5px; color: #1A5A30; line-height: 1.5;
+  }
+  .agency-ok strong { color: #0F5C2A; font-weight: 700; }
+
+  /* Special highlight for prestigious places */
+  .card.prestige { border-color: #C4903A; }
+  .card.prestige::before { background: linear-gradient(to bottom, #C4903A, #8B5E00); width: 4px; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: #DDD6CC; margin: 10px 18px; }
+
+  /* ── SECTION FOOTER ── */
+  .section-footer {
+    margin: 8px 18px 18px;
+    background: rgba(180,130,0,0.05);
+    border: 1px solid rgba(180,130,0,0.22);
+    border-left: 3px solid #B48200;
+    border-radius: 0 8px 8px 0;
+    padding: 11px 15px;
+    font-size: 11px;
+    color: #5A4A3A;
+    line-height: 1.65;
+  }
+  .section-footer strong { color: #8B5E00; font-weight: 700; }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    background: #0A2540;
+    padding: 20px 28px;
+    text-align: center;
+    border-top: 2px solid #1E90B0;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">🌊 Côte d'Azur — PACA · Avril 2026</div>
+  <h1>Offres d'Emploi<br><span>CDD / Intérim / Saisonnier</span></h1>
+  <div class="header-sub">Hellowork · Destinations prestige · Liens directs</div>
+  <div class="header-meta">
+    <div class="meta-pill">🍽️ <span>5</span> Serveur·se</div>
+    <div class="meta-pill">🫧 <span>5</span> Plongeur·se</div>
+    <div class="meta-pill">🛏️ <span>5</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<!-- PLATFORM LEGEND -->
+<div class="platforms">
+  <div class="plat-badge hw"><div class="plat-dot"></div>Hellowork — liens directs offre · Muy recientes</div>
+</div>
+
+
+<!-- ════════ SERVEUR ════════ -->
+<div class="section-head">
+  <div class="section-icon si-blue">🍽️</div>
+  <div class="section-info">
+    <h2>SERVEUR / SERVEUSE</h2>
+    <p>Nice · Antibes · Cagnes · Saint-Raphaël · Bandol · Opio</p>
+  </div>
+  <div class="section-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur·se H/F <span class="card-badge-ok">✅ Sin FT</span></div>
+      <div class="card-company">WellJob Intérim</div>
+      <div class="card-tags">
+        <span class="tag tag-interim">Intérim 3 mois</span>
+        <span class="tag tag-loc">📍 Antibes (06)</span>
+        <span class="tag tag-salary">💶 12,50 €/h</span>
+        <span class="tag tag-date">⚡ Il y a 8h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78200369.html">hellowork.com/fr-fr/emplois/78200369.html</a>
+      <div class="agency-ok"><strong>✅ Postulá directamente a la agencia</strong> — Sin cuenta France Travail · welljobbtp.com</div>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur·se H/F <span class="card-badge-ok">✅ Sin FT</span></div>
+      <div class="card-company">WellJob Intérim</div>
+      <div class="card-tags">
+        <span class="tag tag-interim">Intérim 3 mois</span>
+        <span class="tag tag-loc">📍 Cagnes-sur-Mer (06)</span>
+        <span class="tag tag-salary">💶 12,50 €/h</span>
+        <span class="tag tag-date">⚡ Il y a 8h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78200343.html">hellowork.com/fr-fr/emplois/78200343.html</a>
+      <div class="agency-ok"><strong>✅ Postulá directamente a la agencia</strong> — Sin cuenta France Travail · welljobbtp.com</div>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur·se en Restauration H/F <span class="card-badge-ok">✅ Sin FT</span></div>
+      <div class="card-company">Club Agathos — Domaine privé</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 5 mois</span>
+        <span class="tag tag-loc">📍 Saint-Raphaël (83)</span>
+        <span class="tag tag-salary">💶 2 200 – 3 500 €/mois ⭐</span>
+        <span class="tag tag-date">⚡ Il y a 12h</span>
+        <span class="tag tag-prestige">🏛️ Domaine prestige</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78194992.html">hellowork.com/fr-fr/emplois/78194992.html</a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur en Restauration H/F <span class="card-badge-ok">✅ Sin FT</span></div>
+      <div class="card-company">Thedra (agence intérim)</div>
+      <div class="card-tags">
+        <span class="tag tag-interim">Intérim</span>
+        <span class="tag tag-loc">📍 Opio (06) — village provençal</span>
+        <span class="tag tag-salary">💶 12,30 – 13 €/h</span>
+        <span class="tag tag-date">⚡ Il y a 16h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78187507.html">hellowork.com/fr-fr/emplois/78187507.html</a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur·se de Restaurant H/F</div>
+      <div class="card-company">Timeless — Restaurant</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">📍 Bandol (83) — bord de mer</span>
+        <span class="tag tag-date">⚡ Il y a 17h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78184242.html">hellowork.com/fr-fr/emplois/78184242.html</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-footer">
+  <strong>⚠️ Para titulares de VVT:</strong> Si el botón "Postuler" te redirige a France Travail → presentate en persona con CV impreso. Las ofertas de <strong>WellJob Intérim y Thedra (✅)</strong> se postulan directamente en el sitio de la agencia, sin cuenta FT. <strong>Club Agathos y Timeless</strong>: verificar el botón antes de postular.
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ════════ PLONGEUR ════════ -->
+<div class="section-head">
+  <div class="section-icon si-green">🫧</div>
+  <div class="section-info">
+    <h2>PLONGEUR / PLONGEUSE</h2>
+    <p>Saint-Raphaël · Roquebrune · Saint-Tropez · Porquerolles · Bandol</p>
+  </div>
+  <div class="section-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur·se en Restauration H/F</div>
+      <div class="card-company">Beach Bac — Restaurant de plage</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">📍 Saint-Raphaël (83)</span>
+        <span class="tag tag-date">⚡ Il y a 16h</span>
+        <span class="tag tag-prestige">🏖️ Plage</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78188506.html">hellowork.com/fr-fr/emplois/78188506.html</a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur·se en Restauration H/F</div>
+      <div class="card-company">Le Provençal — Restaurant</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 5 mois</span>
+        <span class="tag tag-loc">📍 Roquebrune-sur-Argens (83)</span>
+        <span class="tag tag-salary">💶 2 059 €/mois</span>
+        <span class="tag tag-date">⚡ Il y a 22h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78165075.html">hellowork.com/fr-fr/emplois/78165075.html</a>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F</div>
+      <div class="card-company">Boutique Hotels Collection</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD</span>
+        <span class="tag tag-loc">📍 Saint-Raphaël (83)</span>
+        <span class="tag tag-salary">💶 2 100 – 2 200 €/mois ⭐</span>
+        <span class="tag tag-date">🕐 Il y a 1 jour</span>
+        <span class="tag tag-prestige">🏨 Boutique Hotel</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/77091298.html">hellowork.com/fr-fr/emplois/77091298.html</a>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F 🏝️</div>
+      <div class="card-company">Le Mas du Langoustier ★★★★</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">📍 Île de Porquerolles · Hyères (83)</span>
+        <span class="tag tag-loge">🏠 Nourri + Logé sur place</span>
+        <span class="tag tag-prestige">🌿 Mas provençal 4★</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/77734732.html">hellowork.com/fr-fr/emplois/77734732.html</a>
+      <div class="agency-ok"><strong>🏝️ Poste nourri et logé</strong> — Hôtel de isla, fin avril à fin septembre · 40h/sem · 2 jours de repos</div>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur CDD H/F</div>
+      <div class="card-company">🌹 La Pâtisserie Tropézienne</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD</span>
+        <span class="tag tag-loc">📍 Saint-Tropez (83)</span>
+        <span class="tag tag-prestige">⭐ Marque iconique</span>
+        <span class="tag tag-date">🕐 Il y a 2 jours</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/75833279.html">hellowork.com/fr-fr/emplois/75833279.html</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-footer">
+  <strong>💡 Para plongeur:</strong> Las ofertas de <strong>Le Mas du Langoustier</strong> son especialmente interesantes — poste logé en isla, sin costo de alojamiento. <strong>Boutique Hotels Collection</strong> ofrece el mejor salario del sector (2100–2200€/mes). Para verificar si redirigen a FT, hacer click en el link antes de postular.
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ════════ FEMME DE CHAMBRE ════════ -->
+<div class="section-head">
+  <div class="section-icon si-purple">🛏️</div>
+  <div class="section-info">
+    <h2>FEMME / VALET DE CHAMBRE</h2>
+    <p>Cannes · Saint-Jean-Cap-Ferrat · Théoule · Roquebrune · Adecco</p>
+  </div>
+  <div class="section-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F <span class="card-badge-ok">✅ Sin FT</span></div>
+      <div class="card-company">Crit Intérim</div>
+      <div class="card-tags">
+        <span class="tag tag-interim">Intérim 1 mois</span>
+        <span class="tag tag-loc">📍 Cannes (06)</span>
+        <span class="tag tag-salary">💶 13 – 14 €/h ⭐</span>
+        <span class="tag tag-date">⚡ Il y a 11h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78196447.html">hellowork.com/fr-fr/emplois/78196447.html</a>
+      <div class="agency-ok"><strong>✅ Postulá directamente a la agencia Crit</strong> — Sin cuenta France Travail · crit-job.com</div>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F</div>
+      <div class="card-company">⭐ Groupe Barrière — Hôtel Majestic Cannes</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">📍 Cannes (06)</span>
+        <span class="tag tag-salary">💶 1 924 €/mois</span>
+        <span class="tag tag-date">⚡ Il y a 13h</span>
+        <span class="tag tag-prestige">🏆 Groupe prestige</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/73901494.html">hellowork.com/fr-fr/emplois/73901494.html</a>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F</div>
+      <div class="card-company">⭐ Royal Riviera Hotel</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD</span>
+        <span class="tag tag-loc">📍 Saint-Jean-Cap-Ferrat (06)</span>
+        <span class="tag tag-prestige">💎 Hôtel de luxe</span>
+        <span class="tag tag-date">⚡ Il y a 13h</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/75970408.html">hellowork.com/fr-fr/emplois/75970408.html</a>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F</div>
+      <div class="card-company">⭐ Tiara Miramar Beach Resort</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD</span>
+        <span class="tag tag-loc">📍 Théoule-sur-Mer (06)</span>
+        <span class="tag tag-salary">💶 2 080 €/mois</span>
+        <span class="tag tag-prestige">🌊 Beach Resort luxe</span>
+        <span class="tag tag-date">🕐 Il y a 1 jour</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/75866095.html">hellowork.com/fr-fr/emplois/75866095.html</a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet de Chambre H/F <span class="card-badge-ok">✅ Sin FT</span></div>
+      <div class="card-company">Adecco (agencia intérim)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD · Jul 2026 – Ene 2027</span>
+        <span class="tag tag-loc">📍 Roquebrune-Cap-Martin (06)</span>
+        <span class="tag tag-salary">💶 1 823 €/mois · 7 mois</span>
+        <span class="tag tag-date">🕐 Il y a 1 jour</span>
+      </div>
+      <a class="card-link" href="https://www.hellowork.com/fr-fr/emplois/78156766.html">hellowork.com/fr-fr/emplois/78156766.html</a>
+      <div class="agency-ok"><strong>✅ Postulá directamente a Adecco</strong> — Sin cuenta France Travail · adecco.fr</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="section-footer">
+  <strong>🏨 Establecimientos de lujo (Barrière, Royal Riviera, Tiara Miramar):</strong> Si el botón lleva a France Travail, enviá tu CV directamente al hotel por email o presentate en persona. <strong>Crit y Adecco (✅)</strong> son agencias — postulá en sus sitios sin necesidad de cuenta FT.
+</div>
+
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <p><strong>15 offres · CDD · Intérim · Saisonnier · Côte d'Azur 2026</strong></p>
+  <p>Alpes-Maritimes (06) · Var (83) · Hellowork · 21 avril 2026</p>
+  <p style="margin-top:6px; font-size:10px; color:rgba(255,255,255,0.3);">Ofertas verificadas individualmente — Links directos a cada oferta</p>
+</div>
+
+</body>
+</html>
