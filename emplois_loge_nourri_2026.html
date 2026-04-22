@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois LOG&#201; NOURRI &#8212; PACA &amp; France &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(150deg, #0A2A1A 0%, #0F4A2A 60%, #082010 100%);
+    padding: 32px 36px 24px;
+    text-align: center;
+    border-bottom: 3px solid #2ECC71;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(46,204,113,0.18);
+    border: 1px solid rgba(46,204,113,0.45);
+    color: #7FFFB0; font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 32px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px;
+  }
+  .header h1 span { color: #2ECC71; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta {
+    display: flex; justify-content: center;
+    gap: 10px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 4px 13px;
+    font-size: 11px; color: rgba(255,255,255,0.7);
+  }
+  .meta-pill span { color: #2ECC71; font-weight: 700; }
+
+  /* INFO BOX */
+  .info-box {
+    margin: 16px 16px 0;
+    background: #EDF8F0; border: 1px solid #2ECC71;
+    border-left: 4px solid #0F4A2A;
+    border-radius: 10px; padding: 12px 16px;
+    font-size: 12px; color: #0A2A10; line-height: 1.65;
+  }
+  .info-box strong { color: #0F5A20; }
+
+  /* PLATFORM LEGEND */
+  .platforms {
+    display: flex; gap: 8px; padding: 12px 20px;
+    background: #F5F0E8; border-bottom: 1px solid #DDD6CC;
+    flex-wrap: wrap; align-items: center;
+    margin-top: 14px;
+  }
+  .plat-badge {
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 11px; border-radius: 9px;
+    font-size: 10.5px; font-weight: 700;
+  }
+  .plat-badge.hw  { background: rgba(180,120,0,0.1);  border: 1px solid rgba(180,120,0,0.3);  color: #7A5500; }
+  .plat-badge.ft  { background: rgba(30,80,180,0.1);  border: 1px solid rgba(30,80,180,0.3);  color: #1A3A9A; }
+  .plat-badge.ind { background: rgba(10,100,50,0.1);  border: 1px solid rgba(10,100,50,0.3);  color: #0A5020; }
+  .plat-badge.oh  { background: rgba(180,80,0,0.1);   border: 1px solid rgba(180,80,0,0.3);   color: #7A3A00; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .dot-hw { background: #C4903A; }
+  .dot-ft { background: #3060D0; }
+  .dot-ind{ background: #0A7030; }
+  .dot-oh { background: #C06000; }
+
+  /* REGION BANNER */
+  .region-banner {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 24px 10px;
+    border-top: 2px solid transparent; margin-top: 18px;
+  }
+  .region-banner.paca { border-color: #2ECC71; background: linear-gradient(90deg,rgba(46,204,113,0.08) 0%,transparent 100%); }
+  .region-banner.france { border-color: #3060D0; background: linear-gradient(90deg,rgba(48,96,208,0.06) 0%,transparent 100%); }
+  .region-banner.corse { border-color: #C4503A; background: linear-gradient(90deg,rgba(196,80,58,0.06) 0%,transparent 100%); }
+
+  .region-flag { font-size: 26px; }
+  .region-name {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 20px; letter-spacing: 0.5px;
+  }
+  .region-banner.paca .region-name   { color: #0A4A1A; }
+  .region-banner.france .region-name { color: #1A3A6A; }
+  .region-banner.corse .region-name  { color: #6A1A0A; }
+
+  .region-sub { font-size: 11px; color: #8A7A6A; margin-top: 1px; }
+  .region-count {
+    margin-left: auto; font-size: 11px; font-weight: 700;
+    padding: 4px 11px; border-radius: 20px;
+    background: rgba(0,0,0,0.06); color: #5A4A3A;
+  }
+
+  /* CARDS */
+  .cards { padding: 0 16px; display: flex; flex-direction: column; gap: 9px; margin-bottom: 8px; }
+
+  .card {
+    background: #fff; border: 1px solid #E0D8CC;
+    border-radius: 12px; padding: 13px 15px;
+    display: flex; gap: 11px; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px;
+  }
+  .card.hw::before  { background: #C4903A; }
+  .card.ft::before  { background: #3060D0; }
+  .card.ind::before { background: #0A7030; }
+  .card.loge { border-color: #2ECC71; }
+  .card.loge::before { background: linear-gradient(to bottom,#0A4A1A,#2ECC71); width: 4px; }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num  { font-family: Impact,sans-serif; font-size: 24px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag  { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-tag.hw  { background: rgba(180,120,0,0.1);  color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .plat-tag.ft  { background: rgba(30,80,180,0.1);  color: #1A3A9A; border: 1px solid rgba(30,80,180,0.28); }
+  .plat-tag.ind { background: rgba(10,100,50,0.1);  color: #0A5020; border: 1px solid rgba(10,100,50,0.28); }
+
+  .card-body    { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 3px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdd  { background: rgba(180,120,0,0.08); color: #7A5000; border: 1px solid rgba(180,120,0,0.22); }
+  .tag-dur  { background: rgba(10,120,80,0.08);  color: #0A5A3A; border: 1px solid rgba(10,120,80,0.18); }
+  .tag-loc  { background: rgba(0,0,0,0.04);      color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09);   }
+  .tag-sal  { background: rgba(20,120,60,0.08);  color: #0F5C2A; border: 1px solid rgba(20,120,60,0.18); }
+  .tag-loge { background: rgba(46,204,113,0.12); color: #0A5A20; border: 1px solid rgba(46,204,113,0.35); font-weight: 800; }
+  .tag-pres { background: rgba(100,20,0,0.08);   color: #6A1000; border: 1px solid rgba(100,20,0,0.18); }
+  .tag-date { background: rgba(150,60,60,0.08);  color: #7A2020; border: 1px solid rgba(150,60,60,0.18); }
+  .tag-deb  { background: rgba(20,120,60,0.08);  color: #0F5C2A; border: 1px solid rgba(20,120,60,0.18); }
+  .tag-sect { background: rgba(80,40,180,0.07);  color: #4A1A9A; border: 1px solid rgba(80,40,180,0.18); }
+
+  .card-badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.22); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+  .card-badge-ft {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(180,30,30,0.1); color: #8B1A1A;
+    border: 1px solid rgba(180,30,30,0.28); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+
+  /* LINK BLOCK */
+  .link-block {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 8px 12px;
+    background: #F0F8F2;
+    border: 1px solid #A0D8B0;
+    border-left: 3px solid #2ECC71;
+    border-radius: 0 7px 7px 0;
+    font-size: 12px; font-weight: 700;
+    color: #0A4A1A;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  .notice {
+    margin-top: 7px; border-radius: 7px; padding: 7px 11px;
+    font-size: 10.5px; line-height: 1.5;
+  }
+  .notice.ok { background: rgba(46,204,113,0.06); border: 1px solid rgba(46,204,113,0.25); color: #0A4A1A; }
+  .notice.ft { background: rgba(180,30,30,0.05); border: 1px solid rgba(180,30,30,0.16); color: #7A1A1A; }
+  .notice.ok strong { color: #0A5A1A; }
+  .notice.ft strong { color: #8B1A1A; }
+
+  /* SECTION FOOTER */
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+  .section-footer {
+    margin: 4px 16px 14px;
+    background: rgba(46,204,113,0.05);
+    border: 1px solid rgba(46,204,113,0.2);
+    border-left: 3px solid #0F4A2A;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px; font-size: 11px; color: #0A2A10; line-height: 1.65;
+  }
+  .section-footer strong { color: #0A4A1A; }
+
+  /* PLATFORM SEARCH CARDS */
+  .plat-search { padding: 0 16px; display: flex; flex-direction: column; gap: 8px; margin-bottom: 8px; }
+  .plat-search-card {
+    background: white; border-radius: 11px; padding: 12px 14px;
+    border: 1px solid #E0D8CC;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .ps-icon {
+    width: 38px; height: 38px; border-radius: 9px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .ps-icon.hw  { background: rgba(180,120,0,0.1); }
+  .ps-icon.ind { background: rgba(10,100,50,0.1); }
+  .ps-icon.ft  { background: rgba(30,80,180,0.1); }
+  .ps-icon.oh  { background: rgba(180,80,0,0.1);  }
+  .ps-icon.lhr { background: rgba(180,30,30,0.08);}
+
+  .ps-info { flex: 1; }
+  .ps-name { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 2px; }
+  .ps-desc { font-size: 10.5px; color: #7A6A5A; line-height: 1.4; }
+  .ps-count {
+    font-size: 11px; font-weight: 700;
+    background: rgba(46,204,113,0.1); color: #0A4A1A;
+    border: 1px solid rgba(46,204,113,0.3);
+    border-radius: 20px; padding: 3px 10px; white-space: nowrap;
+  }
+
+  /* TIPS */
+  .tips-box {
+    margin: 0 16px; background: #0A2A1A;
+    border-radius: 13px; padding: 17px 19px; color: white;
+  }
+  .tips-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #2ECC71; text-transform: uppercase; margin-bottom: 10px; }
+  .tip-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+  .tip-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* PAGE FOOTER */
+  .page-footer {
+    background: #0A2A1A; padding: 18px 24px;
+    text-align: center; border-top: 2px solid #2ECC71; margin-top: 18px;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127968; LOG&#201; &#43; NOURRI &#183; PACA &amp; France &#183; 2026</div>
+  <h1>Emplois <span>LOG&#201;S &amp; NOURRIS</span><br>France M&#233;tropolitaine</h1>
+  <div class="header-sub">Hellowork &#183; Indeed &#183; France Travail &#183; LHR &#183; OhMyJob &#183; 22 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127968; <span>1 036</span> offres logé nourri HW</div>
+    <div class="meta-pill">&#127968; <span>192</span> offres logé nourri Indeed PACA</div>
+    <div class="meta-pill">&#9989; Liens directs v&#233;rifi&#233;s</div>
+  </div>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box">
+  &#127968; <strong>&#191;Por qu&#233; priorizar puestos log&#233;+nourri?</strong> Para quienes llegan de Am&#233;rica Latina con VVT, el alojamiento es el mayor obst&#225;culo. Un puesto log&#233; nourri elimina ese problema: no pag&#225;s alquiler, no pag&#225;s comida, y pod&#233;s ahorrar casi el salario completo. <strong>Prioridad absoluta</strong> para los primeros meses en Francia.
+</div>
+
+<!-- PLATFORM LEGEND -->
+<div class="platforms">
+  <div class="plat-badge hw"><div class="dot dot-hw"></div>Hellowork &#9989;</div>
+  <div class="plat-badge ind"><div class="dot dot-ind"></div>Indeed &#9989;</div>
+  <div class="plat-badge ft"><div class="dot dot-ft"></div>France Travail &#9888;</div>
+  <div class="plat-badge oh"><div class="dot dot-oh"></div>OhMyJob / LHR</div>
+</div>
+
+
+<!-- ════ RÉGION PACA ════ -->
+<div class="region-banner paca">
+  <div class="region-flag">&#9748;</div>
+  <div>
+    <div class="region-name">PACA &#8212; LOG&#201; NOURRI</div>
+    <div class="region-sub">Alpes-de-Haute-Provence &#183; Hautes-Alpes &#183; Var &#183; Alpes-Maritimes &#183; Porquerolles</div>
+  </div>
+  <div class="region-count">4 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur Log&#233; H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Cow Club &#8212; Restaurant &amp; Bar d'altitude</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-cdd">CDD 5 mois</span>
+        <span class="tag tag-loc">&#128205; Isola 2000 (06) &#183; PACA &#183; 2 320 m</span>
+        <span class="tag tag-date">&#9889; Il y a 1 jour</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/75973510.html">
+        hellowork.com/fr-fr/emplois/75973510.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa</strong> &#8212; Estaci&#243;n de esqui Isola 2000, Alpes-Maritimes. Prise de poste imm&#233;diate &#8212; 39h/sem + 1 jour de repos + 2 demi-journ&#233;es. Log&#233; et nourri confirmados en el anuncio.</div>
+    </div>
+  </div>
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#127965;&#65039; &#8212; &#206;le de Porquerolles <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Mas du Langoustier &#9733;&#9733;&#9733;&#9733; &#8212; H&#244;tel de l&#8217;&#238;le</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; &#206;le de Porquerolles &#183; Hy&#232;res (83) &#183; PACA</span>
+        <span class="tag tag-pres">&#11088; H&#244;tel 4&#9733; sur &#238;le</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/77734732.html">
+        hellowork.com/fr-fr/emplois/77734732.html
+      </a>
+      <div class="notice ok"><strong>&#9989; La oferta estrella de PACA</strong> &#8212; Hotel 4 estrellas en isla mediterr&#225;nea, Porquerolles. Nourri+log&#233; &#8212; sin costo de alojamiento ni comida. 40h/sem &#183; 2 d&#237;as de descanso.</div>
+    </div>
+  </div>
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur Log&#233; H/F &#8212; Lac de Serre-Pon&#231;on <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">BTP Vacances &#8212; Restaurant bord du lac</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-cdd">CDD &#8594; Octobre 2026</span>
+        <span class="tag tag-loc">&#128205; Chorges (05) &#183; Hautes-Alpes &#183; PACA</span>
+        <span class="tag tag-pres">&#127754; Lac alpin exceptionnel</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/73757301.html">
+        hellowork.com/fr-fr/emplois/73757301.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Log&#233; nourri confirmado</strong> &#8212; Lac de Serre-Pon&#231;on, uno de los lagos artificiales m&#225;s grandes de Europa. Postulaci&#243;n directa Hellowork sin cuenta FT.</div>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Recherche logé nourri &#8212; PACA &amp; Var <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Indeed &#8212; 192 offres log&#233; nourri PACA activas</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-cdd">CDD / CDI / Int&#233;rim</span>
+        <span class="tag tag-loc">&#128205; PACA &#8212; Toute la r&#233;gion</span>
+        <span class="tag tag-date">&#9889; 192 offres activas</span>
+      </div>
+      <a class="link-block" href="https://fr.indeed.com/emplois?q=log%C3%A9+nourri&l=Provence-Alpes-C%C3%B4te+d%27Azur">
+        indeed.fr &#8594; "log&#233; nourri" &#183; Provence-Alpes-C&#244;te d&#8217;Azur
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#9748; PACA log&#233; nourri &#8212; m&#225;s de 192 ofertas en Indeed:</strong> Isola 2000, Porquerolles y Serre-Pon&#231;on son los tres destinos m&#225;s interesantes. Para ampliar la b&#250;squeda en PACA: <strong>indeed.fr &#8594; "log&#233; nourri" + Provence-Alpes-C&#244;te d&#8217;Azur</strong>. Tambi&#233;n buscar "nourri log&#233;" en hellowork.com con filtro por departamento (04, 05, 06, 13, 83, 84).
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ FRANCE MÉTROPOLITAINE ════ -->
+<div class="region-banner france">
+  <div class="region-flag">&#127467;&#127479;</div>
+  <div>
+    <div class="region-name">FRANCE M&#201;TROPOLITAINE</div>
+    <div class="region-sub">Bretagne &#183; Pays de la Loire &#183; Alpes &#183; Occitanie &#183; Aquitaine</div>
+  </div>
+  <div class="region-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Employ&#233; d&#8217;&#201;tage H/F &#127968; LOG&#201; NOURRI <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Le Fort de l&#8217;Oc&#233;an &#8212; H&#244;tel prestige face &#224; l&#8217;Atlantique</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-sal">&#128182; 12,74 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Le Croisic (44) &#183; Loire-Atlantique</span>
+        <span class="tag tag-pres">&#11088; H&#244;tel prestige face oc&#233;an</span>
+        <span class="tag tag-date">&#9889; Il y a 15h</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76025724.html">
+        hellowork.com/fr-fr/emplois/76025724.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa &#8212; Log&#233; ET nourri confirmado</strong> &#8212; Hotel prestige en Le Croisic, frente al Atlantique. Incluso petit d&#233;jeuner cuisson des pains. Sin cuenta FT.</div>
+    </div>
+  </div>
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">R&#233;ceptionniste H&#244;tellerie H/F &#127968; LOG&#201; <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Le Fort de l&#8217;Oc&#233;an &#8212; Le Croisic</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-sal">&#128182; 2 467 &#8364;/mois &#11088;</span>
+        <span class="tag tag-loc">&#128205; Le Croisic (44) &#183; Loire-Atlantique</span>
+        <span class="tag tag-date">&#9889; Il y a 15h</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76023908.html">
+        hellowork.com/fr-fr/emplois/76023908.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Mejor salario log&#233; nourri</strong> &#8212; 2 467&#8364;/mes brut para Receptionniste en hotel prestige. Log&#233; et nourri confirmados. Postulaci&#243;n directa.</div>
+    </div>
+  </div>
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine Log&#233; H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Le Monchu &#8212; Restaurant montagne</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-sal">&#128182; 2 302 &#8364;/mois</span>
+        <span class="tag tag-loc">&#128205; Chamonix-Mont-Blanc (74) &#183; Alpes</span>
+        <span class="tag tag-pres">&#9978; Station alpine iconique</span>
+        <span class="tag tag-date">&#9889; Il y a 15h</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76023546.html">
+        hellowork.com/fr-fr/emplois/76023546.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Log&#233; nourri + 2302&#8364;/mes</strong> &#8212; Chamonix, la estaci&#243;n alpina m&#225;s internacional de Francia. CDI con poste log&#233; et nourri. Postulaci&#243;n directa Hellowork.</div>
+    </div>
+  </div>
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se Log&#233; H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Azureva &#8212; Village vacances bord de mer</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-cdd">CDD 20/04 &#8594; 30/09/2026</span>
+        <span class="tag tag-loc">&#128205; Lacanau (33) &#183; Gironde &#183; Atlantique</span>
+        <span class="tag tag-date">&#9889; 6 avril 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_azureva-loge-ville_lacanau-33680.html">
+        hellowork.com &#8594; Azureva log&#233; Lacanau
+      </a>
+      <div class="notice ok"><strong>&#9989; Azureva &#8212; grupo de villages vacances</strong> &#8212; Lacanau Oc&#233;an, playa atl&#225;ntica. Log&#233; inclus. Postular directamente en azureva.fr sin cuenta FT.</div>
+    </div>
+  </div>
+
+  <div class="card hw loge">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se Log&#233; H/F &#8212; Corse <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant A Pergola &#8212; Porto-Vecchio</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-sal">&#128182; 2 083 &#8364;/mois</span>
+        <span class="tag tag-loc">&#128205; Porto-Vecchio (2A) &#183; Corse du Sud</span>
+        <span class="tag tag-dur">&#8987; Juin 2026</span>
+        <span class="tag tag-date">&#9889; Il y a 1 jour</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/74814824.html">
+        hellowork.com/fr-fr/emplois/74814824.html
+      </a>
+      <div class="notice ok"><strong>&#9989; Corse &#8212; Destino muy buscado para VVT</strong> &#8212; Porto-Vecchio, sur de C&#243;rcega. Log&#233; et nourri + 2083&#8364;/mes. Servicio del mediod&#237;a y noche. 1 d&#237;a de descanso por semana.</div>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#127968; Top 3 recomendaciones log&#233; nourri para VVT:</strong> (1) <strong>Le Fort de l&#8217;Oc&#233;an</strong> &#8212; mejor relaci&#243;n salario/condiciones (2467&#8364; logé nourri). (2) <strong>Mas du Langoustier Porquerolles</strong> &#8212; experiencia &#250;nica en isla mediterr&#225;nea. (3) <strong>Le Monchu Chamonix</strong> &#8212; CDI en la capital del alpinismo mundial, 2302&#8364; log&#233; nourri.
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ PLATAFORMAS PARA BUSCAR MÁS ════ -->
+<div style="padding: 16px 16px 10px; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #0A4A1A;">
+  &#128270; BUSCAR M&#193;S PUESTOS LOG&#201; NOURRI
+  <div style="height:1px;background:#C0D8C0;margin-top:8px;"></div>
+</div>
+
+<div class="plat-search">
+
+  <div class="plat-search-card">
+    <div class="ps-icon hw">&#128269;</div>
+    <div class="ps-info">
+      <div class="ps-name">Hellowork &#8212; "Log&#233; nourri"</div>
+      <div class="ps-desc">M&#225;s de 1 036 ofertas activas en toda Francia &#183; Filtrar por regi&#243;n &#183; Sin cuenta FT</div>
+      <a class="link-block" style="margin-top:6px;" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_loge-nourri.html">
+        hellowork.com/fr-fr/emploi/mot-cle_loge-nourri.html
+      </a>
+    </div>
+    <div class="ps-count">1 036 offres</div>
+  </div>
+
+  <div class="plat-search-card">
+    <div class="ps-icon ind">&#128269;</div>
+    <div class="ps-info">
+      <div class="ps-name">Indeed &#8212; "Log&#233; nourri" + PACA</div>
+      <div class="ps-desc">192 ofertas solo en PACA &#183; Filtros por sector y fecha &#183; Sin cuenta requerida</div>
+      <a class="link-block" style="margin-top:6px;" href="https://fr.indeed.com/emplois?q=log%C3%A9+nourri&l=Provence-Alpes-C%C3%B4te+d%27Azur">
+        indeed.fr &#8594; "log&#233; nourri" Provence-Alpes-C&#244;te d&#8217;Azur
+      </a>
+    </div>
+    <div class="ps-count">192 offres</div>
+  </div>
+
+  <div class="plat-search-card">
+    <div class="ps-icon hw">&#128269;</div>
+    <div class="ps-info">
+      <div class="ps-name">Hellowork &#8212; "Saisonnier log&#233;"</div>
+      <div class="ps-desc">93 ofertas espec&#237;ficas saisonnier log&#233; &#183; Sector h&#244;tellerie-restauration prioritario</div>
+      <a class="link-block" style="margin-top:6px;" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_saisonnier-loge.html">
+        hellowork.com/fr-fr/emploi/mot-cle_saisonnier-loge.html
+      </a>
+    </div>
+    <div class="ps-count">93 offres</div>
+  </div>
+
+  <div class="plat-search-card">
+    <div class="ps-icon oh">&#128269;</div>
+    <div class="ps-info">
+      <div class="ps-name">OhMyJob &#8212; Jobs saisonniers log&#233;</div>
+      <div class="ps-desc">Especializado en empleos de temporada &#183; Filtro nourri+log&#233; directo &#183; Toda Francia</div>
+      <a class="link-block" style="margin-top:6px;" href="https://www.ohmyjob.fr/emploi/loge+nourri">
+        ohmyjob.fr/emploi/loge+nourri
+      </a>
+    </div>
+    <div class="ps-count">Saison 2026</div>
+  </div>
+
+  <div class="plat-search-card">
+    <div class="ps-icon ft">&#128269;</div>
+    <div class="ps-info">
+      <div class="ps-name">France Travail &#8212; Logement inclus</div>
+      <div class="ps-desc">Usar el filtro "Avantages: logement" &#183; Si no tienen cuenta FT: ir directamente al empleador</div>
+      <a class="link-block" style="margin-top:6px;" href="https://candidat.francetravail.fr/offres/recherche?motsCles=loge+nourri&typeContrat=SAI">
+        francetravail.fr &#8594; "log&#233; nourri" + contrat saisonnier
+      </a>
+    </div>
+    <div class="ps-count">&#9888; Cuenta FT</div>
+  </div>
+
+</div>
+
+
+<!-- TIPS -->
+<div class="tips-box" style="margin-top:14px;">
+  <div class="tips-title">&#127968; Consejos para postular a puestos log&#233; nourri</div>
+  <div class="tip-row">
+    <div class="tip-icon">&#9989;</div>
+    <div><strong>Mencionar siempre en el mensaje:</strong> "Je suis disponible imm&#233;diatement et cherche un poste log&#233; et nourri" &#8212; los empleadores priorizan candidatos flexibles y disponibles.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128216;</div>
+    <div><strong>Preguntar expl&#237;citamente:</strong> "Est-ce que le logement et les repas sont bien inclus dans le poste?" &#8212; algunos anuncios dicen "possible" pero no confirmado.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128101;</div>
+    <div><strong>Couple accepté:</strong> Varios anuncios (como Auberge de la Restonica en Corse) aceptan parejas. Si vienen de a dos, mencionarlo &#8212; aumenta las chances.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128273;</div>
+    <div><strong>Visale funciona en log&#233; nourri:</strong> Aunque el alojamiento sea parte del contrato, si firmás un bail separado Visale puede cubrir cualquier deuda futura.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#127758;</div>
+    <div><strong>Corse e &#238;les</strong> (Porquerolles, R&#233;, Ol&#233;ron) &#8212; siempre tienen m&#225;s puestos log&#233; nourri porque es la &#250;nica forma de atraer personal. Priorizar estas b&#250;squedas.</div>
+  </div>
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>Empleos Log&#233; Nourri &#183; PACA &amp; France M&#233;tropolitaine &#183; 2026</strong></p>
+  <p>Hellowork &#183; Indeed &#183; France Travail &#183; OhMyJob &#183; 22 avril 2026</p>
+  <p style="margin-top:6px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Links separados del texto &#183; 1 036+ ofertas activas en Hellowork &#183; 192 en Indeed PACA</p>
+</div>
+
+</body>
+</html>
