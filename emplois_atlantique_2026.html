@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois C&#244;te Atlantique &#8212; 4 R&#233;gions &#183; Saison 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(150deg, #003A5C 0%, #005A8A 60%, #003A5C 100%);
+    padding: 32px 36px 24px;
+    text-align: center;
+    border-bottom: 3px solid #4BBFFF;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(75,191,255,0.15);
+    border: 1px solid rgba(75,191,255,0.4);
+    color: #A0DEFF; font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 32px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px;
+  }
+  .header h1 span { color: #4BBFFF; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-regions {
+    display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .region-pill {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 600;
+  }
+
+  /* ── REGION BANNER ── */
+  .region-banner {
+    display: flex; align-items: center; gap: 0;
+    margin: 20px 0 0; padding: 14px 24px 12px;
+    border-top: 2px solid transparent;
+  }
+  .region-banner.normandie { background: linear-gradient(90deg, #1A3A5C 0%, #EDE8E0 100%); border-color: #1A3A5C; }
+  .region-banner.bretagne  { background: linear-gradient(90deg, #1A0A3A 0%, #EDE8E0 100%); border-color: #3A1A6A; }
+  .region-banner.paysdeloire { background: linear-gradient(90deg, #1A4A1A 0%, #EDE8E0 100%); border-color: #1A5A1A; }
+  .region-banner.nouvelleaquitaine { background: linear-gradient(90deg, #5A1A00 0%, #EDE8E0 100%); border-color: #8B2A00; }
+
+  .region-flag { font-size: 28px; margin-right: 14px; }
+  .region-name {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 22px; letter-spacing: 1px;
+  }
+  .region-banner.normandie .region-name { color: #1A3A5C; }
+  .region-banner.bretagne  .region-name { color: #3A1A6A; }
+  .region-banner.paysdeloire .region-name { color: #1A5A1A; }
+  .region-banner.nouvelleaquitaine .region-name { color: #8B2A00; }
+
+  .region-subtitle { font-size: 11px; color: #7A6A5A; margin-top: 2px; }
+  .region-count {
+    margin-left: auto; font-size: 11px; font-weight: 700;
+    padding: 4px 11px; border-radius: 20px;
+    background: rgba(0,0,0,0.07); color: #5A4A3A;
+  }
+
+  /* ── CATEGORY LABEL ── */
+  .cat-label {
+    display: flex; align-items: center; gap: 8px;
+    margin: 12px 18px 8px;
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .cat-label::after { content: ''; flex: 1; height: 1px; background: #D0C8BC; }
+  .cat-label.serveur    { color: #1A3A5C; }
+  .cat-label.plongeur   { color: #1A5A4A; }
+  .cat-label.fdchambre  { color: #5A1A6A; }
+
+  /* ── CARDS ── */
+  .cards { padding: 0 18px; display: flex; flex-direction: column; gap: 9px; margin-bottom: 10px; }
+
+  .card {
+    background: #fff; border: 1px solid #E0D8CC;
+    border-radius: 12px; padding: 13px 15px;
+    display: flex; gap: 11px; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px;
+  }
+  /* region left-bar colors */
+  .card.normandie::before   { background: #1A3A5C; }
+  .card.bretagne::before    { background: #3A1A6A; }
+  .card.paysdeloire::before { background: #1A5A1A; }
+  .card.aquitaine::before   { background: #8B2A00; }
+  .card.prestige { border-color: #4BBFFF; }
+  .card.prestige::before { width: 4px; background: linear-gradient(to bottom,#003A5C,#4BBFFF); }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-icon { font-size: 18px; line-height: 1; }
+  .plat-tag  { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-tag.hw  { background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .plat-tag.ft  { background: rgba(30,80,180,0.1); color: #1A3A9A; border: 1px solid rgba(30,80,180,0.28); }
+  .plat-tag.lhr { background: rgba(180,30,30,0.1); color: #8B1A1A; border: 1px solid rgba(180,30,30,0.28); }
+  .plat-tag.dir { background: rgba(0,80,40,0.1);   color: #004A20; border: 1px solid rgba(0,80,40,0.28);   }
+
+  .card-body    { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-dur  { background: rgba(10,120,80,0.07);  color: #0A5A3A; border: 1px solid rgba(10,120,80,0.18); }
+  .tag-loc  { background: rgba(0,0,0,0.04);      color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09);  }
+  .tag-sal  { background: rgba(20,120,60,0.07);  color: #0F5C2A; border: 1px solid rgba(20,120,60,0.18); }
+  .tag-loge { background: rgba(14,100,200,0.07); color: #0A4080; border: 1px solid rgba(14,100,200,0.18);}
+  .tag-pres { background: rgba(0,50,120,0.07);   color: #003080; border: 1px solid rgba(0,50,120,0.18); }
+  .tag-date { background: rgba(150,60,60,0.07);  color: #7A2020; border: 1px solid rgba(150,60,60,0.18); }
+
+  .card-badge-ft {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(180,30,30,0.1); color: #8B1A1A;
+    border: 1px solid rgba(180,30,30,0.28); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+  .card-badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.22); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+
+  /* ── LINK BLOCK — espacio arriba Y abajo ── */
+  .link-block {
+    display: block;
+    margin-top: 10px;       /* espacio ARRIBA */
+    margin-bottom: 4px;     /* espacio ABAJO  */
+    padding: 8px 12px;
+    background: #F4F1EC;
+    border: 1px solid #CEC4B4;
+    border-left: 3px solid #4BBFFF;
+    border-radius: 0 7px 7px 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #003A5C;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  .notice {
+    margin-top: 7px;
+    border-radius: 7px; padding: 7px 11px;
+    font-size: 10.5px; line-height: 1.5;
+  }
+  .notice.ok  { background: rgba(20,120,60,0.05); border: 1px solid rgba(20,120,60,0.16); color: #1A5A30; }
+  .notice.ft  { background: rgba(180,30,30,0.05); border: 1px solid rgba(180,30,30,0.16); color: #7A1A1A; }
+  .notice.ok strong { color: #0F5C2A; }
+  .notice.ft strong { color: #8B1A1A; }
+
+  /* ── REGION FOOTER ── */
+  .region-footer {
+    margin: 0 18px 18px;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 11px; line-height: 1.6;
+  }
+  .region-footer.normandie   { background: rgba(26,58,92,0.05);  border-left: 3px solid #1A3A5C; color: #1A2A3A; }
+  .region-footer.bretagne    { background: rgba(58,26,106,0.05); border-left: 3px solid #3A1A6A; color: #2A1A3A; }
+  .region-footer.paysdeloire { background: rgba(26,90,26,0.05);  border-left: 3px solid #1A5A1A; color: #1A2A1A; }
+  .region-footer.aquitaine   { background: rgba(139,42,0,0.05);  border-left: 3px solid #8B2A00; color: #3A1A00; }
+  .region-footer strong { font-weight: 700; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: #D4CCC0; margin: 0 18px 4px; }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    background: #003A5C; padding: 18px 28px;
+    text-align: center; border-top: 2px solid #4BBFFF;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127754; C&#244;te Atlantique &#183; 4 R&#233;gions &#183; Saison 2026</div>
+  <h1>Offres Atlantique<br><span>CDD / Int&#233;rim / Saisonnier</span></h1>
+  <div class="header-sub">Normandie &#183; Bretagne &#183; Pays de la Loire &#183; Nouvelle-Aquitaine &#183; 22 avril 2026</div>
+  <div class="header-regions">
+    <span class="region-pill">&#9875; Normandie</span>
+    <span class="region-pill">&#9906; Bretagne</span>
+    <span class="region-pill">&#127807; Pays de la Loire</span>
+    <span class="region-pill">&#127754; Nouvelle-Aquitaine</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════
+     RÉGION 1 — NORMANDIE
+════════════════════════════════════ -->
+<div class="region-banner normandie">
+  <div class="region-flag">&#9875;</div>
+  <div>
+    <div class="region-name">NORMANDIE</div>
+    <div class="region-subtitle">Deauville &#183; Trouville &#183; Honfleur &#183; Mont-Saint-Michel &#183; Calvados / Manche</div>
+  </div>
+  <div class="region-count">3 offres</div>
+</div>
+
+<div class="cat-label serveur">&#127869; Serveur / Serveuse</div>
+<div class="cards">
+  <div class="card normandie">
+    <div class="card-left"><div class="card-icon">&#127869;</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Restaurant Camping 4&#9733;</div>
+      <div class="card-company">Camping 4 &#233;toiles &#8212; En Normandie, bord de mer</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Avril &#8594; Septembre 2026</span>
+        <span class="tag tag-loc">&#128205; Normandie &#183; Proche mer</span>
+        <span class="tag tag-loge">&#127968; Logement possible</span>
+        <span class="tag tag-date">&#9889; Publi&#233; 14/03/2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/normandie">
+        lhotellerie-restauration.fr/emploi/normandie
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa LHR</strong> &#8212; Sin cuenta France Travail. Logement possible sur place. Salario seg&#250;n experiencia.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label plongeur">&#129671; Plongeur / Plongeuse</div>
+<div class="cards">
+  <div class="card normandie prestige">
+    <div class="card-left"><div class="card-icon">&#129671;</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Runner en Restauration</div>
+      <div class="card-company">H&#244;tel Barri&#232;re Le Normandy &#8212; Deauville &#11088;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Deauville (14) &#183; Les Planches</span>
+        <span class="tag tag-pres">&#128142; Groupe Barri&#232;re Luxe</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/normandie">
+        lhotellerie-restauration.fr/emploi/normandie &#8594; chercher: Normandy plongeur
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label fdchambre">&#128716; Femme / Valet de Chambre</div>
+<div class="cards">
+  <div class="card normandie prestige">
+    <div class="card-left"><div class="card-icon">&#128716;</div><div class="plat-tag dir">DIR</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">H&#244;tel Barri&#232;re Le Normandy Deauville</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Deauville (14) &#183; Centre-ville</span>
+        <span class="tag tag-pres">&#128142; H&#244;tel 5&#9733; iconique</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/emploi/femme-de-chambre/normandie/s24m6d14">
+        francetravail.fr &#8594; femme de chambre &#8212; Calvados (14)
+      </a>
+      <div class="notice ft"><strong>&#9888; Si redirige a FT:</strong> Postular directamente en barriere.com/fr/rejoignez-nous o presentarse en el hotel con CV impreso.</div>
+    </div>
+  </div>
+</div>
+
+<div class="region-footer normandie">
+  <strong>&#9875; Normandie:</strong> Deauville es la estaci&#243;n balnearia m&#225;s elegante del norte de Francia. El Groupe Barri&#232;re (Normandy, Royal) recluta masivamente para el verano. Honfleur y Mont-Saint-Michel tienen tambi&#233;n fuerte demanda en plongeur/serveur &#8212; buscar en <strong>lhotellerie-restauration.fr/emploi/normandie</strong>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════
+     RÉGION 2 — BRETAGNE
+════════════════════════════════════ -->
+<div class="region-banner bretagne">
+  <div class="region-flag">&#9906;</div>
+  <div>
+    <div class="region-name">BRETAGNE</div>
+    <div class="region-subtitle">Saint-Malo &#183; Dinard &#183; Quiberon &#183; Concarneau &#183; Arzon &#183; Ille-et-Vilaine / Morbihan / Finist&#232;re</div>
+  </div>
+  <div class="region-count">3 offres</div>
+</div>
+
+<div class="cat-label serveur">&#127869; Serveur / Serveuse</div>
+<div class="cards">
+  <div class="card bretagne prestige">
+    <div class="card-left"><div class="card-icon">&#127869;</div><div class="plat-tag dir">DIR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se Petit-D&#233;jeuner H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Grand H&#244;tel de Courtoisville &#8212; Beautiful Life Hotels</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Juin &#8594; Ao&#251;t 2026</span>
+        <span class="tag tag-loc">&#128205; Saint-Malo (35) &#183; Plage du Sillon</span>
+        <span class="tag tag-loge">&#127968; Logement possible 125&#8364;/mois</span>
+        <span class="tag tag-sal">&#128182; 1 929&#8364;/mois</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_saisonnier-ville_saint-malo-35400.html">
+        hellowork.com &#8594; saisonnier Saint-Malo
+      </a>
+      <div class="notice ok"><strong>&#9989; Groupe Beautiful Life Hotels</strong> &#8212; Postular directamente. Logement sur place con participaci&#243;n 125&#8364;/mois. CDD junio-agosto 2026.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label plongeur">&#129671; Plongeur / Plongeuse</div>
+<div class="cards">
+  <div class="card bretagne prestige">
+    <div class="card-left"><div class="card-icon">&#129671;</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Grand H&#244;tel Barri&#232;re Dinard &#8212; 5&#9733;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Dinard (35) &#183; C&#244;te d&#8217;Emeraude</span>
+        <span class="tag tag-pres">&#128142; Groupe Barri&#232;re 5&#9733;</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/bretagne">
+        lhotellerie-restauration.fr/emploi/bretagne &#8594; chercher: Barrière Dinard plongeur
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label fdchambre">&#128716; Femme / Valet de Chambre</div>
+<div class="cards">
+  <div class="card bretagne">
+    <div class="card-left"><div class="card-icon">&#128716;</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">H&#244;tel Restaurant &amp; Spa &#8212; Bretagne atlantique</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 01/04 &#8594; 31/10/2026</span>
+        <span class="tag tag-loge">&#127968; Logement possible sur place</span>
+        <span class="tag tag-loc">&#128205; Bretagne &#183; Pres de la mer (56/29)</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/recherche?lieux=53R&typeContrat=SAI&motsCles=femme+de+chambre">
+        francetravail.fr &#8594; femme de chambre &#8212; Bretagne
+      </a>
+      <div class="notice ft"><strong>&#9888; Si no tienen cuenta FT:</strong> Presentarse directamente en los hoteles de la costa con CV impreso. <strong>Logement possible</strong> confirmado en el anuncio &#8212; preguntar al contactar.</div>
+    </div>
+  </div>
+</div>
+
+<div class="region-footer bretagne">
+  <strong>&#9906; Bretagne:</strong> Saint-Malo intra-muros, Dinard (C&#244;te d&#8217;Emeraude) y la Presque&#238;le de Quiberon son los tres focos principales. El Grand H&#244;tel Barri&#232;re de Dinard recluta serveur, plongeur y femme de chambre todos los a&#241;os para su saison mai-octobre. Buscar tambi&#233;n en <strong>lhotellerie-restauration.fr/emploi/bretagne</strong>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════
+     RÉGION 3 — PAYS DE LA LOIRE
+════════════════════════════════════ -->
+<div class="region-banner paysdeloire">
+  <div class="region-flag">&#127807;</div>
+  <div>
+    <div class="region-name">PAYS DE LA LOIRE</div>
+    <div class="region-subtitle">La Baule &#183; Les Sables-d&#8217;Olonne &#183; Saint-Jean-de-Monts &#183; No&#235;rmoutier &#183; Loire-Atlantique / Vend&#233;e</div>
+  </div>
+  <div class="region-count">3 offres</div>
+</div>
+
+<div class="cat-label serveur">&#127869; Serveur / Serveuse</div>
+<div class="cards">
+  <div class="card paysdeloire">
+    <div class="card-left"><div class="card-icon">&#127869;</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Saison &#233;t&#233; 2026 <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Camping Domaine du Launay &#8212; Vend&#233;e</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Bretagne / Vend&#233;e &#183; Bord de l&#8217;Atlantique</span>
+        <span class="tag tag-date">&#9889; Publi&#233; 2026</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/recherche?lieux=52R&typeContrat=SAI&motsCles=serveur">
+        francetravail.fr &#8594; serveur Pays de la Loire
+      </a>
+      <div class="notice ft"><strong>&#9888; Si no tienen cuenta FT:</strong> Presentarse directamente al camping con CV impreso. Los campings de alta gama de la Vend&#233;e y Loire-Atlantique reclutan masivamente en abril-mayo para el verano.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label plongeur">&#129671; Plongeur / Plongeuse</div>
+<div class="cards">
+  <div class="card paysdeloire">
+    <div class="card-left"><div class="card-icon">&#129671;</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel Club Ker Beuz &#8212; Bretagne / Pays de la Loire</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Pays de la Loire &#183; Bretagne Sud</span>
+        <span class="tag tag-date">&#9889; Publi&#233; 2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/pays-de-la-loire">
+        lhotellerie-restauration.fr/emploi/pays-de-la-loire
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa LHR</strong> &#8212; Sin cuenta FT requerida.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label fdchambre">&#128716; Femme / Valet de Chambre</div>
+<div class="cards">
+  <div class="card paysdeloire prestige">
+    <div class="card-left"><div class="card-icon">&#128716;</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Le Fort de l&#8217;Oc&#233;an &#8212; H&#244;tel prestige face &#224; l&#8217;Atlantique</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-sal">&#128182; 12,74&#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Le Croisic (44) &#183; Loire-Atlantique</span>
+        <span class="tag tag-loge">&#127968; Nourri + Log&#233; inclus</span>
+        <span class="tag tag-pres">&#127960; H&#244;tel prestige</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76023666.html">
+        hellowork.com/fr-fr/emplois/76023666.html
+      </a>
+      <div class="notice ok"><strong>&#127968; Nourri + Log&#233; &#8212; Postulaci&#243;n directa Hellowork</strong> &#8212; Sin cuenta FT. Le Fort de l&#8217;Oc&#233;an es un h&#244;tel prestige au Croisic &#8212; pose de chef-lieu pr&#232;s des &#238;les de No&#235;rmoutier.</div>
+    </div>
+  </div>
+</div>
+
+<div class="region-footer paysdeloire">
+  <strong>&#127807; Pays de la Loire:</strong> La Baule, Le Croisic, Les Sables-d&#8217;Olonne y No&#235;rmoutier son las cuatro joyas del Atlántico ligérois. <strong>Le Fort de l&#8217;Oc&#233;an au Croisic (&#9989;)</strong> es la oferta estrella &#8212; nourri+log&#233;, link directo en Hellowork. Los campings 4&#9733; de la Vend&#233;e tambi&#233;n reclutan masivamente: buscar en francetravail.fr &#8594; Vend&#233;e (85).
+</div>
+<div class="divider"></div>
+
+
+<!-- ════════════════════════════════════
+     RÉGION 4 — NOUVELLE-AQUITAINE
+════════════════════════════════════ -->
+<div class="region-banner nouvelleaquitaine">
+  <div class="region-flag">&#127754;</div>
+  <div>
+    <div class="region-name">NOUVELLE-AQUITAINE</div>
+    <div class="region-subtitle">Arcachon &#183; La Rochelle &#183; &#206;le de R&#233; &#183; &#206;le d&#8217;Ol&#233;ron &#183; Royan &#183; Gironde / Charente-Maritime</div>
+  </div>
+  <div class="region-count">3 offres</div>
+</div>
+
+<div class="cat-label serveur">&#127869; Serveur / Serveuse</div>
+<div class="cards">
+  <div class="card aquitaine">
+    <div class="card-left"><div class="card-icon">&#127869;</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant front de mer &#8212; C&#244;te Atlantique 17</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Jusqu&#8217;&#224; fin octobre</span>
+        <span class="tag tag-loc">&#128205; Charente-Maritime (17) &#183; Face oc&#233;an</span>
+        <span class="tag tag-loge">&#127968; Logement possible</span>
+        <span class="tag tag-sal">&#128182; 1 800&#8211;2 000&#8364; net &#183; 5j/7</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-departement_charente-maritime-17.html">
+        hellowork.com &#8594; serveur Charente-Maritime (17)
+      </a>
+      <div class="notice ok"><strong>&#9989; Postulaci&#243;n directa</strong> &#8212; Salario muy competitivo (1800&#8211;2000&#8364; net en 5 d&#237;as). Logement possible seg&#250;n disponibilidad &#8212; preguntar al contactar.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label plongeur">&#129671; Plongeur / Plongeuse</div>
+<div class="cards">
+  <div class="card aquitaine">
+    <div class="card-left"><div class="card-icon">&#129671;</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Port d&#8217;Arcachon <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant face au port &#8212; Arcachon</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD ou CDI</span>
+        <span class="tag tag-loc">&#128205; Arcachon (33) &#183; Bassin</span>
+        <span class="tag tag-loge">&#127968; Logement possible</span>
+        <span class="tag tag-date">&#9889; D&#233;butant accept&#233;</span>
+        <span class="tag tag-sal">&#128182; Salaire int&#233;ressant &#183; 39h</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_arcachon-33120.html">
+        hellowork.com &#8594; plongeur Arcachon
+      </a>
+      <div class="notice ok"><strong>&#9989; D&#233;butant accept&#233;</strong> &#8212; Le restaurant face au port d&#8217;Arcachon mentionne explicitement d&#233;butant accept&#233; et possibilit&#233; de logement. CDD ou CDI selon profil.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cat-label fdchambre">&#128716; Femme / Valet de Chambre</div>
+<div class="cards">
+  <div class="card aquitaine prestige">
+    <div class="card-left"><div class="card-icon">&#128716;</div><div class="plat-tag dir">DIR</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Le Boutique Hotels Collection &#8212; &#206;le d&#8217;Ol&#233;ron</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; &#192; partir d&#8217;avril 2026</span>
+        <span class="tag tag-loc">&#128205; Dolus-d&#8217;Ol&#233;ron (17) &#183; &#206;le d&#8217;Ol&#233;ron</span>
+        <span class="tag tag-pres">&#127960; Boutique H&#244;tel prestige</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_charente-maritime-17.html">
+        hellowork.com &#8594; valet de chambre Charente-Maritime (17)
+      </a>
+      <div class="notice ok"><strong>&#9989; Le Boutique Hotels Collection</strong> &#8212; Grupo h&#244;telier en expansion, presente en &#206;le d&#8217;Ol&#233;ron y La Rochelle. Postulaci&#243;n directa, prise de poste d&#232;s avril 2026.</div>
+    </div>
+  </div>
+</div>
+
+<div class="region-footer aquitaine">
+  <strong>&#127754; Nouvelle-Aquitaine:</strong> La Rochelle, Arcachon, l&#8217;&#206;le de R&#233; y l&#8217;&#206;le d&#8217;Ol&#233;ron son los cuatro destinos premium de la regi&#243;n. Para ampliar la b&#250;squeda: <strong>lhotellerie-restauration.fr/emploi/nouvelle-aquitaine</strong>. La Charente-Maritime (17) sola concentra m&#225;s de 16 000 contratos saisonniers cada verano.
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>12 offres &#183; 4 R&#233;gions &#183; CDD / Int&#233;rim / Saisonnier &#183; C&#244;te Atlantique 2026</strong></p>
+  <p>Normandie &#183; Bretagne &#183; Pays de la Loire &#183; Nouvelle-Aquitaine &#183; 22 avril 2026</p>
+  <p style="margin-top:6px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Links con espacio arriba y abajo &#183; Sin cuenta France Travail cuando es posible</p>
+</div>
+
+</body>
+</html>
