@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois Montagne &#8212; Saison &#201;t&#233; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    width: 660px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(150deg, #1A2A3A 0%, #2A4060 60%, #1A2A3A 100%);
+    padding: 34px 36px 26px;
+    text-align: center;
+    border-bottom: 3px solid #7AB8F5;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(122,184,245,0.15);
+    border: 1px solid rgba(122,184,245,0.4);
+    color: #B8D8FA;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 14px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 34px; color: #fff;
+    letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px;
+  }
+  .header h1 span { color: #7AB8F5; }
+  .header-sub { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+  .header-meta {
+    display: flex; justify-content: center;
+    gap: 14px; margin-top: 16px; flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 5px 14px;
+    font-size: 11px; color: rgba(255,255,255,0.65);
+  }
+  .meta-pill span { color: #7AB8F5; font-weight: 700; }
+
+  /* ── PLATFORM LEGEND ── */
+  .platforms {
+    display: flex; gap: 10px; padding: 13px 22px;
+    background: #F5F0E8; border-bottom: 1px solid #DDD6CC;
+    flex-wrap: wrap; align-items: center;
+  }
+  .plat-badge {
+    display: flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 9px;
+    font-size: 11px; font-weight: 700;
+  }
+  .plat-badge.hw  { background: rgba(180,120,0,0.1);  border: 1px solid rgba(180,120,0,0.3);  color: #7A5500; }
+  .plat-badge.ft  { background: rgba(30,80,180,0.1);  border: 1px solid rgba(30,80,180,0.3);  color: #1A3A9A; }
+  .plat-badge.lhr { background: rgba(180,30,30,0.08); border: 1px solid rgba(180,30,30,0.25); color: #8B1A1A; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .dot-hw  { background: #C4903A; }
+  .dot-ft  { background: #3060D0; }
+  .dot-lhr { background: #C03030; }
+
+  /* ── SECTION HEADER ── */
+  .section-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 20px 24px 12px;
+  }
+  .section-icon {
+    font-size: 20px; width: 42px; height: 42px;
+    border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .si-blue   { background: rgba(14,100,200,0.12); }
+  .si-teal   { background: rgba(16,140,130,0.12); }
+  .si-purple { background: rgba(100,60,180,0.12); }
+
+  .section-info h2 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 19px; color: #1A1008; letter-spacing: 0.5px;
+  }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 2px; }
+  .section-count {
+    margin-left: auto; font-size: 12px; font-weight: 700;
+    padding: 4px 12px; border-radius: 20px;
+    background: rgba(0,0,0,0.06); color: #5A4A3A;
+  }
+
+  /* ── CARDS ── */
+  .cards { padding: 0 18px 8px; display: flex; flex-direction: column; gap: 10px; }
+
+  .card {
+    background: #FFFFFF; border: 1px solid #E0D8CC;
+    border-radius: 13px; padding: 15px 17px;
+    display: flex; gap: 13px; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px;
+    border-radius: 3px 0 0 3px;
+  }
+  .card.hw::before  { background: #C4903A; }
+  .card.ft::before  { background: #3060D0; }
+  .card.lhr::before { background: #C03030; }
+  .card.prestige    { border-color: #7AB8F5; }
+  .card.prestige::before { background: linear-gradient(to bottom,#2A4060,#7AB8F5); width: 4px; }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .card-num  { font-family: Impact,sans-serif; font-size: 26px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag  { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 7px; border-radius: 6px; }
+  .plat-tag.hw  { background: rgba(180,120,0,0.1);  color: #6B4A00; border: 1px solid rgba(180,120,0,0.3);  }
+  .plat-tag.ft  { background: rgba(30,80,180,0.1);  color: #1A3A9A; border: 1px solid rgba(30,80,180,0.3);  }
+  .plat-tag.lhr { background: rgba(180,30,30,0.1);  color: #8B1A1A; border: 1px solid rgba(180,30,30,0.3);  }
+
+  .card-body    { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13.5px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 3px; }
+  .card-company { font-size: 11.5px; color: #7A6A5A; margin-bottom: 8px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 6px; }
+  .tag-cdd     { background: rgba(180,120,0,0.08);  color: #7A5000; border: 1px solid rgba(180,120,0,0.22); }
+  .tag-dur     { background: rgba(10,120,80,0.08);  color: #0A5A3A; border: 1px solid rgba(10,120,80,0.2);  }
+  .tag-loc     { background: rgba(0,0,0,0.04);      color: #5A4A3A; border: 1px solid rgba(0,0,0,0.1);     }
+  .tag-salary  { background: rgba(20,120,60,0.08);  color: #0F5C2A; border: 1px solid rgba(20,120,60,0.2); }
+  .tag-loge    { background: rgba(14,100,200,0.08); color: #0A4080; border: 1px solid rgba(14,100,200,0.2);}
+  .tag-prestige{ background: rgba(42,64,96,0.08);   color: #1A3060; border: 1px solid rgba(42,64,96,0.2);  }
+  .tag-date    { background: rgba(150,60,60,0.08);  color: #7A2020; border: 1px solid rgba(150,60,60,0.2); }
+  .tag-altitude{ background: rgba(100,160,240,0.1); color: #1A4080; border: 1px solid rgba(100,160,240,0.3);}
+
+  /* badges FT / OK */
+  .card-badge-ft {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(180,30,30,0.1); color: #8B1A1A;
+    border: 1px solid rgba(180,30,30,0.3);
+    border-radius: 4px; padding: 2px 7px; margin-left: 5px; vertical-align: middle;
+  }
+  .card-badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.25);
+    border-radius: 4px; padding: 2px 7px; margin-left: 5px; vertical-align: middle;
+  }
+
+  /* ── LINK BLOCK — espacio arriba Y abajo ── */
+  .link-block {
+    display: block;
+    margin-top: 11px;       /* ← espacio ARRIBA del link */
+    margin-bottom: 2px;     /* ← espacio ABAJO del link  */
+    padding: 9px 13px;
+    background: #F4F0EA;
+    border: 1px solid #D4C8B8;
+    border-left: 3px solid #7AB8F5;
+    border-radius: 0 7px 7px 0;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1A3060;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  /* notices FT / OK */
+  .ft-warning {
+    margin-top: 8px;
+    background: rgba(180,30,30,0.05); border: 1px solid rgba(180,30,30,0.18);
+    border-radius: 8px; padding: 8px 12px;
+    font-size: 11px; color: #7A1A1A; line-height: 1.5;
+  }
+  .ft-warning strong { color: #8B1A1A; }
+
+  .agency-ok {
+    margin-top: 8px;
+    background: rgba(20,120,60,0.05); border: 1px solid rgba(20,120,60,0.18);
+    border-radius: 8px; padding: 7px 12px;
+    font-size: 10.5px; color: #1A5A30; line-height: 1.5;
+  }
+  .agency-ok strong { color: #0F5C2A; }
+
+  /* ── DIVIDER & SECTION FOOTER ── */
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 18px; }
+
+  .section-footer {
+    margin: 4px 18px 16px;
+    background: rgba(122,184,245,0.06);
+    border: 1px solid rgba(122,184,245,0.22);
+    border-left: 3px solid #3A70B0;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 15px;
+    font-size: 11px; color: #1A2A4A; line-height: 1.65;
+  }
+  .section-footer strong { color: #1A3A6A; }
+
+  /* ── TIPS BOX ── */
+  .tips-section {
+    margin: 4px 18px 18px;
+    background: #1A2A3A;
+    border-radius: 14px; padding: 18px 20px;
+  }
+  .tips-title {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 1.5px; color: #7AB8F5;
+    text-transform: uppercase; margin-bottom: 11px;
+  }
+  .tip-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    margin-bottom: 9px; font-size: 12px;
+    color: rgba(255,255,255,0.8); line-height: 1.55;
+  }
+  .tip-num {
+    width: 22px; height: 22px; border-radius: 50%;
+    background: rgba(122,184,245,0.15);
+    border: 1px solid rgba(122,184,245,0.35);
+    color: #7AB8F5; font-size: 11px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── SOURCES ── */
+  .sources-section { margin: 0 18px 18px; }
+  .sources-title {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: #8A7A6A;
+    margin-bottom: 10px; padding-top: 8px;
+    border-top: 1px solid #DDD6CC;
+  }
+  .source-row { display: flex; gap: 8px; flex-wrap: wrap; }
+  .source-card {
+    background: white; border: 1px solid #E0D8CC;
+    border-radius: 10px; padding: 10px 13px;
+    text-decoration: none; flex: 1; min-width: 140px;
+  }
+  .source-name { font-size: 12px; font-weight: 700; color: #2A4060; margin-bottom: 2px; }
+  .source-desc { font-size: 10px; color: #8A7A6A; line-height: 1.4; }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    background: #1A2A3A; padding: 18px 28px;
+    text-align: center; border-top: 2px solid #7AB8F5;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#9975; Alpes &#183; Pyr&#233;n&#233;es &#183; Massif Central &#183; Saison &#201;t&#233; 2026</div>
+  <h1>Emplois <span>Montagne</span><br>&#201;t&#233; 2026</h1>
+  <div class="header-sub">Stations de ski ouvertes en &#233;t&#233; &#183; Postes nourri/log&#233; prioritaires &#183; 22 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>3</span> Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; <span>3</span> Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; <span>3</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<!-- PLATFORM LEGEND -->
+<div class="platforms">
+  <div class="plat-badge hw"><div class="dot dot-hw"></div>Hellowork</div>
+  <div class="plat-badge ft"><div class="dot dot-ft"></div>France Travail &#8212; &#9888;&#65039; ir en persona</div>
+  <div class="plat-badge lhr"><div class="dot dot-lhr"></div>L&#8217;H&#244;tellerie-Restauration</div>
+</div>
+
+
+<!-- ════ SERVEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-blue">&#127869;</div>
+  <div class="section-info">
+    <h2>SERVEUR / SERVEUSE</h2>
+    <p>Chamonix &#183; Meg&#232;ve &#183; Alpe d&#8217;Huez &#183; Haute-Savoie / Is&#232;re</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se Petit-D&#233;jeuner H/F <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Park H&#244;tel Suisse &amp; Spa &#8212; H&#244;tel 4&#9733;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier &#233;t&#233;</span>
+        <span class="tag tag-loc">&#128205; Chamonix-Mont-Blanc (74)</span>
+        <span class="tag tag-altitude">&#9978; 1 035 m &#183; Vue Mont-Blanc</span>
+        <span class="tag tag-date">&#9889; Publi&#233; avril 2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc">
+        lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc
+      </a>
+    </div>
+  </div>
+
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Saison &#201;t&#233; 2026 <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Maisons Emmanuel Renaut &#8212; Flocons de Sel &#11088;&#11088;&#11088; Michelin</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Juin &#8594; Novembre 2026</span>
+        <span class="tag tag-loc">&#128205; Meg&#232;ve (74) &#183; Haute-Savoie</span>
+        <span class="tag tag-prestige">&#11088; 3&#9733; Michelin</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc">
+        lhotellerie-restauration.fr &#8594; chercher: Maisons Emmanuel Renaut serveur &#233;t&#233; 2026
+      </a>
+      <div class="agency-ok"><strong>&#9989; Groupe Maisons Emmanuel Renaut</strong> &#8212; Flocons de Sel (5&#9733; h&#244;tel + 3 Michelin), Flocons Village, Le Boitet Saint-Gervais. Postulaci&#243;n directa por LHR o jobemmanurelrenaut.fr</div>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Villages Clubs du Soleil &#8212; Village de vacances montagne</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier &#233;t&#233; 2026</span>
+        <span class="tag tag-loge">&#127968; Nourri + Log&#233;</span>
+        <span class="tag tag-loc">&#128205; Alpe d&#8217;Huez (38) &#183; Is&#232;re</span>
+        <span class="tag tag-altitude">&#9978; 1 860 m d&#8217;altitude</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/recherche?lieux=38191&typeContrat=SAI">
+        francetravail.fr &#8594; Offres saisonni&#232;res Alpe d&#8217;Huez (38191)
+      </a>
+      <div class="ft-warning"><strong>&#9888; Requiere cuenta FT:</strong> Si no tienen cuenta FT &#8212; postular directamente en le site Villages Clubs du Soleil (vcs.fr). El puesto es <strong>nourri et log&#233;</strong> &#8212; alojamiento y comidas incluidas sin costo.</div>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#9975; Chamonix et Meg&#232;ve:</strong> Estas dos estaciones abren sus hoteles y restaurantes de junio a noviembre para los turistas de verano (senderismo, ciclismo de monta&#241;a, alpinismo). <strong>Alpe d&#8217;Huez</strong> tambi&#233;n abre en verano para el Tour de France y el turismo outdoor. Para VVT: <strong>Villages Clubs du Soleil</strong> ofrece nourri+log&#233; &#8212; preguntar expl&#237;citamente al postular.
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ PLONGEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-teal">&#129671;</div>
+  <div class="section-info">
+    <h2>PLONGEUR / PLONGEUSE</h2>
+    <p>Chorges &#183; Alpe d&#8217;Huez &#183; Meg&#232;ve &#183; Hautes-Alpes / Is&#232;re / Savoie</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#127968; NOURRI + LOG&#201; <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">BTP Vacances &#8212; Restaurant bord du lac</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Fin mars &#8594; Octobre 2026</span>
+        <span class="tag tag-loc">&#128205; Chorges (05) &#183; Lac de Serre-Pon&#231;on</span>
+        <span class="tag tag-loge">&#127968; Nourri + Log&#233; inclus</span>
+        <span class="tag tag-altitude">&#9978; Hautes-Alpes &#183; Cadre exceptionnel</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/73757301.html">
+        hellowork.com/fr-fr/emplois/73757301.html
+      </a>
+      <div class="agency-ok"><strong>&#9989; Postulaci&#243;n directa por Hellowork</strong> &#8212; Sin cuenta France Travail. Poste nourri et log&#233; &#8212; alojamiento y comidas incluidas. Lac de Serre-Pon&#231;on, uno de los lagos artificiales m&#225;s grandes de Europa.</div>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#127968; NOURRI + LOG&#201;</div>
+      <div class="card-company">Food court &#8212; Centre de la station de l&#8217;Alpe d&#8217;Huez</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saison &#233;t&#233; 2026</span>
+        <span class="tag tag-loc">&#128205; Alpe d&#8217;Huez (38) &#183; Is&#232;re</span>
+        <span class="tag tag-loge">&#127968; Nourri + Log&#233; inclus</span>
+        <span class="tag tag-altitude">&#9978; 1 860 m &#183; Au c&#339;ur de la station</span>
+        <span class="tag tag-date">&#9889; Saison &#233;t&#233; 2026</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/recherche?lieux=38191&typeContrat=SAI&motsCles=plongeur">
+        francetravail.fr &#8594; plongeur &#8212; Alpe d&#8217;Huez (38191)
+      </a>
+      <div class="ft-warning"><strong>&#9888; Via France Travail:</strong> Si no tienen cuenta &#8212; presentarse directamente en el food court al centro de la estaci&#243;n. Puesto <strong>nourri et log&#233;</strong> confirmado en el anuncio.</div>
+    </div>
+  </div>
+
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#8212; Saison &#233;t&#233; <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Maisons Emmanuel Renaut &#8212; Flocons Village</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 39h</span>
+        <span class="tag tag-dur">&#8987; Juin &#8594; Novembre 2026</span>
+        <span class="tag tag-loc">&#128205; Meg&#232;ve (74) &#183; Haute-Savoie</span>
+        <span class="tag tag-prestige">&#11088; Groupe gastronomique 3&#9733; Michelin</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc">
+        lhotellerie-restauration.fr &#8594; chercher: Flocons Village plongeur &#233;t&#233; 2026
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#127968; Prioridad para VVT &#8212; puestos nourri+log&#233;:</strong> El <strong>BTP Vacances Chorges (&#9989;)</strong> es la oferta estrella &#8212; link directo en Hellowork, sin FT, y con alojamiento + comidas incluidas en el Lac de Serre-Pon&#231;on. <strong>Alpe d&#8217;Huez</strong> tambi&#233;n confirma nourri+log&#233; en el anuncio &#8212; presentarse en la estaci&#243;n si no tienen cuenta FT.
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ FEMME DE CHAMBRE ════ -->
+<div class="section-head">
+  <div class="section-icon si-purple">&#128716;</div>
+  <div class="section-info">
+    <h2>FEMME / VALET DE CHAMBRE</h2>
+    <p>Chamonix &#183; Meg&#232;ve &#183; Alpe d&#8217;Huez &#183; Haute-Savoie / Is&#232;re</p>
+  </div>
+  <div class="section-count">3 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F</div>
+      <div class="card-company">H&#244;tel Mont-Blanc &#8212; 5&#9733; Chamonix</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Chamonix-Mont-Blanc (74)</span>
+        <span class="tag tag-prestige">&#128142; H&#244;tel 5&#9733; c&#339;ur de Chamonix</span>
+        <span class="tag tag-date">&#9889; Saison &#233;t&#233; 2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc">
+        lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc
+      </a>
+    </div>
+  </div>
+
+  <div class="card lhr prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre H/F &#8212; &#201;t&#233; 2026 <span class="card-badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Maisons Emmanuel Renaut &#8212; Flocons de Sel 5&#9733;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-dur">&#8987; Mai &#8594; Novembre 2026</span>
+        <span class="tag tag-loc">&#128205; Meg&#232;ve (74) &#183; Haute-Savoie</span>
+        <span class="tag tag-prestige">&#11088; H&#244;tel 5&#9733; + 3 Michelin</span>
+        <span class="tag tag-altitude">&#9978; Station 1 113 m</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc">
+        lhotellerie-restauration.fr &#8594; chercher: Flocons de Sel femme de chambre &#233;t&#233; 2026
+      </a>
+    </div>
+  </div>
+
+  <div class="card ft">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F <span class="card-badge-ft">&#9888; FT</span></div>
+      <div class="card-company">Villages Clubs du Soleil &#8212; Village vacances montagne</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier &#233;t&#233; 2026</span>
+        <span class="tag tag-loc">&#128205; Alpe d&#8217;Huez (38) &#183; Is&#232;re</span>
+        <span class="tag tag-loge">&#127968; Nourri + Log&#233; &#8212; inclus</span>
+        <span class="tag tag-altitude">&#9978; 1 860 m d&#8217;altitude</span>
+      </div>
+      <a class="link-block" href="https://candidat.francetravail.fr/offres/recherche?lieux=38191&typeContrat=SAI&motsCles=femme+de+chambre">
+        francetravail.fr &#8594; femme de chambre &#8212; Alpe d&#8217;Huez (38191)
+      </a>
+      <div class="ft-warning"><strong>&#9888; Requiere cuenta FT:</strong> Si no tienen cuenta &#8212; postular directamente en vcs.fr (Villages Clubs du Soleil). Puesto <strong>nourri et log&#233;</strong> &#8212; alojamiento y comidas sin costo.</div>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#128142; Por qu&#233; es buena opci&#243;n la monta&#241;a en verano:</strong> Las estaciones de esqui alpinas abren en verano con una oferta m&#225;s reducida pero muy buena &#8212; menos demanda de candidatos, mejores condiciones. <strong>Meg&#232;ve</strong> es una de las estaciones m&#225;s lujosas de los Alpes &#8212; trabajar en Maisons Emmanuel Renaut es una referencia s&#243;lida. <strong>Alpe d&#8217;Huez y Chorges</strong>: puestos nourri+log&#233; &#8212; ideales para quien viene sin alojamiento previo.
+</div>
+
+
+<!-- ════ TIPS ════ -->
+<div class="tips-section">
+  <div class="tips-title">&#9978; Consejos espec&#237;ficos para monta&#241;a</div>
+  <div class="tip-item">
+    <div class="tip-num">1</div>
+    <div><strong>Alojamiento es el gran problema en monta&#241;a</strong> &#8212; las estaciones tienen muy pocas habitaciones disponibles para saisonniers. Priorizar siempre los puestos que incluyen <strong>nourri+log&#233;</strong> antes de postular.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">2</div>
+    <div><strong>Chamonix es cosmopolita</strong> &#8212; con el ingl&#233;s o el espa&#241;ol se trabaja bien. Clientela internacional todo el a&#241;o (escaladores, senderistas, turistas europeos).</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">3</div>
+    <div>Para <strong>Meg&#232;ve</strong>: postular directamente en jobemmanurelrenaut.fr &#8212; el grupo tiene varios establecimientos y suele reubicar al personal entre ellos seg&#250;n la temporada.</div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">4</div>
+    <div><strong>Transporte en monta&#241;a:</strong> Las estaciones alpinas tienen t&#233;l&#233;cabines y navettes gratuitas o muy baratas. Muchos saisonniers se mueven sin coche entre los sectores de la estaci&#243;n.</div>
+  </div>
+</div>
+
+
+<!-- ════ SOURCES ════ -->
+<div class="sources-section">
+  <div class="sources-title">&#128269; Buscar m&#225;s empleos de monta&#241;a</div>
+  <div class="source-row">
+    <a href="https://www.chamonixmontblanc-emplois.com" target="_blank" class="source-card">
+      <div class="source-name">chamonixmontblanc-emplois.com</div>
+      <div class="source-desc">Portal espec&#237;fico Chamonix &#183; Ofertas saisonnier log&#233; &#183; Actualizado</div>
+    </a>
+    <a href="https://www.lhotellerie-restauration.fr/emploi/74-chamonix-mont-blanc" target="_blank" class="source-card">
+      <div class="source-name">LHR &#8212; Chamonix (74)</div>
+      <div class="source-desc">Ofertas CHR en Chamonix, Meg&#232;ve, Saint-Gervais &#183; Sin cuenta FT</div>
+    </a>
+    <a href="https://www.ohmyseason.fr" target="_blank" class="source-card">
+      <div class="source-name">ohmyseason.fr</div>
+      <div class="source-desc">Jobs saisonniers monta&#241;a y playa &#183; Filtro nourri+log&#233; &#183; Toda Francia</div>
+    </a>
+  </div>
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>9 offres &#183; CDD &#183; Saisonnier &#201;t&#233; &#183; Stations de Montagne &#183; France 2026</strong></p>
+  <p>Chamonix (74) &#183; Meg&#232;ve (74) &#183; Alpe d&#8217;Huez (38) &#183; Chorges (05) &#183; 22 avril 2026</p>
+  <p style="margin-top:6px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Prioridad puestos nourri+log&#233; &#183; Links directos separados del texto</p>
+</div>
+
+</body>
+</html>
