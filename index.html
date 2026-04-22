@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empleos en Francia &#8212; Recursos para la Comunidad</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold:    #C4903A;
+    --gold-dk: #8B5E00;
+    --cream:   #F7F3EC;
+    --white:   #FFFFFF;
+    --dark:    #1A1008;
+    --mid:     #5A4A3A;
+    --light:   #E8E0D4;
+    --green:   #0F5A20;
+    --blue:    #1A3A6A;
+    --red:     #7A1A00;
+    --purple:  #3A1A6A;
+    --teal:    #0A4A3A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--dark);
+    padding: 48px 24px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(196,144,58,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(196,144,58,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-flag {
+    font-size: 36px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 8vw, 42px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .hero h1 em {
+    color: var(--gold);
+    font-style: normal;
+  }
+  .hero-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 400;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .hero-pills {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-pill {
+    background: rgba(196,144,58,0.15);
+    border: 1px solid rgba(196,144,58,0.35);
+    color: #F5C87A;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  /* ── NOTICE ── */
+  .notice {
+    margin: 16px 16px 0;
+    background: #FFF8E7;
+    border: 1px solid var(--gold);
+    border-left: 4px solid var(--gold-dk);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    color: #4A3200;
+    line-height: 1.6;
+  }
+  .notice strong { color: var(--gold-dk); }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 16px 14px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+  .sec-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--light);
+  }
+
+  /* ── CARDS GRID ── */
+  .grid {
+    padding: 0 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .grid.single { grid-template-columns: 1fr; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--white);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--light);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.18s, box-shadow 0.18s;
+    position: relative;
+  }
+  .card:active { transform: scale(0.98); }
+
+  .card-top {
+    padding: 14px 14px 10px;
+    flex: 1;
+  }
+  .card-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .card-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+  .card-desc {
+    font-size: 11px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px 10px;
+    border-top: 1px solid #F0EAE0;
+  }
+  .card-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+  }
+  .card-arrow {
+    font-size: 16px;
+    color: var(--light);
+    font-weight: 700;
+  }
+
+  /* color themes per category */
+  .card.emploi   { border-top: 3px solid var(--blue); }
+  .card.emploi .card-bottom { background: #F5F8FF; }
+  .card.emploi .card-tag { background: rgba(26,58,106,0.08); color: var(--blue); border: 1px solid rgba(26,58,106,0.2); }
+  .card.emploi .card-arrow { color: var(--blue); }
+
+  .card.loge   { border-top: 3px solid var(--green); }
+  .card.loge .card-bottom { background: #F0F8F2; }
+  .card.loge .card-tag { background: rgba(15,90,32,0.08); color: var(--green); border: 1px solid rgba(15,90,32,0.2); }
+  .card.loge .card-arrow { color: var(--green); }
+
+  .card.agri   { border-top: 3px solid #7A5000; }
+  .card.agri .card-bottom { background: #FEF8EC; }
+  .card.agri .card-tag { background: rgba(122,80,0,0.08); color: #7A5000; border: 1px solid rgba(122,80,0,0.2); }
+  .card.agri .card-arrow { color: #7A5000; }
+
+  .card.montagne { border-top: 3px solid #1A3A6A; }
+  .card.montagne .card-bottom { background: #F0F4FF; }
+  .card.montagne .card-tag { background: rgba(26,58,106,0.08); color: #1A3A6A; border: 1px solid rgba(26,58,106,0.2); }
+  .card.montagne .card-arrow { color: #1A3A6A; }
+
+  .card.basque { border-top: 3px solid var(--green); }
+  .card.basque .card-bottom { background: #F0F8F2; }
+  .card.basque .card-tag { background: rgba(15,90,32,0.08); color: var(--green); border: 1px solid rgba(15,90,32,0.2); }
+  .card.basque .card-arrow { color: var(--green); }
+
+  .card.atlantique { border-top: 3px solid #003A5C; }
+  .card.atlantique .card-bottom { background: #F0F6FF; }
+  .card.atlantique .card-tag { background: rgba(0,58,92,0.08); color: #003A5C; border: 1px solid rgba(0,58,92,0.2); }
+  .card.atlantique .card-arrow { color: #003A5C; }
+
+  .card.bordeaux { border-top: 3px solid var(--red); }
+  .card.bordeaux .card-bottom { background: #FEF0F0; }
+  .card.bordeaux .card-tag { background: rgba(122,26,0,0.08); color: var(--red); border: 1px solid rgba(122,26,0,0.2); }
+  .card.bordeaux .card-arrow { color: var(--red); }
+
+  .card.dating { border-top: 3px solid var(--purple); }
+  .card.dating .card-bottom { background: #F5F0FF; }
+  .card.dating .card-tag { background: rgba(58,26,106,0.08); color: var(--purple); border: 1px solid rgba(58,26,106,0.2); }
+  .card.dating .card-arrow { color: var(--purple); }
+
+  .card.coloc { border-top: 3px solid var(--teal); }
+  .card.coloc .card-bottom { background: #F0F8F6; }
+  .card.coloc .card-tag { background: rgba(10,74,58,0.08); color: var(--teal); border: 1px solid rgba(10,74,58,0.2); }
+  .card.coloc .card-arrow { color: var(--teal); }
+
+  /* WIDE CARD (full width) */
+  .card.wide {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+  }
+  .card.wide .card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+  }
+  .card.wide .card-icon { font-size: 28px; margin: 0; flex-shrink: 0; }
+  .card.wide .card-bottom {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    border-top: none;
+    border-left: 1px solid #F0EAE0;
+    min-width: 64px;
+    padding: 14px 14px;
+  }
+
+  /* ── COMING SOON ── */
+  .card.soon {
+    opacity: 0.6;
+    pointer-events: none;
+    border-style: dashed;
+  }
+  .card.soon .card-arrow { color: var(--light); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 11px;
+    color: var(--mid);
+    line-height: 1.7;
+    border-top: 1px solid var(--light);
+    margin-top: 28px;
+  }
+  footer strong { color: var(--gold-dk); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-flag">&#127467;&#127479;</div>
+  <h1>Empleos en<br><em>Francia</em></h1>
+  <p class="hero-sub">Recursos para la comunidad latinoamericana &#183; VVT &#183; 2026</p>
+  <div class="hero-pills">
+    <span class="hero-pill">&#9989; Sin France Travail</span>
+    <span class="hero-pill">&#128205; Por regi&#243;n</span>
+    <span class="hero-pill">&#127968; Log&#233; nourri</span>
+  </div>
+</div>
+
+<!-- NOTICE -->
+<div class="notice">
+  &#128161; <strong>C&#243;mo usar esta p&#225;gina:</strong> Toc&#225; cualquier tarjeta para abrir la infograf&#237;a completa con todas las ofertas, links directos y consejos. Todas las p&#225;ginas funcionan en el navegador del celular.
+</div>
+
+
+<!-- ════ EMPLEOS CHR ════ -->
+<div class="sec-title">&#127869; Empleos Hoteler&#237;a &amp; Restauraci&#243;n</div>
+
+<div class="grid">
+
+  <a class="card emploi" href="emplois_marseille_final.html">
+    <div class="card-top">
+      <span class="card-icon">&#9875;</span>
+      <div class="card-title">Marseille</div>
+      <div class="card-desc">12 ofertas &#183; Serveur, Plongeur, FdC &#183; CDD &amp; Int&#233;rim</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">12 offres</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+  <a class="card emploi" href="emplois_cote_azur_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#127754;</span>
+      <div class="card-title">C&#244;te d&#8217;Azur</div>
+      <div class="card-desc">15 ofertas &#183; Cannes, Nice, Saint-Tropez, Antibes</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">15 offres</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+  <a class="card bordeaux" href="emplois_bordeaux_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#127863;</span>
+      <div class="card-title">Bordeaux</div>
+      <div class="card-desc">9 ofertas &#183; Serveur, Plongeur, FdC &#183; Gironde</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">9 offres</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+  <a class="card basque" href="emplois_cote_basque_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#127839;</span>
+      <div class="card-title">C&#244;te Basque</div>
+      <div class="card-desc">9 ofertas &#183; Biarritz, Bayonne, Hendaye, Bidart</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">9 offres</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+</div>
+
+
+<!-- ════ POR REGIÓN ════ -->
+<div class="sec-title">&#128205; Por Regi&#243;n</div>
+
+<div class="grid">
+
+  <a class="card atlantique" href="emplois_atlantique_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#9875;</span>
+      <div class="card-title">C&#244;te Atlantique</div>
+      <div class="card-desc">12 ofertas &#183; Normandie, Bretagne, Loire, Aquitaine</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">4 r&#233;gions</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+  <a class="card montagne" href="emplois_montagne_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#9978;</span>
+      <div class="card-title">Montagne</div>
+      <div class="card-desc">9 ofertas &#183; Chamonix, Meg&#232;ve, Alpe d&#8217;Huez</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">&#201;t&#233; 2026</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+</div>
+
+
+<!-- ════ LOGÉ NOURRI ════ -->
+<div class="sec-title">&#127968; Log&#233; &amp; Nourri &#8212; Prioridad VVT</div>
+
+<div class="grid single">
+  <a class="card loge wide" href="emplois_loge_nourri_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#127968;</span>
+      <div>
+        <div class="card-title">Empleos Log&#233; + Nourri</div>
+        <div class="card-desc">PACA &amp; Francia metropolitana &#183; Hellowork, Indeed, OhMyJob &#183; +1036 ofertas activas &#183; La mejor opci&#243;n para reci&#233;n llegados</div>
+      </div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">&#11088; PACA</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- ════ AGRICULTURA ════ -->
+<div class="sec-title">&#127807; Agricultura &amp; Viticultura</div>
+
+<div class="grid">
+
+  <a class="card agri" href="emplois_agriculture_2026.html">
+    <div class="card-top">
+      <span class="card-icon">&#127811;</span>
+      <div class="card-title">Agri Lot 1</div>
+      <div class="card-desc">3 ofertas &#183; Vigne bio, Grands Crus, Tabac &#183; D&#233;butants OK</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">D&#233;butant &#9989;</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+  <a class="card agri" href="emplois_agri_lot2.html">
+    <div class="card-top">
+      <span class="card-icon">&#127813;</span>
+      <div class="card-title">Agri Lot 2</div>
+      <div class="card-desc">3 ofertas &#183; Biodynamie, Semences, Cueillette Provence</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">D&#233;butant &#9989;</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+
+</div>
+
+
+<!-- ════ EVENTOS ════ -->
+<div class="sec-title">&#128197; Eventos de Reclutamiento</div>
+
+<div class="grid single">
+  <a class="card dating wide" href="job_dating_FIXED_v2.html">
+    <div class="card-top">
+      <span class="card-icon">&#128203;</span>
+      <div>
+        <div class="card-title">Job Dating &amp; Jornadas de Reclutamiento</div>
+        <div class="card-desc">Eventos confirmados &#183; Palavas-les-Flots, CIDJ, Versailles &#183; Entrada libre &#183; Sin cuenta FT</div>
+      </div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">Abril &#183; Mayo</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- ════ ALOJAMIENTO ════ -->
+<div class="sec-title">&#127968; Alojamiento</div>
+
+<div class="grid single">
+  <a class="card coloc wide" href="colocation_paca_vvt.html">
+    <div class="card-top">
+      <span class="card-icon">&#127968;</span>
+      <div>
+        <div class="card-title">Colocation PACA &#8212; Gu&#237;a para VVT</div>
+        <div class="card-desc">Precios reales &#183; Plataformas &#183; Visale 2026 &#183; API Provence &#183; Consejos contra estafas &#183; Marseille, Nice, Toulon, Aix</div>
+      </div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">PACA 2026</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </a>
+</div>
+
+
+<!-- ════ PRÓXIMAMENTE ════ -->
+<div class="sec-title">&#128336; Pr&#243;ximamente</div>
+
+<div class="grid">
+
+  <div class="card soon emploi">
+    <div class="card-top">
+      <span class="card-icon">&#128196;</span>
+      <div class="card-title">Recursos Administrativos</div>
+      <div class="card-desc">PACS, cambio estatus, documentos, mensajes tipo</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">Pronto</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </div>
+
+  <div class="card soon emploi">
+    <div class="card-top">
+      <span class="card-icon">&#127919;</span>
+      <div class="card-title">Consejos Reci&#233;n Llegados</div>
+      <div class="card-desc">Instalaci&#243;n, transporte, salud, tr&#225;mites CPAM</div>
+    </div>
+    <div class="card-bottom">
+      <span class="card-tag">Pronto</span>
+      <span class="card-arrow">&#8250;</span>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <strong>Recursos para la comunidad latinoamericana en Francia</strong><br>
+  Actualizado semanalmente &#183; Abril 2026<br>
+  &#9989; Informaci&#243;n verificada para titulares de VVT
+</footer>
+
+</body>
+</html>
