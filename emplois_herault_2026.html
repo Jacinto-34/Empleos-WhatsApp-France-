@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Offres H&#233;rault &#8212; H&#244;tellerie &amp; Restauration &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    width: 660px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(150deg, #1A3A2A 0%, #2A5A3A 60%, #0A2A1A 100%);
+    padding: 30px 32px 22px;
+    text-align: center;
+    border-bottom: 3px solid #3ECC80;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(62,204,128,0.18);
+    border: 1px solid rgba(62,204,128,0.4);
+    color: #90FFB8; font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px;
+  }
+  .header h1 span { color: #3ECC80; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta {
+    display: flex; justify-content: center;
+    gap: 8px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .meta-pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 11px; color: rgba(255,255,255,0.65);
+  }
+  .meta-pill span { color: #3ECC80; font-weight: 700; }
+
+  /* INFO BOX */
+  .info-box {
+    margin: 14px 16px 0;
+    background: #EDF8F0; border: 1px solid #3ECC80;
+    border-left: 4px solid #1A6A3A;
+    border-radius: 10px; padding: 11px 14px;
+    font-size: 12px; color: #0A2A10; line-height: 1.65;
+  }
+  .info-box strong { color: #0A5A20; }
+
+  /* SECTION HEADER */
+  .section-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 18px 20px 10px;
+  }
+  .section-icon {
+    font-size: 19px; width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .si-blue   { background: rgba(14,80,200,0.1); }
+  .si-teal   { background: rgba(10,120,100,0.1); }
+  .si-purple { background: rgba(80,30,150,0.1); }
+
+  .section-info h2 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 17px; color: #1A1008; letter-spacing: 0.5px;
+  }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 1px; }
+  .section-count {
+    margin-left: auto; font-size: 11px; font-weight: 700;
+    padding: 3px 11px; border-radius: 20px;
+    background: rgba(0,0,0,0.06); color: #5A4A3A;
+  }
+
+  /* CARDS */
+  .cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 9px; }
+  .card {
+    background: #fff; border: 1px solid #E0D8CC;
+    border-radius: 12px; padding: 13px 14px;
+    display: flex; gap: 11px; align-items: flex-start;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px;
+  }
+  .card.hw::before  { background: #C4903A; }
+  .card.prestige    { border-color: #3ECC80; }
+  .card.prestige::before { background: linear-gradient(to bottom,#1A5A30,#3ECC80); width: 4px; }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num  { font-family: Impact,sans-serif; font-size: 22px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag  { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-tag.hw { background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+
+  .card-body    { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdi  { background: rgba(14,80,200,0.07); color: #0A3A9A; border: 1px solid rgba(14,80,200,0.18); }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-int  { background: rgba(80,40,180,0.07); color: #4A1A9A; border: 1px solid rgba(80,40,180,0.18); }
+  .tag-loc  { background: rgba(0,0,0,0.04);     color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .tag-sal  { background: rgba(20,120,60,0.07); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.17); }
+  .tag-dur  { background: rgba(10,110,80,0.07); color: #0A5A3A; border: 1px solid rgba(10,110,80,0.17); }
+  .tag-date { background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+  .tag-pres { background: rgba(30,60,120,0.07); color: #1A2A6A; border: 1px solid rgba(30,60,120,0.17); }
+
+  .badge-ok {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    background: rgba(20,120,60,0.1); color: #0F5C2A;
+    border: 1px solid rgba(20,120,60,0.22); border-radius: 4px;
+    padding: 2px 6px; margin-left: 4px; vertical-align: middle;
+  }
+
+  /* LINK BLOCK */
+  .link-block {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 8px 12px;
+    background: #EDF8F0;
+    border: 1px solid #90CCA8;
+    border-left: 3px solid #3ECC80;
+    border-radius: 0 7px 7px 0;
+    font-size: 12px; font-weight: 700;
+    color: #0A4A1A;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  /* DIVIDER & FOOTER */
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+  .section-footer {
+    margin: 2px 16px 14px;
+    background: rgba(62,204,128,0.05);
+    border: 1px solid rgba(62,204,128,0.2);
+    border-left: 3px solid #1A6A3A;
+    border-radius: 0 8px 8px 0;
+    padding: 9px 13px; font-size: 11px; color: #0A2A10; line-height: 1.65;
+  }
+  .section-footer strong { color: #0A5A20; }
+
+  .page-footer {
+    background: #1A3A2A; padding: 16px 24px;
+    text-align: center; border-top: 2px solid #3ECC80;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127981; H&#233;rault (34) &#183; Hellowork &#183; 23 abril 2026</div>
+  <h1>Empleos <span>H&#233;rault</span><br>H&#244;tellerie &amp; Restauraci&#243;n</h1>
+  <div class="header-sub">Solo Hellowork &#183; Links directos verificados &#183; Actualizados hoy</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>5</span> Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; <span>5</span> Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; <span>5</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box">
+  &#9989; <strong>Todos los links llevan directamente a la oferta en Hellowork</strong> &#8212; ninguno redirige a Indeed ni a France Travail. Toc&#225; el link, se abre la oferta. Pod&#233;s postular directamente desde la p&#225;gina sin cuenta FT cuando la oferta es de una agencia de int&#233;rim (PROMAN, WellJob, Staffmatch, Randstad, Jubil).
+</div>
+
+
+<!-- ════ SERVEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-blue">&#127869;</div>
+  <div class="section-info">
+    <h2>SERVEUR / SERVEUSE</h2>
+    <p>Agde &#183; Palavas &#183; B&#233;ziers &#183; S&#232;te &#183; Montpellier &#183; H&#233;rault (34)</p>
+  </div>
+  <div class="section-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur de Banquet H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Menway Emploi &#8212; Agencia int&#233;rim</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Agde (34)</span>
+        <span class="tag tag-date">&#9889; Hace 4 horas &#8212; muy reciente</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78295425.html">
+        hellowork.com/fr-fr/emplois/78295425.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur H/F &#8212; Saison 2026 Bord de Mer <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Le Petit Mousse &#8212; Restaurant Palavas</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 3 mois</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Palavas-les-Flots (34) &#183; plage</span>
+        <span class="tag tag-date">&#9889; Hace 8 horas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78287076.html">
+        hellowork.com/fr-fr/emplois/78287076.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">WellJob Int&#233;rim &#8212; B&#233;ziers</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 15 jours</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8211; 12,18 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; B&#233;ziers (34)</span>
+        <span class="tag tag-date">&#9889; Hace 1 d&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78210625.html">
+        hellowork.com/fr-fr/emplois/78210625.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se de Restaurant H/F</div>
+      <div class="card-company">La Table de Laura &#8212; S&#232;te</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 4 mois</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; S&#232;te (34) &#183; bord de mer</span>
+        <span class="tag tag-date">&#9889; Hace 1 d&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78242709.html">
+        hellowork.com/fr-fr/emplois/78242709.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur &#8212; 1 Servicio por D&#237;a H/F &#11088;</div>
+      <div class="card-company">Restaurant en bord de plage &#8212; S&#232;te</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 7 mois &#8212; saison compl&#232;te</span>
+        <span class="tag tag-loc">&#128205; S&#232;te (34) &#183; plage &#127754;</span>
+        <span class="tag tag-pres">&#11088; Solo 1 servicio/d&#237;a &#183; 2 d&#237;as libres</span>
+        <span class="tag tag-date">&#9889; Hace 1 d&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76865677.html">
+        hellowork.com/fr-fr/emplois/76865677.html
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#127869; 125 ofertas de serveur activas en H&#233;rault hoy.</strong> Ver todas:
+  <a class="link-block" style="margin-top:7px;" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-departement_herault-34.html">
+    hellowork.com &#8594; serveur H&#233;rault (125 offres)
+  </a>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ PLONGEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-teal">&#129671;</div>
+  <div class="section-info">
+    <h2>PLONGEUR / PLONGEUSE</h2>
+    <p>Palavas &#183; La Grande-Motte &#183; Montpellier &#183; H&#233;rault (34)</p>
+  </div>
+  <div class="section-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">PROMAN &#8212; Agencia int&#233;rim &#183; Palavas</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 1 mois</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Palavas-les-Flots (34)</span>
+        <span class="tag tag-date">&#9889; Hace 5 horas &#8212; muy reciente</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78273147.html">
+        hellowork.com/fr-fr/emplois/78273147.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Randstad &#8212; Agencia int&#233;rim &#183; Palavas</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 26 jours</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Palavas-les-Flots (34)</span>
+        <span class="tag tag-date">&#9889; Hace 7 horas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78267636.html">
+        hellowork.com/fr-fr/emplois/78267636.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Temps Partiel <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">PROMAN &#8212; Palavas-les-Flots</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim temps partiel</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Palavas-les-Flots (34)</span>
+        <span class="tag tag-date">&#9889; Hace 1 d&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78221210.html">
+        hellowork.com/fr-fr/emplois/78221210.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se &#8212; Saison 2026 H/F</div>
+      <div class="card-company">La Passerelle &#8212; Palavas-les-Flots</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 5 mois</span>
+        <span class="tag tag-sal">&#128182; 1 930 &#8364;/mois &#11088;</span>
+        <span class="tag tag-loc">&#128205; Palavas-les-Flots (34)</span>
+        <span class="tag tag-date">&#9889; Hace 5 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78116691.html">
+        hellowork.com/fr-fr/emplois/78116691.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; 6 mois</div>
+      <div class="card-company">Restaurant &#8212; La Grande-Motte</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois</span>
+        <span class="tag tag-sal">&#128182; 12,10 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; La Grande-Motte (34) &#183; bord de mer</span>
+        <span class="tag tag-date">&#9889; Hace 3 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/75816745.html">
+        hellowork.com/fr-fr/emplois/75816745.html
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#129671; Plongeur H&#233;rault &#8212; ofertas muy recientes hoy.</strong> Ver todas:
+  <a class="link-block" style="margin-top:7px;" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-departement_herault-34.html">
+    hellowork.com &#8594; plongeur H&#233;rault
+  </a>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ FEMME DE CHAMBRE ════ -->
+<div class="section-head">
+  <div class="section-icon si-purple">&#128716;</div>
+  <div class="section-info">
+    <h2>FEMME / VALET DE CHAMBRE</h2>
+    <p>Montpellier &#183; Palavas &#183; Agde &#183; S&#232;te &#183; La Grande-Motte &#183; H&#233;rault (34)</p>
+  </div>
+  <div class="section-count">5 offres</div>
+</div>
+
+<div class="cards">
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Personal de Chambre H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Staffmatch &#8212; Agencia int&#233;rim &#183; Montpellier</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Montpellier (34)</span>
+        <span class="tag tag-date">&#9889; Hace 8 horas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/77128486.html">
+        hellowork.com/fr-fr/emplois/77128486.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F &#8212; Saison 2026</div>
+      <div class="card-company">H&#244;tel du Midi &#8212; Palavas-les-Flots</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Palavas-les-Flots (34) &#183; bord de mer</span>
+        <span class="tag tag-date">&#9889; Hace 8 horas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78287041.html">
+        hellowork.com/fr-fr/emplois/78287041.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Sowell Family Cap d&#8217;Agde &#8212; Resort</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois</span>
+        <span class="tag tag-sal">&#128182; 2 396 &#8364;/mois &#11088;</span>
+        <span class="tag tag-loc">&#128205; Agde (34) &#183; Cap d&#8217;Agde</span>
+        <span class="tag tag-date">&#9889; Hace 3 d&#237;as</span>
+        <span class="tag tag-pres">&#11088; Mejor salario de la categor&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78146765.html">
+        hellowork.com/fr-fr/emplois/78146765.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre H/F &#8212; Agde</div>
+      <div class="card-company">Agathea &#8212; H&#244;tel Agde</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 8 mois &#8212; saison longue</span>
+        <span class="tag tag-sal">&#128182; 12,02 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Agde (34)</span>
+        <span class="tag tag-date">&#9889; Hace 1 d&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78240999.html">
+        hellowork.com/fr-fr/emplois/78240999.html
+      </a>
+    </div>
+  </div>
+
+  <div class="card hw">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; 8 mois</div>
+      <div class="card-company">Mil&#233;ade &#8212; La Grande-Motte</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 8 mois</span>
+        <span class="tag tag-sal">&#128182; 21 876 &#8211; 23 699 &#8364;/an</span>
+        <span class="tag tag-loc">&#128205; La Grande-Motte (34) &#183; bord de mer</span>
+        <span class="tag tag-date">&#9889; Hace 7 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78010342.html">
+        hellowork.com/fr-fr/emplois/78010342.html
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="section-footer">
+  <strong>&#128716; 47 ofertas femme de chambre activas en H&#233;rault hoy.</strong> La destacada es <strong>Sowell Cap d&#8217;Agde (2396&#8364;/mes)</strong> &#8212; el mejor salario. Ver todas:
+  <a class="link-block" style="margin-top:7px;" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_herault-34.html">
+    hellowork.com &#8594; femme de chambre H&#233;rault (47 offres)
+  </a>
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>15 offres &#183; H&#244;tellerie &amp; Restauration &#183; H&#233;rault (34) &#183; 23 avril 2026</strong></p>
+  <p>Agde &#183; Palavas-les-Flots &#183; B&#233;ziers &#183; S&#232;te &#183; Montpellier &#183; La Grande-Motte</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Solo Hellowork &#183; Links directos a cada oferta &#183; Sin redirecci&#243;n a France Travail</p>
+</div>
+
+</body>
+</html>
