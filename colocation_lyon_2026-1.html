@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colocation Lyon &#8212; Gu&#237;a para VVT &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif; background: #EDE8E0; max-width: 660px; margin: 0 auto; }
+
+  .header { background: linear-gradient(150deg, #2A0A0A 0%, #8B0000 60%, #1A0000 100%); padding: 30px 28px 22px; text-align: center; border-bottom: 3px solid #FF4040; }
+  .header-label { display: inline-block; background: rgba(255,64,64,0.18); border: 1px solid rgba(255,64,64,0.4); color: #FFA0A0; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact, 'Arial Black', sans-serif; font-size: 28px; color: #fff; letter-spacing: 1px; line-height: 1.1; margin-bottom: 6px; }
+  .header h1 span { color: #FF8080; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+  .header-pills { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .hpill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 600; }
+
+  .info-box { margin: 14px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 12px; line-height: 1.65; }
+  .info-box.red { background: #FFF0F0; border: 1px solid #FF6060; border-left: 4px solid #8B0000; color: #3A0000; }
+  .info-box.gold { background: #FFF8E7; border: 1px solid #E6A01E; border-left: 4px solid #8B5E00; color: #3A1A00; }
+  .info-box strong { font-weight: 700; }
+  .info-box.red strong { color: #8B0000; }
+  .info-box.gold strong { color: #7A4A00; }
+
+  .sec-title { display: flex; align-items: center; gap: 10px; margin: 20px 16px 12px; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: #C8C0B4; }
+  .sec-title.red { color: #8B0000; }
+  .sec-title.green { color: #1A6A30; }
+  .sec-title.blue { color: #1A3A6A; }
+  .sec-title.orange { color: #8B4A00; }
+
+  /* PRICE GRID */
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 0 16px; }
+  .price-card { background: white; border-radius: 12px; padding: 13px 13px; border: 1px solid #E0D8CC; text-align: center; }
+  .price-card.star { border-color: #FF4040; }
+  .price-city { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .price-range { font-size: 15px; font-weight: 800; color: #8B0000; margin-bottom: 3px; }
+  .price-label { font-size: 10px; color: #8A7A6A; }
+  .price-note { font-size: 10px; color: #5A4A3A; margin-top: 3px; font-style: italic; }
+
+  /* COLOC CARDS */
+  .coloc-cards { padding: 0 16px; display: flex; flex-direction: column; gap: 10px; }
+  .coloc-card { background: white; border-radius: 13px; overflow: hidden; border: 1px solid #E0D8CC; }
+  .coloc-top { display: flex; align-items: stretch; }
+  .coloc-bar { width: 58px; flex-shrink: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 14px 6px; text-align: center; }
+  .bar-price { font-size: 14px; font-weight: 800; color: white; line-height: 1.1; }
+  .bar-unit { font-size: 9px; color: rgba(255,255,255,0.7); margin-top: 2px; }
+  .bar-lbc { background: #FF6600; }
+  .bar-app { background: #8B0000; }
+  .bar-cdc { background: #1A5A1A; }
+
+  .coloc-body { flex: 1; padding: 12px 13px; }
+  .coloc-title { font-size: 13px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .coloc-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .ctag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .ctag-arr { background: rgba(139,0,0,0.07); color: #6A0000; border: 1px solid rgba(139,0,0,0.18); }
+  .ctag-date { background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+  .ctag-type { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .ctag-ok { background: rgba(20,120,60,0.08); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.2); }
+
+  .plat-badge-row { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; }
+  .plat-icon { font-size: 12px; }
+  .plat-name { font-size: 11px; font-weight: 700; color: #5A4A3A; }
+
+  .link-block { display: block; margin-top: 8px; margin-bottom: 2px; padding: 7px 11px; background: #FFF5F5; border: 1px solid #FFA0A0; border-left: 3px solid #8B0000; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #6A0000; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+
+  /* STEPS */
+  .steps { padding: 0 16px; display: flex; flex-direction: column; gap: 9px; }
+  .step-card { background: white; border-radius: 12px; padding: 12px 14px; border: 1px solid #E0D8CC; display: flex; gap: 11px; align-items: flex-start; }
+  .step-num { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: white; background: #8B0000; }
+  .step-body { flex: 1; }
+  .step-title { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .step-text { font-size: 11.5px; color: #5A4A3A; line-height: 1.6; }
+  .step-text strong { color: #1A1008; }
+
+  /* ALERT */
+  .alert-box { margin: 0 16px; background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; border-radius: 0 10px 10px 0; padding: 11px 14px; font-size: 11.5px; color: #3A0A0A; line-height: 1.65; }
+  .alert-box strong { color: #8B1A1A; }
+
+  /* TIPS */
+  .tips-box { margin: 0 16px; background: #1A0000; border-radius: 13px; padding: 16px 18px; }
+  .tips-title { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: #FF8080; text-transform: uppercase; margin-bottom: 10px; }
+  .tip-row { display: flex; gap: 10px; margin-bottom: 8px; font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+  .tip-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+
+  .page-footer { background: #1A0000; padding: 16px 22px; text-align: center; border-top: 2px solid #FF4040; margin-top: 18px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127968; Colocation &#183; Lyon &#183; Para VVT &#183; 2026</div>
+  <h1>Colocation en <span>Lyon</span><br>Gu&#237;a para reci&#233;n llegados</h1>
+  <div class="header-sub">Leboncoin &#183; Appartager &#183; La Carte des Colocs &#183; 23 avril 2026</div>
+  <div class="header-pills">
+    <span class="hpill">&#128205; Precios orientativos</span>
+    <span class="hpill">&#128279; Links a plataformas</span>
+    <span class="hpill">&#9888; Consejos anti-estafa</span>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div style="margin:14px 16px 0;background:#FFF8E7;border:1px solid #C4903A;border-left:4px solid #8B5E00;border-radius:10px;padding:12px 15px;font-size:11.5px;color:#3A2000;line-height:1.7;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan anuncios, precios, disponibilidad ni la identidad de propietarios o plataformas. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de tomar cualquier decisi&#243;n.</strong>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box red" style="margin-top:16px;">
+  &#127968; <strong>Lyon: 2da ciudad gastron&#243;mica de Francia.</strong> Ciudad universitaria de 520.000 hab., muy bien conectada (TGV 2h a Par&#237;s, 1h a Marseille). Alquiler m&#225;s accesible que Par&#237;s pero subiendo. La mejor &#225;rea para trabajadores CHR: <strong>Lyon 2e, 7e y Villeurbanne</strong> &#8212; bien conectados al centro por metro y tramway.
+</div>
+
+
+<!-- PRECIOS -->
+<div class="sec-title red">&#128182; Precios reales hoy &#183; Leboncoin 23/04/2026</div>
+
+<div class="price-grid">
+  <div class="price-card star">
+    <div class="price-city">&#128205; Lyon 3e &#183; Part-Dieu</div>
+    <div class="price-range">450 &#8211; 700&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Mejor zona CHR &#183; Metro B</div>
+  </div>
+  <div class="price-card">
+    <div class="price-city">&#128205; Lyon 7e &#183; Guilloti&#232;re</div>
+    <div class="price-range">470 &#8211; 610&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Multicultura &#183; Tramway T1/T2</div>
+  </div>
+  <div class="price-card">
+    <div class="price-city">&#128205; Lyon 2e &#183; Presqu&#238;le</div>
+    <div class="price-range">475 &#8211; 550&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Centro &#183; Coraz&#243;n gastro</div>
+  </div>
+  <div class="price-card">
+    <div class="price-city">&#128205; Villeurbanne</div>
+    <div class="price-range">430 &#8211; 530&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">M&#225;s barato &#183; Metro A Gratte-Ciel</div>
+  </div>
+</div>
+
+
+
+
+<div class="coloc-cards">
+
+  <div class="coloc-card">
+    <div class="coloc-top">
+      <div class="coloc-bar bar-lbc">
+        <div class="bar-price">530&#8364;</div>
+        <div class="bar-unit">/mois</div>
+      </div>
+      <div class="coloc-body">
+        <div class="coloc-title">Chambre meublee &#183; Lyon 3e Part-Dieu</div>
+        <div class="coloc-tags">
+          <span class="ctag ctag-arr">&#128205; Lyon 3e</span>
+          <span class="ctag ctag-type">Plataforma p&#250;blica</span>
+        </div>
+        <div class="plat-badge-row"><span class="plat-icon">&#127968;</span><span class="plat-name">Leboncoin &#183; Part-Dieu &#183; metro B</span></div>
+        <a class="link-block" href="https://www.leboncoin.fr/cl/colocations/cp_lyon_69003">
+          leboncoin.fr/cl/colocations/cp_lyon_69003
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="coloc-card">
+    <div class="coloc-top">
+      <div class="coloc-bar bar-lbc">
+        <div class="bar-price">519&#8364;</div>
+        <div class="bar-unit">/mois</div>
+      </div>
+      <div class="coloc-body">
+        <div class="coloc-title">Chambre meublee &#183; Lyon 9e Gare de Vaise</div>
+        <div class="coloc-tags">
+          <span class="ctag ctag-arr">&#128205; Lyon 9e &#183; Vaise</span>
+          <span class="ctag ctag-type">Plataforma p&#250;blica</span>
+        </div>
+        <div class="plat-badge-row"><span class="plat-icon">&#127968;</span><span class="plat-name">Leboncoin &#183; Gare de Vaise &#183; metro D</span></div>
+        <a class="link-block" href="https://www.leboncoin.fr/cl/colocations/cp_lyon_69009">
+          leboncoin.fr/cl/colocations/cp_lyon_69009
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="coloc-card">
+    <div class="coloc-top">
+      <div class="coloc-bar bar-lbc">
+        <div class="bar-price">475&#8364;</div>
+        <div class="bar-unit">/mois</div>
+      </div>
+      <div class="coloc-body">
+        <div class="coloc-title">Chambre meublee &#183; Lyon 2e Presqu&#238;le</div>
+        <div class="coloc-tags">
+          <span class="ctag ctag-arr">&#128205; Lyon 2e &#183; Presqu&#238;le</span>
+          <span class="ctag ctag-type">Plataforma p&#250;blica</span>
+        </div>
+        <div class="plat-badge-row"><span class="plat-icon">&#127968;</span><span class="plat-name">Leboncoin &#183; coraz&#243;n gastron&#243;mico de Lyon</span></div>
+        <a class="link-block" href="https://www.leboncoin.fr/cl/colocations/cp_lyon_69002">
+          leboncoin.fr/cl/colocations/cp_lyon_69002
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="coloc-card">
+    <div class="coloc-top">
+      <div class="coloc-bar bar-app">
+        <div class="bar-price">460&#8364;</div>
+        <div class="bar-unit">/mois</div>
+      </div>
+      <div class="coloc-body">
+        <div class="coloc-title">Chambre meublee &#183; Lyon 4e Croix-Rousse</div>
+        <div class="coloc-tags">
+          <span class="ctag ctag-arr">&#128205; Lyon 4e &#183; Croix-Rousse</span>
+          <span class="ctag ctag-type">Plataforma p&#250;blica</span>
+        </div>
+        <div class="plat-badge-row"><span class="plat-icon">&#127968;</span><span class="plat-name">Appartager &#183; barrio bohemio &#183; funicular</span></div>
+        <a class="link-block" href="https://www.appartager.com/colocations/lyon">
+          appartager.com/colocations/lyon
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="coloc-card">
+    <div class="coloc-top">
+      <div class="coloc-bar bar-cdc">
+        <div class="bar-price">480&#8364;</div>
+        <div class="bar-unit">/mois</div>
+      </div>
+      <div class="coloc-body">
+        <div class="coloc-title">Chambre meublee &#183; Villeurbanne Gratte-Ciel</div>
+        <div class="coloc-tags">
+          <span class="ctag ctag-arr">&#128205; Villeurbanne &#183; Gratte-Ciel</span>
+          <span class="ctag ctag-type">Plataforma p&#250;blica</span>
+        </div>
+        <div class="plat-badge-row"><span class="plat-icon">&#127968;</span><span class="plat-name">Leboncoin &#183; metro A &#183; 10 min del centro</span></div>
+        <a class="link-block" href="https://www.leboncoin.fr/cl/colocations/dp_rh%C3%B4ne">
+          leboncoin.fr &#8594; colocations Rh&#244;ne (toda la regi&#243;n)
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- PASOS -->
+<div class="sec-title blue" style="margin-top:20px;">&#128196; C&#243;mo armar el dossier en Lyon</div>
+<div class="steps">
+
+  <div class="step-card">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">Verificar elegibilidad para Visale</div>
+      <div class="step-text">Visale es una garant&#237;a de alquiler gratuita del Estado franc&#233;s. <strong>Antes de solicitarla, verificar tu elegibilidad seg&#250;n tu situaci&#243;n personal en visale.fr</strong> &#8212; las condiciones pueden variar seg&#250;n el tipo de visa y contrato. Si eres elegible, puede reemplazar al garante f&#237;sico franc&#233;s.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">Abrir cuenta bancaria sin domicilio</div>
+      <div class="step-text"><strong>N26, Revolut o Lydia</strong> &#8212; gratuitas, sin justificatif de domicile. Necesit&#225;s el RIB para el dossier. Sin cuenta bancaria francesa, ning&#250;n propietario acepta la candidatura.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">Pedir el bail mobilit&#233;</div>
+      <div class="step-text">El <strong>bail mobilit&#233;</strong> (1 a 10 meses) es el contrato m&#225;s adaptado a los saisonniers y trabajadores temporales. Permite cambiar o no renovar sin p&#233;nalidad. Preguntar expl&#237;citamente al propietario si acepta este tipo de contrato.</div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ALERT -->
+<div class="sec-title orange" style="margin-top:20px;">&#9888;&#65039; Se&#241;ales de estafa &#8212; Lyon</div>
+<div class="alert-box">
+  <strong>&#10071; NUNCA pag&#233;s sin visitar en persona:</strong> Ning&#250;n propietario leg&#237;timo pide dep&#243;sito o primer mes antes de mostrarte el apartamento.<br><br>
+  <strong>&#10071; Precio demasiado bajo:</strong> Una chambre meublee en Lyon por menos de 380&#8364;/mes es una se&#241;al de alerta. Desconf&#237;en.<br><br>
+  <strong>&#10071; &#171;Propietario en el extranjero&#187;:</strong> T&#233;cnica cl&#225;sica de fraude. Si dicen estar fuera y piden transferencia para enviar llaves &#8212; es estafa.<br><br>
+  <strong>&#10071; Piden Western Union / Bitcoin / Lydia a desconocidos:</strong> Ning&#250;n propietario serio acepta estos medios de pago. Solo virement bancaire o ch&#232;que.<br><br>
+  <strong>&#10071; Presionan para decidir r&#225;pido:</strong> &#171;Hay otros interesados, respond&#237; hoy&#187; &#8212; t&#225;ctica de presi&#243;n cl&#225;sica. Tom&#225;te siempre tu tiempo.<br><br>
+  <strong>&#10071; Nunca env&#237;en copia del pasaporte</strong> sin haber visitado el apartamento en persona.<br><br>
+  <strong>&#9989; C&#243;mo protegerse:</strong><br>
+  &#183; Buscar la direcci&#243;n en <strong>Google Maps Street View</strong> antes de ir<br>
+  &#183; Verificar que el anuncio existe realmente en la plataforma oficial (no solo en WhatsApp o Telegram)<br>
+  &#183; Pedir ver el <strong>bail du propri&#233;taire</strong> (contrato de arrendamiento que prueba que quien alquila es due&#241;o leg&#237;timo &#8212; equivalente a las escrituras o t&#237;tulo de propiedad en Am&#233;rica Latina) o la <strong>taxe fonci&#232;re</strong> (impuesto anual a la propiedad &#8212; equivalente al impuesto predial, que solo recibe el due&#241;o real del inmueble) en la visita<br>
+  &#183; Pagar siempre por <strong>virement bancaire</strong> con comprobante escrito<br>
+  &#183; Nunca firmar un contrato sin leerlo completo &#8212; si no entend&#233;s el franc&#233;s, pedirle a alguien de confianza que lo revise
+</div>
+
+
+<!-- TIPS -->
+<div class="tips-box" style="margin-top:14px;">
+  <div class="tips-title">&#127969; Consejos para VVT en Lyon</div>
+  <div class="tip-row"><span class="tip-icon">&#128690;</span><div><strong>Metro lyonnais</strong> &#8212; Lyon tiene 4 l&#237;neas de metro + 7 de tramway. Sin coche es perfectamente viable. El t&#237;tulo mensual Oura cuesta ~78&#8364; para toda la metr&#243;polis.</div></div>
+  <div class="tip-row"><span class="tip-icon">&#128101;</span><div><strong>Grupos Facebook</strong> &#8212; &#171;Colocation Lyon&#187;, &#171;Logement Lyon latinos&#187;. Muchos compatriotas subalquilan habitaciones a reci&#233;n llegados sin exigir dossier completo.</div></div>
+  <div class="tip-row"><span class="tip-icon">&#127891;</span><div><strong>CROUS Lyon</strong> &#8212; tiene residencias abiertas a trabajadores (no solo estudiantes) con tarifas desde 350&#8364;/mes. Consultar en <strong>trouverunlogement.lescrous.fr</strong></div></div>
+  <div class="tip-row"><span class="tip-icon">&#127969;</span><div><strong>Villeurbanne</strong> &#8212; la opci&#243;n m&#225;s econ&#243;mica cerca del centro. Metro A (Laurent Bonnevay / Gratte-Ciel) conecta en 10 min con Lyon 1er.</div></div>
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>Colocation Lyon &#183; Gu&#237;a orientativa &#183; 2026</strong></p>
+  <p>Leboncoin &#183; Appartager &#183; La Carte des Colocs &#183; Informaci&#243;n compartida sin garant&#237;a</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9888; Siempre visitar antes de pagar &#183; Verificar Visale en visale.fr &#183; No me hago responsable del contenido de terceros</p>
+</div>
+
+</body>
+</html>
