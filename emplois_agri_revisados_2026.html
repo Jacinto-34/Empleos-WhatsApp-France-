@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Empleos Agr&#237;colas &#8212; Lotes 1 &amp; 2 Revisados &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+
+  .header { background: linear-gradient(150deg,#0A2A0A 0%,#1A5A1A 60%,#061806 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #4ADE80; }
+  .header-label { display: inline-block; background: rgba(74,222,128,0.18); border: 1px solid rgba(74,222,128,0.4); color: #90FFB8; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+  .header h1 span { color: #4ADE80; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+  .meta-pill span { color: #4ADE80; font-weight: 700; }
+
+  .box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+  .box.gold  { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+  .box.red   { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .box.green { background: #EDF8F0; border: 1px solid #4ADE80; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .box.yellow { background: #FFFAE7; border: 1px solid #DDB800; border-left: 4px solid #8B7000; color: #3A2A00; }
+  .box strong { font-weight: 700; }
+  .box.gold strong { color: #7A4A00; }
+  .box.red strong { color: #8B1A1A; }
+  .box.green strong { color: #0A5A20; }
+  .box.yellow strong { color: #7A5000; }
+
+  .sec-title { display: flex; align-items: center; gap: 10px; margin: 18px 16px 10px; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: #C8C0B4; }
+  .sec-title.green { color: #1A6A30; }
+  .sec-title.red   { color: #8B1A1A; }
+  .sec-title.gold  { color: #8B5E00; }
+  .sec-title.blue  { color: #1A3A8B; }
+
+  .cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 10px; }
+  .card { background: #fff; border: 1px solid #E0D8CC; border-radius: 12px; padding: 13px 14px; display: flex; gap: 11px; align-items: flex-start; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; background: #C4903A; }
+  .card.ok::before { background: linear-gradient(to bottom,#1A5A1A,#4ADE80); width: 4px; }
+  .card.ok { border-color: #4ADE80; }
+  .card.warn { border-color: #DDB800; }
+  .card.warn::before { background: linear-gradient(to bottom,#8B7000,#DDB800); }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num { font-family: Impact,sans-serif; font-size: 22px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-hw  { background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .plat-vj  { background: rgba(60,20,100,0.1); color: #3A0A7A; border: 1px solid rgba(60,20,100,0.28); }
+  .plat-ft  { background: rgba(30,80,180,0.1); color: #1A3A9A; border: 1px solid rgba(30,80,180,0.28); }
+
+  .card-body { flex: 1; min-width: 0; }
+  .card-title { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-loc  { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .tag-sal  { background: rgba(20,120,60,0.07); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.17); }
+  .tag-dur  { background: rgba(10,110,80,0.07); color: #0A5A3A; border: 1px solid rgba(10,110,80,0.17); }
+  .tag-deb  { background: rgba(46,180,80,0.1); color: #0A5A20; border: 1px solid rgba(46,180,80,0.25); font-weight: 800; }
+  .tag-sect { background: rgba(80,40,0,0.07); color: #5A2A00; border: 1px solid rgba(80,40,0,0.18); }
+  .tag-bio  { background: rgba(30,100,30,0.1); color: #1A5A1A; border: 1px solid rgba(30,100,30,0.25); }
+  .tag-warn { background: rgba(180,140,0,0.1); color: #7A5A00; border: 1px solid rgba(180,140,0,0.25); }
+
+  .badge-ok   { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.22); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+  .badge-warn { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(180,140,0,0.1); color: #7A5A00; border: 1px solid rgba(180,140,0,0.25); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+
+  .link-block { display: block; margin-top: 10px; margin-bottom: 2px; padding: 8px 12px; background: #EDF8F0; border: 1px solid #90CCA8; border-left: 3px solid #1A6A30; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #0A4A1A; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+  .link-block.warn { background: #FFFAE7; border-color: #DDB800; border-left-color: #8B7000; color: #5A3A00; }
+
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+
+  .concepts { padding: 0 16px; display: flex; flex-direction: column; gap: 8px; }
+  .concept-card { background: white; border-radius: 11px; padding: 12px 14px; border: 1px solid #E0D8CC; border-left: 3px solid #1A6A30; }
+  .concept-term { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .concept-fr   { font-size: 11px; color: #6A8A6A; font-style: italic; margin-bottom: 4px; }
+  .concept-def  { font-size: 11.5px; color: #3A2A1A; line-height: 1.6; }
+  .concept-def strong { color: #1A5A20; }
+
+  .page-footer { background: #0A2A0A; padding: 16px 24px; text-align: center; border-top: 2px solid #4ADE80; margin-top: 18px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#127807; Agricultura &#183; Lotes 1 &amp; 2 Revisados &#183; 2026</div>
+  <h1>Empleos <span>Agr&#237;colas</span><br>Verificados &#183; D&#233;butants OK</h1>
+  <div class="header-sub">Hellowork &#183; Vitijob &#183; Verificado 23 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#9989; <span>3</span> Ofertas verificadas vigentes</div>
+    <div class="meta-pill">&#9888; <span>3</span> Verificar disponibilidad</div>
+    <div class="meta-pill">&#127811; Vigne &#183; Semences &#183; Cueillette</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan ofertas, empleadores ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de postular o firmar cualquier contrato.</strong>
+</div>
+
+<!-- SEÑALES ESTAFA -->
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Sin empresa verificable en societe.com &#183; &#10071; Piden RIB antes de la entrevista &#183; &#10071; Sin DPAE ni contrato escrito antes del primer d&#237;a<br>
+  &#9989; <strong>Verificar siempre:</strong> societe.com &#183; contrato escrito &#183; nunca pagar para trabajar
+</div>
+
+
+<!-- ✅ VERIFICADAS VIGENTES -->
+<div class="sec-title green">&#9989; Ofertas confirmadas vigentes &#8212; Lotes 1 &amp; 2</div>
+
+<div class="cards">
+
+  <!-- 1 RAGT -->
+  <div class="card ok">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Ouvrier Agricole Saisonnier H/F <span class="badge-ok">&#9989; Verificada</span></div>
+      <div class="card-company">RAGT 2n &#8212; Centre de recherche de Rivi&#232;res</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier renouvelable</span>
+        <span class="tag tag-sal">&#128182; 12,33 &#8364;/h</span>
+        <span class="tag tag-loc">&#128205; Rivi&#232;res (81) &#183; Tarn &#183; Occitanie</span>
+        <span class="tag tag-dur">&#8987; Avril &#8594; Ao&#251;t 2026 (renovable cada a&#241;o)</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+        <span class="tag tag-sect">&#127807; Pollinisation &#183; Semences</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/77630664.html">
+        hellowork.com/fr-fr/emplois/77630664.html
+      </a>
+    </div>
+  </div>
+
+  <!-- 2 TRAPET -->
+  <div class="card ok">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-vj">VJ</div></div>
+    <div class="card-body">
+      <div class="card-title">Saisonnier Viticole H/F <span class="badge-ok">&#9989; Verificada</span></div>
+      <div class="card-company">Domaine Trapet P&#232;re et Fils &#8212; 18 ha Bio + Biodynamie</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2026</span>
+        <span class="tag tag-loc">&#128205; Gevrey-Chambertin (21) &#183; C&#244;te de Nuits &#183; Bourgogne</span>
+        <span class="tag tag-dur">&#8987; Primavera &#8594; Verano 2026</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+        <span class="tag tag-bio">&#127807; Bio + Biodynamie</span>
+        <span class="tag tag-sect">&#127811; Grands Crus Bourgogne</span>
+      </div>
+      <a class="link-block" href="https://www.vitijob.com/emploi/109100/saisonnier-viticole-h-f">
+        vitijob.com/emploi/109100/saisonnier-viticole-h-f
+      </a>
+    </div>
+  </div>
+
+  <!-- 3 LOUIS JADOT -->
+  <div class="card ok">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag plat-vj">VJ</div></div>
+    <div class="card-body">
+      <div class="card-title">Ouvrier Viticole Saisonnier F/H <span class="badge-ok">&#9989; Verificada</span></div>
+      <div class="card-company">Maison Louis Jadot &#8212; Grands Crus C&#244;te de Beaune &amp; C&#244;te de Nuits</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 4 mois</span>
+        <span class="tag tag-loc">&#128205; Beaune (21) &#183; C&#244;te de Beaune &#183; Bourgogne</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant si s&#233;rieux et motiv&#233;</span>
+        <span class="tag tag-sect">&#127811; Vigne &#183; Travaux en vert</span>
+        <span class="tag tag-bio">&#127807; Engagée en Agriculture Biologique</span>
+      </div>
+      <a class="link-block" href="https://careers.werecruit.io/fr/maison-louis-jadot/offres/ouvrier-viticole--saisonnier-b082c8">
+        careers.werecruit.io &#8594; Maison Louis Jadot &#8212; Ouvrier Viticole Saisonnier
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ⚠️ A VERIFICAR -->
+<div class="sec-title gold" style="margin-top:18px;">&#9888;&#65039; Ofertas anteriores &#8212; Verificar disponibilidad</div>
+
+<div class="box yellow">
+  Las siguientes 3 ofertas estaban incluidas en los lotes anteriores pero <strong>no pudieron ser verificadas directamente hoy</strong>. Pueden seguir activas o haber sido cubiertas. Usar los links de b&#250;squeda para encontrar ofertas similares actualizadas.
+</div>
+
+<div class="cards" style="margin-top:10px;">
+
+  <!-- BTP Vacances -->
+  <div class="card warn">
+    <div class="card-left"><div class="card-num">A</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur Log&#233; Nourri H/F <span class="badge-warn">&#9888; Verificar</span></div>
+      <div class="card-company">BTP Vacances &#8212; Restaurant bord du Lac de Serre-Pon&#231;on</div>
+      <div class="card-tags">
+        <span class="tag tag-warn">&#9888; Verificar disponibilidad</span>
+        <span class="tag tag-loc">&#128205; Chorges (05) &#183; Hautes-Alpes &#183; PACA</span>
+        <span class="tag tag-sect">&#127968; Log&#233; nourri incluido</span>
+      </div>
+      <a class="link-block warn" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_plongeur-loge-nourri.html">
+        hellowork.com &#8594; buscar: plongeur log&#233; nourri Chorges &#183; Hautes-Alpes
+      </a>
+    </div>
+  </div>
+
+  <!-- Cueillette Gard -->
+  <div class="card warn">
+    <div class="card-left"><div class="card-num">B</div><div class="plat-tag plat-ft">FT</div></div>
+    <div class="card-body">
+      <div class="card-title">Ouvrier Arboricole &#8212; Cueillette H/F <span class="badge-warn">&#9888; Verificar</span></div>
+      <div class="card-company">Exploitation fruits &#8212; Bassin Beaucairois</div>
+      <div class="card-tags">
+        <span class="tag tag-warn">&#9888; Verificar disponibilidad</span>
+        <span class="tag tag-loc">&#128205; Beaucaire (30) &#183; Gard &#183; Provence</span>
+        <span class="tag tag-sect">&#127813; Cerises &#8594; Abricots &#8594; P&#234;ches</span>
+      </div>
+      <a class="link-block warn" href="https://candidat.francetravail.fr/offres/recherche?motsCles=cueillette+abricot+cerise+Beaucaire">
+        francetravail.fr &#8594; buscar: cueillette abricot cerise Beaucaire (30)
+      </a>
+    </div>
+  </div>
+
+  <!-- Tabac Nord -->
+  <div class="card warn">
+    <div class="card-left"><div class="card-num">C</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Ouvrier Agricole &#8212; Culture Tabac H/F <span class="badge-warn">&#9888; Verificar</span></div>
+      <div class="card-company">Exploitation tabac &#8212; Hauts-de-France</div>
+      <div class="card-tags">
+        <span class="tag tag-warn">&#9888; Verificar disponibilidad</span>
+        <span class="tag tag-loc">&#128205; Nord / Pas-de-Calais &#183; Hauts-de-France</span>
+        <span class="tag tag-sect">&#127807; Tabac &#183; Sector espec&#237;fico</span>
+      </div>
+      <a class="link-block warn" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_tabac-saisonnier.html">
+        hellowork.com &#8594; buscar: tabac saisonnier Nord
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- VISALE -->
+<div class="sec-title blue" style="margin-top:18px;">&#128273; Visale &#8212; Garant&#237;a de alquiler</div>
+<div class="box green">
+  &#9888; <strong>Verificar elegibilidad personal en visale.fr</strong> &#8212; Visale puede facilitar la b&#250;squeda de alojamiento si el empleador proporciona una promesse d&#8217;embauche o contrato. Las condiciones var&#237;an seg&#250;n el tipo de visa y situaci&#243;n laboral de cada persona. <strong>Hacer la simulaci&#243;n directamente en visale.fr.</strong>
+</div>
+
+
+<!-- CONCEPTOS CLAVE -->
+<div class="sec-title gold" style="margin-top:18px;">&#128203; Conceptos clave &#8212; Trabajo agr&#237;cola en Francia</div>
+<div class="concepts">
+
+  <div class="concept-card">
+    <div class="concept-term">&#128209; TESA &#8212; Titre Emploi Simplifi&#233; Agricole</div>
+    <div class="concept-fr">&#8220;T&#237;tulo de empleo agr&#237;cola simplificado&#8221;</div>
+    <div class="concept-def">Contrato simplificado para el sector agr&#237;cola donde el empleador gestiona todo (DPAE, cotizaciones, fiche de paie) con un solo formulario. <strong>Muy com&#250;n para saisonniers</strong>. Compatible con VVT si el empleador tiene SIREN v&#225;lido. No requiere experiencia previa.</div>
+  </div>
+
+  <div class="concept-card">
+    <div class="concept-term">&#128221; Promesse d&#8217;embauche</div>
+    <div class="concept-fr">&#8220;Promesa de contrataci&#243;n&#8221;</div>
+    <div class="concept-def">Documento firmado por el empleador antes del contrato formal que confirma el puesto (fecha, salario, funciones). Equivale a una <strong>carta de oferta de trabajo por escrito</strong> en Am&#233;rica Latina. Tiene valor legal &#8212; el empleador no puede retractarse sin indemnizar. &#218;til para solicitar Visale o buscar alojamiento antes de llegar.</div>
+  </div>
+
+  <div class="concept-card">
+    <div class="concept-term">&#127807; Travaux en vert</div>
+    <div class="concept-fr">&#8220;Trabajos en verde&#8221; &#8212; tareas de primavera en vi&#241;edos</div>
+    <div class="concept-def"><strong>&#201;bourgeonnage</strong> (sacar brotes excesivos a mano) &#183; <strong>Relevage / palissage</strong> (atar los brotes a los alambres) &#183; <strong>Effeuillage</strong> (quitar hojas para airear el racimo). Ninguna tarea requiere experiencia previa. Son los puestos m&#225;s accesibles para debutantes en viticultura.</div>
+  </div>
+
+  <div class="concept-card">
+    <div class="concept-term">&#128184; CP + IFM &#8212; Conges pay&#233;s + Indemnit&#233; de Fin de Mission</div>
+    <div class="concept-fr">&#8220;Vacaciones pagadas + indemnizaci&#243;n de fin de misi&#243;n&#8221;</div>
+    <div class="concept-def">En contratos CDD e int&#233;rim se a&#241;aden al cobrar: <strong>+10% CP</strong> + <strong>+10% IFM</strong> (solo int&#233;rim). Esto significa que el salario real efectivo al finalizar es hasta <strong>20% superior</strong> al salario bruto mensual indicado en la oferta.</div>
+  </div>
+
+</div>
+
+
+<!-- SEÑALES ESTAFA -->
+<div class="sec-title red" style="margin-top:18px;">&#9888;&#65039; Se&#241;ales de estafa &#8212; Empleo agr&#237;cola</div>
+<div class="box red">
+  &#10071; <strong>Piden dinero</strong> para gestionar el TESA, el contrato o los documentos &#8212; es gratuito por ley.<br>
+  &#10071; <strong>No aparecen en societe.com</strong> &#8212; toda explotaci&#243;n agr&#237;cola tiene SIREN/SIRET verificable.<br>
+  &#10071; <strong>Prometen log&#233;+nourri pero no lo especifican en el contrato</strong> &#8212; exigir siempre por escrito.<br>
+  &#10071; <strong>Solo contacto por WhatsApp</strong> sin direcci&#243;n verificable en Google Maps.<br>
+  &#9989; <strong>Protegerse:</strong> verificar en societe.com &#183; pedir contrato escrito &#183; confirmar direcci&#243;n en Google Maps &#183; consultar al grupo ante cualquier duda.
+</div>
+
+
+<div class="page-footer">
+  <p><strong>Empleos Agr&#237;colas &#183; Lotes 1 &amp; 2 Revisados &#183; 23 avril 2026</strong></p>
+  <p>RAGT Tarn (81) &#183; Domaine Trapet Bourgogne (21) &#183; Louis Jadot Beaune (21)</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Hellowork &#183; Vitijob &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Verificar disponibilidad antes de postular</p>
+</div>
+
+</body>
+</html>
