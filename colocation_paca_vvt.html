@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colocation PACA &#8212; Gu&#237;a para VVT &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Trebuchet MS', 'Segoe UI', Arial, sans-serif;
+    background: #EDE8E0;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(150deg, #3A1A5C 0%, #5A2A8A 60%, #2A0A4A 100%);
+    padding: 32px 28px 24px;
+    text-align: center;
+    border-bottom: 3px solid #9B59D0;
+  }
+  .header-label {
+    display: inline-block;
+    background: rgba(155,89,208,0.2);
+    border: 1px solid rgba(155,89,208,0.45);
+    color: #D4A8FF; font-size: 10px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: Impact, 'Arial Black', sans-serif;
+    font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.1; margin-bottom: 6px;
+  }
+  .header h1 span { color: #C89BFF; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; }
+  .header-pills {
+    display: flex; justify-content: center; gap: 8px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .hpill {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 4px 12px;
+    font-size: 11px; color: rgba(255,255,255,0.7); font-weight: 600;
+  }
+
+  /* SECTION TITLE */
+  .sec-title {
+    display: flex; align-items: center; gap: 10px;
+    margin: 22px 16px 12px;
+    font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: #C8C0B4; }
+  .sec-title.purple { color: #5A2A8A; }
+  .sec-title.green  { color: #1A6A30; }
+  .sec-title.blue   { color: #1A3A6A; }
+  .sec-title.orange { color: #8B3A00; }
+  .sec-title.red    { color: #8B1A1A; }
+  .sec-title.teal   { color: #1A5A5A; }
+
+  /* INFO BOX */
+  .info-box {
+    margin: 16px 16px 0;
+    border-radius: 10px; padding: 13px 16px;
+    font-size: 12.5px; line-height: 1.65;
+  }
+  .info-box.purple { background: #F3EDFF; border: 1px solid #9B59D0; border-left: 4px solid #5A2A8A; color: #2A1040; }
+  .info-box.green  { background: #EDF8F0; border: 1px solid #5AAA70; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .info-box.orange { background: #FEF5EC; border: 1px solid #E8903A; border-left: 4px solid #8B3A00; color: #3A1A00; }
+  .info-box.red    { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .info-box strong { font-weight: 700; }
+
+  /* PRICE CARDS GRID */
+  .price-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; padding: 0 16px;
+  }
+  .price-card {
+    background: white; border-radius: 12px; padding: 14px 14px;
+    border: 1px solid #E0D8CC; text-align: center;
+  }
+  .price-card.highlight { border-color: #9B59D0; }
+  .price-city { font-size: 13px; font-weight: 700; color: #1A1008; margin-bottom: 4px; }
+  .price-range {
+    font-size: 16px; font-weight: 800;
+    color: #5A2A8A; margin-bottom: 4px;
+  }
+  .price-label { font-size: 10px; color: #8A7A6A; }
+  .price-note { font-size: 10px; color: #5A4A3A; margin-top: 4px; font-style: italic; }
+
+  /* PLATFORM CARDS */
+  .plat-cards { padding: 0 16px; display: flex; flex-direction: column; gap: 9px; }
+  .plat-card {
+    background: white; border-radius: 12px; padding: 13px 15px;
+    border: 1px solid #E0D8CC;
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .plat-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .pi-orange { background: #FEF0E0; }
+  .pi-purple { background: #F3EDFF; }
+  .pi-blue   { background: #EDF2FF; }
+  .pi-green  { background: #EDF8F0; }
+  .pi-teal   { background: #EDF8F8; }
+
+  .plat-info { flex: 1; min-width: 0; }
+  .plat-name { font-size: 13px; font-weight: 700; color: #1A1008; margin-bottom: 2px; }
+  .plat-desc { font-size: 11px; color: #7A6A5A; line-height: 1.5; margin-bottom: 6px; }
+  .plat-badge {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    padding: 2px 8px; border-radius: 5px; margin-right: 4px;
+  }
+  .pb-free   { background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.25); }
+  .pb-fast   { background: rgba(14,100,200,0.1); color: #0A4080; border: 1px solid rgba(14,100,200,0.25); }
+  .pb-vvt    { background: rgba(155,89,208,0.1); color: #4A1A8A; border: 1px solid rgba(155,89,208,0.25); }
+  .pb-warn   { background: rgba(180,80,0,0.1); color: #7A3A00; border: 1px solid rgba(180,80,0,0.25); }
+
+  /* LINK BLOCK */
+  .link-block {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    padding: 8px 12px;
+    background: #F4F0EA;
+    border: 1px solid #CEC4B4;
+    border-left: 3px solid #9B59D0;
+    border-radius: 0 7px 7px 0;
+    font-size: 12px; font-weight: 700;
+    color: #3A1A6A;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    word-break: break-all;
+    line-height: 1.5;
+  }
+
+  /* STEP CARDS (Visale, consejos) */
+  .steps { padding: 0 16px; display: flex; flex-direction: column; gap: 9px; }
+  .step-card {
+    background: white; border-radius: 12px; padding: 13px 15px;
+    border: 1px solid #E0D8CC;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .step-num {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; color: white;
+  }
+  .sn-purple { background: #5A2A8A; }
+  .sn-green  { background: #1A6A30; }
+  .sn-orange { background: #8B3A00; }
+  .sn-red    { background: #8B1A1A; }
+
+  .step-body { flex: 1; }
+  .step-title { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .step-text  { font-size: 11.5px; color: #5A4A3A; line-height: 1.6; }
+  .step-text strong { color: #1A1008; }
+
+  /* ALERT BOX */
+  .alert-box {
+    margin: 0 16px;
+    background: #FEF0F0; border: 1px solid #E88080;
+    border-left: 4px solid #8B1A1A;
+    border-radius: 0 10px 10px 0;
+    padding: 12px 15px; font-size: 11.5px;
+    color: #3A0A0A; line-height: 1.65;
+  }
+  .alert-box strong { color: #8B1A1A; }
+
+  /* DOCS LIST */
+  .docs-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8px; padding: 0 16px;
+  }
+  .doc-item {
+    background: white; border-radius: 10px; padding: 10px 12px;
+    border: 1px solid #E0D8CC;
+    font-size: 11px; color: #3A2A1A; line-height: 1.5;
+  }
+  .doc-item strong { font-size: 12px; color: #1A1008; display: block; margin-bottom: 2px; }
+
+  /* TIPS BOX */
+  .tips-box {
+    margin: 0 16px;
+    background: #1A0A2A; border-radius: 14px;
+    padding: 18px 20px; color: white;
+  }
+  .tips-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+    color: #C89BFF; text-transform: uppercase; margin-bottom: 11px;
+  }
+  .tip-row {
+    display: flex; gap: 10px; margin-bottom: 9px;
+    font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.55;
+  }
+  .tip-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* PAGE FOOTER */
+  .page-footer {
+    background: #2A0A4A; padding: 18px 24px;
+    text-align: center; border-top: 2px solid #9B59D0;
+    margin-top: 20px;
+  }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+
+  .divider { height: 1px; background: #D0C8BC; margin: 6px 16px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127968; Gu&#237;a de Alojamiento &#183; Am&#233;rica Latina en PACA</div>
+  <h1>Colocation en PACA<br><span>Para titulares de VVT</span></h1>
+  <div class="header-sub">Marseille &#183; Nice &#183; Toulon &#183; Aix-en-Provence &#183; Var &#183; 2026</div>
+  <div class="header-pills">
+    <span class="hpill">&#128205; Precios reales</span>
+    <span class="hpill">&#9989; Sin garant&#237;a f&#237;sica</span>
+    <span class="hpill">&#128278; Links verificados</span>
+  </div>
+</div>
+
+<!-- INFO GENERAL -->
+<div class="info-box purple" style="margin-top:18px;">
+  &#127468;&#127479; <strong>&#191;Qu&#233; es una colocation?</strong> Es compartir un apartamento con otras personas — cada uno tiene su habitaci&#243;n privada y comparte cocina, ba&#241;o y zonas comunes. Es la opci&#243;n m&#225;s accesible para llegar a Francia sin conocidos y sin mucho dinero ahorrado. En PACA, el precio promedio de una habitaci&#243;n en colocation va de <strong>350&#8364; a 550&#8364;/mes</strong> seg&#250;n la ciudad y el barrio.
+</div>
+
+
+<!-- PRECIOS POR CIUDAD -->
+<div class="sec-title purple">&#128182; Precios por ciudad &#183; PACA 2026</div>
+
+<div class="price-grid">
+  <div class="price-card highlight">
+    <div class="price-city">&#128205; Marseille</div>
+    <div class="price-range">270 &#8211; 610&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Mejor zona: 13001&#8211;13006 &#183; m&#225;s barato: 13015</div>
+  </div>
+  <div class="price-card">
+    <div class="price-city">&#128205; Nice</div>
+    <div class="price-range">400 &#8211; 533&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Centre-ville y Le Piol</div>
+  </div>
+  <div class="price-card">
+    <div class="price-city">&#128205; Toulon</div>
+    <div class="price-range">350 &#8211; 460&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Porte d'Italie &#183; muy accesible</div>
+  </div>
+  <div class="price-card">
+    <div class="price-city">&#128205; Aix-en-Provence</div>
+    <div class="price-range">400 &#8211; 550&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Sextius &#183; demanda alta</div>
+  </div>
+</div>
+
+
+<!-- PLATAFORMAS -->
+<div class="sec-title green">&#128270; D&#243;nde buscar colocation</div>
+
+<div class="plat-cards">
+
+  <div class="plat-card">
+    <div class="plat-icon pi-orange">&#127968;</div>
+    <div class="plat-info">
+      <div class="plat-name">Leboncoin &#8212; la m&#225;s grande</div>
+      <div class="plat-desc">La plataforma de anuncios n&#250;mero 1 en Francia. Miles de habitaciones en PACA. Buscar en la secci&#243;n "Colocations" filtrando por ciudad y precio.</div>
+      <span class="plat-badge pb-free">&#9989; Gratuito</span>
+      <span class="plat-badge pb-warn">&#9888; Riesgo de estafas</span>
+      <a class="link-block" href="https://www.leboncoin.fr/colocations/offres/provence_alpes_cote_d_azur">
+        leboncoin.fr/colocations/offres/provence_alpes_cote_d_azur
+      </a>
+    </div>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-icon pi-purple">&#127968;</div>
+    <div class="plat-info">
+      <div class="plat-name">La Carte des Colocs</div>
+      <div class="plat-desc">Especializada en colocation. Dossier en l&#237;nea, anuncios verificados, interfaz simple. Buena opci&#243;n para buscar por barrio espec&#237;fico.</div>
+      <span class="plat-badge pb-free">&#9989; Gratuito</span>
+      <span class="plat-badge pb-vvt">&#128278; Recomendado VVT</span>
+      <a class="link-block" href="https://www.lacartedescolocs.fr/colocations/marseille">
+        lacartedescolocs.fr/colocations/marseille
+      </a>
+    </div>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-icon pi-blue">&#127968;</div>
+    <div class="plat-info">
+      <div class="plat-name">Roomlala</div>
+      <div class="plat-desc">Plataforma con habitaciones amuebladas, tambi&#233;n "chambre chez l'habitant". Buena presencia en PACA, incluyendo cerca de Toulon y Var.</div>
+      <span class="plat-badge pb-free">&#9989; Gratuito</span>
+      <span class="plat-badge pb-fast">&#128336; R&#225;pido</span>
+      <a class="link-block" href="https://fr-fr.roomlala.com/colocation/FR-France/marseille">
+        roomlala.com &#8594; colocation Marseille / PACA
+      </a>
+    </div>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-icon pi-green">&#9992;</div>
+    <div class="plat-info">
+      <div class="plat-name">Appartager</div>
+      <div class="plat-desc">Otra plataforma s&#243;lida de colocation, con muchos anuncios en Marseille, Nice y Aix. Permite crear perfil y ser contactado por propietarios.</div>
+      <span class="plat-badge pb-free">&#9989; Gratuito</span>
+      <span class="plat-badge pb-vvt">&#128278; Apto VVT</span>
+      <a class="link-block" href="https://www.appartager.com/colocation/marseille">
+        appartager.com/colocation/marseille
+      </a>
+    </div>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-icon pi-teal">&#128247;</div>
+    <div class="plat-info">
+      <div class="plat-name">Facebook &#8212; grupos locales</div>
+      <div class="plat-desc">Buscar "Colocation Marseille", "Logement Nice latinos", "Colocation Toulon". Muchos latinos en Francia publican all&#237;. Contacto directo y r&#225;pido.</div>
+      <span class="plat-badge pb-free">&#9989; Gratuito</span>
+      <span class="plat-badge pb-warn">&#9888; Verificar bien</span>
+      <a class="link-block" href="https://www.facebook.com/groups/search/results/?q=colocation%20marseille">
+        facebook.com &#8594; grupos: "colocation marseille" / "logement latinos PACA"
+      </a>
+    </div>
+  </div>
+
+  <!-- API PROVENCE -->
+  <div class="plat-card" style="border-color:#1A6A30; border-left: 3px solid #1A6A30;">
+    <div class="plat-icon pi-green">&#127968;</div>
+    <div class="plat-info">
+      <div class="plat-name">&#11088; API Provence &#8212; Organisme social oficial</div>
+      <div class="plat-desc">Asociaci&#243;n activa desde 1990 en toda la regi&#243;n PACA. Gestiona <strong>residencias sociales para j&#243;venes, saisonniers, trabajadores inmigrantes y personas en dificultad</strong>. Ofrece habitaciones y estudios amueblados de pocas semanas a 2 a&#241;os. Presente en <strong>Alpes-Maritimes, Var, Bouches-du-Rh&#244;ne y Vaucluse</strong>. Acompa&#241;amiento social incluido.<br><br>
+      &#128205; <strong>Sede:</strong> 11 avenue Emmanuel Pontr&#233;moli, B&#226;timent E3 &#183; 06200 Nice<br>
+      &#128222; <strong>Tel:</strong> 04 93 58 98 74<br>
+      &#128231; <strong>Email:</strong> siegevence@apiprovence.org<br><br>
+      <strong>&#127775; Ideal para VVT:</strong> Aceptan saisonniers, j&#243;venes activos (18&#8211;30 a&#241;os) y trabajadores inmigrantes. Residencias con asistente social en el lugar. Tarifas accesibles con revenu m&#237;nimo.</div>
+      <span class="plat-badge pb-free">&#9989; Accesible</span>
+      <span class="plat-badge pb-vvt">&#128278; Apto VVT</span>
+      <span class="plat-badge" style="background:rgba(26,106,48,0.1);color:#0A5020;border:1px solid rgba(26,106,48,0.25);">&#127760; Organismo oficial</span>
+      <a class="link-block" href="https://www.apiprovence.org/nos-logements-jeunes-etudiants/">
+        apiprovence.org/nos-logements-jeunes-etudiants
+      </a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- VISALE -->
+<div class="sec-title purple">&#128273; Visale &#8212; El garant&#237;a gratuita del Estado</div>
+
+<div class="info-box green">
+  &#9989; <strong>Gran noticia 2026:</strong> Desde el 6 de enero de 2026, <strong>los trabajadores saisonniers pueden obtener Visale sin importar su lugar de residencia</strong>. Antes se exig&#237;a movilidad geogr&#225;fica &#8212; ahora esa condici&#243;n fue suprimida. Esto beneficia directamente a los titulares de VVT que llegan a trabajar en PACA.
+</div>
+
+<div class="steps" style="margin-top:10px;">
+
+  <div class="step-card">
+    <div class="step-num sn-purple">1</div>
+    <div class="step-body">
+      <div class="step-title">&#191;Qu&#233; es Visale?</div>
+      <div class="step-text">Es una <strong>garant&#237;a de alquiler gratuita del Estado franc&#233;s</strong> (Action Logement) que reemplaza al garant&#237;a f&#237;sica. El propietario acepta Visale en lugar de un familiar franc&#233;s como garante. Cubre 36 meses de alquiler impagado.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num sn-purple">2</div>
+    <div class="step-body">
+      <div class="step-title">&#191;Qui&#233;n puede obtenerla con VVT?</div>
+      <div class="step-text">
+        &#9989; Menores de 30 a&#241;os &#8212; <strong>sin condici&#243;n de recursos</strong><br>
+        &#9989; Mayores de 30 a&#241;os &#8212; si tienen contrato (CDD, int&#233;rim, promesse d'embauche) o ganan menos de 1 710&#8364; netos/mes<br>
+        &#9989; <strong>Saisonniers de todas las edades</strong> &#8212; nueva regla 2026
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num sn-purple">3</div>
+    <div class="step-body">
+      <div class="step-title">&#191;C&#243;mo solicitarla?</div>
+      <div class="step-text"><strong>Paso 1:</strong> Crear cuenta en visale.fr antes de firmar el contrato de alquiler<br>
+      <strong>Paso 2:</strong> Subir pasaporte + visa VVT + contrato de trabajo o promesse d'embauche<br>
+      <strong>Paso 3:</strong> Recibir el "visa Visale" en 2&#8211;4 d&#237;as<br>
+      <strong>Paso 4:</strong> Presentarlo al propietario junto con el dossier</div>
+      <a class="link-block" href="https://www.visale.fr">
+        visale.fr &#8212; solicitar garant&#237;a gratuita
+      </a>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num sn-green">4</div>
+    <div class="step-body">
+      <div class="step-title">&#128182; Plafonds de loyer cubiertos en PACA 2026</div>
+      <div class="step-text">
+        Marseille, Nice, Aix, Toulon (zona II &#8212; ciudades +100.000 hab.):<br>
+        <strong>M&#225;ximo cubierto: 1 575&#8364; cargos incluidos/mes</strong><br>
+        Para una habitaci&#243;n en colocation de 350&#8211;550&#8364; &#8212; est&#225;s bien dentro del plafond &#9989;
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- DOCUMENTOS -->
+<div class="sec-title blue">&#128196; Documentos para el dossier de alquiler</div>
+
+<div class="docs-grid">
+  <div class="doc-item"><strong>&#128210; Pasaporte</strong>con visa VVT vigente &#183; scan color obligatorio</div>
+  <div class="doc-item"><strong>&#128196; Contrato</strong>de trabajo o promesse d'embauche (incluso CDD o int&#233;rim)</div>
+  <div class="doc-item"><strong>&#128184; 3 &#250;ltimas</strong>fichas de paye (o carta del empleador si reci&#233;n llegan)</div>
+  <div class="doc-item"><strong>&#128273; Visa Visale</strong>obtenido en visale.fr &#8212; reemplaza garant&#237;a f&#237;sica</div>
+  <div class="doc-item"><strong>&#128231; Email</strong>activo &#183; n&#250;mero de tel&#233;fono franc&#233;s &#183; foto de perfil presentable</div>
+  <div class="doc-item"><strong>&#127968; RIB</strong>cuenta bancaria francesa &#183; Lydia, Revolut o N26 funcionan</div>
+</div>
+
+
+<!-- ALERTA ESTAFAS -->
+<div class="sec-title red" style="margin-top:20px;">&#9888;&#65039; Estafas &#8212; Se&#241;ales de alerta</div>
+
+<div class="alert-box">
+  <strong>&#10071; NUNCA pag&#233;s sin ver el piso:</strong> Ning&#250;n prop.etario leg&#237;timo pide dep&#243;sito o primer mes antes de mostrarte el apartamento.<br><br>
+  <strong>&#10071; Desconfianza si:</strong> El precio es muy bajo para la zona &#183; Dicen estar en el extranjero &#183; Piden pago por Western Union / Bitcoin / transferencia a desconocidos.<br><br>
+  <strong>&#10071; Nunca compartas</strong> copia del pasaporte sin haber visitado el apartamento en persona.<br><br>
+  <strong>&#9989; Para verificar:</strong> Buscar el n&#250;mero del departamento en los registros de la ville &#183; Pedir ver el titre de propri&#233;t&#233; o el bail du propri&#233;taire &#183; Visitar siempre en persona antes de pagar.
+</div>
+
+
+<!-- CONSEJOS PARA VVT -->
+<div class="sec-title teal" style="margin-top:20px;">&#128161; Consejos espec&#237;ficos para VVT</div>
+
+<div class="tips-box">
+  <div class="tips-title">&#127468;&#127479; Gu&#237;a r&#225;pida para reci&#233;n llegados</div>
+
+  <div class="tip-row">
+    <div class="tip-icon">&#9992;</div>
+    <div><strong>Llegar primero a un Airbnb o residencia estudiantes 1&#8211;2 semanas</strong> &#8212; te da tiempo de visitar colocs en persona sin presi&#243;n. Buscar en Airbnb o Booking.com habitaci&#243;n por semana (150&#8211;250&#8364;).</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128247;</div>
+    <div><strong>Sacar un n&#250;mero de tel&#233;fono franc&#233;s antes de buscar</strong> &#8212; los propietarios no responden a n&#250;meros extranjeros. SIM prepago Orange/Free en cualquier supermarch&#233; desde 10&#8364;.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#127968;</div>
+    <div><strong>Pedir Visale antes de buscar</strong> &#8212; tener el "visa Visale" listo hace tu dossier mucho m&#225;s atractivo. Los propietarios lo prefieren a un garant&#237;a sin historial franc&#233;s.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128184;</div>
+    <div><strong>Abrir cuenta bancaria online primero</strong> &#8212; N26, Revolut o Lydia son gratuitas y no piden justificatif de domicile. Necesit&#225;s el RIB para el dossier.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128203;</div>
+    <div><strong>Bail mobilit&#233;</strong> &#8212; un contrato de 1 a 10 meses para saisonniers. Muchos propietarios aceptan este formato para VVT. Cubiert por Visale. Pedir expl&#237;citamente "bail mobilit&#233;" al contactar.</div>
+  </div>
+  <div class="tip-row">
+    <div class="tip-icon">&#128101;</div>
+    <div><strong>Grupos de latinos en Facebook</strong> &#8212; muchos compatriotas subalquilan habitaciones a reci&#233;n llegados sin exigir dossier completo. Primera opci&#243;n si llegan sin contrato de trabajo.</div>
+  </div>
+</div>
+
+
+<!-- PAGE FOOTER -->
+<div class="page-footer">
+  <p><strong>Gu&#237;a Colocation PACA &#183; Para titulares de VVT &#183; 2026</strong></p>
+  <p>Marseille &#183; Nice &#183; Toulon &#183; Aix-en-Provence &#183; Var</p>
+  <p style="margin-top:6px;font-size:10px;color:rgba(255,255,255,0.3);">Informaci&#243;n actualizada al 22 abril 2026 &#183; Verificar disponibilidad de anuncios al momento de buscar</p>
+</div>
+
+</body>
+</html>
