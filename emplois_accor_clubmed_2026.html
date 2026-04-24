@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Empleos Accor &amp; Club Med &#8212; Toute France 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+
+  /* HEADER */
+  .header { background: linear-gradient(150deg,#0A0A1A 0%,#1A1A3A 50%,#0A2A0A 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #C4903A; }
+  .header-label { display: inline-block; background: rgba(196,144,58,0.18); border: 1px solid rgba(196,144,58,0.4); color: #F5C87A; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+  .header h1 span { color: #C4903A; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+  .meta-pill span { color: #C4903A; font-weight: 700; }
+
+  /* BOXES */
+  .box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+  .box.gold   { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+  .box.red    { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .box.dark   { background: #F0F0F8; border: 1px solid #6060A0; border-left: 4px solid #1A1A5A; color: #0A0A2A; }
+  .box.green  { background: #EDF8F0; border: 1px solid #2ECC71; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .box.orange { background: #FFF3E8; border: 1px solid #FF8C42; border-left: 4px solid #C03A00; color: #2A0A00; }
+  .box strong { font-weight: 700; }
+  .box.gold strong   { color: #7A4A00; }
+  .box.red strong    { color: #8B1A1A; }
+  .box.dark strong   { color: #1A1A5A; }
+  .box.green strong  { color: #0A5A20; }
+  .box.orange strong { color: #8B2A00; }
+
+  /* GROUP BANNERS */
+  .group-banner { display: flex; align-items: center; gap: 14px; padding: 16px 20px 10px; margin-top: 18px; }
+  .group-banner.accor  { border-left: 5px solid #C4903A; background: linear-gradient(90deg,rgba(196,144,58,0.08) 0%,transparent 100%); }
+  .group-banner.clubmed{ border-left: 5px solid #2ECC71; background: linear-gradient(90deg,rgba(46,204,113,0.08) 0%,transparent 100%); }
+  .group-logo { font-size: 28px; flex-shrink: 0; }
+  .group-name { font-family: Impact,'Arial Black',sans-serif; font-size: 20px; letter-spacing: 0.5px; }
+  .group-banner.accor   .group-name { color: #6A3A00; }
+  .group-banner.clubmed .group-name { color: #0A5A20; }
+  .group-sub { font-size: 11px; color: #7A6A5A; margin-top: 2px; }
+  .group-count { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 20px; background: rgba(0,0,0,0.06); color: #5A4A3A; }
+
+  /* SECTION HEAD */
+  .section-head { display: flex; align-items: center; gap: 10px; padding: 12px 20px 8px; }
+  .section-icon { font-size: 17px; width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .si-a { background: rgba(196,144,58,0.12); }
+  .si-b { background: rgba(10,120,100,0.12); }
+  .si-c { background: rgba(100,40,160,0.12); }
+  .si-d { background: rgba(200,60,0,0.1); }
+  .section-info h2 { font-family: Impact,'Arial Black',sans-serif; font-size: 15px; color: #1A1008; letter-spacing: 0.5px; }
+  .section-info p  { font-size: 10.5px; color: #8A7A6A; margin-top: 1px; }
+  .section-count { margin-left: auto; font-size: 10px; font-weight: 700; padding: 2px 9px; border-radius: 20px; background: rgba(0,0,0,0.06); color: #5A4A3A; }
+
+  /* CARDS */
+  .cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 9px; }
+  .card { background: #fff; border: 1px solid #E0D8CC; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; }
+  .card.accor::before   { background: #C4903A; }
+  .card.clubmed::before { background: #2ECC71; }
+  .card.prestige { border-color: #C4903A; }
+  .card.prestige.clubmed-p { border-color: #2ECC71; }
+  .card.prestige::before, .card.prestige.clubmed-p::before { width: 4px; }
+  .card.prestige::before { background: linear-gradient(to bottom,#6A3A00,#C4903A); }
+  .card.prestige.clubmed-p::before { background: linear-gradient(to bottom,#0A4A1A,#2ECC71); }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num { font-family: Impact,sans-serif; font-size: 20px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-ac { background: rgba(196,144,58,0.12); color: #7A4A00; border: 1px solid rgba(196,144,58,0.3); }
+  .plat-cm { background: rgba(46,204,113,0.12); color: #0A5A20; border: 1px solid rgba(46,204,113,0.3); }
+
+  .card-body { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 6px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 5px; }
+  .tag-cdi  { background: rgba(14,80,200,0.07); color: #0A3A9A; border: 1px solid rgba(14,80,200,0.18); }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-loc  { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .tag-loge { background: rgba(46,204,113,0.1); color: #0A5A20; border: 1px solid rgba(46,204,113,0.25); font-weight: 800; }
+  .tag-date { background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+  .tag-av   { background: rgba(196,144,58,0.1); color: #6A3A00; border: 1px solid rgba(196,144,58,0.25); }
+  .tag-cm   { background: rgba(46,204,113,0.1); color: #0A5A20; border: 1px solid rgba(46,204,113,0.25); }
+  .tag-go   { background: rgba(46,204,113,0.15); color: #0A4A1A; border: 1px solid rgba(46,204,113,0.35); font-weight: 800; }
+  .tag-ge   { background: rgba(0,150,100,0.1); color: #005A3A; border: 1px solid rgba(0,150,100,0.25); font-weight: 800; }
+
+  .badge-ok { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.22); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+
+  .link-block { display: block; margin-top: 9px; margin-bottom: 2px; padding: 8px 12px; background: #FEF8EE; border: 1px solid #C4903A; border-left: 3px solid #8B5E00; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #5A2A00; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+  .link-block.cm { background: #EDF8F0; border-color: #2ECC71; border-left-color: #1A6A30; color: #0A4A1A; }
+
+  .divider { height: 1px; background: #DDD6CC; margin: 8px 16px; }
+
+  /* CONCEPTS */
+  .concepts { padding: 0 16px; display: flex; flex-direction: column; gap: 8px; }
+  .concept-card { background: white; border-radius: 11px; padding: 12px 14px; border: 1px solid #E0D8CC; border-left: 3px solid #C4903A; }
+  .concept-card.cm { border-left-color: #2ECC71; }
+  .concept-term { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .concept-def  { font-size: 11.5px; color: #3A2A1A; line-height: 1.6; }
+  .concept-def strong { color: #6A3A00; }
+  .concept-card.cm .concept-def strong { color: #0A5A20; }
+
+  .sec-title { display: flex; align-items: center; gap: 10px; margin: 18px 16px 10px; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #6A3A00; }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: #C8C0B4; }
+  .sec-title.cm { color: #0A5A20; }
+
+  .page-footer { background: #0A0A1A; padding: 16px 24px; text-align: center; border-top: 2px solid #C4903A; margin-top: 14px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#11088; Grandes Grupos &#183; Accor &amp; Club Med &#183; 2026</div>
+  <h1>Empleos <span>Accor &amp; Club Med</span><br>4 Categor&#237;as &#183; Toda Francia</h1>
+  <div class="header-sub">careers.accor.com &#183; clubmedjobs.com &#183; Postulaci&#243;n directa &#183; 24 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; Serveur</div>
+    <div class="meta-pill">&#129671; Plongeur</div>
+    <div class="meta-pill">&#128716; Femme de Chambre</div>
+    <div class="meta-pill">&#127981; R&#233;ceptionniste</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan ofertas ni condiciones de empleo. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar directamente en los portales oficiales de cada grupo antes de postular.</strong>
+</div>
+
+<!-- SEÑALES ESTAFA -->
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta &#8212; Grupos internacionales:</strong> &#10071; Accor y Club Med <strong>NUNCA</strong> cobran para postular &#183; &#10071; Solo postular en <strong>careers.accor.com</strong> y <strong>clubmedjobs.com</strong> &#8212; nunca por intermediarios desconocidos &#183; &#10071; Si piden dinero antes de la entrevista, es estafa<br>
+  &#9989; <strong>Postulaci&#243;n oficial:</strong> careers.accor.com &#183; clubmedjobs.com &#183; nunca pagar para trabajar
+</div>
+
+<!-- INFO GRUPOS -->
+<div class="box dark">
+  &#11088; <strong>&#191;Por qu&#233; postular en grupos grandes?</strong><br>
+  <strong>Accor</strong> &#8212; L&#237;der mundial de hoteler&#237;a con m&#225;s de 40 marcas (Ibis, Novotel, Mercure, MGallery, Fairmont...). Presente en toda Francia. Ventajas: <strong>tarjeta Heartist</strong> (descuentos en todos los hoteles Accor del mundo), formaci&#243;n interna, posibilidades de evoluci&#243;n y movilidad internacional.<br><br>
+  <strong>Club Med</strong> &#8212; L&#237;der mundial de vacaciones all-inclusive. Resorts en Francia: Valmorel (73), Serre-Chevalier (05), Opio (06), Vittel (88), La Plagne... Ventajas: <strong>nourri+log&#233; incluido</strong> en todos los puestos, ambiente multicultural, posibilidad de trabajar en el extranjero.
+</div>
+
+
+<!-- ══════════════════════════
+     GROUPE ACCOR
+══════════════════════════ -->
+<div class="group-banner accor">
+  <div class="group-logo">&#127963;</div>
+  <div>
+    <div class="group-name">GROUPE ACCOR</div>
+    <div class="group-sub">Ibis &#183; Novotel &#183; Mercure &#183; MGallery &#183; Fairmont &#183; 40+ marcas &#183; careers.accor.com</div>
+  </div>
+  <div class="group-count">40+ marcas</div>
+</div>
+
+<!-- SERVEUR ACCOR -->
+<div class="section-head">
+  <div class="section-icon si-a">&#127869;</div>
+  <div class="section-info"><h2>SERVEUR / SERVEUSE</h2><p>Novotel &#183; Ibis &#183; Mercure &#183; Toute France</p></div>
+  <div class="section-count">2 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card accor prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; CDI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Ibis / Novotel &#8212; Diverses villes &#183; Groupe Accor</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI &#8212; contrato estable</span>
+        <span class="tag tag-loc">&#128205; Toute France &#183; varios destinos</span>
+        <span class="tag tag-av">&#11088; Tarjeta Heartist incluida</span>
+        <span class="tag tag-date">&#9889; Activas 2026</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/emploi-en-restauration">
+        careers.accor.com/fr/fr/emploi-en-restauration &#8212; serveur Accor France
+      </a>
+    </div>
+  </div>
+
+  <div class="card accor">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; La Rochelle <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel Accor &#8212; La Rochelle (17) &#183; Charente-Maritime</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI ou CDD</span>
+        <span class="tag tag-loc">&#128205; La Rochelle (17) &#183; Atlantique</span>
+        <span class="tag tag-date">&#9889; Activa 2026</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/jobs">
+        careers.accor.com/fr/fr/jobs &#8212; chercher: serveur La Rochelle
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- PLONGEUR ACCOR -->
+<div class="section-head">
+  <div class="section-icon si-b">&#129671;</div>
+  <div class="section-info"><h2>PLONGEUR &#8212; Accor</h2><p>MGallery Aix-en-Provence &#183; Novotel Nantes &#183; Ibis</p></div>
+  <div class="section-count">2 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card accor prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; CDI 32h &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">MGallery Grand H&#244;tel Roi Ren&#233; &#8212; Aix-en-Provence (13)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI 32h/semaine</span>
+        <span class="tag tag-loc">&#128205; Aix-en-Provence (13) &#183; PACA</span>
+        <span class="tag tag-av">&#11088; MGallery &#8212; h&#244;tel prestige</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/job/plongeur-h-f-cdi-32h-semaine-in-grand-hotel-roi-rene-aix-en-provence-centre-mgalle-jid-33735">
+        careers.accor.com &#8594; Plongeur CDI &#8212; MGallery Aix-en-Provence
+      </a>
+    </div>
+  </div>
+
+  <div class="card accor">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Recherche generale <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Groupe Accor &#8212; Ibis / Novotel / Mercure &#183; Toute France</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI / CDD seg&#250;n establecimiento</span>
+        <span class="tag tag-loc">&#128205; Toute France</span>
+        <span class="tag tag-date">&#9889; Activas 2026</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/jobs">
+        careers.accor.com &#8594; buscar: plongeur France
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FEMME DE CHAMBRE ACCOR -->
+<div class="section-head">
+  <div class="section-icon si-c">&#128716;</div>
+  <div class="section-info"><h2>FEMME DE CHAMBRE &#8212; Accor</h2><p>Ibis Styles Brive &#183; Mercure Dijon &#183; Chambery &#183; Nantes</p></div>
+  <div class="section-count">2 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card accor prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; CDI <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Ibis Styles Brive-la-Gaillarde &#8212; Corr&#232;ze (19)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Brive-la-Gaillarde (19) &#183; Nouvelle-Aquitaine</span>
+        <span class="tag tag-av">&#11088; Tarjeta Heartist + mutuelle</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/jobs">
+        careers.accor.com &#8594; femme de chambre &#8212; Ibis Styles Brive
+      </a>
+    </div>
+  </div>
+
+  <div class="card accor">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">1&#232;re Femme de Chambre H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Mercure Dijon Centre Cl&#233;menceau &#8212; Dijon (21)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Dijon (21) &#183; Bourgogne</span>
+        <span class="tag tag-av">&#11088; Mercure 4&#9733; &#183; poste responsable</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/job/1ere-femme-de-chambre-in-hotel-mercure-dijon-centre-clemenceau-dijon-france-jid-90733">
+        careers.accor.com &#8594; 1&#232;re femme de chambre &#8212; Mercure Dijon
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- RÉCEPTIONNISTE ACCOR -->
+<div class="section-head">
+  <div class="section-icon si-d">&#127981;</div>
+  <div class="section-info"><h2>R&#201;CEPTIONNISTE &#8212; Accor</h2><p>Ibis Grenoble &#183; Ibis Chamb&#233;ry &#183; Ibis Paris Bastille &#183; La Rochelle</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card accor prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">R&#233;ceptionniste Tournant H/F &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Ibis Grenoble Centre Bastille &#8212; Grenoble (38)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI &#183; d&#233;but mai 2026</span>
+        <span class="tag tag-loc">&#128205; Grenoble (38) &#183; Is&#232;re &#183; Alpes</span>
+        <span class="tag tag-av">&#11088; Prime 13&#186; mois &#183; Heartist &#183; mutuelle</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/job/fr-receptionniste-tournant-h-f-x-in-ibis-grenoble-centre-bastille-grenoble-france-jid-87694">
+        careers.accor.com &#8594; receptionniste tournant &#8212; Ibis Grenoble
+      </a>
+    </div>
+  </div>
+
+  <div class="card accor">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">R&#233;ceptionniste Tournant H/F &#8212; &#201;t&#233; 2026 <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Ibis Chamb&#233;ry Chamnord &#8212; Chamb&#233;ry (73) &#183; Savoie</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saison &#233;t&#233; 2026</span>
+        <span class="tag tag-loc">&#128205; Chamb&#233;ry (73) &#183; Savoie</span>
+        <span class="tag tag-av">&#11088; Accor &#183; Saison alpine</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/jobs">
+        careers.accor.com &#8594; receptionniste &#8212; Ibis Chamb&#233;ry saison &#233;t&#233; 2026
+      </a>
+    </div>
+  </div>
+
+  <div class="card accor">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag plat-ac">ACCOR</div></div>
+    <div class="card-body">
+      <div class="card-title">R&#233;ceptionniste de Nuit H/F &#8212; CDI <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Ibis Paris Bastille Op&#233;ra 11e &#8212; Paris (75)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI 16h/semaine &#183; horaire nuit</span>
+        <span class="tag tag-loc">&#128205; Paris 11e &#183; Bastille</span>
+        <span class="tag tag-av">&#11088; Prime nuit &#183; Prime 13&#186; mois &#183; Heartist</span>
+      </div>
+      <a class="link-block" href="https://careers.accor.com/fr/fr/job/receptionniste-e-de-nuit-h-f-cdi-temps-partiel-16h-semaine-in-ibis-paris-bastille-opera-11eme-paris-france-jid-90335">
+        careers.accor.com &#8594; receptionniste de nuit &#8212; Ibis Paris Bastille CDI
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="box gold" style="margin-top:8px;margin-bottom:4px;">
+  &#128269; <strong>Ver todas las ofertas Accor en Francia:</strong>
+  <a class="link-block" href="https://careers.accor.com/fr/fr/jobs">
+    careers.accor.com/fr/fr/jobs &#8212; filtrar por ciudad, marca y puesto
+  </a>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- ══════════════════════════
+     CLUB MED
+══════════════════════════ -->
+<div class="group-banner clubmed">
+  <div class="group-logo">&#127774;</div>
+  <div>
+    <div class="group-name">CLUB MED</div>
+    <div class="group-sub">G.O &amp; G.E &#183; Resorts France &#183; Nourri+Log&#233; inclus &#183; clubmedjobs.com</div>
+  </div>
+  <div class="group-count">6 Resorts France</div>
+</div>
+
+<!-- INFO CLUB MED -->
+<div class="box green">
+  &#127774; <strong>Club Med &#8212; Lo que hay que saber:</strong><br>
+  &#9989; <strong>G.O (Gentil Organisateur)</strong> = empleado con rol de anfitrión. Adem&#225;s de su funci&#243;n principal (serveur, plongeur, etc.) participa en la vida del resort.<br>
+  &#9989; <strong>G.E (Gentil Employ&#233;)</strong> = empleado t&#233;cnico especializado, m&#225;s enfocado en su oficio.<br>
+  &#9989; <strong>Nourri + log&#233; siempre incluido</strong> en todos los puestos de resort.<br>
+  &#9989; <strong>Con o sin diploma</strong> &#8212; lo que importa es la actitud, el sentido del servicio y el esp&#237;ritu de equipo.<br>
+  &#9989; <strong>Resorts en Francia:</strong> Valmorel (73) &#183; Serre-Chevalier (05) &#183; Opio/C&#244;te d&#8217;Azur (06) &#183; Vittel (88) &#183; La Plagne (73)
+</div>
+
+<!-- SERVEUR CLUB MED -->
+<div class="section-head">
+  <div class="section-icon si-a">&#127869;</div>
+  <div class="section-info"><h2>G.O SERVEUR &#8212; Club Med</h2><p>Valmorel &#183; Opio &#183; Serre-Chevalier &#183; France</p></div>
+  <div class="section-count">1 offre</div>
+</div>
+<div class="cards">
+  <div class="card clubmed prestige clubmed-p">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-cm">CM</div></div>
+    <div class="card-body">
+      <div class="card-title">G.O Serveur H/F &#127968; NOURRI + LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Club Med &#8212; Resorts France (Valmorel, Opio, Serre-Chevalier, Vittel)</div>
+      <div class="card-tags">
+        <span class="tag tag-go">&#127774; G.O &#8212; Gentil Organisateur</span>
+        <span class="tag tag-loge">&#127968; NOURRI + LOG&#201; inclus</span>
+        <span class="tag tag-loc">&#128205; Resorts France &#183; selon disponibilit&#233;</span>
+        <span class="tag tag-cm">&#11088; Ambiente multicultural</span>
+      </div>
+      <a class="link-block cm" href="https://www.clubmedjobs.com/fr/resort/offres-d-emploi">
+        clubmedjobs.com/fr/resort/offres-d-emploi &#8212; G.O Serveur France
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- PLONGEUR CLUB MED -->
+<div class="section-head">
+  <div class="section-icon si-b">&#129671;</div>
+  <div class="section-info"><h2>G.E PLONGEUR &#8212; Club Med</h2><p>Cuisine &amp; Restauration &#183; Resorts France</p></div>
+  <div class="section-count">1 offre</div>
+</div>
+<div class="cards">
+  <div class="card clubmed">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-cm">CM</div></div>
+    <div class="card-body">
+      <div class="card-title">G.E Plongeur / Cuisine H/F &#127968; NOURRI + LOG&#201; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Club Med &#8212; Resorts France &#183; Hôtellerie &amp; Restauration</div>
+      <div class="card-tags">
+        <span class="tag tag-ge">&#127774; G.E &#8212; Gentil Employ&#233;</span>
+        <span class="tag tag-loge">&#127968; NOURRI + LOG&#201; inclus</span>
+        <span class="tag tag-loc">&#128205; Resorts France</span>
+        <span class="tag tag-cm">&#11088; 725 postes restauration recrutement 2026</span>
+      </div>
+      <a class="link-block cm" href="https://www.clubmedjobs.com/fr/resort/offres-d-emploi">
+        clubmedjobs.com &#8594; G.E plongeur / cuisine &#8212; Resorts France 2026
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FEMME DE CHAMBRE CLUB MED -->
+<div class="section-head">
+  <div class="section-icon si-c">&#128716;</div>
+  <div class="section-info"><h2>G.E FEMME DE CHAMBRE &#8212; Club Med</h2><p>Service d&#8217;&#233;tage &#183; Resorts France</p></div>
+  <div class="section-count">1 offre</div>
+</div>
+<div class="cards">
+  <div class="card clubmed">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-cm">CM</div></div>
+    <div class="card-body">
+      <div class="card-title">G.E Femme / Valet de Chambre H/F &#127968; LOG&#201; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Club Med &#8212; Service d&#8217;&#201;tage &#183; Resorts France</div>
+      <div class="card-tags">
+        <span class="tag tag-ge">&#127774; G.E &#8212; Gentil Employ&#233;</span>
+        <span class="tag tag-loge">&#127968; NOURRI + LOG&#201; inclus</span>
+        <span class="tag tag-loc">&#128205; Valmorel &#183; Opio &#183; Serre-Chevalier &#183; Vittel</span>
+      </div>
+      <a class="link-block cm" href="https://www.clubmedjobs.com/fr/resort/offres-d-emploi">
+        clubmedjobs.com &#8594; G.E femme de chambre &#8212; Resorts France
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- RÉCEPTIONNISTE CLUB MED -->
+<div class="section-head">
+  <div class="section-icon si-d">&#127981;</div>
+  <div class="section-info"><h2>G.O R&#201;CEPTIONNISTE &#8212; Club Med</h2><p>Front Office &#183; Resorts France</p></div>
+  <div class="section-count">1 offre</div>
+</div>
+<div class="cards">
+  <div class="card clubmed prestige clubmed-p">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-cm">CM</div></div>
+    <div class="card-body">
+      <div class="card-title">G.O R&#233;ceptionniste H/F &#127968; LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Club Med &#8212; Front Office &#183; Resorts France Premium</div>
+      <div class="card-tags">
+        <span class="tag tag-go">&#127774; G.O &#8212; Gentil Organisateur</span>
+        <span class="tag tag-loge">&#127968; NOURRI + LOG&#201; inclus</span>
+        <span class="tag tag-loc">&#128205; Resorts France &#183; selon disponibilit&#233;</span>
+        <span class="tag tag-cm">&#11088; Multilingual &#183; Anglais indispensable</span>
+      </div>
+      <a class="link-block cm" href="https://www.clubmedjobs.com/fr/resort/offres-d-emploi">
+        clubmedjobs.com &#8594; G.O r&#233;ceptionniste &#8212; Resorts France 2026
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="box green" style="margin-top:8px;margin-bottom:4px;">
+  &#128269; <strong>Ver todas las ofertas Club Med:</strong>
+  <a class="link-block cm" href="https://www.clubmedjobs.com/fr/resort/offres-d-emploi">
+    clubmedjobs.com/fr/resort/offres-d-emploi &#8212; toutes les offres Resorts France 2026
+  </a>
+</div>
+
+<div class="divider"></div>
+
+
+<!-- COMPARATIVA -->
+<div class="sec-title">&#128202; Comparativa r&#225;pida &#8212; Accor vs Club Med</div>
+<div class="concepts">
+
+  <div class="concept-card">
+    <div class="concept-term">&#127963; Accor &#8212; Ventajas principales</div>
+    <div class="concept-def">
+      &#9989; CDI frecuentes &#183; estabilidad laboral<br>
+      &#9989; <strong>Tarjeta Heartist</strong> &#8212; descuentos en +5.400 hoteles Accor en el mundo<br>
+      &#9989; Formaci&#243;n interna y <strong>movilidad internacional</strong> real<br>
+      &#9989; Marcas diversas: desde Ibis (econ&#243;mico) hasta Fairmont (lujo)<br>
+      &#9989; Presente en toda Francia &#8212; m&#225;s de 1.800 hoteles
+    </div>
+  </div>
+
+  <div class="concept-card cm">
+    <div class="concept-term">&#127774; Club Med &#8212; Ventajas principales</div>
+    <div class="concept-def">
+      &#9989; <strong>Nourri + log&#233; siempre incluido</strong> &#8212; cero gasto de alojamiento y comida<br>
+      &#9989; Ambiente multicultural &#8212; colegas de 40+ pa&#237;ses<br>
+      &#9989; <strong>Con o sin diploma</strong> &#8212; actitud primero<br>
+      &#9989; Posibilidad de trabajar en resorts en el extranjero (Maldivas, Brasil, etc.)<br>
+      &#9989; Experiencia muy valorada en el CV para futuros empleadores
+    </div>
+  </div>
+
+  <div class="concept-card">
+    <div class="concept-term">&#9888; A tener en cuenta en Club Med</div>
+    <div class="concept-def">
+      &#9888; Los horarios son intensos &#8212; alta temporada implica muchas horas<br>
+      &#9888; El rol de G.O implica participar en la vida social del resort (no solo la tarea t&#233;cnica)<br>
+      &#9888; <strong>Ingl&#233;s obligatorio</strong> para los puestos G.O de contacto con clientes<br>
+      &#9888; Las noches de soirée forman parte del trabajo &#8212; no es para todo el mundo
+    </div>
+  </div>
+
+</div>
+
+
+<div class="page-footer">
+  <p><strong>Groupe Accor &#183; Club Med &#183; 4 Cat&#233;gories &#183; Toute France &#183; 24 avril 2026</strong></p>
+  <p>careers.accor.com &#183; clubmedjobs.com &#183; Postulaci&#243;n directa &#183; Sin intermediarios</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Informaci&#243;n p&#250;blica con fines orientativos &#183; Verificar directamente en los portales oficiales</p>
+</div>
+
+</body>
+</html>
