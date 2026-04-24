@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois Corse &#8212; H&#244;tellerie &amp; Restauration &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+
+  /* HEADER */
+  .header { background: linear-gradient(150deg,#1A0A2A 0%,#3A1A5A 60%,#0A0018 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #FF6B35; }
+  .header-label { display: inline-block; background: rgba(255,107,53,0.18); border: 1px solid rgba(255,107,53,0.4); color: #FFB08A; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+  .header h1 span { color: #FF6B35; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+  .meta-pill span { color: #FF9060; font-weight: 700; }
+
+  /* BOXES */
+  .box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+  .box.gold   { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+  .box.red    { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .box.orange { background: #FFF3EE; border: 1px solid #FF6B35; border-left: 4px solid #C03A00; color: #3A1000; }
+  .box.green  { background: #EDF8F0; border: 1px solid #2ECC71; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .box strong { font-weight: 700; }
+  .box.gold strong   { color: #7A4A00; }
+  .box.red strong    { color: #8B1A1A; }
+  .box.orange strong { color: #8B2A00; }
+  .box.green strong  { color: #0A5A20; }
+
+  /* SECTION HEAD */
+  .section-head { display: flex; align-items: center; gap: 12px; padding: 18px 20px 10px; }
+  .section-icon { font-size: 19px; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .si-a { background: rgba(200,80,20,0.1); }
+  .si-b { background: rgba(10,120,100,0.1); }
+  .si-c { background: rgba(100,40,160,0.1); }
+  .section-info h2 { font-family: Impact,'Arial Black',sans-serif; font-size: 17px; color: #1A1008; letter-spacing: 0.5px; }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 1px; }
+  .section-count { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 20px; background: rgba(0,0,0,0.06); color: #5A4A3A; }
+
+  /* SALAIRES PAR VILLE */
+  .sal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 0 16px; }
+  .sal-card { background: white; border-radius: 11px; padding: 11px 13px; border: 1px solid #E0D8CC; text-align: center; }
+  .sal-card.top { border-color: #FF6B35; }
+  .sal-city { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .sal-range { font-size: 14px; font-weight: 800; color: #8B2A00; margin-bottom: 2px; }
+  .sal-label { font-size: 10px; color: #8A7A6A; }
+  .sal-note  { font-size: 10px; color: #5A4A3A; margin-top: 2px; font-style: italic; }
+
+  /* CARDS */
+  .cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 9px; }
+  .card { background: #fff; border: 1px solid #E0D8CC; border-radius: 12px; padding: 13px 14px; display: flex; gap: 11px; align-items: flex-start; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; background: #C4903A; }
+  .card.prestige { border-color: #FF6B35; }
+  .card.prestige::before { width: 4px; background: linear-gradient(to bottom,#3A1A5A,#FF6B35); }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num { font-family: Impact,sans-serif; font-size: 22px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; }
+  .plat-hw { background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .plat-lhr{ background: rgba(180,30,30,0.1); color: #8B1A1A; border: 1px solid rgba(180,30,30,0.28); }
+  .plat-cj { background: rgba(160,60,0,0.1); color: #8B2A00; border: 1px solid rgba(160,60,0,0.28); }
+
+  .card-body    { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-loc  { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .tag-sal  { background: rgba(20,120,60,0.07); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.17); }
+  .tag-dur  { background: rgba(10,110,80,0.07); color: #0A5A3A; border: 1px solid rgba(10,110,80,0.17); }
+  .tag-loge { background: rgba(0,130,255,0.09); color: #003A8A; border: 1px solid rgba(0,130,255,0.22); font-weight: 800; }
+  .tag-date { background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+  .tag-pres { background: rgba(58,26,90,0.08); color: #2A0A4A; border: 1px solid rgba(58,26,90,0.2); }
+  .tag-warn { background: rgba(180,100,0,0.08); color: #7A4000; border: 1px solid rgba(180,100,0,0.2); }
+
+  .badge-ok { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.22); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+
+  .link-block { display: block; margin-top: 10px; margin-bottom: 2px; padding: 8px 12px; background: #FFF3EE; border: 1px solid #FFB080; border-left: 3px solid #C03A00; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #5A1A00; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+  .sec-footer { margin: 2px 16px 12px; background: rgba(255,107,53,0.04); border: 1px solid rgba(255,107,53,0.18); border-left: 3px solid #C03A00; border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 11px; color: #2A0A00; line-height: 1.65; }
+  .sec-footer strong { color: #8B2A00; }
+
+  .sec-title { display: flex; align-items: center; gap: 10px; margin: 18px 16px 10px; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: #C8C0B4; }
+  .sec-title.orange { color: #8B2A00; }
+  .sec-title.red    { color: #8B1A1A; }
+  .sec-title.green  { color: #1A6A30; }
+
+  /* PAGE FOOTER */
+  .page-footer { background: #1A0A2A; padding: 16px 24px; text-align: center; border-top: 2px solid #FF6B35; margin-top: 14px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-label">&#127965; Corse &#183; 2A &amp; 2B &#183; Saison 2026</div>
+  <h1>Empleos <span>Corse</span><br>H&#244;tellerie &amp; Restauraci&#243;n</h1>
+  <div class="header-sub">Hellowork &#183; LHR &#183; CorsicaJobs &#183; 23 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>3</span> Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; <span>3</span> Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; <span>3</span> Femme de Chambre</div>
+    <div class="meta-pill">&#127968; Log&#233; prioritario</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan ofertas, empleadores ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de postular o firmar cualquier contrato.</strong>
+</div>
+
+<!-- SEÑALES ESTAFA -->
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta &#8212; Empleo en isla:</strong> &#10071; Piden dinero para tramitar el contrato &#183; &#10071; Prometen log&#233; sin especificarlo por escrito &#183; &#10071; Sin contrato escrito antes del primer d&#237;a &#183; &#10071; Piden dep&#243;sito por el alojamiento antes de llegar &#183; &#10071; Solo contacto por WhatsApp sin direcci&#243;n verificable<br>
+  &#9989; <strong>Siempre pedir:</strong> contrato escrito con log&#233; especificado &#183; direcci&#243;n f&#237;sica del establecimiento &#183; nunca pagar para trabajar
+</div>
+
+<!-- INFO CORSE -->
+<div class="box orange">
+  &#127965; <strong>&#191;Por qu&#233; Corse es especial para VVT?</strong> Al ser una isla, <strong>el alojamiento es el mayor obst&#225;culo</strong> &#8212; priorizar siempre puestos log&#233;+nourri. La temporada es larga (abril-octubre) con alta demanda de personal en hoteler&#237;a y restauraci&#243;n. <strong>&#9888; Algunos puestos requieren veh&#237;culo</strong> &#8212; verificar en la oferta antes de reservar el ferry.
+</div>
+
+<!-- CONSEJOS POSTULACIÓN -->
+<div class="box green">
+  &#128203; <strong>C&#243;mo postular con m&#225;s chances:</strong><br>
+  &#9989; <strong>Presentarse en persona con CV impreso</strong> &#8212; en Corse el contacto directo funciona mucho mejor que el email. Los empleadores valoran la iniciativa de presentarse.<br>
+  &#9989; <strong>Ir directamente al establecimiento</strong> &#8212; en el horario de apertura (10h&#8211;12h o 15h&#8211;17h, fuera del servicio). Preguntar por el responsable o la gouvernante.<br>
+  &#9989; <strong>Llevar 5&#8211;10 copias del CV</strong> &#8212; recorrer varios establecimientos el mismo d&#237;a en la ciudad elegida.<br>
+  &#9989; <strong>Mencionar disponibilidad inmediata</strong> &#8212; los empleadores en Corse buscan personal que pueda empezar r&#225;pido.<br>
+  &#9989; <strong>Preguntar expl&#237;citamente por log&#233;+nourri</strong> al presentarse &#8212; muchos establecimientos tienen plazas de alojamiento que no siempre anuncian.
+</div>
+
+
+<!-- ════ SERVEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-a">&#127869;</div>
+  <div class="section-info"><h2>SERVEUR / SERVEUSE</h2><p>Calvi &#183; Porto-Vecchio &#183; Bastia &#183; Sart&#232;ne &#183; Corse 2026</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Saison 2026 <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Calvi (2B) &#183; Haute-Corse</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 3/04 &#8594; 20/10/2026</span>
+        <span class="tag tag-sal">&#128182; 2 338 &#8364;/mois &#11088;</span>
+        <span class="tag tag-loc">&#128205; Calvi (2B) &#183; Haute-Corse</span>
+        <span class="tag tag-date">&#9889; Saison 2026 &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-region_corse.html">
+        hellowork.com &#8594; serveur Corse (78 offres) &#8212; filtrar Calvi
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; CDD 6 mois <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Sart&#232;ne (2A) &#183; Corse du Sud</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois</span>
+        <span class="tag tag-sal">&#128182; 2 240 &#8211; 2 245 &#8364;/mois</span>
+        <span class="tag tag-loc">&#128205; Sart&#232;ne (2A) &#183; Corse du Sud</span>
+        <span class="tag tag-date">&#9889; Hace 2 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-region_corse.html">
+        hellowork.com &#8594; serveur Corse &#8212; filtrar Sart&#232;ne
+      </a>
+    </div>
+  </div>
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#127968; LOG&#201; NOURRI <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Porto-Vecchio (2A) &#183; Corse du Sud</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois</span>
+        <span class="tag tag-sal">&#128182; 2 484 &#8364;/mois &#11088;</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-loc">&#128205; Porto-Vecchio (2A)</span>
+        <span class="tag tag-date">&#9889; Hace 4 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_loge-ville_porto-vecchio-20137.html">
+        hellowork.com &#8594; log&#233; Porto-Vecchio &#8212; serveur 2026
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="sec-footer"><strong>78 ofertas serveur activas en Corse &#183; 78 offres Hellowork.</strong> Porto-Vecchio (2484&#8364; logé) es la m&#225;s interesante. Bastia tiene m&#225;s ofertas accesibles para d&#233;butants. CorsicaJobs es el portal especializado de la isla:
+  <a class="link-block" href="https://hotellerierestauration.corsicajobs.com">corsicajobs.com &#8594; offres CHR Corse 2026</a>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ PLONGEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-b">&#129671;</div>
+  <div class="section-info"><h2>PLONGEUR / PLONGEUSE</h2><p>Olmeto &#183; Bonifacio &#183; Algajola &#183; Lecci &#183; Corse 2026</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#127968; LOG&#201; NOURRI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Olmeto (2A) &#183; Corse du Sud</div>
+      <div class="card-tags">
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI individuel</span>
+        <span class="tag tag-cdd">CDD 5 mois</span>
+        <span class="tag tag-sal">&#128182; 3 300 &#8211; 3 400 &#8364;/mois &#11088;&#11088;</span>
+        <span class="tag tag-loc">&#128205; Olmeto (2A) &#183; Golfe du Valinco</span>
+        <span class="tag tag-date">&#9889; Hace 8 d&#237;as &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-region_corse.html">
+        hellowork.com &#8594; plongeur Corse (54 offres) &#8212; Olmeto 3300&#8364; logé
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur / Aide de Cuisine H/F &#127968; LOG&#201; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel Son de Mar &#8212; Lecci (2A) &#183; Corse du Sud</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saison 2026</span>
+        <span class="tag tag-loge">&#127968; Log&#233; inclus</span>
+        <span class="tag tag-loc">&#128205; Lecci (2A) &#183; pr&#232;s Porto-Vecchio</span>
+        <span class="tag tag-date">&#9889; 31/03/2026 &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/Corse">
+        lhotellerie-restauration.fr/emploi/Corse &#8212; H&#244;tel Son de Mar plongeur
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#127968; LOG&#201; &#8212; Couple accept&#233; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Via Marine &#8212; Le Bistrot &#183; Calvi (2B)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saison 2026 &#183; 8 servicios/14</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI &#183; 2 min a pie</span>
+        <span class="tag tag-loc">&#128205; Calvi (2B) &#183; centre-ville</span>
+        <span class="tag tag-date">&#9889; 02/04/2026 &#183; activa</span>
+        <span class="tag tag-pres">&#128145; Couple accept&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/Corse">
+        lhotellerie-restauration.fr/emploi/Corse &#8212; Via Marine Le Bistrot Calvi
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="sec-footer"><strong>&#11088;&#11088; Olmeto (3.300&#8211;3.400&#8364;/mois log&#233; nourri)</strong> es el mejor salario de plongeur de toda la infograf&#237;a. <strong>Via Marine Calvi</strong> acepta parejas (couple accept&#233;) &#8212; logé+nourri a 2 minutos del trabajo. <strong>54 ofertas plongeur activas en Corse.</strong></div>
+<div class="divider"></div>
+
+
+<!-- ════ FEMME DE CHAMBRE ════ -->
+<div class="section-head">
+  <div class="section-icon si-c">&#128716;</div>
+  <div class="section-info"><h2>FEMME / VALET DE CHAMBRE</h2><p>Ajaccio &#183; Porto-Vecchio &#183; Serra-di-Ferro &#183; Corse 2026</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Radisson Blu Resort &amp; Spa &#8212; Ajaccio Bay &#9733;&#9733;&#9733;&#9733;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2026</span>
+        <span class="tag tag-loc">&#128205; Albitreccia (2A) &#183; Baie d&#8217;Ajaccio</span>
+        <span class="tag tag-pres">&#11088; Radisson Blu 4&#9733; &#183; Spa</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-region_corse.html">
+        hellowork.com &#8594; femme de chambre Corse &#8212; Radisson Blu Ajaccio
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre H/F &#127968; LOG&#201;E <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Mare e Monti &#8212; R&#233;sidence &#183; Serra-di-Ferro (2A)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Avr &#8594; Sept 2026</span>
+        <span class="tag tag-loge">&#127968; Log&#233;e + golfette fournie</span>
+        <span class="tag tag-loc">&#128205; Serra-di-Ferro (2A) &#183; Corse du Sud</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-region_corse.html">
+        hellowork.com &#8594; femme de chambre Corse &#8212; Mare e Monti Serra-di-Ferro
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag plat-hw">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre Polyvalente H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel &#8212; Porto-Vecchio (2A) &#183; 5 mois</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 5 mois &#183; Log&#233;</span>
+        <span class="tag tag-loge">&#127968; Log&#233; inclus</span>
+        <span class="tag tag-loc">&#128205; Porto-Vecchio (2A) &#183; saison longue</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_porto-vecchio-20137.html">
+        hellowork.com &#8594; femme de chambre Porto-Vecchio
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="sec-footer"><strong>&#128716; Destacados:</strong> <strong>Radisson Blu Ajaccio</strong> &#8212; establecimiento 4 estrellas con SPA, muy bien valorado. <strong>Mare e Monti Serra-di-Ferro</strong> &#8212; logée + golfette (peque&#241;o veh&#237;culo) para llegar a los chalets de los clientes &#8212; &#250;nico en Corse.</div>
+
+
+<!-- PLATAFORMA ESPECIALIZADA -->
+<div class="sec-title green">&#128269; Plataforma especializada Corse</div>
+<div class="box green">
+  &#127965; <strong>CorsicaJobs &#8212; el portal CHR de la isla:</strong> Especializado exclusivamente en empleo de hoteler&#237;a y restauraci&#243;n en Corse. Incluye gu&#237;as por ciudad, comparativas de salarios y ofertas log&#233;+nourri filtradas. Muy &#250;til para comparar condiciones antes de postular.
+  <a class="link-block" href="https://hotellerierestauration.corsicajobs.com" style="background:#EDF8F0;border-color:#2ECC71;border-left-color:#1A6A30;color:#0A4A1A;">
+    corsicajobs.com &#8594; CHR Corse &#183; salaires &#183; offres 2026
+  </a>
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/region_corse.html" style="background:#EDF8F0;border-color:#2ECC71;border-left-color:#1A6A30;color:#0A4A1A;margin-top:6px;">
+    hellowork.com &#8594; toutes offres Corse (3 509 offres)
+  </a>
+  <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/Corse" style="background:#EDF8F0;border-color:#2ECC71;border-left-color:#1A6A30;color:#0A4A1A;margin-top:6px;">
+    lhotellerie-restauration.fr/emploi/Corse &#8212; CHR sin FT
+  </a>
+</div>
+
+
+<!-- SEÑALES ESTAFA FINAL -->
+<div class="sec-title red" style="margin-top:18px;">&#9888;&#65039; Espec&#237;fico Corse &#8212; Lo que hay que saber</div>
+<div class="box red">
+  &#10071; <strong>Sin veh&#237;culo puede ser un problema</strong> &#8212; muchas explotaciones rurales no tienen transporte. Verificar en la oferta si el puesto requiere permiso B o si hay navette.<br>
+  &#10071; <strong>El alojamiento en isla es caro y escaso</strong> &#8212; priorizar SIEMPRE ofertas con log&#233;+nourri incluido en el contrato.<br>
+  &#10071; <strong>El ferry tiene costo</strong> &#8212; Marseille-Ajaccio o Nice-Bastia ronda los 80&#8211;150&#8364; ida. Prever ese gasto antes de aceptar el puesto.<br>
+  &#10071; <strong>Nunca pagar dep&#243;sito por alojamiento</strong> antes de firmar el contrato y llegar a la isla.<br>
+  &#9989; <strong>Consejo:</strong> Contactar al empleador ANTES de reservar el ferry &#183; confirmar log&#233; por escrito en el contrato &#183; presentarse en persona con CV impreso
+</div>
+
+
+<div class="page-footer">
+  <p><strong>9 offres &#183; Corse &#183; H&#244;tellerie &amp; Restauration &#183; 23 avril 2026</strong></p>
+  <p>Porto-Vecchio &#183; Calvi &#183; Bastia &#183; Sart&#232;ne &#183; Olmeto &#183; Ajaccio &#183; Corse du Sud &amp; Haute-Corse</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Hellowork &#183; LHR &#183; CorsicaJobs &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Siempre exigir contrato escrito</p>
+</div>
+
+</body>
+</html>
