@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois &#206;le-de-France &#8212; H&#244;tellerie &amp; Restauration &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+
+  .header { background: linear-gradient(150deg,#0A0A1A 0%,#1A1A3A 60%,#050510 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #C9A227; }
+  .header-label { display: inline-block; background: rgba(201,162,39,0.18); border: 1px solid rgba(201,162,39,0.4); color: #F5D878; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+  .header h1 span { color: #C9A227; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+  .meta-pill span { color: #C9A227; font-weight: 700; }
+
+  .box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+  .box.gold  { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+  .box.red   { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .box.green { background: #EDF8F0; border: 1px solid #2ECC71; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .box.dark  { background: #F0F0F8; border: 1px solid #8888CC; border-left: 4px solid #2A2A6A; color: #0A0A2A; }
+  .box strong { font-weight: 700; }
+  .box.gold strong  { color: #7A4A00; }
+  .box.red strong   { color: #8B1A1A; }
+  .box.green strong { color: #0A5A20; }
+  .box.dark strong  { color: #2A2A6A; }
+
+  .section-head { display: flex; align-items: center; gap: 12px; padding: 18px 20px 10px; }
+  .section-icon { font-size: 19px; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .si-a { background: rgba(201,162,39,0.12); }
+  .si-b { background: rgba(10,120,100,0.12); }
+  .si-c { background: rgba(100,40,160,0.12); }
+  .section-info h2 { font-family: Impact,'Arial Black',sans-serif; font-size: 17px; color: #1A1008; letter-spacing: 0.5px; }
+  .section-info p { font-size: 11px; color: #8A7A6A; margin-top: 1px; }
+  .section-count { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 20px; background: rgba(0,0,0,0.06); color: #5A4A3A; }
+
+  .cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 9px; }
+  .card { background: #fff; border: 1px solid #E0D8CC; border-radius: 12px; padding: 13px 14px; display: flex; gap: 11px; align-items: flex-start; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; background: #C4903A; }
+  .card.prestige { border-color: #C9A227; }
+  .card.prestige::before { width: 4px; background: linear-gradient(to bottom,#1A1A3A,#C9A227); }
+
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num { font-family: Impact,sans-serif; font-size: 22px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .card-body { flex: 1; min-width: 0; }
+  .card-title { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdi  { background: rgba(14,80,200,0.07); color: #0A3A9A; border: 1px solid rgba(14,80,200,0.18); }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-int  { background: rgba(80,40,180,0.07); color: #4A1A9A; border: 1px solid rgba(80,40,180,0.18); }
+  .tag-loc  { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .tag-dur  { background: rgba(10,110,80,0.07); color: #0A5A3A; border: 1px solid rgba(10,110,80,0.17); }
+  .tag-date { background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+  .tag-pres { background: rgba(42,42,106,0.08); color: #1A1A5A; border: 1px solid rgba(42,42,106,0.2); }
+  .tag-lux  { background: rgba(201,162,39,0.1); color: #6A4A00; border: 1px solid rgba(201,162,39,0.3); font-weight: 800; }
+
+  .badge-ok { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.22); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+
+  .link-block { display: block; margin-top: 10px; margin-bottom: 2px; padding: 8px 12px; background: #F5F0E8; border: 1px solid #C4A030; border-left: 3px solid #8B6A00; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #3A2000; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+  .sec-footer { margin: 2px 16px 12px; background: rgba(201,162,39,0.05); border: 1px solid rgba(201,162,39,0.2); border-left: 3px solid #8B6A00; border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 11px; color: #2A1A00; line-height: 1.65; }
+  .sec-footer strong { color: #6A4000; }
+
+  .page-footer { background: #0A0A1A; padding: 16px 24px; text-align: center; border-top: 2px solid #C9A227; margin-top: 14px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#127968; &#206;le-de-France &#183; Paris &#183; 23 avril 2026</div>
+  <h1>Empleos <span>&#206;le-de-France</span><br>H&#244;tellerie &amp; Restauraci&#243;n</h1>
+  <div class="header-sub">Hellowork &#183; 247 serveur &#183; 154 plongeur &#183; 73 femme de chambre &#183; 23 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>5</span> Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; <span>5</span> Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; <span>5</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan ofertas, empleadores ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de postular o firmar cualquier contrato.</strong>
+</div>
+
+<!-- SEÑALES ESTAFA -->
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para tramitar el contrato &#183; &#10071; Sin contrato escrito antes del primer d&#237;a &#183; &#10071; Solo contacto por WhatsApp sin direcci&#243;n verificable &#183; &#10071; Piden RIB antes de la entrevista &#183; &#10071; Direcci&#243;n inexistente en Google Maps<br>
+  &#9989; <strong>Siempre pedir:</strong> contrato escrito &#183; direcci&#243;n f&#237;sica del establecimiento &#183; nunca pagar para trabajar
+</div>
+
+<!-- INFO IDF -->
+<div class="box dark">
+  &#127968; <strong>&#191;Por qu&#233; &#206;le-de-France para VVT?</strong> El mercado laboral CHR de Par&#237;s es el m&#225;s grande y activo de Francia &#8212; con ofertas <strong>todo el a&#241;o</strong>, no solo en verano. <strong>247 ofertas de serveur &#183; 154 plongeur &#183; 73 femme de chambre</strong> activas hoy en Hellowork. Los contratos son mayoritariamente CDI &#8212; m&#225;s estabilidad que en las regiones saisonni&#232;res. <strong>&#9888; El costo de vida es alto</strong> &#8212; prever alojamiento antes de llegar (ver colocation Paris en plataformas como Appartager o La Carte des Colocs).
+</div>
+
+<!-- CONSEJOS POSTULACIÓN -->
+<div class="box green">
+  &#128203; <strong>C&#243;mo postular en Par&#237;s:</strong><br>
+  &#9989; <strong>Presentarse en persona con CV impreso</strong> &#8212; en los arrondissements con m&#225;s restaurantes (1er, 2e, 6e, 8e, 11e, 18e) entre 10h&#8211;12h o 15h&#8211;17h.<br>
+  &#9989; <strong>Metro es tu herramienta</strong> &#8212; en un d&#237;a pod&#233;s recorrer 8&#8211;10 restaurantes u h&#244;tels con el pase Navigo (semana ~22&#8364;).<br>
+  &#9989; <strong>Agencias CHR en Par&#237;s:</strong> THEDRA, Slash Int&#233;rim, Extracadabra &#8212; inscribirse una vez y proponen misiones sin cuenta FT.<br>
+  &#9989; <strong>Mencionar disponibilidad inmediata</strong> &#8212; los empleadores parisinos valoran la flexibilidad horaria.<br>
+  &#9989; <strong>Preguntar por horas suplementarias</strong> &#8212; muy comunes en restauraci&#243;n parisina y bien remuneradas.
+</div>
+
+
+<!-- ════ SERVEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-a">&#127869;</div>
+  <div class="section-info"><h2>SERVEUR / SERVEUSE</h2><p>Paris 1er &#183; 6e &#183; 8e &#183; 10e &#183; 11e &#183; &#206;le-de-France</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; CDI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant gastronomique &#8212; Paris 6e &#183; Saint-Germain-des-Pr&#233;s</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Paris 6e &#183; Saint-Germain-des-Pr&#233;s</span>
+        <span class="tag tag-pres">&#11088; Quartier gastron&#243;mico icónico</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_paris-75000.html">
+        hellowork.com &#8594; serveur Paris (247 offres) &#8212; filtrar 6e
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Int&#233;rim <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Extracadabra &#8212; Agencia CHR &#183; Toute Paris</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim missions r&#233;guli&#232;res</span>
+        <span class="tag tag-loc">&#128205; Paris &#8212; tous arrondissements</span>
+        <span class="tag tag-pres">&#11088; Agencia CHR especializada</span>
+        <span class="tag tag-date">&#9889; Missions continues 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/interim/metier_serveur-ville_paris-75000.html">
+        hellowork.com &#8594; int&#233;rim serveur Paris &#8212; Extracadabra
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; CDD <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Brasserie traditionnelle &#8212; Paris 11e &#183; Bastille</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD</span>
+        <span class="tag tag-loc">&#128205; Paris 11e &#183; Bastille &#183; Oberkampf</span>
+        <span class="tag tag-date">&#9889; 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_paris-75000.html">
+        hellowork.com &#8594; serveur Paris &#8212; filtrar 11e Bastille
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; H&#244;tel 4&#9733; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel 4 &#233;toiles &#8212; Paris 8e &#183; Champs-&#201;lys&#233;es</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI ou CDD</span>
+        <span class="tag tag-loc">&#128205; Paris 8e &#183; Champs-&#201;lys&#233;es</span>
+        <span class="tag tag-lux">&#127881; H&#244;tel 4&#9733;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/domaine_hotellerie-ville_paris-75000.html">
+        hellowork.com &#8594; h&#244;tellerie Paris &#8212; serveur 8e
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Versailles <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Versailles (78) &#183; Yvelines</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Versailles (78) &#183; 35 min de Paris RER C</span>
+        <span class="tag tag-pres">&#11088; Ville royale &#183; fort tourismo</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_versailles-78000.html">
+        hellowork.com &#8594; serveur Versailles
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="sec-footer"><strong>247 ofertas serveur activas solo en París hoy.</strong> Para ampliar a toda &#206;le-de-France:
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-region_ile-de-france.html">hellowork.com &#8594; serveur &#206;le-de-France (todas las ofertas)</a>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ PLONGEUR ════ -->
+<div class="section-head">
+  <div class="section-icon si-b">&#129671;</div>
+  <div class="section-info"><h2>PLONGEUR / PLONGEUSE</h2><p>Paris 5e &#183; 6e &#183; 10e &#183; 19e &#183; Pantin &#183; Le Raincy &#183; &#206;le-de-France</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; CDI &#11088; Super Recruteur <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Paris (75) &#183; Super Recruteur certifi&#233;</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Paris (75)</span>
+        <span class="tag tag-date">&#9889; Hace 15 horas</span>
+        <span class="tag tag-pres">&#11088; Super Recruteur &#8212; r&#233;pond en 15j</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_paris-75000.html">
+        hellowork.com &#8594; plongeur Paris (154 offres) &#8212; Super Recruteur CDI
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Int&#233;rim 1 mois <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#8212; Paris 10e &#183; R&#233;publique</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 1 mois renouvelable</span>
+        <span class="tag tag-loc">&#128205; Paris 10e &#183; R&#233;publique</span>
+        <span class="tag tag-date">&#9889; Hace 3 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_paris-75000.html">
+        hellowork.com &#8594; plongeur Paris &#8212; int&#233;rim 10e
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Int&#233;rim 6 mois <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#8212; Paris 5e &#183; Quartier Latin</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 6 mois</span>
+        <span class="tag tag-loc">&#128205; Paris 5e &#183; Quartier Latin</span>
+        <span class="tag tag-date">&#9889; Hace 3 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_paris-75000.html">
+        hellowork.com &#8594; plongeur Paris &#8212; int&#233;rim 5e
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; CDI <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Pantin (93) &#183; Seine-Saint-Denis</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Pantin (93) &#183; Metro 5 &#183; 15 min Paris</span>
+        <span class="tag tag-date">&#9889; Hace 22 horas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_paris-75000.html">
+        hellowork.com &#8594; plongeur Paris/Pantin &#8212; CDI 93
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Int&#233;rim 5 mois <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#8212; Le Raincy (93)</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 5 mois</span>
+        <span class="tag tag-loc">&#128205; Le Raincy (93) &#183; RER E</span>
+        <span class="tag tag-date">&#9889; Hace 19 horas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_paris-75000.html">
+        hellowork.com &#8594; plongeur Le Raincy &#8212; int&#233;rim 5 mois
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="sec-footer"><strong>154 ofertas plongeur activas en París hoy &#183; 1.973 en toda Francia.</strong> Las agencias CHR especializadas en París (THEDRA, Slash Int&#233;rim, Extracadabra) proponen misiones regulares sin necesidad de cuenta France Travail. Inscribirse directamente en sus sitios.
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-region_ile-de-france.html">hellowork.com &#8594; plongeur &#206;le-de-France (todas las ofertas)</a>
+</div>
+<div class="divider"></div>
+
+
+<!-- ════ FEMME DE CHAMBRE ════ -->
+<div class="section-head">
+  <div class="section-icon si-c">&#128716;</div>
+  <div class="section-info"><h2>FEMME / VALET DE CHAMBRE</h2><p>Paris 8e &#183; 16e &#183; Boulogne &#183; Neuilly &#183; Versailles &#183; &#206;le-de-France</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F &#8212; Palace &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agence THEDRA &#8212; Palaces parisiens &#183; 5&#9733;</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim missions r&#233;guli&#232;res</span>
+        <span class="tag tag-loc">&#128205; Paris 8e &#183; 16e &#183; Palaces</span>
+        <span class="tag tag-lux">&#127881; Palaces 5&#9733; Paris</span>
+        <span class="tag tag-pres">&#11088; THEDRA &#8212; agencia CHR referente</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/interim/metier_valet-de-chambre-ville_paris-75000.html">
+        hellowork.com &#8594; int&#233;rim femme de chambre Paris &#8212; THEDRA Palaces
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme de Chambre Polyvalente H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#8212; H&#244;tels Paris centre</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim</span>
+        <span class="tag tag-loc">&#128205; Paris &#183; centre &#8212; tous arrondissements</span>
+        <span class="tag tag-date">&#9889; Missions continues</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_paris-75.html">
+        hellowork.com &#8594; femme de chambre Paris (73 offres)
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; 5&#9733; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel 5&#9733; &#8212; Boulogne-Billancourt (92)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI</span>
+        <span class="tag tag-loc">&#128205; Boulogne-Billancourt (92) &#183; M&#233;tro 10</span>
+        <span class="tag tag-lux">&#127881; H&#244;tel 5&#9733;</span>
+        <span class="tag tag-date">&#9889; 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_boulogne-billancourt-92100.html">
+        hellowork.com &#8594; femme de chambre Boulogne-Billancourt
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel &#8212; Neuilly-sur-Seine (92)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD ou CDI</span>
+        <span class="tag tag-loc">&#128205; Neuilly-sur-Seine (92) &#183; M&#233;tro 1</span>
+        <span class="tag tag-pres">&#11088; Quartier prestige &#206;le-de-France</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_neuilly-sur-seine-92200.html">
+        hellowork.com &#8594; femme de chambre Neuilly-sur-Seine
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; Versailles <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel &#8212; Versailles (78) &#183; Yvelines</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI &#183; Poste stable</span>
+        <span class="tag tag-loc">&#128205; Versailles (78) &#183; RER C &#183; 35 min Paris</span>
+        <span class="tag tag-pres">&#11088; Ch&#226;teau de Versailles &#183; tourismo todo el a&#241;o</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_versailles-78000.html">
+        hellowork.com &#8594; femme de chambre Versailles
+      </a>
+    </div>
+  </div>
+
+</div>
+<div class="sec-footer"><strong>73 ofertas femme de chambre activas en París &#183; 700+ en hoteler&#237;a &#206;le-de-France.</strong> <strong>THEDRA</strong> es la agencia de referencia para palaces en Par&#237;s &#8212; inscribirse en thedra.fr. Para Boulogne y Neuilly: mercado muy activo todo el a&#241;o con CDI frecuentes. Ver todas:
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-region_ile-de-france.html">hellowork.com &#8594; femme de chambre &#206;le-de-France</a>
+</div>
+
+
+<div class="page-footer">
+  <p><strong>15 offres &#183; &#206;le-de-France &#183; H&#244;tellerie &amp; Restauration &#183; 23 avril 2026</strong></p>
+  <p>Paris &#183; Versailles &#183; Boulogne-Billancourt &#183; Neuilly-sur-Seine &#183; Pantin &#183; Le Raincy</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Hellowork &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Presentarse en persona con CV impreso</p>
+</div>
+
+</body>
+</html>
