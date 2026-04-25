@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois Côte Atlantique — Arcachon → Le Havre · 2026</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+.header { background: linear-gradient(150deg,#001A3A 0%,#003A6A 60%,#000E20 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #00AAFF; }
+.header-label { display: inline-block; background: rgba(0,170,255,0.18); border: 1px solid rgba(0,170,255,0.4); color: #80D0FF; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+.header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 28px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+.header h1 span { color: #00AAFF; }
+.header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+.header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+.meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+.meta-pill span { color: #00AAFF; font-weight: 700; }
+.route-strip { display: flex; align-items: center; margin: 14px 16px 0; background: #001A3A; border-radius: 10px; padding: 10px 14px; gap: 5px; flex-wrap: wrap; }
+.route-city { font-size: 10.5px; font-weight: 700; color: #80D0FF; white-space: nowrap; }
+.route-arrow { font-size: 10px; color: rgba(255,255,255,0.3); }
+.box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+.box.gold { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+.box.red  { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+.box.green{ background: #EDF8F0; border: 1px solid #2ECC71; border-left: 4px solid #1A6A30; color: #0A2A10; }
+.box strong { font-weight: 700; }
+.box.gold strong { color: #7A4A00; }
+.box.red strong  { color: #8B1A1A; }
+.box.green strong{ color: #0A5A20; }
+.section-head { display: flex; align-items: center; gap: 12px; padding: 18px 20px 10px; }
+.section-icon { font-size: 19px; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.si-a{background:rgba(0,58,106,0.12);} .si-b{background:rgba(10,120,100,0.12);} .si-c{background:rgba(100,40,160,0.12);} .si-d{background:rgba(180,80,0,0.12);}
+.section-info h2 { font-family: Impact,'Arial Black',sans-serif; font-size: 17px; color: #1A1008; }
+.section-info p  { font-size: 11px; color: #8A7A6A; margin-top: 1px; }
+.section-count { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 20px; background: rgba(0,0,0,0.06); color: #5A4A3A; }
+.cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 9px; }
+.card { background: #fff; border: 1px solid #E0D8CC; border-radius: 12px; padding: 13px 14px; display: flex; gap: 11px; align-items: flex-start; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; background: #C4903A; }
+.card.prestige { border-color: #00AAFF; }
+.card.prestige::before { width: 4px; background: linear-gradient(to bottom,#001A3A,#00AAFF); }
+.card.loge { border-color: #2ECC71; }
+.card.loge::before { width: 4px; background: linear-gradient(to bottom,#0A4A1A,#2ECC71); }
+.card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.card-num { font-family: Impact,sans-serif; font-size: 22px; line-height: 1; color: rgba(0,0,0,0.08); }
+.plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+.card-body { flex: 1; min-width: 0; }
+.card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+.card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+.tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+.tag-cdi { background: rgba(14,80,200,0.07); color: #0A3A9A; border: 1px solid rgba(14,80,200,0.18); }
+.tag-cdd { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+.tag-int { background: rgba(80,40,180,0.07); color: #4A1A9A; border: 1px solid rgba(80,40,180,0.18); }
+.tag-loc { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+.tag-loge{ background: rgba(46,204,113,0.1); color: #0A5A20; border: 1px solid rgba(46,204,113,0.25); font-weight: 800; }
+.tag-date{ background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+.tag-deb { background: rgba(20,140,60,0.09); color: #0A5A20; border: 1px solid rgba(20,140,60,0.22); font-weight: 800; }
+.badge-ok { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.22); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+.link-block { display: block; margin-top: 10px; margin-bottom: 2px; padding: 8px 12px; background: #EDF5FF; border: 1px solid #80C8F0; border-left: 3px solid #003A8A; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #001A4A; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+.divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+.page-footer { background: #001A3A; padding: 16px 24px; text-align: center; border-top: 2px solid #00AAFF; margin-top: 14px; }
+.page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+.page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#9875; C&#244;te Atlantique &#183; Arcachon &#8594; Le Havre &#183; 2026</div>
+  <h1>Empleos <span>C&#244;te Atlantique</span><br>4 Categor&#237;as &#183; 5 Ofertas cada una</h1>
+  <div class="header-sub">Hellowork &#183; Arcachon &#183; &#206;le de R&#233; &#183; Ol&#233;ron &#183; La Baule &#183; Honfleur &#183; Le Havre &#183; 25 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; Serveur&#183;se</div>
+    <div class="meta-pill">&#129671; Plongeur&#183;se</div>
+    <div class="meta-pill">&#128716; Femme de Chambre</div>
+    <div class="meta-pill">&#127859; Commis Cuisine</div>
+  </div>
+</div>
+
+<div class="route-strip">
+  <span class="route-city">&#128205; Arcachon</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">&#206;le de R&#233;</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">&#206;le d&#8217;Ol&#233;ron</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">Les Sables</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">La Baule</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">Honfleur</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">Deauville</span><span class="route-arrow">&#8594;</span>
+  <span class="route-city">Le Havre</span>
+</div>
+
+<div class="box gold" style="margin-top:12px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Informaci&#243;n de car&#225;cter <strong>orientativo</strong>. No se verifican ofertas ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar antes de postular.</strong>
+</div>
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Sin contrato escrito &#183; &#10071; Solo WhatsApp sin direcci&#243;n verificable &#183; &#10071; Piden RIB antes de la entrevista &#183; &#10071; Prometen log&#233; sin especificarlo por escrito<br>
+  &#9989; <strong>Siempre pedir:</strong> contrato escrito &#183; direcci&#243;n f&#237;sica &#183; nunca pagar para trabajar
+</div>
+
+<!-- SERVEUR -->
+<div class="section-head">
+  <div class="section-icon si-a">&#127869;</div>
+  <div class="section-info"><h2>SERVEUR / SERVEUSE</h2><p>Arcachon &#183; Le Croisic &#183; Honfleur &#183; Le Havre &#183; Loire-Atlantique</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+  <div class="card">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Bord de Mer <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurants saisonnier &#8212; Arcachon (33) &#183; Bassin d&#8217;Arcachon</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Arcachon (33) &#183; Gironde</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_arcachon-33120.html">
+        hellowork.com &#8594; serveur Arcachon (33)
+      </a>
+    </div>
+  </div>
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#127968; LOG&#201; NOURRI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Fort de l&#8217;Oc&#233;an &#8212; Le Croisic (44) &#183; H&#244;tel prestige face oc&#233;an</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI</span>
+        <span class="tag tag-loc">&#128205; Le Croisic (44) &#183; Loire-Atlantique</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76025724.html">
+        hellowork.com/fr-fr/emplois/76025724.html &#8212; Fort de l&#8217;Oc&#233;an log&#233;
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Honfleur Saison <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Brasseries &#8212; Honfleur (14) &#183; Vieux-Port &#183; Normandie</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Honfleur (14) &#183; Calvados &#183; 40+ ofertas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_honfleur-14600.html">
+        hellowork.com &#8594; serveur Honfleur (40+ offres)
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Le Havre <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">3 Brasseurs &#183; Restaurants &#8212; Le Havre (76) &#183; Normandie</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI / CDD</span>
+        <span class="tag tag-loc">&#128205; Le Havre (76) &#183; 36 ofertas activas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_le-havre-76620.html">
+        hellowork.com &#8594; serveur Le Havre (36 offres)
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Loire-Atlantique <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">La Baule &#183; Saint-Nazaire &#183; Nantes (44)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Loire-Atlantique (44) &#183; 150+ ofertas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-departement_loire-atlantique-44.html">
+        hellowork.com &#8594; serveur Loire-Atlantique (150+ offres)
+      </a>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- PLONGEUR -->
+<div class="section-head">
+  <div class="section-icon si-b">&#129671;</div>
+  <div class="section-info"><h2>PLONGEUR / PLONGEUSE</h2><p>Arcachon &#183; &#206;le de R&#233; &#183; Ol&#233;ron &#183; Le Croisic &#183; Loire-Atlantique</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#127968; Log&#233; possible <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant face au port &#8212; Arcachon (33)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD ou CDI &#183; 39h</span>
+        <span class="tag tag-loge">&#127968; Logement possible</span>
+        <span class="tag tag-loc">&#128205; Arcachon (33) &#183; Gironde</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_arcachon-33120.html">
+        hellowork.com &#8594; plongeur Arcachon &#8212; log&#233; possible
+      </a>
+    </div>
+  </div>
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#127968; LOG&#201; &#8212; &#206;le de R&#233; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Domaine Les Grenettes 4&#9733; &#8212; Sainte-Marie-de-R&#233; (17)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; &#183; 300m oc&#233;an</span>
+        <span class="tag tag-loc">&#128205; &#206;le de R&#233; (17) &#183; Charente-Maritime</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_le-bois-plage-en-re-17580.html">
+        hellowork.com &#8594; plongeur &#206;le de R&#233; &#8212; Les Grenettes log&#233;
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#8212; &#206;le d&#8217;Ol&#233;ron <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Le Ch&#226;teau-d&#8217;Ol&#233;ron (17)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD &#201;t&#233; 2026</span>
+        <span class="tag tag-loc">&#128205; &#206;le d&#8217;Ol&#233;ron (17)</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_le-chateau-d-oleron-17480.html">
+        hellowork.com &#8594; plongeur &#206;le d&#8217;Ol&#233;ron
+      </a>
+    </div>
+  </div>
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#127968; LOG&#201; NOURRI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Fort de l&#8217;Oc&#233;an &#8212; Le Croisic (44)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI &#11088;</span>
+        <span class="tag tag-loc">&#128205; Le Croisic (44) &#183; Loire-Atlantique</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78116691.html">
+        hellowork.com/fr-fr/emplois/78116691.html &#8212; Plongeur log&#233; Le Croisic
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur&#183;se H/F &#8212; Loire-Atlantique <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurants &#183; Agencias &#8212; Loire-Atlantique (44)</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim ou CDD</span>
+        <span class="tag tag-loc">&#128205; Loire-Atlantique (44) &#183; 53 ofertas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-departement_loire-atlantique-44.html">
+        hellowork.com &#8594; plongeur Loire-Atlantique (53 offres)
+      </a>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- FEMME DE CHAMBRE -->
+<div class="section-head">
+  <div class="section-icon si-c">&#128716;</div>
+  <div class="section-info"><h2>FEMME / VALET DE CHAMBRE</h2><p>Le Croisic &#183; La Baule &#183; Honfleur &#183; Deauville &#183; Ol&#233;ron</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Employ&#233;&#183;e d&#8217;&#201;tage H/F &#127968; LOG&#201; NOURRI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Fort de l&#8217;Oc&#233;an &#8212; Le Croisic (44) &#183; 12,74&#8364;/h</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI &#11088;</span>
+        <span class="tag tag-loc">&#128205; Le Croisic (44) &#183; face oc&#233;an</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/76025724.html">
+        hellowork.com/fr-fr/emplois/76025724.html &#8212; Employ&#233;e d&#8217;&#233;tage log&#233;e Le Croisic
+      </a>
+    </div>
+  </div>
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Employ&#233;&#183;e d&#8217;&#201;tage H/F &#8212; Barri&#232;re &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Resort Barri&#232;re 5&#9733; &#8212; La Baule-Escoublac (44)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD avr &#8594; oct 2026 &#183; 39h</span>
+        <span class="tag tag-loc">&#128205; La Baule (44) &#183; 67 ofertas Barri&#232;re</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/entreprises/groupe-barriere-16519/ville_la-baule-escoublac-44500.html">
+        hellowork.com &#8594; Barri&#232;re La Baule (67 offres)
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; Honfleur <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel &#8212; Honfleur (14) &#183; 1,5km Vieux-Port</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD &#183; 25h semaine</span>
+        <span class="tag tag-loc">&#128205; Honfleur (14) &#183; Calvados &#183; Normandie</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-region_normandie.html">
+        hellowork.com &#8594; femme de chambre Normandie &#8212; Honfleur
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; Deauville <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia Temporis &#8212; Deauville (14) &#183; Normandie</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim missions r&#233;guli&#232;res</span>
+        <span class="tag tag-loc">&#128205; Deauville (14) &#183; Calvados &#183; Normandie</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-region_normandie.html">
+        hellowork.com &#8594; femme de chambre Normandie &#8212; Deauville int&#233;rim
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; &#206;les <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tels &#183; Campings &#8212; Charente-Maritime (17)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; &#206;les R&#233; &amp; Ol&#233;ron (17) &#183; 84% puestos saisonnier</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_charente-maritime-17.html">
+        hellowork.com &#8594; femme de chambre Charente-Maritime (17)
+      </a>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- COMMIS CUISINE -->
+<div class="section-head">
+  <div class="section-icon si-d">&#127859;</div>
+  <div class="section-info"><h2>COMMIS DE CUISINE</h2><p>Lacanau &#183; La Baule &#183; &#206;le de R&#233; &#183; Les Sables &#183; Le Havre</p></div>
+  <div class="section-count">5 offres</div>
+</div>
+<div class="cards">
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#127968; LOG&#201; NOURRI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Azureva &#8212; Village vacances &#183; Lacanau (33) &#183; oc&#233;an</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 20/04 &#8594; 30/09/2026</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; inclus</span>
+        <span class="tag tag-loc">&#128205; Lacanau (33) &#183; Gironde &#183; oc&#233;an</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_azureva-loge-ville_lacanau-33680.html">
+        hellowork.com &#8594; Azureva log&#233; Lacanau &#8212; commis cuisine
+      </a>
+    </div>
+  </div>
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#8212; Barri&#232;re &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Resort Barri&#232;re &#8212; La Baule (44) &#183; Restaurant gastronomique</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD saison 2026</span>
+        <span class="tag tag-loc">&#128205; La Baule (44) &#183; Loire-Atlantique</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/78263038.html">
+        hellowork.com/fr-fr/emplois/78263038.html &#8212; Commis Barri&#232;re La Baule
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis / Plongeur Cuisine H/F <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; &#206;le de R&#233; (17) &#183; Charente-Maritime</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD saisonnier</span>
+        <span class="tag tag-loc">&#128205; &#206;le de R&#233; (17)</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant motiv&#233; accept&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_le-bois-plage-en-re-17580.html">
+        hellowork.com &#8594; commis/plongeur &#206;le de R&#233; &#8212; d&#233;butant OK
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#8212; Les Sables d&#8217;Olonne <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurants &#8212; Les Sables-d&#8217;Olonne (85) &#183; Vend&#233;e</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2026</span>
+        <span class="tag tag-loc">&#128205; Les Sables-d&#8217;Olonne (85) &#183; Vend&#233;e</span>
+        <span class="tag tag-deb">&#9989; D&#233;butant accept&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_les-sables-d-olonne-85180.html">
+        hellowork.com &#8594; cuisine Les Sables-d&#8217;Olonne
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#8212; Le Havre <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#183; Restaurants &#8212; Le Havre (76)</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim &#183; 150+ restauration Le Havre</span>
+        <span class="tag tag-loc">&#128205; Le Havre (76) &#183; Normandie</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/domaine_restauration-ville_le-havre-76620.html">
+        hellowork.com &#8594; restauration Le Havre (150+ offres)
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="box green" style="margin-top:14px;">
+  &#128270; <strong>Buscar m&#225;s en la C&#244;te Atlantique:</strong>
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_saisonnier-loge.html">hellowork.com &#8594; "saisonnier log&#233;" &#8212; toda Francia</a>
+  <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/charente-maritime-17" style="margin-top:6px;">lhotellerie-restauration.fr &#8594; CHR &#206;les R&#233; &amp; Ol&#233;ron</a>
+  <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/normandie" style="margin-top:6px;">lhotellerie-restauration.fr &#8594; CHR Normandie &#8212; Honfleur &#183; Deauville</a>
+</div>
+
+<div class="page-footer">
+  <p><strong>20 offres &#183; C&#244;te Atlantique &#183; Arcachon &#8594; Le Havre &#183; 25 avril 2026</strong></p>
+  <p>Arcachon &#183; &#206;le de R&#233; &#183; Ol&#233;ron &#183; Les Sables &#183; La Baule &#183; Honfleur &#183; Deauville &#183; Le Havre</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Hellowork &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Nunca pagar para trabajar</p>
+</div>
+
+</body>
+</html>
