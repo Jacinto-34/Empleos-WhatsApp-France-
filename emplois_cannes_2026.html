@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Emplois Cannes (06) &#8212; H&#244;tellerie &amp; Restauration &#183; 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+  .header { background: linear-gradient(150deg,#1A0A2A 0%,#3A1058 60%,#0A0018 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #D4A0FF; }
+  .header-label { display: inline-block; background: rgba(212,160,255,0.18); border: 1px solid rgba(212,160,255,0.4); color: #EAC8FF; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 32px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+  .header h1 span { color: #D4A0FF; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+  .meta-pill span { color: #D4A0FF; font-weight: 700; }
+  .box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+  .box.gold   { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+  .box.red    { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .box.purple { background: #F8F0FF; border: 1px solid #D4A0FF; border-left: 4px solid #3A1058; color: #1A0A2A; }
+  .box.green  { background: #EDF8F0; border: 1px solid #2ECC71; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .box strong { font-weight: 700; }
+  .box.gold strong   { color: #7A4A00; }
+  .box.red strong    { color: #8B1A1A; }
+  .box.purple strong { color: #3A1058; }
+  .box.green strong  { color: #0A5A20; }
+  .section-head { display: flex; align-items: center; gap: 12px; padding: 18px 20px 10px; }
+  .section-icon { font-size: 19px; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .si-a{background:rgba(58,16,88,0.12);} .si-b{background:rgba(10,120,100,0.12);} .si-c{background:rgba(180,80,0,0.12);}
+  .section-info h2 { font-family: Impact,'Arial Black',sans-serif; font-size: 17px; color: #1A1008; }
+  .section-info p  { font-size: 11px; color: #8A7A6A; margin-top: 1px; }
+  .section-count { margin-left: auto; font-size: 11px; font-weight: 700; padding: 3px 11px; border-radius: 20px; background: rgba(0,0,0,0.06); color: #5A4A3A; }
+  .cards { padding: 0 16px 6px; display: flex; flex-direction: column; gap: 9px; }
+  .card { background: #fff; border: 1px solid #E0D8CC; border-radius: 12px; padding: 13px 14px; display: flex; gap: 11px; align-items: flex-start; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 3px 0 0 3px; background: #C4903A; }
+  .card.prestige { border-color: #D4A0FF; }
+  .card.prestige::before { width: 4px; background: linear-gradient(to bottom,#1A0A2A,#D4A0FF); }
+  .card-left { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .card-num { font-family: Impact,sans-serif; font-size: 22px; line-height: 1; color: rgba(0,0,0,0.08); }
+  .plat-tag { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 2px 6px; border-radius: 5px; background: rgba(180,120,0,0.1); color: #6B4A00; border: 1px solid rgba(180,120,0,0.28); }
+  .card-body { flex: 1; min-width: 0; }
+  .card-title   { font-size: 13px; font-weight: 700; color: #1A1008; line-height: 1.3; margin-bottom: 2px; }
+  .card-company { font-size: 11px; color: #7A6A5A; margin-bottom: 7px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 7px; }
+  .tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 5px; }
+  .tag-cdi  { background: rgba(14,80,200,0.07); color: #0A3A9A; border: 1px solid rgba(14,80,200,0.18); }
+  .tag-cdd  { background: rgba(180,120,0,0.07); color: #7A5000; border: 1px solid rgba(180,120,0,0.2); }
+  .tag-int  { background: rgba(80,40,180,0.07); color: #4A1A9A; border: 1px solid rgba(80,40,180,0.18); }
+  .tag-loc  { background: rgba(0,0,0,0.04); color: #5A4A3A; border: 1px solid rgba(0,0,0,0.09); }
+  .tag-date { background: rgba(150,60,60,0.07); color: #7A2020; border: 1px solid rgba(150,60,60,0.17); }
+  .tag-pres { background: rgba(58,16,88,0.07); color: #2A0A4A; border: 1px solid rgba(58,16,88,0.18); }
+  .badge-ok { display: inline-block; font-size: 9px; font-weight: 700; background: rgba(20,120,60,0.1); color: #0F5C2A; border: 1px solid rgba(20,120,60,0.22); border-radius: 4px; padding: 2px 6px; margin-left: 4px; vertical-align: middle; }
+  .link-block { display: block; margin-top: 10px; margin-bottom: 2px; padding: 8px 12px; background: #F8F0FF; border: 1px solid #C4A0E8; border-left: 3px solid #3A1058; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #1A0A3A; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+  .divider { height: 1px; background: #DDD6CC; margin: 6px 16px; }
+  .sec-footer { margin: 2px 16px 12px; background: rgba(58,16,88,0.04); border: 1px solid rgba(58,16,88,0.15); border-left: 3px solid #3A1058; border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 11px; color: #1A0A2A; line-height: 1.65; }
+  .sec-footer strong { color: #3A1058; }
+  .page-footer { background: #1A0A2A; padding: 16px 24px; text-align: center; border-top: 2px solid #D4A0FF; margin-top: 14px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#127954; Cannes (06) &#183; C&#244;te d&#8217;Azur &#183; 25 avril 2026</div>
+  <h1>Empleos <span>Cannes</span><br>H&#244;tellerie &amp; Restauraci&#243;n</h1>
+  <div class="header-sub">Hellowork &#183; 9.174 ofertas activas en Cannes &#183; 25 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127869; <span>150+</span> Serveur</div>
+    <div class="meta-pill">&#129671; <span>53</span> Plongeur</div>
+    <div class="meta-pill">&#128716; <span>80+</span> Femme de Chambre</div>
+  </div>
+</div>
+
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan ofertas, empleadores ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de postular o firmar cualquier contrato.</strong>
+</div>
+
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Sin contrato escrito antes del primer d&#237;a &#183; &#10071; Solo WhatsApp sin direcci&#243;n verificable &#183; &#10071; Piden RIB antes de la entrevista &#183; &#10071; Direcci&#243;n inexistente en Google Maps<br>
+  &#9989; <strong>Siempre pedir:</strong> contrato escrito &#183; direcci&#243;n f&#237;sica del establecimiento &#183; nunca pagar para trabajar
+</div>
+
+<div class="box purple">
+  &#127954; <strong>Cannes &#8212; demanda CHR todo el a&#241;o:</strong> Festival de Cannes, MIPIM, TFWA y decenas de congresos internacionales generan demanda de personal <strong>todo el a&#241;o</strong>. <strong>9.174 ofertas activas</strong> hoy en Hellowork. Agencias CHR especializadas: <strong>R2T Int&#233;rim Cannes &#183; Aquila RH Cannes &#183; Solcis Nice</strong> &#8212; inscribirse directamente sin cuenta France Travail.
+</div>
+
+<div class="box green">
+  &#128203; <strong>C&#243;mo postular en Cannes:</strong><br>
+  &#9989; Presentarse en persona con CV impreso en La Croisette, le Suquet y le Port &#8212; entre 10h&#8211;12h o 15h&#8211;17h<br>
+  &#9989; Agencias int&#233;rim CHR: <strong>R2T Int&#233;rim Cannes &#183; Aquila RH Cannes &#183; Solcis Nice</strong> &#8212; sin cuenta FT<br>
+  &#9989; Durante festivales y congresos los hoteles necesitan refuerzo urgente &#8212; contactar directamente
+</div>
+
+<!-- SERVEUR -->
+<div class="section-head">
+  <div class="section-icon si-a">&#127869;</div>
+  <div class="section-info"><h2>SERVEUR / SERVEUSE</h2><p>Cannes centre &#183; La Croisette &#183; le Suquet &#183; Mougins</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; CDD 1.932&#8364;/mois <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Cannes (06) &#183; Saison 2026</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier</span>
+        <span class="tag tag-loc">&#128205; Cannes (06) &#183; Alpes-Maritimes</span>
+        <span class="tag tag-date">&#9889; 54 ofertas saisonnier activas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_saisonnier-ville_cannes-06400.html">
+        hellowork.com &#8594; saisonnier Cannes (54 offres) &#8212; serveur 1&#170; posici&#243;n
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; CDI <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurants &#8212; Cannes (06) &#183; Contrat stable</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI &#8212; contrato estable</span>
+        <span class="tag tag-loc">&#128205; Cannes (06)</span>
+        <span class="tag tag-date">&#9889; 150+ ofertas activas</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_cannes-06400.html">
+        hellowork.com &#8594; serveur Cannes (150+ offres)
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Serveur&#183;se H/F &#8212; Int&#233;rim <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencias int&#233;rim CHR &#8212; Cannes (06)</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim &#183; missions r&#233;guli&#232;res</span>
+        <span class="tag tag-loc">&#128205; Cannes (06) &#183; h&#244;tels &amp; restaurants</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/interim/metier_serveur-ville_cannes-06400.html">
+        hellowork.com &#8594; int&#233;rim serveur Cannes
+      </a>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- PLONGEUR -->
+<div class="section-head">
+  <div class="section-icon si-b">&#129671;</div>
+  <div class="section-info"><h2>PLONGEUR / PLONGEUSE</h2><p>Cannes &#183; Mougins &#183; Mouans-Sartoux &#183; Grasse</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; Int&#233;rim 1 mois <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#8212; Mougins (06) &#183; 5 km Cannes</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim 1 mois renouvelable</span>
+        <span class="tag tag-loc">&#128205; Mougins (06) &#183; pr&#232;s Cannes</span>
+        <span class="tag tag-date">&#9889; Hace 19 horas &#8212; muy reciente</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_cannes-06400.html">
+        hellowork.com &#8594; plongeur Cannes (53 offres) &#8212; int&#233;rim Mougins
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; 14&#8364;/h &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia int&#233;rim &#8212; Mouans-Sartoux (06)</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim &#183; 14&#8364;/h &#11088;</span>
+        <span class="tag tag-loc">&#128205; Mouans-Sartoux (06) &#183; entre Cannes et Grasse</span>
+        <span class="tag tag-date">&#9889; Hace 1 d&#237;a</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_cannes-06400.html">
+        hellowork.com &#8594; plongeur Cannes &#8212; Mouans-Sartoux 14&#8364;/h
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Plongeur H/F &#8212; CDD 9 mois &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Restaurant &#8212; Cannes (06) &#183; 2.146&#8364;/mois</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 9 mois &#11088; &#8212; muy largo</span>
+        <span class="tag tag-loc">&#128205; Cannes (06)</span>
+        <span class="tag tag-date">&#9889; Hace 20 d&#237;as &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_cannes-06400.html">
+        hellowork.com &#8594; plongeur Cannes &#8212; CDD 9 mois 2.146&#8364;
+      </a>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- FEMME DE CHAMBRE -->
+<div class="section-head">
+  <div class="section-icon si-c">&#128716;</div>
+  <div class="section-info"><h2>FEMME / VALET DE CHAMBRE</h2><p>Cannes &#183; Mandelieu &#183; Mougins &#183; Le Cannet</p></div>
+  <div class="section-count">3 offres</div>
+</div>
+<div class="cards">
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; H&#244;tel 5&#9733; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">R2T Int&#233;rim + Aquila RH Cannes &#8212; h&#244;tels lujo Cannes</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim &#183; missions 2-3 semanas</span>
+        <span class="tag tag-loc">&#128205; Cannes (06) &#183; H&#244;tels 4&#9733; et 5&#9733;</span>
+        <span class="tag tag-pres">&#11088; Agencias especializadas lujo</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_cannes-06400.html">
+        hellowork.com &#8594; femme de chambre Cannes &#8212; h&#244;tels lujo int&#233;rim
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; Int&#233;rim <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Agencia &#8212; Mandelieu-la-Napoule (06) &#183; 1.823&#8211;1.972&#8364;/mois</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim &#183; 1.823&#8211;1.972&#8364;/mois</span>
+        <span class="tag tag-loc">&#128205; Mandelieu-la-Napoule (06) &#183; 8 km Cannes</span>
+        <span class="tag tag-date">&#9889; Hace 2 d&#237;as</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_cannes-06400.html">
+        hellowork.com &#8594; femme de chambre Cannes &#8212; Mandelieu int&#233;rim
+      </a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; CDI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">R&#233;sidence H&#244;teli&#232;re 4&#9733; &#8212; Mougins (06) &#183; 1.930&#8364;/mois</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI &#183; 1.930&#8364;/mois</span>
+        <span class="tag tag-loc">&#128205; Mougins (06) &#183; 5 km Cannes</span>
+        <span class="tag tag-pres">&#11088; R&#233;sidence 4&#9733; &#183; CDI estable</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_cannes-06400.html">
+        hellowork.com &#8594; femme de chambre Cannes &#8212; r&#233;sidence 4&#9733; Mougins CDI
+      </a>
+    </div>
+  </div>
+</div>
+<div class="sec-footer"><strong>80+ ofertas femme de chambre Cannes/Alpes-Maritimes.</strong> Aquila RH Cannes busca urgentemente femmes de chambre/linger&#232;res para h&#244;tels de lujo. Ver todas:
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_alpes-maritimes-06.html">hellowork.com &#8594; femme de chambre Alpes-Maritimes (80+ offres)</a>
+</div>
+
+<div class="page-footer">
+  <p><strong>9 offres &#183; Cannes (06) &#183; H&#244;tellerie &amp; Restauration &#183; 25 avril 2026</strong></p>
+  <p>Cannes &#183; Mougins &#183; Mandelieu &#183; Mouans-Sartoux &#183; Alpes-Maritimes</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Hellowork &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Nunca pagar para trabajar</p>
+</div>
+</body>
+</html>

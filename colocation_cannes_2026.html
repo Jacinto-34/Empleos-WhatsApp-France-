@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Colocation Cannes &#8212; Gu&#237;a para VVT 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Trebuchet MS','Segoe UI',Arial,sans-serif; background: #EDE8E0; width: 660px; margin: 0 auto; }
+  .header { background: linear-gradient(150deg,#0A001A 0%,#1A0050 60%,#05000E 100%); padding: 30px 32px 22px; text-align: center; border-bottom: 3px solid #C8A200; }
+  .header-label { display: inline-block; background: rgba(200,162,0,0.18); border: 1px solid rgba(200,162,0,0.4); color: #FFE066; font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 12px; }
+  .header h1 { font-family: Impact,'Arial Black',sans-serif; font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.05; margin-bottom: 4px; }
+  .header h1 span { color: #C8A200; }
+  .header-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 6px; }
+  .header-meta { display: flex; justify-content: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: rgba(255,255,255,0.7); }
+
+  .box { margin: 12px 16px 0; border-radius: 10px; padding: 12px 14px; font-size: 11.5px; line-height: 1.7; }
+  .box.gold  { background: #FFF8E7; border: 1px solid #C4903A; border-left: 4px solid #8B5E00; color: #3A2000; }
+  .box.red   { background: #FEF0F0; border: 1px solid #E88080; border-left: 4px solid #8B1A1A; color: #3A0A0A; }
+  .box.dark  { background: #F0EEF8; border: 1px solid #8070C0; border-left: 4px solid #1A0050; color: #0A0020; }
+  .box.green { background: #EDF8F0; border: 1px solid #2ECC71; border-left: 4px solid #1A6A30; color: #0A2A10; }
+  .box strong { font-weight: 700; }
+  .box.gold strong { color: #7A4A00; }
+  .box.red strong  { color: #8B1A1A; }
+  .box.dark strong { color: #1A0050; }
+  .box.green strong{ color: #0A5A20; }
+
+  .sec-title { display: flex; align-items: center; gap: 10px; margin: 18px 16px 10px; font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #7A5A00; }
+  .sec-title::after { content: ''; flex: 1; height: 1px; background: #C8C0B4; }
+  .sec-title.red { color: #8B1A1A; }
+  .sec-title.green { color: #1A6A30; }
+
+  /* PRICE GRID */
+  .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; padding: 0 16px; }
+  .price-card { background: white; border-radius: 12px; padding: 12px 13px; border: 1px solid #E0D8CC; text-align: center; }
+  .price-card.top { border-color: #C8A200; }
+  .price-zone { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .price-range { font-size: 15px; font-weight: 800; color: #1A0050; margin-bottom: 2px; }
+  .price-label { font-size: 10px; color: #8A7A6A; }
+  .price-note  { font-size: 10px; color: #5A4A3A; margin-top: 2px; font-style: italic; }
+
+  /* PLAT CARDS */
+  .plat-cards { padding: 0 16px; display: flex; flex-direction: column; gap: 9px; }
+  .plat-card { background: white; border-radius: 12px; padding: 13px 14px; border: 1px solid #E0D8CC; border-left: 3px solid #C8A200; }
+  .plat-name { font-size: 13px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .plat-desc { font-size: 11.5px; color: #5A4A3A; line-height: 1.55; margin-bottom: 6px; }
+
+  .link-block { display: block; margin-top: 8px; margin-bottom: 2px; padding: 7px 11px; background: #FAF5E0; border: 1px solid #C8A200; border-left: 3px solid #7A5A00; border-radius: 0 7px 7px 0; font-size: 12px; font-weight: 700; color: #3A2A00; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; line-height: 1.5; }
+
+  /* STEPS */
+  .steps { padding: 0 16px; display: flex; flex-direction: column; gap: 8px; }
+  .step-card { background: white; border-radius: 11px; padding: 12px 14px; border: 1px solid #E0D8CC; display: flex; gap: 11px; align-items: flex-start; }
+  .step-num { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: white; background: #1A0050; }
+  .step-title { font-size: 12.5px; font-weight: 700; color: #1A1008; margin-bottom: 3px; }
+  .step-text  { font-size: 11.5px; color: #5A4A3A; line-height: 1.6; }
+  .step-text strong { color: #1A0050; }
+
+  .page-footer { background: #0A001A; padding: 16px 24px; text-align: center; border-top: 2px solid #C8A200; margin-top: 18px; }
+  .page-footer p { font-size: 11px; color: rgba(255,255,255,0.4); line-height: 1.7; }
+  .page-footer strong { color: rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#127968; Colocation &#183; Cannes (06) &#183; Para VVT &#183; 2026</div>
+  <h1>Colocation en <span>Cannes</span><br>Gu&#237;a para reci&#233;n llegados</h1>
+  <div class="header-sub">Leboncoin &#183; Appartager &#183; La Carte des Colocs &#183; 25 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#128205; Precios orientativos</div>
+    <div class="meta-pill">&#128279; Links verificados</div>
+    <div class="meta-pill">&#9888; Anti-estafas</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan anuncios, precios ni disponibilidad. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar antes de tomar cualquier decisi&#243;n.</strong>
+</div>
+
+<!-- INFO CANNES -->
+<div class="box dark">
+  &#127880; <strong>Cannes &#8212; Alojamiento:</strong> Una de las ciudades m&#225;s caras de Francia. El alquiler en el centro puede ser muy elevado en temporada. Para trabajadores CHR, las zonas m&#225;s accesibles son <strong>La Bocca (06150)</strong> y <strong>Le Cannet (06110)</strong> &#8212; bien conectadas en bus al centro. <strong>Prioridad absoluta: buscar puesto log&#233;+nourri</strong> si es posible &#8212; ahorra entre 600 y 900&#8364; mensuales.
+</div>
+
+
+<!-- PRECIOS -->
+<div class="sec-title">&#128182; Precios orientativos &#183; Chambre meublee &#183; Leboncoin 2026</div>
+<div class="price-grid">
+  <div class="price-card top">
+    <div class="price-zone">&#128205; Cannes Centre &#183; Croisette</div>
+    <div class="price-range">650 &#8211; 900&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Alta demanda &#183; muy caro</div>
+  </div>
+  <div class="price-card top">
+    <div class="price-zone">&#128205; La Bocca (06150)</div>
+    <div class="price-range">450 &#8211; 640&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">M&#225;s accesible &#183; bus al centro</div>
+  </div>
+  <div class="price-card">
+    <div class="price-zone">&#128205; Le Cannet (06110)</div>
+    <div class="price-range">480 &#8211; 600&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Tranquilo &#183; bus &#8594; Cannes</div>
+  </div>
+  <div class="price-card">
+    <div class="price-zone">&#128205; Mougins / Valbonne</div>
+    <div class="price-range">500 &#8211; 650&#8364;</div>
+    <div class="price-label">chambre meublee / mois</div>
+    <div class="price-note">Alejado &#183; veh&#237;culo recomendado</div>
+  </div>
+</div>
+
+
+<!-- PLATAFORMAS -->
+<div class="sec-title green" style="margin-top:20px;">&#128270; Plataformas para buscar en Cannes</div>
+<div class="plat-cards">
+
+  <div class="plat-card">
+    <div class="plat-name">&#128247; Leboncoin &#8212; Cannes centre (06400)</div>
+    <div class="plat-desc">La fuente principal. Anuncios de particulares y profesionales. Precio real del mercado. Filtrar por "La Bocca" para opciones m&#225;s econ&#243;micas.</div>
+    <a class="link-block" href="https://www.leboncoin.fr/cl/colocations/cp_cannes_06400">leboncoin.fr/cl/colocations/cp_cannes_06400</a>
+    <a class="link-block" href="https://www.leboncoin.fr/cl/colocations/cp_cannes_06150" style="margin-top:6px;">leboncoin.fr/cl/colocations/cp_cannes_06150 &#8212; La Bocca (m&#225;s econ&#243;mico)</a>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-name">&#127968; Appartager &#8212; Cannes</div>
+    <div class="plat-desc">Especializado en colocation. Perfil del colocatario m&#225;s detallado. Filtros por precio y disponibilidad.</div>
+    <a class="link-block" href="https://www.appartager.com/colocations/alpes-maritimes/cannes">appartager.com/colocations/alpes-maritimes/cannes</a>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-name">&#127760; La Carte des Colocs &#8212; Cannes</div>
+    <div class="plat-desc">Plataforma moderna con mapa interactivo. Permite ver la ubicaci&#243;n exacta antes de contactar.</div>
+    <a class="link-block" href="https://www.lacartedescolocs.com/flatshares/fr/provence-alpes-cote-d-azur/cannes">lacartedescolocs.com &#8594; colocation Cannes</a>
+  </div>
+
+  <div class="plat-card">
+    <div class="plat-name">&#128101; Facebook &#8212; Grupos locales</div>
+    <div class="plat-desc">Buscar en Facebook: <strong>"Colocation Cannes"</strong> &#183; <strong>"Logement Cannes saisonnier"</strong> &#183; <strong>"Chambre Cannes 06"</strong>. Muchos trabajadores saisonniers subalquilan directamente.</div>
+  </div>
+
+</div>
+
+
+<!-- PASOS -->
+<div class="sec-title green" style="margin-top:20px;">&#128203; Pasos para conseguir alojamiento</div>
+<div class="steps">
+
+  <div class="step-card">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">Verificar Visale antes de buscar</div>
+      <div class="step-text">Visale es una garant&#237;a de alquiler gratuita del Estado franc&#233;s. Verificar tu elegibilidad seg&#250;n tu situaci&#243;n en <strong>visale.fr</strong> &#8212; las condiciones var&#237;an seg&#250;n el tipo de visa y contrato.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">Abrir cuenta bancaria francesa</div>
+      <div class="step-text"><strong>N26, Revolut o Lydia</strong> &#8212; gratuitas, sin justificatif de domicile. El RIB es imprescindible para cualquier dossier de alquiler en Francia.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">Pedir bail mobilit&#233;</div>
+      <div class="step-text">Para trabajadores saisonniers, el <strong>bail mobilit&#233;</strong> (1 a 10 meses) es el contrato m&#225;s adaptado. Sin penalidad por salida anticipada. Preguntar expl&#237;citamente al propietario si lo acepta.</div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- SEÑALES ESTAFA -->
+<div class="sec-title red" style="margin-top:20px;">&#9888;&#65039; Se&#241;ales de estafa &#8212; Alojamiento Cannes</div>
+<div class="box red">
+  &#10071; <strong>Piden dep&#243;sito antes de la visita</strong> &#8212; ning&#250;n propietario leg&#237;timo cobra antes de mostrarte el piso.<br>
+  &#10071; <strong>Precio muy bajo para Cannes</strong> &#8212; menos de 380&#8364;/mes en Cannes centre es se&#241;al de alerta.<br>
+  &#10071; <strong>&#171;Propietario en el extranjero&#187;</strong> &#8212; piden transferencia para enviar llaves. Estafa cl&#225;sica.<br>
+  &#10071; <strong>Solo contacto por WhatsApp</strong> sin anuncio verificable en plataforma oficial.<br>
+  &#10071; <strong>Presi&#243;n para decidir r&#225;pido</strong> &#8212; tom&#225;te siempre tu tiempo.<br>
+  &#10071; <strong>Piden pasaporte sin visita previa</strong> &#8212; nunca enviar documentos sin haber visitado.<br><br>
+  &#9989; <strong>C&#243;mo protegerse:</strong> Verificar direcci&#243;n en Google Maps &#183; Pedir ver el <strong>bail du propri&#233;taire</strong> (contrato que prueba que quien alquila es due&#241;o leg&#237;timo &#8212; equivalente al t&#237;tulo de propiedad en Am&#233;rica Latina) o la <strong>taxe fonci&#232;re</strong> (impuesto anual a la propiedad &#8212; equivalente al impuesto predial) &#183; Nunca pagar antes de firmar &#183; Consultar al grupo ante cualquier duda.
+</div>
+
+
+<div class="page-footer">
+  <p><strong>Colocation Cannes &#183; Gu&#237;a orientativa &#183; 25 avril 2026</strong></p>
+  <p>Leboncoin &#183; Appartager &#183; La Carte des Colocs &#183; Cannes &#183; La Bocca &#183; Le Cannet</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Siempre visitar antes de pagar &#183; Verificar Visale en visale.fr &#183; Informaci&#243;n p&#250;blica con fines orientativos</p>
+</div>
+
+</body>
+</html>
