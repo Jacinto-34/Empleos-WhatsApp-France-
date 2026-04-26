@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alquileres Mayo — Saint-Tropez & Biarritz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sand:   #f5ede0;
+      --cream:  #fdf8f3;
+      --navy:   #1a2e44;
+      --teal:   #2a7f7f;
+      --rust:   #c2552a;
+      --gold:   #d4a847;
+      --muted:  #7a8a99;
+      --border: #ddd0c0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(42,127,127,.35) 0%, transparent 60%),
+                  radial-gradient(ellipse at 10% 80%, rgba(212,168,71,.18) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .header-tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(212,168,71,.4);
+      border-radius: 2rem;
+      padding: .3rem .9rem;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.9rem, 6vw, 3rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: .5rem;
+    }
+    header h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    header p.sub {
+      color: rgba(255,255,255,.6);
+      font-size: .92rem;
+      font-weight: 300;
+    }
+    .wave {
+      width: 100%; height: 40px;
+      display: block;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    /* ── DISCLAIMER ── */
+    .disclaimer {
+      margin: 1.8rem 1rem 0;
+      background: #fff8ee;
+      border: 1.5px solid var(--gold);
+      border-left: 5px solid var(--gold);
+      border-radius: .6rem;
+      padding: 1rem 1.2rem;
+      display: flex;
+      gap: .8rem;
+      align-items: flex-start;
+      animation: fadeUp .5s ease both;
+    }
+    .disc-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+    .disclaimer h3 {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: .3rem;
+    }
+    .disclaimer p {
+      font-size: .82rem;
+      color: #5a4a30;
+      line-height: 1.55;
+    }
+
+    /* ── SECTION TITLE ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: 2rem 1rem .8rem;
+    }
+    .section-header .city-pill {
+      background: var(--navy);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 2rem;
+    }
+    .section-header .city-pill.teal { background: var(--teal); }
+    .section-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.5rem;
+      color: var(--navy);
+    }
+
+    /* ── CARDS ── */
+    .cards {
+      padding: 0 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: .9rem;
+      overflow: hidden;
+      transition: box-shadow .2s, transform .2s;
+      animation: fadeUp .4s ease both;
+    }
+    .card:hover {
+      box-shadow: 0 6px 28px rgba(26,46,68,.12);
+      transform: translateY(-2px);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 1rem 1.1rem .6rem;
+    }
+    .card-platform {
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .card-badge {
+      font-size: .68rem;
+      font-weight: 600;
+      padding: .25rem .65rem;
+      border-radius: 2rem;
+      background: #e8f5f5;
+      color: var(--teal);
+    }
+    .card-badge.orange { background: #fef0e8; color: var(--rust); }
+    .card-badge.blue   { background: #e8eef8; color: var(--navy); }
+
+    .card h3 {
+      padding: 0 1.1rem;
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: .5rem;
+    }
+    .card-meta {
+      padding: 0 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: .8rem;
+    }
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .77rem;
+      color: var(--muted);
+    }
+    .meta-chip span { font-size: .9rem; }
+
+    .card-desc {
+      padding: 0 1.1rem .9rem;
+      font-size: .84rem;
+      color: #4a5a6a;
+      line-height: 1.6;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-footer {
+      padding: .75rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .card-price {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+    }
+    .card-price small {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .75rem;
+      color: var(--muted);
+      font-weight: 400;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: .8rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--navy);
+      padding: .45rem 1rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .card-link:hover { background: var(--teal); }
+    .card-link.teal { background: var(--teal); }
+    .card-link.teal:hover { background: var(--navy); }
+
+    /* ── TIPS BOX ── */
+    .tips-box {
+      margin: 1.5rem 1rem;
+      background: var(--navy);
+      border-radius: .9rem;
+      padding: 1.4rem 1.2rem;
+      color: #fff;
+      animation: fadeUp .5s ease both;
+    }
+    .tips-box h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: .9rem;
+    }
+    .tips-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+    .tips-list li {
+      font-size: .84rem;
+      color: rgba(255,255,255,.82);
+      display: flex;
+      gap: .6rem;
+      line-height: 1.5;
+    }
+    .tips-list li::before {
+      content: '→';
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.8rem 1rem 2.5rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+    footer p {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    footer strong { color: var(--navy); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: .5rem 1rem 0;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-tag">📌 Comunidad PVT Francia</div>
+  <h1>Alquileres <em>todo mayo</em><br>para 3 personas</h1>
+  <p class="sub">Saint-Tropez &amp; Biarritz · Mayo 2026</p>
+</header>
+<div class="wave"></div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer" style="animation-delay:.1s">
+  <div class="disc-icon">⚠️</div>
+  <div>
+    <h3>Aviso importante</h3>
+    <p>
+      Esta información fue recopilada con fines orientativos para los miembros del grupo.
+      <strong>No somos agencia inmobiliaria ni representamos a ninguna plataforma.</strong>
+      Verifica siempre la disponibilidad, precios y condiciones directamente con el propietario
+      o la plataforma anunciante. Desconfía de quien pida dinero o datos personales antes de
+      que puedas visitar (o verificar) el inmueble. Ante cualquier duda, consulta con el grupo. 🙌
+    </p>
+  </div>
+</div>
+
+
+<!-- ══════════════ SAINT-TROPEZ ══════════════ -->
+<div class="section-header">
+  <span class="city-pill">🌊 Saint-Tropez</span>
+  <h2>Var, Côte d'Azur</h2>
+</div>
+
+<div class="cards">
+
+  <!-- Card 1 -->
+  <div class="card" style="animation-delay:.15s">
+    <div class="card-top">
+      <span class="card-platform">Leboncoin</span>
+      <span class="card-badge">3 personas ✓</span>
+    </div>
+    <h3>Apartamento en Saint-Tropez centro</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>🛏</span> Apto para 3 pers.</span>
+      <span class="meta-chip"><span>📐</span> ~50 m²</span>
+      <span class="meta-chip"><span>📅</span> Mayo disponible</span>
+    </div>
+    <p class="card-desc">
+      Apartamento de particular a particular en Saint-Tropez. Mayo es temporada alta —
+      conviene contactar al propietario directamente para negociar precio mensual y
+      evitar tarifas semanales. Filtrar por "3 voyageurs" en la búsqueda.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">Desde ~80€ <small>/ noche · negociar mensual</small></div>
+      <a class="card-link" href="https://www.leboncoin.fr/cl/locations_saisonnieres/cp_saint-tropez_83990" target="_blank">Ver anuncios →</a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card" style="animation-delay:.22s">
+    <div class="card-top">
+      <span class="card-platform">PAP Vacances</span>
+      <span class="card-badge orange">Sin comisión</span>
+    </div>
+    <h3>Particulares en Saint-Tropez</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>🏡</span> Casas y aptos</span>
+      <span class="meta-chip"><span>💬</span> Sin agencia</span>
+      <span class="meta-chip"><span>🔑</span> Contacto directo</span>
+    </div>
+    <p class="card-desc">
+      Plataforma de particular a particular, sin comisión de agencia.
+      Hay opciones desde villas provenzales hasta aptos cerca del puerto.
+      Ideal para negociar estancia mensual y precio global. Usar filtro
+      "3 personnes" y fechas de todo mayo.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">Variable <small>/ consultar directo</small></div>
+      <a class="card-link" href="https://www.papvacances.fr/annonces/location-vacances-saint-tropez-83990-g41078" target="_blank">Ver anuncios →</a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card" style="animation-delay:.29s">
+    <div class="card-top">
+      <span class="card-platform">Agence St-Tropez Home Rental</span>
+      <span class="card-badge blue">Agencia local</span>
+    </div>
+    <h3>Agencia especializada en la zona</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>📍</span> St-Tropez, Ramatuelle, Gassin</span>
+      <span class="meta-chip"><span>🇫🇷</span> Atención en FR / EN</span>
+    </div>
+    <p class="card-desc">
+      Agencia local especializada con selección amplia de apartamentos y villas.
+      Atienden en francés e inglés. Tienen opciones desde confort familiar hasta
+      gran standing. Contactarlos para pedir disponibilidad mensual de mayo.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">Variable <small>/ según temporada</small></div>
+      <a class="card-link teal" href="https://www.saint-tropez-location.fr/" target="_blank">Ver agencia →</a>
+    </div>
+  </div>
+
+</div><!-- /cards ST -->
+
+<div class="divider"></div>
+
+<!-- ══════════════ BIARRITZ ══════════════ -->
+<div class="section-header">
+  <span class="city-pill teal">🌊 Biarritz</span>
+  <h2>País Vasco, Atlántico</h2>
+</div>
+
+<div class="cards">
+
+  <!-- Card 4 -->
+  <div class="card" style="animation-delay:.1s">
+    <div class="card-top">
+      <span class="card-platform">SeLoger</span>
+      <span class="card-badge">Bail mobilité</span>
+    </div>
+    <h3>Apartamentos meublés en Biarritz centro</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>📅</span> Ene–Mayo 2026</span>
+      <span class="meta-chip"><span>📐</span> 25–39 m²</span>
+      <span class="meta-chip"><span>💶</span> ~550€/mes</span>
+    </div>
+    <p class="card-desc">
+      Varios apartamentos meublés disponibles con <em>bail mobilité</em> hasta mayo 2026.
+      Hay opciones en pleno centro de Biarritz. Precio promedio de alquiler en la ciudad:
+      ~18€/m². Un T3 de 60 m² puede rondar los 1.000–1.200€/mes fuera de alta temporada.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">~550–1.200€ <small>/ mes aprox.</small></div>
+      <a class="card-link" href="https://www.seloger.com/immobilier/locations/immo-biarritz-64/bien-appartement/" target="_blank">Ver anuncios →</a>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card" style="animation-delay:.17s">
+    <div class="card-top">
+      <span class="card-platform">PAP Vacances</span>
+      <span class="card-badge orange">3 pièces · 3★</span>
+    </div>
+    <h3>Apartamento 3 piezas en Biarritz</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>📐</span> 60 m²</span>
+      <span class="meta-chip"><span>♿</span> Ascensor, accesible</span>
+      <span class="meta-chip"><span>📍</span> Centro Biarritz</span>
+    </div>
+    <p class="card-desc">
+      Apartamento de 3 piezas clasificado oficialmente 3 estrellas, con ascensor de apertura lateral
+      (accesible PMR), en el corazón de Biarritz. Equipado para recibir bebés también.
+      Sin comisión de agencia — contacto directo con el propietario.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">Desde 420€ <small>/ semana · negociar mensual</small></div>
+      <a class="card-link teal" href="https://www.papvacances.fr/annonces/location-vacances-biarritz-64200-g33376" target="_blank">Ver anuncios →</a>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card" style="animation-delay:.24s">
+    <div class="card-top">
+      <span class="card-platform">Airbnb</span>
+      <span class="card-badge blue">3 habitaciones</span>
+    </div>
+    <h3>Apto renovado, 3 hab., vistas al faro</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>🛏</span> 3 habitaciones</span>
+      <span class="meta-chip"><span>📐</span> Salón 25 m²</span>
+      <span class="meta-chip"><span>🍳</span> Cocina equipada</span>
+    </div>
+    <p class="card-desc">
+      Apartamento completamente renovado en el centro de Biarritz, con hermosas vistas
+      al faro. Tres habitaciones, amplio salón, cocina completamente equipada y balcón.
+      En residencia tranquila con portero. Ideal para 3 personas trabajando en temporada.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">Consultar <small>/ filtrar mes completo</small></div>
+      <a class="card-link" href="https://www.airbnb.com/s/Biarritz--France/homes?checkin=2026-05-01&checkout=2026-05-31&adults=3" target="_blank">Ver en Airbnb →</a>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card" style="animation-delay:.31s">
+    <div class="card-top">
+      <span class="card-platform">Olaizola Immo</span>
+      <span class="card-badge">Agencia local</span>
+    </div>
+    <h3>T3 renovado, barrio Milady</h3>
+    <div class="card-meta">
+      <span class="meta-chip"><span>🌊</span> 300 m de la playa</span>
+      <span class="meta-chip"><span>🔧</span> Renovado 2020</span>
+      <span class="meta-chip"><span>📅</span> Hasta ago 2026</span>
+    </div>
+    <p class="card-desc">
+      Apartamento T3 completamente renovado en el barrio de Milady, a 300 m de la playa.
+      Disponible hasta finales de agosto 2026. La agencia atiende de lunes a sábado,
+      8h–19h. Ideal si buscan estabilidad para la temporada.
+    </p>
+    <div class="card-footer">
+      <div class="card-price">~1.100€ <small>/ mes (aprox. cc)</small></div>
+      <a class="card-link teal" href="https://www.olaizola.immo/ville_bien/Biarritz_1_1__Location/location-appartement-biarritz.html" target="_blank">Ver agencia →</a>
+    </div>
+  </div>
+
+</div><!-- /cards BIZ -->
+
+
+<!-- TIPS -->
+<div class="tips-box" style="animation-delay:.2s">
+  <h3>💡 Consejos del grupo</h3>
+  <ul class="tips-list">
+    <li>Pide siempre la tarifa mensual — es diferente a multiplicar el precio semanal por 4.</li>
+    <li>En Saint-Tropez, mayo ya es temporada alta: reserva cuanto antes o negocia directamente.</li>
+    <li>Para Biarritz, mayo es pre-temporada: más fácil negociar y precios más accesibles.</li>
+    <li>Desconfía si te piden transferencia antes de ver el contrato o el inmueble.</li>
+    <li>Verifica que el propietario esté en la plataforma (perfil verificado, reseñas, etc.).</li>
+    <li>Para bail mobilité necesitas justificar movilidad profesional (contrato CDD, misión, etc.).</li>
+    <li>Comparte la búsqueda en el grupo — otros miembros pueden conocer contactos locales.</li>
+  </ul>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    📲 Compilado por <strong>Comunidad PVT Latinoamérica en Francia</strong><br>
+    Información recopilada en abril 2026 · Precios y disponibilidad sujetos a cambios<br>
+    <strong>No somos agencia. Siempre verifica antes de pagar.</strong>
+  </p>
+</footer>
+
+</body>
+</html>
