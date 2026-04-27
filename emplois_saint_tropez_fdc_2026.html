@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Femme de Chambre &#8212; Saint-Tropez &#183; Log&#233; &#183; 2026</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Trebuchet MS','Segoe UI',Arial,sans-serif; background:#EDE8E0; width:660px; margin:0 auto; }
+  .header { background:linear-gradient(150deg,#1A0A00 0%,#5A1A00 60%,#0A0500 100%); padding:30px 32px 22px; text-align:center; border-bottom:3px solid #FF8C42; }
+  .header-label { display:inline-block; background:rgba(255,140,66,0.18); border:1px solid rgba(255,140,66,0.4); color:#FFD0A0; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:5px 16px; border-radius:20px; margin-bottom:12px; }
+  .header h1 { font-family:Impact,'Arial Black',sans-serif; font-size:30px; color:#fff; letter-spacing:1px; line-height:1.05; margin-bottom:4px; }
+  .header h1 span { color:#FF8C42; }
+  .header-sub { font-size:12px; color:rgba(255,255,255,0.45); margin-top:6px; }
+  .header-meta { display:flex; justify-content:center; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  .meta-pill { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:4px 12px; font-size:11px; color:rgba(255,255,255,0.7); }
+  .meta-pill span { color:#FF8C42; font-weight:700; }
+  .box { margin:12px 16px 0; border-radius:10px; padding:12px 14px; font-size:11.5px; line-height:1.7; }
+  .box.gold   { background:#FFF8E7; border:1px solid #C4903A; border-left:4px solid #8B5E00; color:#3A2000; }
+  .box.red    { background:#FEF0F0; border:1px solid #E88080; border-left:4px solid #8B1A1A; color:#3A0A0A; }
+  .box.orange { background:#FFF3EE; border:1px solid #FF8C42; border-left:4px solid #5A1A00; color:#2A0A00; }
+  .box.green  { background:#EDF8F0; border:1px solid #2ECC71; border-left:4px solid #1A6A30; color:#0A2A10; }
+  .box strong { font-weight:700; }
+  .box.gold strong   { color:#7A4A00; }
+  .box.red strong    { color:#8B1A1A; }
+  .box.orange strong { color:#8B2A00; }
+  .box.green strong  { color:#0A5A20; }
+  .sec-title { display:flex; align-items:center; gap:10px; margin:18px 16px 10px; font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#5A1A00; }
+  .sec-title::after { content:''; flex:1; height:1px; background:#C8C0B4; }
+  .sec-title.green { color:#1A6A30; }
+  .cards { padding:0 16px 6px; display:flex; flex-direction:column; gap:9px; }
+  .card { background:#fff; border:1px solid #E0D8CC; border-radius:12px; padding:13px 14px; display:flex; gap:11px; align-items:flex-start; position:relative; overflow:hidden; }
+  .card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:3px 0 0 3px; background:#C4903A; }
+  .card.prestige { border-color:#FF8C42; }
+  .card.prestige::before { width:4px; background:linear-gradient(to bottom,#5A1A00,#FF8C42); }
+  .card.loge { border-color:#2ECC71; }
+  .card.loge::before { width:4px; background:linear-gradient(to bottom,#0A4A1A,#2ECC71); }
+  .card-left { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .card-num { font-family:Impact,sans-serif; font-size:22px; line-height:1; color:rgba(0,0,0,0.08); }
+  .plat-tag { font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 6px; border-radius:5px; background:rgba(180,120,0,0.1); color:#6B4A00; border:1px solid rgba(180,120,0,0.28); }
+  .card-body { flex:1; min-width:0; }
+  .card-title   { font-size:13px; font-weight:700; color:#1A1008; line-height:1.3; margin-bottom:2px; }
+  .card-company { font-size:11px; color:#7A6A5A; margin-bottom:7px; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:7px; }
+  .tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:5px; }
+  .tag-cdi  { background:rgba(14,80,200,0.07); color:#0A3A9A; border:1px solid rgba(14,80,200,0.18); }
+  .tag-cdd  { background:rgba(180,120,0,0.07); color:#7A5000; border:1px solid rgba(180,120,0,0.2); }
+  .tag-int  { background:rgba(80,40,180,0.07); color:#4A1A9A; border:1px solid rgba(80,40,180,0.18); }
+  .tag-loc  { background:rgba(0,0,0,0.04); color:#5A4A3A; border:1px solid rgba(0,0,0,0.09); }
+  .tag-loge { background:rgba(46,204,113,0.1); color:#0A5A20; border:1px solid rgba(46,204,113,0.25); font-weight:800; }
+  .tag-date { background:rgba(150,60,60,0.07); color:#7A2020; border:1px solid rgba(150,60,60,0.17); }
+  .tag-pres { background:rgba(90,26,0,0.07); color:#3A0A00; border:1px solid rgba(90,26,0,0.18); }
+  .badge-ok { display:inline-block; font-size:9px; font-weight:700; background:rgba(20,120,60,0.1); color:#0F5C2A; border:1px solid rgba(20,120,60,0.22); border-radius:4px; padding:2px 6px; margin-left:4px; vertical-align:middle; }
+  .link-block { display:block; margin-top:10px; margin-bottom:2px; padding:8px 12px; background:#FFF3EE; border:1px solid #FFB080; border-left:3px solid #5A1A00; border-radius:0 7px 7px 0; font-size:12px; font-weight:700; color:#3A0A00; text-decoration:underline; text-underline-offset:3px; word-break:break-all; line-height:1.5; }
+  .page-footer { background:#1A0A00; padding:16px 24px; text-align:center; border-top:2px solid #FF8C42; margin-top:14px; }
+  .page-footer p { font-size:11px; color:rgba(255,255,255,0.4); line-height:1.7; }
+  .page-footer strong { color:rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#127868; Saint-Tropez (83) &#183; Femme de Chambre &#183; 2026</div>
+  <h1>Femme de Chambre<br><span>Saint-Tropez</span> &#183; Log&#233; incl.</h1>
+  <div class="header-sub">Hellowork &#183; 67 ofertas log&#233; Saint-Tropez &#183; 127 hoteler&#237;a &#183; 25 avril 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#128716; Femme de Chambre</div>
+    <div class="meta-pill">&#127968; <span>67</span> ofertas log&#233;</div>
+    <div class="meta-pill">&#9989; Links directos HW</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Esta informaci&#243;n es de car&#225;cter <strong>informativo y orientativo</strong>. No se verifican ni garantizan ofertas, empleadores ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de postular o firmar cualquier contrato.</strong>
+</div>
+
+<!-- SEÑALES ESTAFA -->
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Prometen log&#233; sin especificarlo por escrito &#183; &#10071; Sin contrato antes del primer d&#237;a &#183; &#10071; Solo WhatsApp sin direcci&#243;n verificable<br>
+  &#9989; <strong>Siempre pedir:</strong> log&#233; especificado en el contrato escrito &#183; direcci&#243;n f&#237;sica del establecimiento &#183; nunca pagar para trabajar
+</div>
+
+<!-- INFO -->
+<div class="box orange">
+  &#127868; <strong>Saint-Tropez &#8212; mercado CHR de lujo:</strong> Saint-Tropez tiene <strong>1.966 ofertas activas</strong> en Hellowork y <strong>67 puestos log&#233;</strong> disponibles. La temporada va de mayo a octubre. Los establecimientos son mayoritariamente h&#244;tels boutique, villas y resorts de lujo. El alojamiento en la zona es pr&#225;cticamente imposible de encontrar por cuenta propia &#8212; priorizar siempre puestos log&#233;+nourri. Se valora la discrecci&#243;n, el franc&#233;s fluido y el sentido del servicio de lujo.
+</div>
+
+<!-- FEMME DE CHAMBRE SIN LOGÉ -->
+<div class="sec-title">&#128716; Femme de Chambre &#8212; Saint-Tropez</div>
+<div class="cards">
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel Villa Cosy &amp; Spa &#8212; Saint-Tropez centre &#183; N&#176;1 TripAdvisor</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier mai&#8211;oct 2026 &#183; 35h</span>
+        <span class="tag tag-loc">&#128205; Saint-Tropez (83) &#183; centre-ville</span>
+        <span class="tag tag-pres">&#11088; N&#176;1 TripAdvisor Saint-Tropez</span>
+        <span class="tag tag-date">&#9889; Activa 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emplois/65636439.html">
+        hellowork.com/fr-fr/emplois/65636439.html &#8212; Villa Cosy Saint-Tropez
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#8212; H&#244;tel luxe <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel &#8212; Saint-Tropez (83) &#183; Saison 2026</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2026</span>
+        <span class="tag tag-loc">&#128205; Saint-Tropez (83) &#183; Var</span>
+        <span class="tag tag-date">&#9889; 127 ofertas h&#244;tellerie Saint-Tropez</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_saint-tropez-83990.html">
+        hellowork.com &#8594; femme de chambre Saint-Tropez
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F &#8212; Int&#233;rim <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">R.A.S. Int&#233;rim Fr&#233;jus &#8212; Saint-Tropez (83)</div>
+      <div class="card-tags">
+        <span class="tag tag-int">Int&#233;rim &#183; missions r&#233;guli&#232;res</span>
+        <span class="tag tag-loc">&#128205; Saint-Tropez (83) &#183; Var</span>
+        <span class="tag tag-date">&#9889; Saison 2026</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_saint-tropez-83990.html">
+        hellowork.com &#8594; femme de chambre Saint-Tropez &#8212; R.A.S. Int&#233;rim
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FEMME DE CHAMBRE CON LOGÉ -->
+<div class="sec-title green">&#127968; Femme de Chambre &#8212; LOG&#201; inclus Saint-Tropez &amp; alrededores</div>
+<div class="cards">
+
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Valet / Femme de Chambre H/F &#127968; LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel haut de gamme &#8212; Ramatuelle (83) &#183; 2.200&#8211;2.600&#8364;/mois</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 6 mois &#183; 1 poste log&#233; / 1 no log&#233;</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; inclus &#11088;</span>
+        <span class="tag tag-loc">&#128205; Ramatuelle (83) &#183; 5 km Saint-Tropez</span>
+        <span class="tag tag-date">&#9889; Hace 8 d&#237;as &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_var-83.html">
+        hellowork.com &#8594; femme de chambre Var &#8212; Ramatuelle log&#233; 2.200&#8211;2.600&#8364;
+      </a>
+    </div>
+  </div>
+
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Employ&#233;&#183;e d&#8217;H&#244;tel Polyvalent H/F &#127968; LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel &#8212; Saint-Tropez (83) &#183; Poste log&#233; CDI</div>
+      <div class="card-tags">
+        <span class="tag tag-cdi">CDI 35h &#183; LOG&#201;</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; inclus &#183; Saint-Tropez</span>
+        <span class="tag tag-loc">&#128205; Saint-Tropez (83)</span>
+        <span class="tag tag-date">&#9889; Activa 2026 &#183; 67 ofertas log&#233;</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_loge-ville_saint-tropez-83990.html">
+        hellowork.com &#8594; log&#233; Saint-Tropez (67 offres) &#8212; filtrar: femme de chambre
+      </a>
+    </div>
+  </div>
+
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag">HW</div></div>
+    <div class="card-body">
+      <div class="card-title">Femme / Valet de Chambre H/F &#127968; LOG&#201; NOURRI &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Domaine viticole &#8212; Ch&#226;teauvert (83) &#183; 13&#8211;14&#8364;/h</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 1 mois renouvelable</span>
+        <span class="tag tag-loge">&#127968; LOG&#201; + NOURRI &#183; domaine prestige</span>
+        <span class="tag tag-loc">&#128205; Ch&#226;teauvert (83) &#183; Var</span>
+        <span class="tag tag-date">&#9889; Hace 7 d&#237;as &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_var-83.html">
+        hellowork.com &#8594; femme de chambre Var &#8212; Ch&#226;teauvert log&#233; nourri 13&#8211;14&#8364;/h
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- VER MÁS -->
+<div class="box green" style="margin-top:10px;">
+  &#128270; <strong>Ver todas las ofertas log&#233; Saint-Tropez:</strong>
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_loge-ville_saint-tropez-83990.html">
+    hellowork.com &#8594; log&#233; Saint-Tropez (67 offres) &#8212; filtrar por femme de chambre
+  </a>
+  <a class="link-block" href="https://www.hellowork.com/fr-fr/emploi/domaine_hotellerie-ville_saint-tropez-83990.html" style="margin-top:6px;">
+    hellowork.com &#8594; h&#244;tellerie Saint-Tropez (127 offres)
+  </a>
+</div>
+
+<div class="page-footer">
+  <p><strong>Femme de Chambre &#183; Saint-Tropez (83) &#183; Log&#233; inclus &#183; 25 avril 2026</strong></p>
+  <p>Saint-Tropez &#183; Ramatuelle &#183; Ch&#226;teauvert &#183; Var &#183; Hellowork</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; Informaci&#243;n p&#250;blica con fines orientativos &#183; Exigir log&#233; por escrito en el contrato &#183; Nunca pagar para trabajar</p>
+</div>
+
+</body>
+</html>
