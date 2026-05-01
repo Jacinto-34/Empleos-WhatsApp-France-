@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=620">
+<title>Commis de Cuisine &#8212; PACA &#183; LHR &#183; 2026</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:'Trebuchet MS','Segoe UI',Arial,sans-serif; background:#EDE8E0; width:660px; margin:0 auto; }
+  .header { background:linear-gradient(150deg,#1A0A00 0%,#4A1A00 60%,#0A0500 100%); padding:30px 32px 22px; text-align:center; border-bottom:3px solid #FF7020; }
+  .header-label { display:inline-block; background:rgba(255,112,32,0.18); border:1px solid rgba(255,112,32,0.4); color:#FFCCA0; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; padding:5px 16px; border-radius:20px; margin-bottom:12px; }
+  .header h1 { font-family:Impact,'Arial Black',sans-serif; font-size:28px; color:#fff; letter-spacing:1px; line-height:1.05; margin-bottom:4px; }
+  .header h1 span { color:#FF7020; }
+  .header-sub { font-size:12px; color:rgba(255,255,255,0.45); margin-top:6px; }
+  .header-meta { display:flex; justify-content:center; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  .meta-pill { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:4px 12px; font-size:11px; color:rgba(255,255,255,0.7); }
+  .meta-pill span { color:#FF7020; font-weight:700; }
+  .box { margin:12px 16px 0; border-radius:10px; padding:12px 14px; font-size:11.5px; line-height:1.7; }
+  .box.gold   { background:#FFF8E7; border:1px solid #C4903A; border-left:4px solid #8B5E00; color:#3A2000; }
+  .box.red    { background:#FEF0F0; border:1px solid #E88080; border-left:4px solid #8B1A1A; color:#3A0A0A; }
+  .box.orange { background:#FFF3EE; border:1px solid #FF7020; border-left:4px solid #4A1A00; color:#2A0A00; }
+  .box.green  { background:#EDF8F0; border:1px solid #2ECC71; border-left:4px solid #1A6A30; color:#0A2A10; }
+  .box strong { font-weight:700; }
+  .box.gold strong   { color:#7A4A00; }
+  .box.red strong    { color:#8B1A1A; }
+  .box.orange strong { color:#4A1A00; }
+  .box.green strong  { color:#0A5A20; }
+  .sec-title { display:flex; align-items:center; gap:10px; margin:18px 16px 10px; font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#4A1A00; }
+  .sec-title::after { content:''; flex:1; height:1px; background:#C8C0B4; }
+  .cards { padding:0 16px 6px; display:flex; flex-direction:column; gap:9px; }
+  .card { background:#fff; border:1px solid #E0D8CC; border-radius:12px; padding:13px 14px; display:flex; gap:11px; align-items:flex-start; position:relative; overflow:hidden; }
+  .card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:3px 0 0 3px; background:#C4903A; }
+  .card.prestige { border-color:#FF7020; }
+  .card.prestige::before { width:4px; background:linear-gradient(to bottom,#4A1A00,#FF7020); }
+  .card.loge { border-color:#2ECC71; }
+  .card.loge::before { width:4px; background:linear-gradient(to bottom,#0A4A1A,#2ECC71); }
+  .card-left { flex-shrink:0; display:flex; flex-direction:column; align-items:center; gap:4px; }
+  .card-num { font-family:Impact,sans-serif; font-size:22px; line-height:1; color:rgba(0,0,0,0.08); }
+  .plat-tag { font-size:9px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:2px 6px; border-radius:5px; }
+  .plat-lhr { background:rgba(180,30,30,0.1); color:#8B1A1A; border:1px solid rgba(180,30,30,0.28); }
+  .card-body { flex:1; min-width:0; }
+  .card-title   { font-size:13px; font-weight:700; color:#1A1008; line-height:1.3; margin-bottom:2px; }
+  .card-company { font-size:11px; color:#7A6A5A; margin-bottom:7px; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:7px; }
+  .tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:5px; }
+  .tag-cdi  { background:rgba(14,80,200,0.07); color:#0A3A9A; border:1px solid rgba(14,80,200,0.18); }
+  .tag-cdd  { background:rgba(180,120,0,0.07); color:#7A5000; border:1px solid rgba(180,120,0,0.2); }
+  .tag-loc  { background:rgba(0,0,0,0.04); color:#5A4A3A; border:1px solid rgba(0,0,0,0.09); }
+  .tag-loge { background:rgba(46,204,113,0.1); color:#0A5A20; border:1px solid rgba(46,204,113,0.25); font-weight:800; }
+  .tag-date { background:rgba(150,60,60,0.07); color:#7A2020; border:1px solid rgba(150,60,60,0.17); }
+  .tag-pres { background:rgba(74,26,0,0.07); color:#2A0A00; border:1px solid rgba(74,26,0,0.18); }
+  .badge-ok { display:inline-block; font-size:9px; font-weight:700; background:rgba(20,120,60,0.1); color:#0F5C2A; border:1px solid rgba(20,120,60,0.22); border-radius:4px; padding:2px 6px; margin-left:4px; vertical-align:middle; }
+  .link-block { display:block; margin-top:10px; margin-bottom:2px; padding:8px 12px; background:#FFF3EE; border:1px solid #FFAA70; border-left:3px solid #4A1A00; border-radius:0 7px 7px 0; font-size:12px; font-weight:700; color:#2A0A00; text-decoration:underline; text-underline-offset:3px; word-break:break-all; line-height:1.5; }
+  .link-block.email { background:#FEF8EE; border-color:#C4903A; border-left-color:#8B5E00; color:#3A2000; font-family:monospace; font-size:11.5px; }
+  .page-footer { background:#1A0A00; padding:16px 24px; text-align:center; border-top:2px solid #FF7020; margin-top:14px; }
+  .page-footer p { font-size:11px; color:rgba(255,255,255,0.4); line-height:1.7; }
+  .page-footer strong { color:rgba(255,255,255,0.65); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">&#127859; LHR &#183; Commis de Cuisine &#183; PACA &#183; 2026</div>
+  <h1>Commis de Cuisine<br><span>PACA</span> &#183; Source LHR</h1>
+  <div class="header-sub">L&#8217;H&#244;tellerie Restauration &#183; lhotellerie-restauration.fr &#183; 5 empleadores distintos &#183; 1 mai 2026</div>
+  <div class="header-meta">
+    <div class="meta-pill">&#127859; <span>5</span> ofertas LHR</div>
+    <div class="meta-pill">&#127968; Log&#233; nourri disponible</div>
+    <div class="meta-pill">&#9989; Postulaci&#243;n directa</div>
+  </div>
+</div>
+
+<div class="box gold" style="margin-top:14px;">
+  &#9888;&#65039; <strong>Aviso:</strong> Informaci&#243;n de car&#225;cter <strong>orientativo</strong>. No se verifican ofertas ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico y se comparte con fines informativos. <strong>Cada persona es responsable de verificar por su cuenta antes de postular.</strong>
+</div>
+<div class="box red">
+  &#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Sin contrato escrito &#183; &#10071; Solo WhatsApp sin direcci&#243;n verificable &#183; &#10071; Prometen log&#233; sin especificarlo por escrito<br>
+  &#9989; <strong>Siempre pedir:</strong> contrato escrito &#183; direcci&#243;n f&#237;sica &#183; nunca pagar para trabajar
+</div>
+<div class="box orange">
+  &#128240; <strong>Source LHR &#8212; Postulaci&#243;n directa por email:</strong> Los anuncios en L&#8217;H&#244;tellerie Restauration incluyen el <strong>email directo del empleador</strong>. Sin intermediarios, sin cuenta France Travail. Enviar CV + lettre de motivation directamente al email indicado en cada oferta. Todos los empleadores son diferentes a los del documento Hellowork.
+</div>
+
+<div class="sec-title">&#127859; 5 Ofertas &#8212; Commis de Cuisine &#183; PACA &#183; LHR 2026</div>
+<div class="cards">
+
+  <div class="card prestige loge">
+    <div class="card-left"><div class="card-num">1</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#127968; NOURRI LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">&#206;le des Embiez &#8212; SEDE (filiale Paul Ricard) &#183; Var (83)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier &#183; &#206;le des Embiez</span>
+        <span class="tag tag-loge">&#127968; NOURRI LOG&#201; sur l&#8217;&#238;le &#11088;</span>
+        <span class="tag tag-loc">&#128205; &#206;le des Embiez (83) &#183; Var &#183; pr&#232;s Toulon</span>
+        <span class="tag tag-pres">&#11088; Soci&#233;t&#233; Paul Ricard &#183; &#238;le priv&#233;e</span>
+        <span class="tag tag-date">&#9889; Posté 25/04/2026 &#8212; muy reciente</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/provence-alpes-cote-d-azur">
+        lhotellerie-restauration.fr &#8594; PACA &#8212; &#206;le des Embiez commis cuisine log&#233;
+      </a>
+    </div>
+  </div>
+
+  <div class="card prestige loge">
+    <div class="card-left"><div class="card-num">2</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#127968; NOURRI LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">H&#244;tel Le Bailli de Suffren 4&#9733; &#8212; Golfe de Saint-Tropez (83)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saisonnier 2026</span>
+        <span class="tag tag-loge">&#127968; Exp&#233;rience exig&#233;e &#183; Anglais oblig.</span>
+        <span class="tag tag-loc">&#128205; Golfe de Saint-Tropez (83) &#183; Var</span>
+        <span class="tag tag-pres">&#11088; H&#244;tel 4&#9733; prestige &#183; Saint-Tropez</span>
+        <span class="tag tag-date">&#9889; Posté 24/04/2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/provence-alpes-cote-d-azur">
+        lhotellerie-restauration.fr &#8594; Bailli de Suffren Saint-Tropez &#8212; commis cuisine
+      </a>
+    </div>
+  </div>
+
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">3</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#127968; NOURRI LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">La Bastide du Calalou &amp; Spa 4&#9733; &#8212; Gorges du Verdon (83)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 15/03 &#8594; 31/10/2026</span>
+        <span class="tag tag-loge">&#127968; Conditions selon exp.</span>
+        <span class="tag tag-loc">&#128205; Gorges du Verdon &#183; Var (83)</span>
+        <span class="tag tag-pres">&#11088; Best Western Premier 4&#9733; &#183; Spa</span>
+        <span class="tag tag-date">&#9889; Posté 05/01/2026 &#183; activa</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/provence-alpes-cote-d-azur">
+        lhotellerie-restauration.fr &#8594; La Bastide du Calalou &#8212; commis cuisine
+      </a>
+    </div>
+  </div>
+
+  <div class="card loge">
+    <div class="card-left"><div class="card-num">4</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#127968; NOURRI LOG&#201; &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">Villa Sainte Anne &#8212; &#206;le de Porquerolles (83) &#183; Bistronomique Ma&#238;tres Rest.</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD 40h &#183; 2 jours repos/sem &#183; &#238;le</span>
+        <span class="tag tag-loge">&#127968; NOURRI LOG&#201; &#183; restaurant &#238;le prot&#233;g&#233;e</span>
+        <span class="tag tag-loc">&#128205; &#206;le de Porquerolles (83) &#183; Hy&#232;res</span>
+        <span class="tag tag-pres">&#11088; Ma&#238;tres Restaurateurs &#183; 1&#42; Michelin zone</span>
+        <span class="tag tag-date">&#9889; Posté 24/04/2026</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/provence-alpes-cote-d-azur">
+        lhotellerie-restauration.fr &#8594; Villa Sainte Anne Porquerolles &#8212; commis log&#233;
+      </a>
+    </div>
+  </div>
+
+  <div class="card prestige">
+    <div class="card-left"><div class="card-num">5</div><div class="plat-tag plat-lhr">LHR</div></div>
+    <div class="card-body">
+      <div class="card-title">Commis de Cuisine H/F &#8212; The Maybourne Riviera &#11088; <span class="badge-ok">&#9989; Sin FT</span></div>
+      <div class="card-company">The Maybourne Riviera &#8212; H&#244;tel de prestige &#183; C&#244;te d&#8217;Azur (06)</div>
+      <div class="card-tags">
+        <span class="tag tag-cdd">CDD Saison estivale 2026</span>
+        <span class="tag tag-loc">&#128205; C&#244;te d&#8217;Azur &#183; Alpes-Maritimes (06)</span>
+        <span class="tag tag-pres">&#11088; Maybourne Group &#183; Claridge&#8217;s London</span>
+        <span class="tag tag-date">&#9889; Posté 25/04/2026 &#8212; muy reciente</span>
+      </div>
+      <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/provence-alpes-cote-d-azur">
+        lhotellerie-restauration.fr &#8594; The Maybourne Riviera C&#244;te d&#8217;Azur &#8212; commis
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<div class="box green" style="margin-top:10px;">
+  &#128270; <strong>Ver m&#225;s commis de cuisine en PACA &#8212; LHR:</strong>
+  <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi-commis-de-cuisine">
+    lhotellerie-restauration.fr &#8594; emploi commis de cuisine &#8212; toda Francia
+  </a>
+  <a class="link-block" href="https://www.lhotellerie-restauration.fr/emploi/Provence-Alpes-Cote-d-Azur" style="margin-top:6px;">
+    lhotellerie-restauration.fr &#8594; emploi PACA &#8212; toutes cat&#233;gories
+  </a>
+</div>
+
+<div class="page-footer">
+  <p><strong>5 offres &#183; Commis de Cuisine &#183; PACA &#183; Source LHR &#183; 1 mai 2026</strong></p>
+  <p>&#206;le des Embiez &#183; Saint-Tropez &#183; Gorges du Verdon &#183; &#206;le de Porquerolles &#183; C&#244;te d&#8217;Azur</p>
+  <p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,0.3);">&#9989; lhotellerie-restauration.fr &#183; Postulaci&#243;n directa por email &#183; Sin intermediarios &#183; Nunca pagar para trabajar</p>
+</div>
+
+</body>
+</html>
