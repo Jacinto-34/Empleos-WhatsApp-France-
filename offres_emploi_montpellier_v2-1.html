@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=620">
+<title>Emplois Montpellier 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Trebuchet MS',Arial,sans-serif;background:#EDE8E0;width:660px;margin:0 auto}
+.header{background:linear-gradient(150deg,#001A10,#003A20,#000E08);padding:30px 32px 22px;text-align:center;border-bottom:3px solid #00E066}
+.hl{display:inline-block;background:rgba(0,224,102,.18);border:1px solid rgba(0,224,102,.4);color:#80FFB8;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:12px}
+h1{font-family:Impact,sans-serif;font-size:30px;color:#fff;line-height:1.05;margin-bottom:4px}.header h1 span{color:#00E066}
+.hsub{font-size:12px;color:rgba(255,255,255,.45);margin-top:6px}
+.hmeta{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.mp{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.7)}
+.mp span{color:#00E066;font-weight:700}
+.box{margin:12px 16px 0;border-radius:10px;padding:12px 14px;font-size:11.5px;line-height:1.7}
+.gold{background:#FFF8E7;border:1px solid #C4903A;border-left:4px solid #8B5E00;color:#3A2000}
+.red{background:#FEF0F0;border:1px solid #E88080;border-left:4px solid #8B1A1A;color:#3A0A0A}
+.green{background:#EDFAF4;border:1px solid #00E066;border-left:4px solid #006A30;color:#001A10}
+.gold strong{color:#7A4A00}.red strong{color:#8B1A1A}.green strong{color:#006A30}
+.sh{display:flex;align-items:center;gap:12px;padding:18px 20px 10px}
+.si{font-size:19px;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sia{background:rgba(0,58,32,.12)}.sib{background:rgba(10,120,70,.12)}.sic{background:rgba(100,40,160,.12)}.sid{background:rgba(180,80,0,.12)}
+.sh h2{font-family:Impact,sans-serif;font-size:17px;color:#1A1008}.sh p{font-size:11px;color:#8A7A6A;margin-top:1px}
+.sc{margin-left:auto;font-size:11px;font-weight:700;padding:3px 11px;border-radius:20px;background:rgba(0,0,0,.06);color:#5A4A3A}
+.cards{padding:0 16px 6px;display:flex;flex-direction:column;gap:9px}
+.card{background:#fff;border:1px solid #E0D8CC;border-radius:12px;padding:13px 14px;display:flex;gap:11px;align-items:flex-start;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;background:#C4903A}
+.card.p{border-color:#00E066}.card.p::before{width:4px;background:linear-gradient(to bottom,#001A10,#00E066)}
+.cl{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.cn{font-family:Impact,sans-serif;font-size:22px;line-height:1;color:rgba(0,0,0,.08)}
+.pt{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;border-radius:5px;background:rgba(180,120,0,.1);color:#6B4A00;border:1px solid rgba(180,120,0,.28)}
+.cb{flex:1;min-width:0}
+.ct{font-size:13px;font-weight:700;color:#1A1008;line-height:1.3;margin-bottom:2px}
+.cc{font-size:11px;color:#7A6A5A;margin-bottom:7px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px}
+.cdi{background:rgba(14,80,200,.07);color:#0A3A9A;border:1px solid rgba(14,80,200,.18)}
+.cdd{background:rgba(180,120,0,.07);color:#7A5000;border:1px solid rgba(180,120,0,.2)}
+.int{background:rgba(80,40,180,.07);color:#4A1A9A;border:1px solid rgba(80,40,180,.18)}
+.loc{background:rgba(0,0,0,.04);color:#5A4A3A;border:1px solid rgba(0,0,0,.09)}
+.dat{background:rgba(150,60,60,.07);color:#7A2020;border:1px solid rgba(150,60,60,.17)}
+.pre{background:rgba(0,58,32,.07);color:#002A18;border:1px solid rgba(0,58,32,.18)}
+.deb{background:rgba(0,180,80,.09);color:#005A20;border:1px solid rgba(0,180,80,.22);font-weight:800}
+.bok{display:inline-block;font-size:9px;font-weight:700;background:rgba(20,120,60,.1);color:#0F5C2A;border:1px solid rgba(20,120,60,.22);border-radius:4px;padding:2px 6px;margin-left:4px;vertical-align:middle}
+.lnk{display:block;margin-top:10px;margin-bottom:2px;padding:8px 12px;background:#EDFAF4;border:1px solid #80E0A8;border-left:3px solid #006A30;border-radius:0 7px 7px 0;font-size:12px;font-weight:700;color:#001A10;text-decoration:underline;text-underline-offset:3px;word-break:break-all;line-height:1.5}
+.div{height:1px;background:#DDD6CC;margin:6px 16px}
+.footer{background:#001A10;padding:16px 24px;text-align:center;border-top:2px solid #00E066;margin-top:14px}
+.footer p{font-size:11px;color:rgba(255,255,255,.4);line-height:1.7}.footer strong{color:rgba(255,255,255,.65)}
+</style></head><body>
+
+<div class="header">
+<div class="hl">&#127774; Montpellier (34) &#183; H&#233;rault &#183; 1 mai 2026</div>
+<h1>Empleos <span>Montpellier</span><br>H&#244;tellerie &amp; Restauraci&#243;n</h1>
+<div class="hsub">Hellowork &#183; 10.195 ofertas activas &#183; 1 mai 2026</div>
+<div class="hmeta">
+<div class="mp">&#127869; <span>5</span> Serveur</div>
+<div class="mp">&#129671; <span>5</span> Plongeur</div>
+<div class="mp">&#128716; <span>5</span> Femme de Chambre</div>
+<div class="mp">&#127859; <span>5</span> Commis Cuisine</div>
+</div></div>
+
+<div class="box gold" style="margin-top:14px;">&#9888;&#65039; <strong>Aviso:</strong> Informaci&#243;n <strong>orientativa</strong>. No se verifican ofertas ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico con fines informativos. <strong>Cada persona es responsable de verificar antes de postular.</strong></div>
+<div class="box red">&#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Sin contrato escrito &#183; &#10071; Solo WhatsApp sin direcci&#243;n &#183; &#10071; Piden RIB antes de la entrevista<br>&#9989; <strong>Siempre pedir:</strong> contrato escrito &#183; direcci&#243;n f&#237;sica &#183; nunca pagar para trabajar</div>
+<div class="box green">&#127774; <strong>Montpellier &#8212; 10.195 ofertas activas hoy:</strong> Mercado CHR activo todo el a&#241;o. Playa a 12 km (Palavas) y 20 km (La Grande-Motte). <strong>THEDRA Montpellier</strong> &#8212; agencia CHR especializada sin cuenta FT. Tramway l&#237;neas 1, 2 y 3.</div>
+
+<!-- SERVEUR -->
+<div class="sh"><div class="si sia">&#127869;</div><div><h2>SERVEUR / SERVEUSE</h2><p>Montpellier &#183; La Grande-Motte &#183; Saint-Jean-de-V&#233;das</p></div><div class="sc">5 offres</div></div>
+<div class="cards">
+<div class="card p"><div class="cl"><div class="cn">1</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Serveur&#183;se H/F &#8212; CDI 1.700&#8211;1.950&#8364; &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant &#8212; Montpellier (34)</div><div class="tags"><span class="tag cdi">CDI &#183; 1.700&#8211;1.950&#8364;/mois</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag deb">&#9989; D&#233;butant accept&#233;</span><span class="tag dat">&#9889; Hace 5 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_montpellier-34000.html">hellowork.com &#8594; serveur Montpellier &#8212; CDI d&#233;butant OK</a></div></div>
+<div class="card"><div class="cl"><div class="cn">2</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Serveur&#183;se H/F &#8212; Int&#233;rim THEDRA <span class="bok">&#9989; Sin FT</span></div><div class="cc">THEDRA Montpellier &#8212; Agencia CHR (34)</div><div class="tags"><span class="tag int">Int&#233;rim &#183; missions r&#233;guli&#232;res</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag pre">&#11088; THEDRA CHR</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_montpellier-34000.html">hellowork.com &#8594; serveur Montpellier &#8212; THEDRA int&#233;rim</a></div></div>
+<div class="card"><div class="cl"><div class="cn">3</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Serveur&#183;se H/F &#8212; CDD Saison <span class="bok">&#9989; Sin FT</span></div><div class="cc">South Restaurant &#8212; Saint-Jean-de-V&#233;das (34)</div><div class="tags"><span class="tag cdd">CDD Saison 2026</span><span class="tag loc">&#128205; Saint-Jean-de-V&#233;das (34)</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_montpellier-34000.html">hellowork.com &#8594; serveur Montpellier &#8212; CDD saison</a></div></div>
+<div class="card p"><div class="cl"><div class="cn">4</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Serveur&#183;se H/F &#8212; La Grande-Motte 1.932&#8364; &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant &#8212; La Grande-Motte (34) &#183; bord de mer</div><div class="tags"><span class="tag cdd">CDD &#183; 1.932&#8364;/mois &#11088;</span><span class="tag loc">&#128205; La Grande-Motte (34) &#183; 20 km</span><span class="tag dat">&#9889; Hace 12 horas</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_saisonnier-ville_montpellier-34000.html">hellowork.com &#8594; saisonnier Montpellier &#8212; La Grande-Motte 1.932&#8364;</a></div></div>
+<div class="card"><div class="cl"><div class="cn">5</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Serveur&#183;se H/F &#8212; CDD 5 mois <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant &#8212; Montpellier (34) &#183; 1.829&#8211;1.879&#8364;/mois</div><div class="tags"><span class="tag cdd">CDD 5 mois &#183; 1.829&#8211;1.879&#8364;/mois</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag dat">&#9889; Hace 11 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_serveur-ville_montpellier-34000.html">hellowork.com &#8594; serveur Montpellier &#8212; CDD 5 mois</a></div></div>
+</div>
+<div class="div"></div>
+
+<!-- PLONGEUR -->
+<div class="sh"><div class="si sib">&#129671;</div><div><h2>PLONGEUR / PLONGEUSE</h2><p>Montpellier &#183; P&#233;rols &#183; Palavas-les-Flots &#183; H&#233;rault</p></div><div class="sc">5 offres</div></div>
+<div class="cards">
+<div class="card p"><div class="cl"><div class="cn">1</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Plongeur H/F &#8212; Int&#233;rim 1 semaine <span class="bok">&#9989; Sin FT</span></div><div class="cc">Agencia int&#233;rim &#8212; Montpellier (34)</div><div class="tags"><span class="tag int">Int&#233;rim 1 semaine renouvelable</span><span class="tag loc">&#128205; Montpellier (34)</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_montpellier-34000.html">hellowork.com &#8594; plongeur Montpellier (20 offres)</a></div></div>
+<div class="card p"><div class="cl"><div class="cn">2</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Commis Plongeur H/F &#8212; CDI &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant &#8212; Montpellier centre (34)</div><div class="tags"><span class="tag cdi">CDI &#8212; nuevo restaurant centre</span><span class="tag loc">&#128205; Montpellier (34) &#183; centre</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_montpellier-34000.html">hellowork.com &#8594; plongeur Montpellier &#8212; CDI centre</a></div></div>
+<div class="card"><div class="cl"><div class="cn">3</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Plongeur H/F &#8212; Int&#233;rim P&#233;rols <span class="bok">&#9989; Sin FT</span></div><div class="cc">Agencia int&#233;rim &#8212; P&#233;rols (34470)</div><div class="tags"><span class="tag int">Int&#233;rim</span><span class="tag loc">&#128205; P&#233;rols (34) &#183; 5 km Montpellier</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-departement_herault-34.html">hellowork.com &#8594; plongeur H&#233;rault &#8212; P&#233;rols</a></div></div>
+<div class="card"><div class="cl"><div class="cn">4</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Aide Cuisine / Plongeur H/F &#8212; Palavas Saison <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant plage &#8212; Palavas-les-Flots (34)</div><div class="tags"><span class="tag cdd">CDD Saison 2026</span><span class="tag loc">&#128205; Palavas-les-Flots (34) &#183; 12 km</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-departement_herault-34.html">hellowork.com &#8594; plongeur H&#233;rault &#8212; Palavas saison</a></div></div>
+<div class="card"><div class="cl"><div class="cn">5</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Plongeur H/F &#8212; THEDRA Montpellier <span class="bok">&#9989; Sin FT</span></div><div class="cc">THEDRA &#8212; Agencia CHR &#183; Montpellier (34)</div><div class="tags"><span class="tag int">Int&#233;rim CHR &#183; sin cuenta FT</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag pre">&#11088; THEDRA CHR</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_plongeur-en-restauration-ville_montpellier-34000.html">hellowork.com &#8594; plongeur Montpellier &#8212; THEDRA</a></div></div>
+</div>
+<div class="div"></div>
+
+<!-- FEMME DE CHAMBRE -->
+<div class="sh"><div class="si sic">&#128716;</div><div><h2>FEMME / VALET DE CHAMBRE</h2><p>Montpellier &#183; Palavas &#183; La Grande-Motte &#183; Castries &#183; H&#233;rault</p></div><div class="sc">5 offres</div></div>
+<div class="cards">
+<div class="card p"><div class="cl"><div class="cn">1</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Femme / Valet de Chambre H/F &#8212; Int&#233;rim 12&#8211;13&#8364;/h &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">Agencia int&#233;rim &#8212; H&#233;rault (34) &#183; travail de jour</div><div class="tags"><span class="tag int">Int&#233;rim &#183; 12&#8211;13&#8364;/h &#183; de jour</span><span class="tag loc">&#128205; H&#233;rault (34)</span><span class="tag dat">&#9889; Hace 16 horas</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_herault-34.html">hellowork.com &#8594; femme de chambre H&#233;rault (40+ offres) &#8212; 13&#8364;/h</a></div></div>
+<div class="card p"><div class="cl"><div class="cn">2</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Femme / Valet de Chambre H/F &#8212; CDD 5 mois &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">H&#244;tel &#8212; Palavas-les-Flots (34) &#183; 1.823&#8364;/mois</div><div class="tags"><span class="tag cdd">CDD 5 mois &#183; 1.823&#8364;/mois</span><span class="tag loc">&#128205; Palavas-les-Flots (34) &#183; plage</span><span class="tag dat">&#9889; Hace 1 d&#237;a</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_herault-34.html">hellowork.com &#8594; femme de chambre H&#233;rault &#8212; Palavas CDD 5 mois</a></div></div>
+<div class="card"><div class="cl"><div class="cn">3</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Femme / Valet de Chambre H/F &#8212; CDD <span class="bok">&#9989; Sin FT</span></div><div class="cc">H&#244;tel &#8212; Montpellier (34) &#183; 12,08&#8364;/h</div><div class="tags"><span class="tag cdd">CDD &#183; 12,08&#8364;/h</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag dat">&#9889; Hace 1 d&#237;a</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-ville_montpellier-34000.html">hellowork.com &#8594; femme de chambre Montpellier</a></div></div>
+<div class="card"><div class="cl"><div class="cn">4</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Femme / Valet de Chambre H/F &#8212; CDI &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">H&#244;tel &#8212; La Grande-Motte (34) &#183; 12,38&#8364;/h</div><div class="tags"><span class="tag cdi">CDI &#183; 12,38&#8364;/h</span><span class="tag loc">&#128205; La Grande-Motte (34) &#183; bord de mer</span><span class="tag dat">&#9889; Hace 4 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_valet-de-chambre-departement_herault-34.html">hellowork.com &#8594; femme de chambre H&#233;rault &#8212; CDI La Grande-Motte</a></div></div>
+<div class="card"><div class="cl"><div class="cn">5</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Femme / Valet de Chambre H/F &#8212; CDD <span class="bok">&#9989; Sin FT</span></div><div class="cc">GIE International Hotel Management &#8212; Castries (34)</div><div class="tags"><span class="tag cdd">CDD &#183; 12,02&#8364;/h</span><span class="tag loc">&#128205; Castries (34) &#183; 15 km Montpellier</span><span class="tag dat">&#9889; Hace 2 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emplois/76927330.html">hellowork.com/fr-fr/emplois/76927330.html &#8212; GIE Hotel Castries</a></div></div>
+</div>
+<div class="div"></div>
+
+<!-- COMMIS CUISINE -->
+<div class="sh"><div class="si sid">&#127859;</div><div><h2>COMMIS DE CUISINE</h2><p>Montpellier &#183; Mauguio &#183; Palavas &#183; B&#233;ziers &#183; H&#233;rault (34)</p></div><div class="sc">5 offres</div></div>
+<div class="cards">
+<div class="card p"><div class="cl"><div class="cn">1</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Commis de Cuisine H/F &#8212; Int&#233;rim 12&#8364;/h &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">Agencia int&#233;rim &#8212; Montpellier (34)</div><div class="tags"><span class="tag int">Int&#233;rim &#183; 12&#8364;/h</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag dat">&#9889; Hace 9 horas</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-cuisine-ville_montpellier-34000.html">hellowork.com &#8594; commis cuisine Montpellier (33 offres)</a></div></div>
+<div class="card p"><div class="cl"><div class="cn">2</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Commis de Cuisine H/F &#8212; Mauguio 2.564&#8364; &#11088; <span class="bok">&#9989; Sin FT</span></div><div class="cc">H&#244;tel-Restaurant &#8212; Mauguio (34)</div><div class="tags"><span class="tag cdd">CDD 5 mois &#183; 2.564&#8364;/mois &#11088;</span><span class="tag loc">&#128205; Mauguio (34) &#183; proche a&#233;roport</span><span class="tag dat">&#9889; Hace 9 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-cuisine-ville_montpellier-34000.html">hellowork.com &#8594; commis cuisine Montpellier &#8212; Mauguio 2.564&#8364;</a></div></div>
+<div class="card"><div class="cl"><div class="cn">3</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Commis de Cuisine H/F &#8212; CDI <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant &#8212; Montpellier (34) &#183; 12&#8364;/h</div><div class="tags"><span class="tag cdi">CDI &#183; 12&#8364;/h</span><span class="tag loc">&#128205; Montpellier (34)</span><span class="tag dat">&#9889; Hace 2 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-cuisine-ville_montpellier-34000.html">hellowork.com &#8594; commis cuisine Montpellier &#8212; CDI</a></div></div>
+<div class="card"><div class="cl"><div class="cn">4</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Commis de Cuisine H/F &#8212; Palavas 1.890&#8364; <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant plage &#8212; Palavas-les-Flots (34)</div><div class="tags"><span class="tag cdd">CDD Saison &#183; 1.890&#8364;/mois</span><span class="tag loc">&#128205; Palavas-les-Flots (34) &#183; 12 km</span><span class="tag dat">&#9889; Hace 10 horas</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-cuisine-departement_herault-34.html">hellowork.com &#8594; commis cuisine H&#233;rault &#8212; Palavas 1.890&#8364;</a></div></div>
+<div class="card"><div class="cl"><div class="cn">5</div><div class="pt">HW</div></div><div class="cb"><div class="ct">Commis de Cuisine H/F &#8212; CDD B&#233;ziers <span class="bok">&#9989; Sin FT</span></div><div class="cc">Restaurant &#8212; B&#233;ziers (34) &#183; 1.587&#8364;/mois</div><div class="tags"><span class="tag cdd">CDD &#183; 1.587&#8364;/mois</span><span class="tag loc">&#128205; B&#233;ziers (34) &#183; H&#233;rault</span><span class="tag dat">&#9889; Hace 2 d&#237;as</span></div><a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_commis-de-cuisine-departement_herault-34.html">hellowork.com &#8594; commis cuisine H&#233;rault &#8212; B&#233;ziers</a></div></div>
+</div>
+
+<div class="box green" style="margin-top:10px;">&#128270; <strong>Ver m&#225;s ofertas:</strong>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/domaine_restauration-ville_montpellier-34000.html">hellowork.com &#8594; restauration Montpellier (350+ offres)</a>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/interim/ville_montpellier-34000.html" style="margin-top:6px;">hellowork.com &#8594; int&#233;rim Montpellier &#8212; THEDRA incluse (2.101 missions)</a>
+</div>
+
+<div class="footer">
+<p><strong>20 offres &#183; Montpellier (34) &#183; H&#244;tellerie &amp; Restauration &#183; 1 mai 2026</strong></p>
+<p>Montpellier &#183; Palavas &#183; La Grande-Motte &#183; Mauguio &#183; Castries &#183; P&#233;rols &#183; B&#233;ziers</p>
+<p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,.3)">&#9989; Hellowork &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Nunca pagar para trabajar</p>
+</div>
+</body></html>
