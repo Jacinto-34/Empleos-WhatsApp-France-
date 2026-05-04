@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=620">
+<title>Barista &amp; Barman &#8212; Nantes &amp; Angers &#183; 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Trebuchet MS',Arial,sans-serif;background:#EDE8E0;width:660px;margin:0 auto}
+.hdr{background:linear-gradient(150deg,#0A0A00,#2A1A00,#1A0A00);padding:30px 32px 22px;text-align:center;border-bottom:3px solid #FF9900}
+.hl{display:inline-block;background:rgba(255,153,0,.18);border:1px solid rgba(255,153,0,.4);color:#FFD080;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:12px}
+.hdr h1{font-family:Impact,sans-serif;font-size:30px;color:#fff;line-height:1.05;margin-bottom:4px}.hdr h1 span{color:#FF9900}
+.hsub{font-size:12px;color:rgba(255,255,255,.45);margin-top:6px}
+.hm{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.mp{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.7)}.mp span{color:#FF9900;font-weight:700}
+.box{margin:12px 16px 0;border-radius:10px;padding:12px 14px;font-size:11.5px;line-height:1.7}
+.gold{background:#FFF8E7;border:1px solid #C4903A;border-left:4px solid #8B5E00;color:#3A2000}
+.red{background:#FEF0F0;border:1px solid #E88080;border-left:4px solid #8B1A1A;color:#3A0A0A}
+.amber{background:#FFF4E0;border:1px solid #FF9900;border-left:4px solid #2A1A00;color:#1A0A00}
+.green{background:#EDF8F0;border:1px solid #2ECC71;border-left:4px solid #1A6A30;color:#0A2A10}
+.gold strong{color:#7A4A00}.red strong{color:#8B1A1A}.amber strong{color:#2A1A00}.green strong{color:#0A5A20}
+.sh{display:flex;align-items:center;gap:12px;padding:18px 20px 10px}
+.si{font-size:19px;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sa{background:rgba(42,26,0,.12)}.sb{background:rgba(10,80,40,.12)}
+.sh h2{font-family:Impact,sans-serif;font-size:17px;color:#1A1008}.sh p{font-size:11px;color:#8A7A6A;margin-top:1px}
+.sct{margin-left:auto;font-size:11px;font-weight:700;padding:3px 11px;border-radius:20px;background:rgba(0,0,0,.06);color:#5A4A3A}
+.cards{padding:0 16px 6px;display:flex;flex-direction:column;gap:9px}
+.card{background:#fff;border:1px solid #E0D8CC;border-radius:12px;padding:13px 14px;display:flex;gap:11px;align-items:flex-start;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;background:#C4903A}
+.card.p{border-color:#FF9900}.card.p::before{width:4px;background:linear-gradient(to bottom,#2A1A00,#FF9900)}
+.cl{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:4px}
+.cn{font-family:Impact,sans-serif;font-size:22px;line-height:1;color:rgba(0,0,0,.08)}
+.pt{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;border-radius:5px;background:rgba(180,120,0,.1);color:#6B4A00;border:1px solid rgba(180,120,0,.28)}
+.cb{flex:1;min-width:0}
+.ct{font-size:13px;font-weight:700;color:#1A1008;line-height:1.3;margin-bottom:2px}
+.cc{font-size:11px;color:#7A6A5A;margin-bottom:7px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px}
+.tcdi{background:rgba(14,80,200,.07);color:#0A3A9A;border:1px solid rgba(14,80,200,.18)}
+.tcdd{background:rgba(180,120,0,.07);color:#7A5000;border:1px solid rgba(180,120,0,.2)}
+.tint{background:rgba(80,40,180,.07);color:#4A1A9A;border:1px solid rgba(80,40,180,.18)}
+.tloc{background:rgba(0,0,0,.04);color:#5A4A3A;border:1px solid rgba(0,0,0,.09)}
+.tdat{background:rgba(150,60,60,.07);color:#7A2020;border:1px solid rgba(150,60,60,.17)}
+.tpre{background:rgba(42,26,0,.07);color:#1A0A00;border:1px solid rgba(42,26,0,.18)}
+.tdeb{background:rgba(20,140,60,.09);color:#0A5A20;border:1px solid rgba(20,140,60,.22);font-weight:800}
+.bok{display:inline-block;font-size:9px;font-weight:700;background:rgba(20,120,60,.1);color:#0F5C2A;border:1px solid rgba(20,120,60,.22);border-radius:4px;padding:2px 6px;margin-left:4px;vertical-align:middle}
+.lnk{display:block;margin-top:10px;margin-bottom:2px;padding:8px 12px;background:#FFF4E0;border:1px solid #FFB840;border-left:3px solid #2A1A00;border-radius:0 7px 7px 0;font-size:12px;font-weight:700;color:#1A0A00;text-decoration:underline;text-underline-offset:3px;word-break:break-all;line-height:1.5}
+.div{height:1px;background:#DDD6CC;margin:6px 16px}
+.sf{margin:2px 16px 12px;background:rgba(42,26,0,.04);border:1px solid rgba(42,26,0,.15);border-left:3px solid #2A1A00;border-radius:0 8px 8px 0;padding:9px 13px;font-size:11px;color:#1A0A00;line-height:1.65}.sf strong{color:#2A1A00}
+.ftr{background:#0A0A00;padding:16px 24px;text-align:center;border-top:2px solid #FF9900;margin-top:14px}
+.ftr p{font-size:11px;color:rgba(255,255,255,.4);line-height:1.7}.ftr strong{color:rgba(255,255,255,.65)}
+</style></head><body>
+
+<div class="hdr">
+<div class="hl">&#9749; Barista &amp; Barman &#183; Nantes &#183; Angers &#183; 2026</div>
+<h1>Barista &amp; <span>Barman</span><br>Nantes &amp; Angers</h1>
+<div class="hsub">Hellowork &#183; 17 barista + 47 barman Nantes &#183; Mai 2026</div>
+<div class="hm">
+<div class="mp">&#9749; <span>5</span> Barista</div>
+<div class="mp">&#127867; <span>5</span> Barman</div>
+<div class="mp">&#128205; Nantes &#183; Angers</div>
+<div class="mp">&#9989; CDI &#183; CDD &#183; Int&#233;rim</div>
+</div></div>
+
+<div class="box gold" style="margin-top:14px;">&#9888;&#65039; <strong>Aviso:</strong> Informaci&#243;n de car&#225;cter <strong>orientativo</strong>. No se verifican ofertas ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico con fines informativos. <strong>Cada persona es responsable de verificar antes de postular.</strong></div>
+<div class="box red">&#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Sin contrato escrito &#183; &#10071; Solo WhatsApp sin direcci&#243;n verificable &#183; &#10071; Piden RIB antes de la entrevista<br>&#9989; <strong>Siempre pedir:</strong> contrato escrito &#183; direcci&#243;n f&#237;sica &#183; nunca pagar para trabajar</div>
+<div class="box amber">&#9749; <strong>Nantes &amp; Angers &#8212; mercado CHR activo todo el a&#241;o:</strong> Nantes tiene <strong>17 ofertas barista + 47 barman</strong> activas hoy en Hellowork. Ciudad dinámica con fuerte cultura caf&#233; y coctelería en auge. Angers es capital de la Anjou viticola &#8212; los bares de vino y la coctelería son muy activos. Ambas ciudades tienen tramway y transporte público eficiente. <strong>TonBarman.fr</strong> &#8212; plataforma especializada en misiones barman a 25&#8364;/h neto, sin cuenta FT.</div>
+<div class="box green">&#128203; <strong>C&#243;mo postular:</strong><br>&#9989; Presentarse en persona con CV impreso &#8212; Nantes: Bouffay, Zola, Talensac &#183; Angers: centre-ville<br>&#9989; <strong>TonBarman.fr</strong> &#8212; plataforma barman 25&#8364;/h net &#183; sin cuenta FT<br>&#9989; Mencionar conocimientos de cock-tail, cafés de spécialité o vinos &#8212; muy valorados en ambas ciudades</div>
+
+<!-- BARISTA -->
+<div class="sh"><div class="si sa">&#9749;</div><div><h2>BARISTA</h2><p>Nantes &#183; Saint-S&#233;bastien-sur-Loire &#183; Angers &#183; Maine-et-Loire</p></div><div class="sct">5 offres</div></div>
+<div class="cards">
+
+<div class="card p"><div class="cl"><div class="cn">1</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barista H/F &#8212; CDI &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">Caf&#233; de sp&#233;cialit&#233; &#8212; Nantes (44) &#183; centre</div>
+<div class="tags"><span class="tag tcdi">CDI &#183; caf&#233; de sp&#233;cialit&#233;</span><span class="tag tloc">&#128205; Nantes (44) &#183; centre</span><span class="tag tpre">&#11088; Torr&#233;faction artisanale</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barista-ville_nantes-44000.html">hellowork.com &#8594; barista Nantes (17 offres) &#8212; CDI caf&#233; sp&#233;cialit&#233;</a>
+</div></div>
+
+<div class="card p"><div class="cl"><div class="cn">2</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barista H/F &#8212; CDI 13,17&#8364;/h &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">&#201;tablissement &#8212; Saint-S&#233;bastien-sur-Loire (44) &#183; 12 d&#237;as</div>
+<div class="tags"><span class="tag tcdi">CDI &#183; 13,17&#8364;/h &#11088;</span><span class="tag tloc">&#128205; Saint-S&#233;bastien-sur-Loire (44)</span><span class="tag tdat">&#9889; Hace 12 d&#237;as</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barista-ville_nantes-44000.html">hellowork.com &#8594; barista Nantes &#8212; CDI 13,17&#8364;/h Saint-S&#233;bastien</a>
+</div></div>
+
+<div class="card"><div class="cl"><div class="cn">3</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barista H/F &#8212; CDD Saison <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">H&#244;tel / Caf&#233; &#8212; Nantes (44) &#183; Loire-Atlantique</div>
+<div class="tags"><span class="tag tcdd">CDD saison 2026</span><span class="tag tloc">&#128205; Nantes (44)</span><span class="tag tdeb">&#9989; D&#233;butant accept&#233;</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barista-ville_nantes-44000.html">hellowork.com &#8594; barista Nantes &#8212; CDD saison</a>
+</div></div>
+
+<div class="card"><div class="cl"><div class="cn">4</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barista H/F &#8212; Int&#233;rim Nantes <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">Agencia int&#233;rim &#8212; Nantes (44) &#183; missions r&#233;guli&#232;res</div>
+<div class="tags"><span class="tag tint">Int&#233;rim &#183; missions r&#233;guli&#232;res</span><span class="tag tloc">&#128205; Nantes (44)</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/interim/metier_barista-ville_nantes-44000.html">hellowork.com &#8594; int&#233;rim barista Nantes</a>
+</div></div>
+
+<div class="card"><div class="cl"><div class="cn">5</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barista H/F &#8212; Angers &#183; CDI <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">Caf&#233; / Brasserie &#8212; Angers (49) &#183; Maine-et-Loire</div>
+<div class="tags"><span class="tag tcdi">CDI &#183; Angers centre</span><span class="tag tloc">&#128205; Angers (49) &#183; Maine-et-Loire</span><span class="tag tpre">&#11088; Capitale du vignoble Anjou</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barista-ville_angers-49000.html">hellowork.com &#8594; barista Angers (Maine-et-Loire)</a>
+</div></div>
+
+</div>
+<div class="sf"><strong>17 ofertas barista activas en Nantes hoy.</strong> Ver todas: <a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barista-ville_nantes-44000.html">hellowork.com &#8594; barista Nantes (17 offres)</a></div>
+<div class="div"></div>
+
+<!-- BARMAN -->
+<div class="sh"><div class="si sb">&#127867;</div><div><h2>BARMAN / BARMAID</h2><p>Nantes &#183; Rez&#233; &#183; Saint-Herblain &#183; Angers &#183; Pays de la Loire</p></div><div class="sct">5 offres</div></div>
+<div class="cards">
+
+<div class="card p"><div class="cl"><div class="cn">1</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barman H/F &#8212; CDI &#183; Formation TFP incluse &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">&#201;tablissement &#8212; Nantes (44) &#183; TFP Barman + CDI garanti</div>
+<div class="tags"><span class="tag tcdi">CDI &#183; formation TFP incluse &#11088;</span><span class="tag tloc">&#128205; Nantes (44)</span><span class="tag tdeb">&#9989; D&#233;butant &#8212; CDI garanti</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-ville_nantes-44000.html">hellowork.com &#8594; barman Nantes (17 offres) &#8212; formation TFP + CDI</a>
+</div></div>
+
+<div class="card p"><div class="cl"><div class="cn">2</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barman H/F &#8212; CDI 13,17&#8364;/h &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">Bar &#8212; Saint-S&#233;bastien-sur-Loire (44) &#183; Loire-Atlantique</div>
+<div class="tags"><span class="tag tcdi">CDI &#183; 13,17&#8364;/h &#11088;</span><span class="tag tloc">&#128205; Saint-S&#233;bastien-sur-Loire (44)</span><span class="tag tdat">&#9889; Hace 12 d&#237;as</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-ville_reze-44400.html">hellowork.com &#8594; barman Rez&#233;/Saint-S&#233;bastien (29 offres) &#8212; CDI 13,17&#8364;</a>
+</div></div>
+
+<div class="card"><div class="cl"><div class="cn">3</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barman H/F &#8212; TonBarman &#183; 25&#8364;/h net &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">TonBarman.fr &#8212; Plateforme barman &#183; Nantes (44)</div>
+<div class="tags"><span class="tag tint">25&#8364;/h NET &#183; prestation &#11088;</span><span class="tag tloc">&#128205; Nantes (44) &#183; m&#233;tropole</span><span class="tag tpre">&#11088; TonBarman &#8212; plateforme sp&#233;cialis&#233;e</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-ville_nantes-44000.html">hellowork.com &#8594; barman Nantes &#8212; TonBarman 25&#8364;/h net</a>
+</div></div>
+
+<div class="card"><div class="cl"><div class="cn">4</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barman H/F &#8212; CDD &#183; Bar Loire-Atlantique <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">Bar-Restaurant &#8212; Loire-Atlantique (44) &#183; 47 ofertas activas</div>
+<div class="tags"><span class="tag tcdd">CDD &#183; Loire-Atlantique</span><span class="tag tloc">&#128205; Loire-Atlantique (44)</span><span class="tag tdat">&#9889; 47 ofertas barman activas</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-departement_loire-atlantique-44.html">hellowork.com &#8594; barman Loire-Atlantique (47 offres)</a>
+</div></div>
+
+<div class="card"><div class="cl"><div class="cn">5</div><div class="pt">HW</div></div><div class="cb">
+<div class="ct">Barman H/F &#8212; Angers &#183; CDI <span class="bok">&#9989; Sin FT</span></div>
+<div class="cc">Bar-Brasserie &#8212; Angers (49) &#183; Maine-et-Loire</div>
+<div class="tags"><span class="tag tcdi">CDI &#183; Angers centre</span><span class="tag tloc">&#128205; Angers (49) &#183; Maine-et-Loire</span><span class="tag tpre">&#11088; Ville du vin Anjou</span></div>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-ville_angers-49000.html">hellowork.com &#8594; barman Angers (Maine-et-Loire)</a>
+</div></div>
+
+</div>
+<div class="sf"><strong>17 ofertas barman Nantes &#183; 47 en Loire-Atlantique &#183; offers Angers.</strong>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-ville_nantes-44000.html">hellowork.com &#8594; barman Nantes (17 offres)</a>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-departement_loire-atlantique-44.html" style="margin-top:6px">hellowork.com &#8594; barman Loire-Atlantique (47 offres)</a>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/metier_barman-ville_angers-49000.html" style="margin-top:6px">hellowork.com &#8594; barman Angers</a>
+</div>
+
+<div class="ftr">
+<p><strong>10 offres &#183; Barista &amp; Barman &#183; Nantes &amp; Angers &#183; Mai 2026</strong></p>
+<p>Nantes &#183; Saint-S&#233;bastien-sur-Loire &#183; Rez&#233; &#183; Saint-Herblain &#183; Angers &#183; Pays de la Loire</p>
+<p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,.3)">&#9989; Hellowork &#183; Informaci&#243;n p&#250;blica con fines orientativos &#183; Nunca pagar para trabajar</p>
+</div>
+</body></html>
