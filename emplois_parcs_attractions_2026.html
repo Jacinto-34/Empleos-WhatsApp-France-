@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=620">
+<title>Emplois Parcs d&#8217;Attractions &#8212; France 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Trebuchet MS',Arial,sans-serif;background:#EDE8E0;width:660px;margin:0 auto}
+.hdr{background:linear-gradient(150deg,#1A0500,#500A00,#0A0200);padding:30px 32px 22px;text-align:center;border-bottom:3px solid #FF6600}
+.hl{display:inline-block;background:rgba(255,102,0,.18);border:1px solid rgba(255,102,0,.4);color:#FFCC99;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:20px;margin-bottom:12px}
+.hdr h1{font-family:Impact,sans-serif;font-size:30px;color:#fff;line-height:1.05;margin-bottom:4px}.hdr h1 span{color:#FF6600}
+.hsub{font-size:12px;color:rgba(255,255,255,.45);margin-top:6px}
+.hm{display:flex;justify-content:center;gap:8px;margin-top:12px;flex-wrap:wrap}
+.mp{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:4px 12px;font-size:11px;color:rgba(255,255,255,.7)}.mp span{color:#FF6600;font-weight:700}
+.box{margin:12px 16px 0;border-radius:10px;padding:12px 14px;font-size:11.5px;line-height:1.7}
+.gold{background:#FFF8E7;border:1px solid #C4903A;border-left:4px solid #8B5E00;color:#3A2000}
+.red{background:#FEF0F0;border:1px solid #E88080;border-left:4px solid #8B1A1A;color:#3A0A0A}
+.orange{background:#FFF3EE;border:1px solid #FF6600;border-left:4px solid #500A00;color:#1A0500}
+.green{background:#EDF8F0;border:1px solid #2ECC71;border-left:4px solid #1A6A30;color:#0A2A10}
+.gold strong{color:#7A4A00}.red strong{color:#8B1A1A}.orange strong{color:#500A00}.green strong{color:#0A5A20}
+.gb{display:flex;align-items:center;gap:14px;padding:14px 20px 8px;margin-top:14px}
+.gb.disney{border-left:5px solid #006EC7;background:linear-gradient(90deg,rgba(0,110,199,.07),transparent)}
+.gb.asterix{border-left:5px solid #CC0000;background:linear-gradient(90deg,rgba(204,0,0,.07),transparent)}
+.gb.puydu{border-left:5px solid #8B6914;background:linear-gradient(90deg,rgba(139,105,20,.07),transparent)}
+.gb.futuro{border-left:5px solid #009933;background:linear-gradient(90deg,rgba(0,153,51,.07),transparent)}
+.gb.vulca{border-left:5px solid #CC4400;background:linear-gradient(90deg,rgba(204,68,0,.07),transparent)}
+.gb.walibi{border-left:5px solid #0077AA;background:linear-gradient(90deg,rgba(0,119,170,.07),transparent)}
+.gb.spirou{border-left:5px solid #AA00FF;background:linear-gradient(90deg,rgba(170,0,255,.07),transparent)}
+.gl{font-size:24px;flex-shrink:0}
+.gn{font-family:Impact,sans-serif;font-size:17px;letter-spacing:.5px}
+.gb.disney .gn{color:#006EC7}.gb.asterix .gn{color:#CC0000}.gb.puydu .gn{color:#8B6914}
+.gb.futuro .gn{color:#009933}.gb.vulca .gn{color:#CC4400}.gb.walibi .gn{color:#0077AA}.gb.spirou .gn{color:#AA00FF}
+.gs{font-size:10.5px;color:#7A6A5A;margin-top:2px}
+.gct{margin-left:auto;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;background:rgba(0,0,0,.06);color:#5A4A3A}
+.pcard{background:white;border-radius:12px;padding:13px 14px;margin:0 16px 8px;border:1px solid #E0D8CC;position:relative;overflow:hidden}
+.pcard::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px}
+.pcard.disney::before{background:#006EC7}.pcard.asterix::before{background:#CC0000}
+.pcard.puydu::before{background:#8B6914}.pcard.futuro::before{background:#009933}
+.pcard.vulca::before{background:#CC4400}.pcard.walibi::before{background:#0077AA}.pcard.spirou::before{background:#AA00FF}
+.pc-title{font-size:12.5px;font-weight:700;color:#1A1008;margin-bottom:5px}
+.pc-desc{font-size:11.5px;color:#5A4A3A;line-height:1.6;margin-bottom:7px}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:7px}
+.tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:5px}
+.tcdi{background:rgba(14,80,200,.07);color:#0A3A9A;border:1px solid rgba(14,80,200,.18)}
+.tcdd{background:rgba(180,120,0,.07);color:#7A5000;border:1px solid rgba(180,120,0,.2)}
+.tloc{background:rgba(0,0,0,.04);color:#5A4A3A;border:1px solid rgba(0,0,0,.09)}
+.tpre{background:rgba(80,10,0,.07);color:#1A0300;border:1px solid rgba(80,10,0,.18)}
+.tdeb{background:rgba(20,140,60,.09);color:#0A5A20;border:1px solid rgba(20,140,60,.22);font-weight:800}
+.twarn{background:rgba(200,100,0,.08);color:#7A3A00;border:1px solid rgba(200,100,0,.2)}
+.bok{display:inline-block;font-size:9px;font-weight:700;background:rgba(20,120,60,.1);color:#0F5C2A;border:1px solid rgba(20,120,60,.22);border-radius:4px;padding:2px 6px;margin-left:4px;vertical-align:middle}
+.lnk{display:block;margin-top:8px;margin-bottom:2px;padding:8px 12px;background:#FFF3EE;border:1px solid #FF9966;border-left:3px solid #500A00;border-radius:0 7px 7px 0;font-size:12px;font-weight:700;color:#1A0500;text-decoration:underline;text-underline-offset:3px;word-break:break-all;line-height:1.5}
+.lnk.of{background:#F0F8FF;border-color:#66AAFF;border-left-color:#006EC7;color:#001A3A}
+.lnk.gr{background:#F0FFF4;border-color:#66CC88;border-left-color:#005A20;color:#001A0A}
+.div{height:1px;background:#DDD6CC;margin:6px 16px}
+.ftr{background:#1A0500;padding:16px 24px;text-align:center;border-top:2px solid #FF6600;margin-top:14px}
+.ftr p{font-size:11px;color:rgba(255,255,255,.4);line-height:1.7}.ftr strong{color:rgba(255,255,255,.65)}
+</style></head><body>
+
+<div class="hdr">
+<div class="hl">&#127914; Parcs d&#8217;Attractions &#183; France &#183; 2026</div>
+<h1>Empleos <span>Parcs d&#8217;Attractions</span><br>7 Parques &#183; Portales Oficiales</h1>
+<div class="hsub">Disneyland &#183; Ast&#233;rix &#183; Puy du Fou &#183; Futuroscope &#183; Vulcania &#183; Walibi &#183; Spirou &#183; 7 mai 2026</div>
+<div class="hm">
+<div class="mp">&#127869; Restauration</div>
+<div class="mp">&#128716; H&#244;tellerie</div>
+<div class="mp">&#127859; Cuisine</div>
+<div class="mp">&#127981; Accueil</div>
+<div class="mp">&#11088; <span>10.000+</span> postes</div>
+</div></div>
+
+<div class="box gold" style="margin-top:14px;">&#9888;&#65039; <strong>Aviso:</strong> Informaci&#243;n de car&#225;cter <strong>orientativo</strong>. No se verifican ofertas ni condiciones. Esta informaci&#243;n es de acceso p&#250;blico con fines informativos. <strong>Cada persona es responsable de verificar antes de postular.</strong></div>
+<div class="box red">&#128683; <strong>Se&#241;ales de alerta:</strong> &#10071; Piden dinero para el contrato &#183; &#10071; Links que no son el portal oficial del parque &#183; &#10071; Intermediarios no autorizados<br>&#9989; <strong>Postular SOLO en portales oficiales</strong> &#8212; links verificados en este documento &#183; nunca pagar para trabajar</div>
+<div class="box orange">&#127914; <strong>Parcs d&#8217;attractions &#8212; empleadores masivos:</strong> Los grandes parques contratan entre <strong>2.500 y 10.000 personas por temporada</strong>. Abiertos a d&#233;butants &#8212; priman la actitud y el sentido del servicio. Sin cuenta France Travail necesaria &#8212; todos tienen su propio portal oficial.</div>
+<div class="box green">&#128203; <strong>Consejos para postular:</strong><br>&#9989; Postular directamente en el portal oficial &#8212; links verificados abajo<br>&#9989; Disponibilidad fines de semana y festivos &#8212; esencial en parques<br>&#9989; Para Disneyland: <strong>se puede ir en persona sin cita</strong> el d&#237;a del Job Fair y salir con oferta el mismo d&#237;a &#8212; traer CV + pi&#232;ce d&#8217;identit&#233;</div>
+
+<!-- DISNEYLAND -->
+<div class="gb disney"><div class="gl">&#127981;</div><div><div class="gn">DISNEYLAND PARIS</div><div class="gs">Serris / Marne-la-Vall&#233;e (77) &#183; Ouvert 365 jours/an &#183; Disney Adventure World 2026</div></div><div class="gct">10.000+ postes</div></div>
+<div class="pcard disney">
+<div class="pc-title">Restauration &#183; H&#244;tellerie &#183; Accueil &#8212; CDI / CDD &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc">Disneyland Paris recrute pour l&#8217;ensemble de la destination: parcs, Disney Village, h&#244;tels. <strong>2026: ouverture de Disney Adventure World</strong> &#8212; centaines de nouveaux postes. Avantages: logement &#224; proximit&#233; selon disponibilit&#233;s, 13e mois, acc&#232;s parcs + Disney+.<br><br>
+&#11088; <strong>Job Fairs Restauration:</strong> venez sans rendez-vous &#8212; Bât. Bellini, 5 Av. Hergé, 77700 Serris &#183; 9h30&#8211;12h et 14h&#8211;16h30. Partir con una oferta el mismo d&#237;a es posible.</div>
+<div class="tags"><span class="tag tcdi">CDI / CDD &#183; international</span><span class="tag tloc">&#128205; Marne-la-Vall&#233;e (77) &#183; RER A</span><span class="tag tpre">&#11088; 13e mois &#183; parcs &#183; Disney+</span><span class="tag tdeb">&#9989; D&#233;butants accept&#233;s</span></div>
+<a class="lnk of" href="https://emplois.disneycareers.com/l%E2%80%99emploi-%C3%A0-Disneyland-Paris">emplois.disneycareers.com &#8594; &#11088; PORTAIL OFFICIEL Disneyland Paris</a>
+<a class="lnk of" href="https://jobs.disneycareers.com/disneyland-paris-home" style="margin-top:6px">jobs.disneycareers.com &#8594; Disneyland Paris &#8212; toutes les offres</a>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/entreprises/disneyland-paris-85875.html" style="margin-top:6px">hellowork.com &#8594; Disneyland Paris &#8212; offres CHR</a>
+</div>
+<div class="div"></div>
+
+<!-- PARC ASTÉRIX -->
+<div class="gb asterix"><div class="gl">&#9876;&#65039;</div><div><div class="gn">PARC AST&#201;RIX</div><div class="gs">Plailly (60) &#183; Hauts-de-France &#183; 2&#186; parque m&#225;s visitado de Francia</div></div><div class="gct">2.500 postes</div></div>
+<div class="pcard asterix">
+<div class="pc-title">Restauration &#183; H&#244;tellerie &#183; Accueil &#8212; Saison 2026 &#11088; <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc"><strong>2.500 puestos saisonniers 2026</strong> + 200 anticipados para <strong>H&#244;tel L&#8217;Odyss&#233;e 4&#9733;</strong> (2027): r&#233;ception, restauration, housekeeping, cuisine. Acepta d&#233;butants &#8212; priman las cualidades humanas. Posibilidad de recontrataci&#243;n cada a&#241;o. <strong>200+ m&#233;tiers disponibles.</strong></div>
+<div class="tags"><span class="tag tcdd">CDD Saison 2026 &#183; 200+ m&#233;tiers</span><span class="tag tloc">&#128205; Plailly (60) &#183; 35 km Paris</span><span class="tag tdeb">&#9989; D&#233;butants &#183; sans diplôme</span><span class="tag tpre">&#11088; H&#244;tel 4&#9733; 2027 &#183; 200 postes</span></div>
+<a class="lnk of" href="https://recrutement.parcasterix.fr/">recrutement.parcasterix.fr &#8594; &#11088; PORTAIL OFFICIEL Parc Ast&#233;rix</a>
+<a class="lnk" href="https://www.hellowork.com/fr-fr/emploi/mot-cle_saisonnier-ville_plailly-60128.html" style="margin-top:6px">hellowork.com &#8594; saisonnier Plailly &#8212; Parc Ast&#233;rix</a>
+</div>
+<div class="div"></div>
+
+<!-- PUY DU FOU -->
+<div class="gb puydu"><div class="gl">&#127981;</div><div><div class="gn">LE PUY DU FOU</div><div class="gs">Les Epesses (85) &#183; Vend&#233;e &#183; 3+ millions visiteurs / a&#241;o</div></div><div class="gct">2.500 postes</div></div>
+<div class="pcard puydu">
+<div class="pc-title">Serveur &#183; Cuisinier &#183; Accueil H/F &#8212; Saison 2026 <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc"><strong>2.500 personas por temporada dont 1.500 saisonniers.</strong> Ouvert du 4 avril au 3 janvier 2027. Restauration th&#233;matique m&#233;di&#233;vale unique. <strong>&#9888; Pas d&#8217;h&#233;bergement fourni</strong> &#8212; pr&#233;voir logement dans la Vend&#233;e avant de postuler.</div>
+<div class="tags"><span class="tag tcdd">CDD avr 2026 &#8594; janv 2027</span><span class="tag tloc">&#128205; Les Epesses (85) &#183; Vend&#233;e</span><span class="tag twarn">&#9888; Pas de logement fourni</span></div>
+<a class="lnk of" href="https://www.puydufou.com/fr/le-puy-du-fou/recrutement">puydufou.com/recrutement &#8594; &#11088; PORTAIL OFFICIEL Puy du Fou</a>
+</div>
+<div class="div"></div>
+
+<!-- FUTUROSCOPE -->
+<div class="gb futuro"><div class="gl">&#128250;</div><div><div class="gn">FUTUROSCOPE</div><div class="gs">Poitiers (86) &#183; Vienne &#183; Ouvert depuis le 7 f&#233;vrier 2026</div></div><div class="gct">Saison 2026</div></div>
+<div class="pcard futuro">
+<div class="pc-title">Restauration &#183; H&#244;tellerie &#183; Accueil H/F &#8212; Saison 2026 <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc">Futuroscope ouvert depuis le <strong>7 f&#233;vrier 2026</strong>. Restauration, h&#244;tels du domaine et accueil. Parc ouvert toute l&#8217;ann&#233;e &#8212; CDD longs possibles. H&#244;tels sur site avec logement possible selon disponibilit&#233;.</div>
+<div class="tags"><span class="tag tcdd">CDD Saison &#183; ouvert 365j/an</span><span class="tag tloc">&#128205; Poitiers (86) &#183; Vienne</span><span class="tag tpre">&#11088; H&#244;tels sur site &#183; logement possible</span></div>
+<a class="lnk of" href="https://www.futuroscope.com/fr/recrutement">futuroscope.com/recrutement &#8594; &#11088; PORTAIL OFFICIEL Futuroscope</a>
+</div>
+<div class="div"></div>
+
+<!-- VULCANIA -->
+<div class="gb vulca"><div class="gl">&#127755;</div><div><div class="gn">VULCANIA</div><div class="gs">Saint-Ours-les-Roches (63) &#183; Auvergne &#183; Ouvert le 25 mars 2026</div></div><div class="gct">Saison 2026</div></div>
+<div class="pcard vulca">
+<div class="pc-title">Plongeur &#183; Commis &#183; Serveur H/F &#8212; Saison 2026 <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc">Vulcania (parc volcans en Auvergne) ouvert le <strong>25 mars 2026</strong>. Puestos: plongeur, commis de cuisine, cuisinier, serveur snacking, employ&#233; de restauration. <strong>Panier repas offert</strong> pour les employ&#233;s. Job dating organis&#233; le 12 janvier 2026.</div>
+<div class="tags"><span class="tag tcdd">CDD Saison mars&#8594;nov 2026</span><span class="tag tloc">&#128205; Saint-Ours-les-Roches (63) &#183; Puy-de-D&#244;me</span><span class="tag tpre">&#11088; Panier repas offert</span></div>
+<a class="lnk of" href="https://www.vulcania.com/recrutement/">vulcania.com/recrutement &#8594; &#11088; PORTAIL OFFICIEL Vulcania</a>
+</div>
+<div class="div"></div>
+
+<!-- WALIBI -->
+<div class="gb walibi"><div class="gl">&#127937;</div><div><div class="gn">WALIBI RH&#212;NE-ALPES</div><div class="gs">Les Avenni&#232;res (38) &#183; Is&#232;re &#183; Compagnie des Alpes</div></div><div class="gct">WTeam 2026</div></div>
+<div class="pcard walibi">
+<div class="pc-title">Restauration &#183; Entretien &#183; Attractions H/F &#8212; WTeam 2026 <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc">Walibi Rh&#244;ne-Alpes recrute pour la <strong>WTeam 2026</strong>. Puestos: serveur de bar, plongeur, pr&#233;parateur de commandes, agent d&#8217;entretien, op&#233;rateur d&#8217;attractions. Grupo <strong>Compagnie des Alpes</strong> (mismo grupo que Parc Ast&#233;rix, Bioscope, France Miniature).</div>
+<div class="tags"><span class="tag tcdd">CDD Saison 2026 &#183; WTeam</span><span class="tag tloc">&#128205; Les Avenni&#232;res (38) &#183; Is&#232;re</span><span class="tag tpre">&#11088; Compagnie des Alpes</span></div>
+<a class="lnk of" href="https://careers.werecruit.io/fr/walibira">careers.werecruit.io/fr/walibira &#8594; &#11088; PORTAIL OFICIEL Walibi 2026</a>
+</div>
+<div class="div"></div>
+
+<!-- SPIROU -->
+<div class="gb spirou"><div class="gl">&#9889;</div><div><div class="gn">PARC SPIROU PROVEN&#199;AL</div><div class="gs">Monteux (84) &#183; Vaucluse &#183; Provence &#183; BD belge</div></div><div class="gct">Saison 2026</div></div>
+<div class="pcard spirou">
+<div class="pc-title">Emplois Saisonniers &#8212; Parc Spirou 2026 <span class="bok">&#9989; Sin FT</span></div>
+<div class="pc-desc">Parc Spirou Proven&#231;al &#224; Monteux (Vaucluse), entre Avignon et Carpentras. Inspirado en los c&#243;mics belgas (Spirou, Gaston, Lucky Luke...). Restauraci&#243;n, accueil, animaci&#243;n saisonniers. Postular directamente en el portal oficial del parque.</div>
+<div class="tags"><span class="tag tcdd">CDD Saison 2026</span><span class="tag tloc">&#128205; Monteux (84) &#183; Vaucluse &#183; Provence</span><span class="tag tpre">&#11088; BD belge &#183; Spirou &#183; Gaston</span></div>
+<a class="lnk of" href="https://www.parc-spirou.com/offres-demplois/">parc-spirou.com/offres-demplois &#8594; &#11088; PORTAIL OFICIEL Parc Spirou</a>
+</div>
+
+<div class="box green" style="margin-top:12px;">
+&#128270; <strong>Ver m&#225;s ofertas en Hellowork:</strong>
+<a class="lnk gr" href="https://www.hellowork.com/fr-fr/entreprises/disneyland-paris-85875.html">hellowork.com &#8594; Disneyland Paris &#8212; toutes les offres CHR</a>
+<a class="lnk gr" href="https://www.emploiplus.com/formation/item/746-les-parcs-de-loisirs-fran%C3%A7ais-recrutent.html" style="margin-top:6px">emploiplus.com &#8594; Guide complet parcs de loisirs fran&#231;ais 2026</a>
+</div>
+
+<div class="ftr">
+<p><strong>7 Parques &#183; Francia &#183; Portales Oficiales Verificados &#183; 7 mai 2026</strong></p>
+<p>Disneyland &#183; Ast&#233;rix &#183; Puy du Fou &#183; Futuroscope &#183; Vulcania &#183; Walibi &#183; Spirou</p>
+<p style="margin-top:5px;font-size:10px;color:rgba(255,255,255,.3)">&#9989; Portales verificados &#183; Sin cuenta FT necesaria &#183; Nunca pagar para trabajar</p>
+</div>
+</body></html>
